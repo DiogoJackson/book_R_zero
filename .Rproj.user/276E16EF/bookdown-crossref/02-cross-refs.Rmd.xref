@@ -1,0 +1,17 @@
+h1:r-para-iniciantes R para iniciantes
+h2:entendendo-o-rstudio Entendendo o RStudio
+h2:objetos-vetores-e-funções Objetos, vetores e funções
+h3:objetos Objetos
+h3:vetores Vetores
+h3:funções Funções
+h2:tabela-de-dados Tabela de dados
+h3:data-frame Data frame
+h3:planilha-de-dados-nativa-do-r Planilha de dados nativa do R
+h3:importando-sua-planilha Importando sua planilha
+h2:graficos Graficos
+h3:grafico-de-histograma Grafico de histograma
+h3:grafico-de-dispersao Grafico de dispersao
+h3:grafico-boxplot Grafico boxplot
+h3:grafico-de-barras Grafico de barras
+h2:pacotes Pacotes
+

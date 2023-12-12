@@ -1,0 +1,809 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={R Zero - do simples ao complexo},
+  pdfauthor={Diogo J. A. Silva},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{R Zero - do simples ao complexo}
+\author{Diogo J. A. Silva}
+\date{2023-12-12}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{bem-vindos}{%
+\chapter{Bem-vindos}\label{bem-vindos}}
+
+Esse livro foi criado para organizar, de forma fácil, os códigos dos tipos de gráficos que podem ser criados utilizando o R, trazendo um compilado essencial da Visualização de dados. Claro que já existem livros muito bons sobre o assunto (\url{https://rkabacoff.github.io/datavis/} e \url{https://r-graphics.org/}), porém são livros em inglês e pouco amigáveis para iniciantes. Claro que existe um livro muito bom em português e serve para iniciantes (\url{https://analises-ecologicas.netlify.app/}), mas não é focado em visualização de dados. Portanto, nesse livro, iniciantes terão uma boa base introdutória no R e serão direcionados para a visualização de dados de forma mais simples e organizada.
+
+Neste livro, você encontrará o essencial para produzir gráficos em R utilizando o pacote ggplot2. Para o melhor aproveitamento do conteúdo, você precisará entender como o R funciona e também compreender de forma clara os conceitos de variáveis estatísticas (ou seja, variável nominal, quantitativa, etc.). Com isso em mente, você poderá pular para qualquer parte do livro e aproveitar seu conteúdo, que se mostrará independente caso você tenha todos os pré-requisitos (ou seja, R + RStudio instalados).
+
+Se você já possui os conhecimentos básicos de estatística e R, sinta-se livre para pular para qualquer parte do livro e aproveitar os códigos dos gráficos. :)
+
+\textless img src=``img/fig\_morcegos.png'' alt=``Texto Alternativo'' style=``width: 200px\textgreater{}
+
+\hypertarget{pre-requisitos}{%
+\chapter{Pre-requisitos}\label{pre-requisitos}}
+
+\hypertarget{instalando-r-e-rstudio}{%
+\section{Instalando R e RStudio}\label{instalando-r-e-rstudio}}
+
+Logicamente, para você usar esse livro de forma otimizada, precisará ter o R e RStudio instalados. Nem vou falar sobre a instalação, pois sei que você é capaz de encontrar um tutorial feito por uma criança de 8 anos no YouTube.
+
+Se voce eh um completo iniciante, a forma ideal de utilizar esse livro, eh seguir o que o livro pede executando os comandos no RStudio.
+
+\hypertarget{r-para-iniciantes}{%
+\chapter{R para iniciantes}\label{r-para-iniciantes}}
+
+Caro iniciante, meu objetivo aqui é mostrar que utilizar o R é muito divertido e recompensador. Você vai perceber que cada código rodado (e que funciona) vai te dar um pouquinho de dopamina e uma sensação de prazer. Claro que alguns erros vão te deixar maluco, mas você vai perceber que tudo é culpa sua. Mas não se preocupe, se é culpa sua, você pode consertá-los facilmente :)
+
+A tendência é que quanto mais você utiliza o R, mais fácil sua vida se torna, e apesar da curva de aprendizagem ser um pouco desestimuladora, é 1000 vezes recompensadora. Como alguns gostam de dizer, você conseguirá fazer um gráfico até 30 vezes mais rápido!!! Não sei de onde veio esse cálculo, mas se está na internet é verdade.
+
+\hypertarget{entendendo-o-rstudio}{%
+\section{Entendendo o RStudio}\label{entendendo-o-rstudio}}
+
+Tudo que iremos fazer será através do R Studio devido à organização que ele nos fornece. Ao abrir o R Studio, você verá o seguinte:
+\includegraphics{img/cara_do_rstudio1.png}
+
+Não tem a aparência convencional dos programas estatísticos, mas isso acontece porque não se realizam tarefas clicando em abas ou botões. No R Studio, você executa comandos por meio de códigos! No futuro, é provável que exista um programa com o qual você poderá conversar em qualquer idioma e ele realizará as tarefas que você pedir. Até onde sei, ainda não existe nenhum programa com a precisão do R. No entanto, para utilizar o R, é necessário falar a linguagem dele.
+
+Se voce for ``falar'' diretamente com o R no console e digitar e apertar o botao ``Enter'' do teclado: \emph{``Ei R, faz um grafico pra mim ai na moral hehe''}. Ele vai te retornar um erro em vermelho.
+
+\includegraphics{img/cara_do_rstudio2.png}
+
+Ele está basicamente indicando que não entendeu o que você disse. Vamos tentar usar a linguagem dele. Digite: \textbf{1 + 1}
+
+Você vai notar que ele retornará o resultado \textbf{2}. Você pode realizar qualquer operação matemática, desde que utilize uma linguagem que ele possa compreender.
+
+\textbf{2+2 (soma)}\\
+\textbf{2-2 (subtração)}\\
+\textbf{2*2 (multiplicação)}\\
+\textbf{2/2 (divisão)}\\
+\textbf{2\^{}2 (potenciação)}
+
+Agora digite uma equacao mais complexa:
+
+\textbf{2+2-2\^{}2/2}
+
+O resultado sera \textbf{2}. Mas e se voce quiser mudar? Trocar a raiz quadrada de 10 (sqrt(10)) para a raiz quadrada de 4 (sqrt(4))? Voce vai ter que digitar tudo de novo? De fato, sim, vai ter que digitar tudo de novo, porem voce pode usar a tecla ``seta para cima'' do teclado, e ele vai te mostrando os ultimos comando dados.
+
+Mas eh por essa falta de praticidade de conversar com o R, que o R studio ganha sua importancia na janela de Script.
+
+Vamos criar um pequeno script e aprender algumas coisas. Copie o codigo abaixo e cole na janela de script.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Mini Script  }
+\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{1}  
+\NormalTok{b }\OtherTok{\textless{}{-}} \DecValTok{2}  
+\NormalTok{a }\SpecialCharTok{+}\NormalTok{ b}
+\end{Highlighting}
+\end{Shaded}
+
+Veja que no Script, o documento eh organizado por linhas (1, 2, 3, 4\ldots). Nesse caso, cada linha representa um comando. Com excesao da linha 1 que eh na verdade um comentario ou uma nota. Qualquer codigo pode ser transformado em um comentario, para isso, eh so adicionar o \textbf{\#} no inicio da linha. Comentarios, nao sao comandos, e se voce tentar executa-los, automaticamente irao pular e executar a proxima linha.
+
+Para executar um comando no script nao utilizamos apenas o ``Enter'' e sim o ``Ctrl + Enter''. Ao executar a segunda linha \textbf{a \textless- 1}, voce pediu para o R atribuir o numero \textbf{1} a letra \textbf{a}. Ao executar a terceira linha, voce atribui o numero \textbf{2} a letra \textbf{b}. E por fim, ao executar a quarta linha, voce realiza uma soma de \textbf{a + b}, ou seja \textbf{1 + 2}.
+
+Voce ja deve ter percebido que o codigo \textbf{\textless-} significa \textbf{atribuir}.
+
+\emph{Nesse momento, nobre leitor, eu espero que voce esteja realizando diferentes operacoes matematicas, utilizando diferentes atribuicoes.}
+
+Vamos continuar! Um objeto pode possuir mais de um valor ao mesmo tempo. Vamos fazer uma atribuicao chamada de \textbf{v} e outro chamado de \textbf{V}. Note que para o R, o v minusculo e V maiusculo sao coisas diferentes. Muitos erros acontecem por causa desse pequeno detalhe. Vamos realizar essas atribuicoes com o codigo abaixo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{10}\NormalTok{)  }
+\NormalTok{V }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{20}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Note que para fazer uma atribuicao de muitos valores, eles precisam estar entre parenteses, separados por virgula antecedidos do \textbf{c}.
+
+\hypertarget{objetos-vetores-e-funuxe7uxf5es}{%
+\section{Objetos, vetores e funções}\label{objetos-vetores-e-funuxe7uxf5es}}
+
+Dando nome aos bois! Entender que cada parte e cada coisa que voce faz possui uma nomeclatura, ajuda voce a se comunicar com outros, seja lendo um livro, seja assistindo um video ou conversando com um colega sobre R. Entao vamos entender alguns conceitos.
+
+\hypertarget{objetos}{%
+\subsection{Objetos}\label{objetos}}
+
+Quando atribuimos o numero \textbf{1} a letra \textbf{a}, a gente criou um objeto de nome \textbf{a}. Abaixo mais alguns exemplos de objetos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{objeto\_a }\OtherTok{\textless{}{-}} \DecValTok{10}
+\NormalTok{objeto\_b }\OtherTok{\textless{}{-}} \DecValTok{20}
+\NormalTok{melhor\_comida }\OtherTok{\textless{}{-}} \StringTok{"Coxinha de frango!"}
+\NormalTok{Brasil }\OtherTok{\textless{}{-}} \StringTok{"Pentacampeao!"}
+\NormalTok{Marilia }\OtherTok{\textless{}{-}} \StringTok{"Troxa!"}
+\end{Highlighting}
+\end{Shaded}
+
+Note que eh possivel atribuir letras, caracteres ou frases a um objeto. Mas eh necessario que o conteudo esteja entre aspas.
+
+Toda vez que voce executa o objeto, o R ira retornar seu valor correspondente. Execute os objetos um por um e veja o resultado.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{objeto\_a}
+\NormalTok{objeto\_b}
+\NormalTok{melhor\_comida}
+\NormalTok{Brasil}
+\NormalTok{Marilia}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{vetores}{%
+\subsection{Vetores}\label{vetores}}
+
+Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetor.A }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{ (}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\NormalTok{vetor.B }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{ (}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{melhores.comidas }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{ (}\StringTok{"coxinha"}\NormalTok{,}\StringTok{"pastel"}\NormalTok{,}\StringTok{"lasanha"}\NormalTok{)}
+
+\NormalTok{vetor.A}
+\NormalTok{vetor.B}
+\NormalTok{melhores.comidas}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{funuxe7uxf5es}{%
+\subsection{Funções}\label{funuxe7uxf5es}}
+
+No R, as funcoes servem para processar de alguma forma os dados. No codigo abaixo, vamos criar dois objetos e utilizar a funcao de adicao para soma-los.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Objetos}
+\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{2}
+\NormalTok{b }\OtherTok{\textless{}{-}} \DecValTok{8}
+\NormalTok{vetor }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+
+\CommentTok{\#Funcao de soma}
+\FunctionTok{sum}\NormalTok{(a,b)}
+\FunctionTok{sum}\NormalTok{(vetor)}
+\end{Highlighting}
+\end{Shaded}
+
+Existem funcoes dentro do R para todo tipo de coisa! Vamos criar um conjunto de dados e fazer alguns calculos utilizando algumas funcoes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Notas do terceiro ano A}
+\NormalTok{notas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{6.6}\NormalTok{, }\FloatTok{7.9}\NormalTok{, }\FloatTok{8.9}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+
+\CommentTok{\#Qual a media da turma?}
+\FunctionTok{mean}\NormalTok{(notas)}
+
+\CommentTok{\#Qual a mediana?}
+\FunctionTok{median}\NormalTok{(notas)}
+
+\CommentTok{\#Qual o desvio padrao das notas?}
+\FunctionTok{sd}\NormalTok{(notas)}
+
+\CommentTok{\#Qual a menor e a maior nota?}
+\FunctionTok{min}\NormalTok{(notas)}
+\FunctionTok{max}\NormalTok{(notas)}
+
+\CommentTok{\#resumo das notas}
+\FunctionTok{summary}\NormalTok{(notas)}
+\end{Highlighting}
+\end{Shaded}
+
+Cada uma dessas funcoes realiza algum calculo em especifico, no caso de \emph{summary()}, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce.
+
+Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Eu sei, eh uma funcao simples, mas vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de \emph{function()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Estrutura de uma funcao}
+\NormalTok{nome }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(variables) \{}
+    
+    \CommentTok{\#dentro das chaves adicionamos o processo que queremos realizar.}
+    \CommentTok{\#Nesse caso, somar dois numeros.}
+\NormalTok{\}}
+
+\CommentTok{\#Criando a funcao soma}
+
+\NormalTok{soma }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(primeiro\_numero, segundo\_numero) \{}
+
+\NormalTok{add }\OtherTok{\textless{}{-}}\NormalTok{ primeiro\_numero }\SpecialCharTok{+}\NormalTok{ segundo\_numero}
+\FunctionTok{print}\NormalTok{(add)}
+
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Essa eh uma funcao que possui dois argumentos (primeiro\_numero, segundo\_numero) e utilizando esses argumentos ela realiza um calculo de soma e atribui esse resultado a um objeto que chamamos de ``add''. Por fim, utilizamos a funcao \emph{print()} para mostrar o valor embutido em ``add''.
+
+Agora, vamos imaginar que talvez a funcao \emph{summary()} nao seja o que voce precisa. Voce precisa mesmo eh de uma funcao que te forneca, media, mediana e desvio padrao dos seus dados.
+
+Nesse caso, podemos criar a funcao \emph{my\_summary()} utilizando a funcao \emph{function()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Criando a funcao my\_summary()}
+
+\NormalTok{my\_summary }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(vetor) \{}
+
+\NormalTok{media   }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(vetor)}
+\NormalTok{mediana }\OtherTok{\textless{}{-}} \FunctionTok{median}\NormalTok{(vetor)}
+\NormalTok{desvio  }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(vetor)}
+
+\NormalTok{resultado }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(media, mediana, desvio)}
+\FunctionTok{print}\NormalTok{(resultado)}
+
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Calma, tem muita coisa ai, mas eh tudo o que a gente ja sabe. Na funcao \emph{my\_summary()}, precisamos inserir apenas um argumento do tipo vetor, como por exemplo, ``notas''. Mais uma vez, as chaves que abre e fecha contem tudo o que a gente quer que a funcao realize, linha por linha. Primeiro, queremos que a nossa funcao calcule a media e atribua o resultado a um objeto chamado ``media''. Segundo, calcular a mediana e atribuir o resultado a um objeto chamado ``mediana'', depois o desvio. Depois criamos um vetor chamado de ``resultado'' que armazena os objetos ``media'', ``mediana'' e ``desvio''. Em seguida, pedimos para o R nos mostrar os valores desse vetor ``resultado'' utilizando a funcao \emph{print()}.
+
+Vamos usar nossa funcao personalizada para calcular nosso objeto ``notas''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Usando a funcao my\_function()}
+
+\FunctionTok{my\_function}\NormalTok{(notas)}
+\end{Highlighting}
+\end{Shaded}
+
+Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para frente, a gente ve como criar funcoes mais elaboradas.
+
+\hypertarget{tabela-de-dados}{%
+\section{Tabela de dados}\label{tabela-de-dados}}
+
+\hypertarget{data-frame}{%
+\subsection{Data frame}\label{data-frame}}
+
+Data frame nada mais eh do que uma tabela de dados. Vamos direto ao que interessa e usar a funcao \emph{data.frame()} para criar uma tabela. Iremos criar as notas de 10 alunos e seus respectivos nomes. Se voce ainda estiver na mesma sessao de R, podemos ver que o objeto ``notas'' ainda esta salvo na janela 3 (Environment e History) e podemos aproveita-lo. De qualquer forma vou recriar ``notas'', caso por algum motivo voce SAIU do R, um absurdo, mas acontece.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Criando um data frame contendo as notas e os nomes de cada aluno}
+
+\CommentTok{\#Primeiro criamos as notas}
+\NormalTok{notas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{6.6}\NormalTok{, }\FloatTok{7.9}\NormalTok{, }\FloatTok{8.9}\NormalTok{, }\DecValTok{0}\NormalTok{) }
+
+\CommentTok{\#Segundo criamos os nomes}
+\NormalTok{nomes }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Marilia"}\NormalTok{, }\StringTok{"Jonatas"}\NormalTok{, }\StringTok{"Guilherme"}\NormalTok{, }\StringTok{"Camila"}\NormalTok{, }
+\StringTok{"Fiuza"}\NormalTok{, }\StringTok{"Brunno"}\NormalTok{, }\StringTok{"Diego"}\NormalTok{, }\StringTok{"Mathews"}\NormalTok{, }\StringTok{"Biny"}\NormalTok{, }\StringTok{"Rebecca"}\NormalTok{)}
+
+\CommentTok{\#Terceiro utilizamos a funcao data.frame() para criar a tabela}
+\NormalTok{tabela }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(nomes, notas)}
+\NormalTok{tabela}
+\end{Highlighting}
+\end{Shaded}
+
+Esse data.frame (tabela), eh uma forma muito simplificada das tabelas que iremos importar de nossos dados reais. Porem, ela nos serve muito bem para entendermos como funciona uma planilha no R.
+
+A partir de agora eu quero que voce perceba uma coisa muito importante e leve isso para a vida. Uma planilha organizada deve ser construida da seguinte forma:
+
+-Variaveis sao colunas;
+-Observacoes sao linhas;
+-Cada valor na sua celula.
+
+Com essa formatacao de planilha, voce consegue fazer quase tudo no R, utilizando pacotes como `dplyr' e `ggplot2', para manipulacao de dados e construcao de graficos, respectivamente.
+
+Logo, para voce acessar uma variavel de uma tabela, voce pode usar o \textbf{\$} da seguinte forma:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Acessando uma variavel}
+
+\NormalTok{tabela}\SpecialCharTok{$}\NormalTok{nomes}
+\NormalTok{tabela}\SpecialCharTok{$}\NormalTok{notas}
+\end{Highlighting}
+\end{Shaded}
+
+Perceba que quando voce digita tabela\$ voce pode apertar a tecla TAB para mostrar e selecionar as variaveis de sua tabela. Caso alguma nota esteja errada e voce queira corrigi-la, voce pode utilizar a funcao \emph{fix()}. Essa funcao abre uma janela onde voce pode clicar e modificar o valor desejado.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\FunctionTok{fix}\NormalTok{(tabela)}
+\end{Highlighting}
+\end{Shaded}
+
+Agora sabendo como acessar as variaveis de uma tabela, voce pode utilizar funcoes para calcular uma variavel especifica do data frame.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\FunctionTok{summary}\NormalTok{(tabela}\SpecialCharTok{$}\NormalTok{notas)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{planilha-de-dados-nativa-do-r}{%
+\subsection{Planilha de dados nativa do R}\label{planilha-de-dados-nativa-do-r}}
+
+O R possui um banco de dados que nos fornece algumas tabelas de estudo reais o quais podemos utilizar para treinar nossas habilidades. Para isso, precisamos dizer para o R qual banco de dados queremos invocar utilizando a funcao \emph{data()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Importando o banco de dados do R}
+\FunctionTok{data}\NormalTok{(iris)}
+
+\CommentTok{\#Funcoes exploratorias}
+\FunctionTok{head}\NormalTok{(iris) }\CommentTok{\#Mostra a parte de cima da planilha }
+\FunctionTok{tail}\NormalTok{(iris) }\CommentTok{\#Mostra a parte de baixo}
+\FunctionTok{str}\NormalTok{(iris)  }\CommentTok{\#Mostra os tipos de variaveis}
+\end{Highlighting}
+\end{Shaded}
+
+Veja que ao usarmos a funcao \emph{str()} o R retorna a natureza das variaveis da planilha.
+
+-num significa numerica.
+-Factor significa que eh uma variavel qualitativa com fatores (setosa, versicolor, virginica).
+
+As vezes a planilha eh importada com as variaveis mal formatadas e isso pode gerar problemas de reconhecimento por parte do R. Nesse caso, eh sempre interessante realizar a verificacao dos dados utilizando a funcao \emph{str()} ou outras funcoes similares. Caso o R nao esteja identificando as variaveis corretamente, duas funcoes muito uteis podem ser utilizadas: \emph{as.numeric()} e \emph{as.factor()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(iris)}
+
+\CommentTok{\#Convertendo variavel para numerica}
+\NormalTok{iris}\SpecialCharTok{$}\NormalTok{Sepal.Length }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Length)}
+
+\CommentTok{\#Convertendo variavel para fator}
+\NormalTok{iris}\SpecialCharTok{$}\NormalTok{Species }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Species)}
+\end{Highlighting}
+\end{Shaded}
+
+Basicamente voce ta transformando em numerica a variavel Sepal length da planilha iris e atribuindo a ela mesma. Dessa forma, voce faz a alteracao de forma permanente. A mesma coisa ocorre com as.factor.
+
+Vamos brincar um pouco com a planilha iris. Primeiro veja que ela esta construida de forma organizada (variaveis nas colunas, observacoes nas linhas, cada celula um valor). Podemos entao realizar o summary() para saber a media, mediana, maximo e minimo da largura da petala (Petal.Width).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Width)}
+\end{Highlighting}
+\end{Shaded}
+
+Porem note que existe 3 especies diferentes. A funcao \emph{summary()} nao leva isso em consideracao. O ideal seria calcular o \emph{summary()} para cada especie. Para isso temos uma funcao muito legal chamada \emph{tapply()}, onde: o primeiro argumento eh a variavel numerica, o segundo a variavel com os fatores, e o terceiro argumento eh a funcao que voce quer aplicar.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tapply}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Width, iris}\SpecialCharTok{$}\NormalTok{Species, summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{importando-sua-planilha}{%
+\subsection{Importando sua planilha}\label{importando-sua-planilha}}
+
+No RStudio podemos importar uma planilha do formato excel (xlsx) utilizando o botao na janela Environment (superior direita):
+
+Environment \textgreater{} Import Dataset \textgreater{} From excel
+
+Acho pouco eficiente ensinar a importar dados de um diretorio, acho pouco pratico, uma vez que temos o botao de importar. Ao inves disso, irei treina-lo a utilizar projetos de R reprodutiveis e organizados. Ao trabalhar no R, voce seguira um protocolo basico de como tratar os dados a serem analisados. Ao longo do tempo, voce sera capaz de otimizar esse protocolo e aplicar para quase todo tipo de dado que voce possuir. De qualquer forma, saiba que o R trabalha com uma pasta especifica chamada de diretorio, e para saber qual eh o seu diretorio padrao, utilize a funcao \emph{getwd()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Ao executar esse funcao, o R te retornara o caminho da pasta do diretorio padrao atual que provavelmente eh a pasta ``documentos'' do seu computador.
+
+\hypertarget{graficos}{%
+\section{Graficos}\label{graficos}}
+
+Agora comeca a parte divertida! A visualizacao de dados no R tem um potencial quase infinito devido as sua grande capacidade de personalizar cada pedacinho da figura.
+
+\hypertarget{grafico-de-histograma}{%
+\subsection{Grafico de histograma}\label{grafico-de-histograma}}
+
+Esse grafico nos mostra a frequencia dos valores da variavel de interesse, como por exemplo comprimento da petala das flores do banco de dados iris.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Importando banco de dados "iris"}
+\FunctionTok{data}\NormalTok{(iris)}
+
+\CommentTok{\#Criando histograma}
+\FunctionTok{hist}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Length)}
+\end{Highlighting}
+\end{Shaded}
+
+Simples nao eh? Mas podemos modificar ainda mais nosso grafico. Alterar cores, nomes dos eixos, titulo, etc. Vamos ver mais argumentos com o grafico de dispersao de pontos.
+
+\hypertarget{grafico-de-dispersao}{%
+\subsection{Grafico de dispersao}\label{grafico-de-dispersao}}
+
+Esse grafico nos mostra a relacao entre duas variaveis continuas. Vamos utilizar o banco de dados ``iris'' para construir e visualizar alguns graficos. Para construir um grafico de dispersao utilizamos a funcao \emph{plot()}. Note que a funcao plot, possui varios argumentos que podemos ir adicionando para personalizar o grafico. Alem disso, para deixar o codigo mais organizado, sempre apos a virgula de um argumento, pulamos a linha, de forma que cada argumento fique numa linha.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Cria o grafico basico}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width)}
+
+\CommentTok{\#adiciona o argumento para mudar o nome do eixo y}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{)}
+
+\CommentTok{\#adiciona o argumento para mudar o nome do eixo x}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
+   \AttributeTok{xlab =} \StringTok{"Sepal Width"}
+\NormalTok{   )}
+
+\CommentTok{\#argumento para mudar a cor dos pontos}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
+   \AttributeTok{xlab =} \StringTok{"Sepal Width"}\NormalTok{,}
+   \AttributeTok{col =} \StringTok{"blue"}
+\NormalTok{   )}
+   
+\CommentTok{\#argumento para mudar o formato dos pontos}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
+   \AttributeTok{xlab =} \StringTok{"Sepal Width"}\NormalTok{,}
+   \AttributeTok{col =} \DecValTok{3}\NormalTok{,}
+   \AttributeTok{pch =} \DecValTok{2}
+\NormalTok{   )}
+   
+\CommentTok{\#argumento para adicionar um titulo no grafico}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
+   \AttributeTok{xlab =} \StringTok{"Sepal Width"}\NormalTok{,}
+   \AttributeTok{col =} \DecValTok{3}\NormalTok{,}
+   \AttributeTok{pch =} \DecValTok{2}\NormalTok{,}
+   \AttributeTok{main =} \StringTok{"Titulo do grafico"}
+\NormalTok{   )}
+   
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{grafico-boxplot}{%
+\subsection{Grafico boxplot}\label{grafico-boxplot}}
+
+Para criar o grafico de boxplot, iremos utilizar a variavel numerica Sepal.Width do banco de dados iris em relacao a variavel Species. Note que na funcao plot, as duas variaveis (argumentos) eram separados por virgula, aqui utilizamos o \textbf{\textasciitilde{}} para relacionar a variavel numerica com a categorica.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Importa o banco de dados iris}
+\FunctionTok{data}\NormalTok{(iris)}
+
+\CommentTok{\#Cria o grafico de boxplot basico}
+\FunctionTok{boxplot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width }\SpecialCharTok{\textasciitilde{}}\NormalTok{ iris}\SpecialCharTok{$}\NormalTok{Species)}
+
+\CommentTok{\#Boxplot personalizado}
+\FunctionTok{boxplot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width }\SpecialCharTok{\textasciitilde{}}\NormalTok{ iris}\SpecialCharTok{$}\NormalTok{Species,}
+      \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
+      \AttributeTok{xlab =} \StringTok{"Species"}\NormalTok{,}
+      \AttributeTok{col =} \FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\StringTok{"tomato"}\NormalTok{),}
+      \AttributeTok{main =} \StringTok{"Titulo do grafico"}
+\NormalTok{      )}
+\end{Highlighting}
+\end{Shaded}
+
+Perceba que o argumento col pode ser um vetor, e pode receber mais de um valor. Nesse caso, demos uma cor para cada fator de Species. Tente substituir os numeros por outros, ou colocar o nome das principais cores como: red, green, blue, yellow\ldots{} So nao esqueca de colocar entre aspas.
+
+\hypertarget{grafico-de-barras}{%
+\subsection{Grafico de barras}\label{grafico-de-barras}}
+
+Para criar um grafico de barras de contagem, vamos criar nosso proprio data frame. Imagine que queremos tabular a contagem total de ectoparasitas (piolho) de ave de cada parte corporal. Como eh algo simples, podemos criar direto no R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Criando quantidade total de parasitas}
+\NormalTok{qt\_parasita }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{29}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+
+\CommentTok{\#Criando parte corporal da ave}
+\NormalTok{parte\_corporal }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"cabeca"}\NormalTok{, }\StringTok{"asa"}\NormalTok{, }\StringTok{"barriga"}\NormalTok{, }\StringTok{"cauda"}\NormalTok{)}
+
+\CommentTok{\#Criando tabela}
+\NormalTok{dados\_parasita }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(qt\_parasita, parte\_corporal)}
+
+\CommentTok{\# Cria ndo gráfico de barras}
+\NormalTok{grafico }\OtherTok{\textless{}{-}} \FunctionTok{barplot}\NormalTok{(dados\_parasita}\SpecialCharTok{$}\NormalTok{qt\_parasita, }
+                   \AttributeTok{names.arg =}\NormalTok{ dados\_parasita}\SpecialCharTok{$}\NormalTok{parte\_corporal,}
+                   \AttributeTok{xlab =} \StringTok{"Parte do Corpo"}\NormalTok{,}
+                   \AttributeTok{ylab =} \StringTok{"Quantidade de Parasitas"}\NormalTok{,}
+                   \AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{35}\NormalTok{), }\CommentTok{\#define o limite do eixo y (de 0 a 35)}
+                   \AttributeTok{col =} \StringTok{"lightgreen"}\NormalTok{,}
+                   \AttributeTok{border =} \StringTok{"black"}\NormalTok{)}
+
+\CommentTok{\# Adicionando os números acima das barras}
+\FunctionTok{text}\NormalTok{(grafico, dados\_parasita}\SpecialCharTok{$}\NormalTok{qt\_parasita, }
+\AttributeTok{labels =}\NormalTok{ dados\_parasita}\SpecialCharTok{$}\NormalTok{qt\_parasita, }\AttributeTok{pos =} \DecValTok{3}\NormalTok{, }\AttributeTok{cex =} \FloatTok{0.8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Faca as seguintes modificacoes no codigo e veja o que acontece:
+
+\begin{itemize}
+\tightlist
+\item
+  Veja o que acontece se voce deletar a linha completa do argumento names.arg.\\
+\item
+  Troque o valor 35 de ylim por 50.\\
+\item
+  No argumento border, troque ``black'' por ``red'' e depois ``white''.\\
+\item
+  Na funcao text(), troque pos = 3, por pos = 1.\\
+  (rode o grafico antes para nao sobrepor os numeros)
+\end{itemize}
+
+Eh possivel fazer muitos outros tipos de graficos, utilizando diferentes funcoes. Mas a ideia desse capitulo eh ensinar a utilizar o R, e nao a criar graficos. Entao vamos com calma, pois quando voce pensar que nao, ja foi.
+
+\hypertarget{pacotes}{%
+\section{Pacotes}\label{pacotes}}
+
+Agora ja podemos comecar a expandir nosso universo do R. Tudo que fizemos ate agora foi utilizando o proprio R base. A partir de agora, iremos incluir um conjunto de novas funcoes atraves dos pacotes de R.
+Antes de tudo, precisamos instalar o pacote que queremos utilizar, e para isso existe duas formas:
+
+\begin{itemize}
+\tightlist
+\item
+  Utilizando o botao \emph{Tools} do RStudio.\\
+\item
+  Utilizando a funcao \emph{install.packages(``nome\_do\_pacote'')}
+\end{itemize}
+
+Vamos instalar o pacote ``lattice'' para criarmos uns graficos diferentes do que fizemos anteriormente.
+
+Utilizando o botao \emph{Tools} do RStudio click em: \textbf{Tools \textgreater{} Install package \textgreater{} digite o nome ``lattice''.} Ao comecar a digitar o R ira sugerir opcoes de pacotes com as iniciais que voce digitou. Depois clica em ``instalar''.
+
+Utilizando a funcao \emph{install.packages()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"lattice"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+O processo de instalacao mostra no console varios processos e enquanto isso acontece, um icone de ``stop'' vermelho aparece na parte superior direita da janela do console. O processo so termina quando esse icone some e um aviso aparece:
+
+\includegraphics{img/install_package.png}
+
+Pacote instalado, agora eh so dizer que queremos utilizar o pacote. O processo de instalacao em um determinado computador so precisa ser feito uma vez. Porem, toda vez, voce precisa dizer para o R, qual pacote voce estar utilizando. Para isso utilizamos a funcao \emph{library()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Carregando o pacote lattice}
+\FunctionTok{library}\NormalTok{(lattice)}
+\end{Highlighting}
+\end{Shaded}
+
+Se voce carregou o pacote e o R nao te retornou nenhum erro, ta tudo certo. As vezes ele te retorna um Warning message, tambem esta tudo certo. Vamos adiante.
+
+\hypertarget{parts}{%
+\chapter{Parts}\label{parts}}
+
+You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
+
+Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+
+Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+
+Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
+
+\hypertarget{footnotes-and-citations}{%
+\chapter{Footnotes and citations}\label{footnotes-and-citations}}
+
+\hypertarget{footnotes}{%
+\section{Footnotes}\label{footnotes}}
+
+Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
+
+\hypertarget{citations}{%
+\section{Citations}\label{citations}}
+
+Reference items in your bibliography file(s) using \texttt{@key}.
+
+For example, we are using the \textbf{bookdown} package \citep{R-bookdown} (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015} (this citation was added manually in an external file book.bib).
+Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YAML \texttt{bibliography} key.
+
+The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
+
+\hypertarget{blocks}{%
+\chapter{Blocks}\label{blocks}}
+
+\hypertarget{equations}{%
+\section{Equations}\label{equations}}
+
+Here is an equation.
+
+\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  \label{eq:binom}
+\end{equation}
+
+You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation \eqref{eq:binom}.
+
+\hypertarget{theorems-and-proofs}{%
+\section{Theorems and proofs}\label{theorems-and-proofs}}
+
+Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
+
+\begin{theorem}
+\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
+and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
+\[a^2 + b^2 = c^2\]
+\end{theorem}
+
+Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
+
+\hypertarget{callout-blocks}{%
+\section{Callout blocks}\label{callout-blocks}}
+
+The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
+
+\hypertarget{sharing-your-book}{%
+\chapter{Sharing your book}\label{sharing-your-book}}
+
+\hypertarget{publishing}{%
+\section{Publishing}\label{publishing}}
+
+HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
+
+\hypertarget{pages}{%
+\section{404 pages}\label{pages}}
+
+By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
+
+\hypertarget{metadata-for-sharing}{%
+\section{Metadata for sharing}\label{metadata-for-sharing}}
+
+Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
+
+This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
+
+Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
+
+Read more about the features of this output format here:
+
+\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
+
+Or use:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
+\end{Highlighting}
+\end{Shaded}
+
+
+  \bibliography{book.bib}
+
+\end{document}

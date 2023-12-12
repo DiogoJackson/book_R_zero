@@ -1,0 +1,36 @@
+#Importa o banco de dados iris
+data(iris)
+
+#Cria o grafico de boxplot basico
+boxplot(iris$Sepal.Width ~ iris$Species)
+
+#Boxplot personalizado
+boxplot(iris$Sepal.Width ~ iris$Species,
+        ylab = "Petal Width", 
+        xlab = "Species",
+        col = c(3,4,"tomato"),
+        main = "Titulo do grafico"
+)
+
+data(ChickWeight)
+#Criando quantidade total de parasitas
+qt_parasita <- c(10, 15, 29, 4)
+
+#Criando parte corporal da ave
+parte_corporal <- c("cabeca", "asa", "barriga", "cauda")
+
+#Criando tabela
+dados_parasita <- data.frame(qt_parasita, parte_corporal)
+
+# Cria ndo gráfico de barras
+grafico <- barplot(dados_parasita$qt_parasita, 
+                   names.arg = dados_parasita$parte_corporal,
+                   xlab = "Parte do Corpo",
+                   ylab = "Quantidade de Parasitas",
+                   ylim = c(0,35),
+                   col = "lightgreen",
+                   border = "white")
+
+# Adicionando os números acima das barras
+text(grafico, dados_parasita$qt_parasita, labels = dados_parasita$qt_parasita, pos = 3, cex = 0.8)
+library(lattice)
