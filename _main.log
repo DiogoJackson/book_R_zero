@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  12 DEC 2023 20:21
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  12 DEC 2023 20:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -742,11 +742,6 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 [3] [4]
 Chapter 1.
-
-Underfull \hbox (badness 1418) in paragraph at lines 158--159
-[]\TU/lmr/m/n/10 <img src=“img/fig_morcegos.png” alt=“Texto Alternativo” style=“width:
- []
-
 [5
 
 ] [6
@@ -760,7 +755,7 @@ Chapter 3.
 File: img/cara_do_rstudio1.png Graphic file (type bmp)
 <img/cara_do_rstudio1.png>
 
-Underfull \hbox (badness 2443) in paragraph at lines 180--182
+Underfull \hbox (badness 2443) in paragraph at lines 178--180
 \TU/lmr/m/n/10 Tudo que iremos fazer será através do R Studio devido à organiza-
  []
 
@@ -772,8 +767,13 @@ File: img/cara_do_rstudio2.png Graphic file (type bmp)
 <img/cara_do_rstudio2.png>
 [10]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 214.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 212.
 [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 655--657
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 657--659
 
  []
@@ -783,13 +783,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 659--661
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 661--663
-
- []
-
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 678--680
+Underfull \hbox (badness 10000) in paragraph at lines 676--678
 
  []
 
@@ -798,7 +793,7 @@ File: img/install_package.png Graphic file (type bmp)
 [22]
 Chapter 4.
 
-Underfull \hbox (badness 1859) in paragraph at lines 717--718
+Underfull \hbox (badness 1859) in paragraph at lines 715--716
 []\TU/lmr/m/n/10 Add an unnumbered part: \TU/lmtt/m/n/10 # (PART\*) Act one {-} \TU/lmr/m/n/10 (followed by \TU/lmtt/m/n/10 # A
  []
 
@@ -809,7 +804,7 @@ Underfull \hbox (badness 1859) in paragraph at lines 717--718
 ]
 Chapter 5.
 
-Package natbib Warning: Citation `R-bookdown' on page 25 undefined on input line 734.
+Package natbib Warning: Citation `R-bookdown' on page 25 undefined on input line 732.
 
 [25] [26
 
