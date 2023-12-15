@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  12 DEC 2023 20:28
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  15 DEC 2023 15:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -768,57 +768,95 @@ File: img/cara_do_rstudio2.png Graphic file (type bmp)
 [10]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 212.
-[11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 655--657
+[11] [12] [13] [14] [15] [16] [17] [18]
+File: _main_files/figure-latex/nome-do-chunk1-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/nome-do-chunk1-1.pdf>
+[19]
+File: _main_files/figure-latex/nome-do-chunk2-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/nome-do-chunk2-1.pdf>
+File: _main_files/figure-latex/nome-do-chunk2-2.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/nome-do-chunk2-2.pdf>
+File: _main_files/figure-latex/nome-do-chunk2-3.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/nome-do-chunk2-3.pdf>
+File: _main_files/figure-latex/nome-do-chunk2-4.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/nome-do-chunk2-4.pdf>
+[20] [21]
+File: _main_files/figure-latex/nome-do-chunk2-5.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/nome-do-chunk2-5.pdf>
+File: _main_files/figure-latex/nome-do-chunk2-6.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/nome-do-chunk2-6.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[22] [23]
+File: _main_files/figure-latex/3_basic_boxplot-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/3_basic_boxplot-1.pdf>
+File: _main_files/figure-latex/3_basic_boxplot-2.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/3_basic_boxplot-2.pdf>
+[24] [25]
+File: _main_files/figure-latex/4_basic_hist-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/4_basic_hist-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 727--729
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 733--735
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--659
+Underfull \hbox (badness 10000) in paragraph at lines 735--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 659--661
+Underfull \hbox (badness 10000) in paragraph at lines 737--739
 
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 676--678
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 754--756
 
  []
 
 File: img/install_package.png Graphic file (type bmp)
 <img/install_package.png>
-[22]
+[27]
+File: _main_files/figure-latex/nome-do-chunk-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/nome-do-chunk-1.pdf>
+File: _main_files/figure-latex/nome-do-chunk-2.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/nome-do-chunk-2.pdf>
+[28] [29] [30
+
+]
 Chapter 4.
 
-Underfull \hbox (badness 1859) in paragraph at lines 715--716
+Underfull \hbox (badness 1859) in paragraph at lines 839--840
 []\TU/lmr/m/n/10 Add an unnumbered part: \TU/lmtt/m/n/10 # (PART\*) Act one {-} \TU/lmr/m/n/10 (followed by \TU/lmtt/m/n/10 # A
  []
 
-[23
-
-] [24
+[31] [32
 
 ]
 Chapter 5.
 
-Package natbib Warning: Citation `R-bookdown' on page 25 undefined on input line 732.
+Package natbib Warning: Citation `R-bookdown' on page 33 undefined on input line 856.
 
-[25] [26
+[33] [34
 
 ]
 Chapter 6.
-[27] [28
+[35] [36
 
 ]
 Chapter 7.
-[29] (./_main.bbl [30])
+[37] (./_main.bbl [38])
 
 Package natbib Warning: There were undefined citations.
 
-[31
+[39
 
 ] (./_main.aux)
  ***********
@@ -829,12 +867,12 @@ Package rerunfilecheck Info: File `_main.out' has not changed.
 (rerunfilecheck)             Checksum: E76AF393715CDC7EA52E95FB0FD85EFB;2586.
  ) 
 Here is how much of TeX's memory you used:
- 17511 strings out of 476826
- 321161 string characters out of 5802357
+ 17634 strings out of 476826
+ 326817 string characters out of 5802357
  1929122 words of memory out of 5000000
- 39228 multiletter control sequences out of 15000+600000
+ 39338 multiletter control sequences out of 15000+600000
  564576 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  90i,8n,120p,750b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (31 pages).
+Output written on _main.pdf (39 pages).

@@ -10,8 +10,11 @@ h3:planilha-de-dados-nativa-do-r Planilha de dados nativa do R
 h3:importando-sua-planilha Importando sua planilha
 h2:graficos Graficos
 h3:grafico-de-histograma Grafico de histograma
+fig:nome-do-chunk1 Gráficos com R base
 h3:grafico-de-dispersao Grafico de dispersao
+fig:nome-do-chunk2 Gráficos com R base
 h3:grafico-boxplot Grafico boxplot
 h3:grafico-de-barras Grafico de barras
 h2:pacotes Pacotes
+fig:nome-do-chunk Gráficos com Lattice
 

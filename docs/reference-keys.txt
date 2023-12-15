@@ -1,3 +1,12 @@
+fig:nome-do-chunk1
+fig:nome-do-chunk2-1
+fig:nome-do-chunk2-2
+fig:nome-do-chunk2-3
+fig:nome-do-chunk2-4
+fig:nome-do-chunk2-5
+fig:nome-do-chunk2-6
+fig:nome-do-chunk-1
+fig:nome-do-chunk-2
 eq:binom
 bem-vindos
 pre-requisitos

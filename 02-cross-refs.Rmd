@@ -327,7 +327,8 @@ Agora comeca a parte divertida! A visualizacao de dados no R tem um potencial qu
 
 Esse grafico nos mostra a frequencia dos valores da variavel de interesse, como por exemplo comprimento da petala das flores do banco de dados iris.
 
-```r
+```{r nome-do-chunk1, fig.show='asis', fig.cap='Gráficos com R base'}
+
 #Importando banco de dados "iris"
 data(iris)
 
@@ -341,7 +342,8 @@ Simples nao eh? Mas podemos modificar ainda mais nosso grafico. Alterar cores, n
 
 Esse grafico nos mostra a relacao entre duas variaveis continuas. Vamos utilizar o banco de dados "iris" para construir e visualizar alguns graficos. Para construir um grafico de dispersao utilizamos a funcao  *plot()*. Note que a funcao plot, possui varios argumentos que podemos ir adicionando para personalizar o grafico. Alem disso, para deixar o codigo mais organizado, sempre apos a virgula de um argumento, pulamos a linha, de forma que cada argumento fique numa linha.
 
-  ```r
+```{r nome-do-chunk2, fig.show='asis', fig.cap='Gráficos com R base'}
+  
 #Cria o grafico basico
 plot(iris$Sepal.Width, iris$Petal.Width)
 
@@ -385,7 +387,8 @@ plot(iris$Sepal.Width, iris$Petal.Width,
   
 Para criar o grafico de boxplot, iremos utilizar a variavel numerica Sepal.Width do banco de dados iris em relacao a variavel Species. Note que na funcao plot, as duas variaveis (argumentos) eram separados por virgula, aqui utilizamos o **~** para relacionar a variavel numerica com a categorica.
   
-  ```r
+  ```{r 3_basic_boxplot, fig.show='asis', fig.cap='Boxplot com R base utilizando o banco de dados iris'}
+  
 #Importa o banco de dados iris
 data(iris)
 
@@ -408,7 +411,8 @@ Perceba que o argumento col pode ser um vetor, e pode receber mais de um valor. 
   
 Para criar um grafico de barras de contagem, vamos criar nosso proprio data frame. Imagine que queremos tabular a contagem total de ectoparasitas (piolho) de ave de cada parte corporal. Como eh algo simples, podemos criar direto no R.
 
-```r
+```{r 4_basic_hist, fig.show='asis', fig.cap='Grafico de barras de contagem com R base utilizando banco de dados criado'}
+
 #Criando quantidade total de parasitas
 qt_parasita <- c(10, 15, 29, 4)
 
@@ -472,10 +476,23 @@ library(lattice)
 
 ```
 Se voce carregou o pacote e o R nao te retornou nenhum erro, ta tudo certo. As vezes ele te retorna um Warning message, tambem esta tudo certo. Vamos adiante.
-
-
-
-
   
+O pacote lattice que acabamos de instalar nos fornece varias funcoes para criacao de graficos. Tenha em mente que existem milhares de pacotes cada um trazendo um conjunto de funcoes e banco de dados de diferentes contextos, tanto para criar graficos, quanto para realizar modelos estatisticos avancados.
   
+Vamos criar alguns graficos utilizando as funcoes que o pacote lattice nos forneceu.
   
+```{r nome-do-chunk, fig.show='asis', fig.cap='Gráficos com Lattice'}
+#Se o pacote já estiver instalado, você só precisa carregar o pacote
+library(lattice) 
+
+# Gráfico de dispersão condicionado por uma variável
+xyplot(Sepal.Length ~ Sepal.Width | Species, data = iris,
+       main = "Scatterplot Condicionado por Espécie",
+       xlab = "Largura da Sépala", 
+       ylab = "Comprimento da Sépala")
+
+# Histograma condicionado por uma variável
+histogram(~ Petal.Length | Species, data = iris,
+          main = "Histograma Condicionado por Espécie",
+          xlab = "Comprimento da Pétala")
+```

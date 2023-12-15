@@ -120,7 +120,7 @@
 
 \title{R Zero - do simples ao complexo}
 \author{Diogo J. A. Silva}
-\date{2023-12-12}
+\date{2023-12-15}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -161,7 +161,7 @@ Se você já possui os conhecimentos básicos de estatística e R, sinta-se livr
 \hypertarget{instalando-r-e-rstudio}{%
 \section{Instalando R e RStudio}\label{instalando-r-e-rstudio}}
 
-Logicamente, para você usar esse livro de forma otimizada, precisará ter o R e RStudio instalados. Nem vou falar sobre a instalação, pois sei que você é capaz de encontrar um tutorial feito por uma criança de 8 anos no YouTube.
+Para você usar esse livro de forma otimizada, precisará ter o R e RStudio instalados. Nem vou falar sobre a instalação, pois sei que você é capaz de encontrar um tutorial feito por uma criança de 8 anos no YouTube.
 
 Se voce eh um completo iniciante, a forma ideal de utilizar esse livro, eh seguir o que o livro pede executando os comandos no RStudio.
 
@@ -542,6 +542,12 @@ Esse grafico nos mostra a frequencia dos valores da variavel de interesse, como 
 \end{Highlighting}
 \end{Shaded}
 
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/nome-do-chunk1-1.pdf}
+\caption{\label{fig:nome-do-chunk1}Gráficos com R base}
+\end{figure}
+
 Simples nao eh? Mas podemos modificar ainda mais nosso grafico. Alterar cores, nomes dos eixos, titulo, etc. Vamos ver mais argumentos com o grafico de dispersao de pontos.
 
 \hypertarget{grafico-de-dispersao}{%
@@ -553,43 +559,98 @@ Esse grafico nos mostra a relacao entre duas variaveis continuas. Vamos utilizar
 \begin{Highlighting}[]
 \CommentTok{\#Cria o grafico basico}
 \FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width)}
-
-\CommentTok{\#adiciona o argumento para mudar o nome do eixo y}
-\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
-   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{)}
-
-\CommentTok{\#adiciona o argumento para mudar o nome do eixo x}
-\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
-   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
-   \AttributeTok{xlab =} \StringTok{"Sepal Width"}
-\NormalTok{   )}
-
-\CommentTok{\#argumento para mudar a cor dos pontos}
-\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
-   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
-   \AttributeTok{xlab =} \StringTok{"Sepal Width"}\NormalTok{,}
-   \AttributeTok{col =} \StringTok{"blue"}
-\NormalTok{   )}
-   
-\CommentTok{\#argumento para mudar o formato dos pontos}
-\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
-   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
-   \AttributeTok{xlab =} \StringTok{"Sepal Width"}\NormalTok{,}
-   \AttributeTok{col =} \DecValTok{3}\NormalTok{,}
-   \AttributeTok{pch =} \DecValTok{2}
-\NormalTok{   )}
-   
-\CommentTok{\#argumento para adicionar um titulo no grafico}
-\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
-   \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
-   \AttributeTok{xlab =} \StringTok{"Sepal Width"}\NormalTok{,}
-   \AttributeTok{col =} \DecValTok{3}\NormalTok{,}
-   \AttributeTok{pch =} \DecValTok{2}\NormalTok{,}
-   \AttributeTok{main =} \StringTok{"Titulo do grafico"}
-\NormalTok{   )}
-   
 \end{Highlighting}
 \end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/nome-do-chunk2-1.pdf}
+\caption{\label{fig:nome-do-chunk2-1}Gráficos com R base}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#adiciona o argumento para mudar o nome do eixo y}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+     \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/nome-do-chunk2-2.pdf}
+\caption{\label{fig:nome-do-chunk2-2}Gráficos com R base}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#adiciona o argumento para mudar o nome do eixo x}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+     \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{"Sepal Width"}
+\NormalTok{     )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/nome-do-chunk2-3.pdf}
+\caption{\label{fig:nome-do-chunk2-3}Gráficos com R base}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#argumento para mudar a cor dos pontos}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+     \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{"Sepal Width"}\NormalTok{,}
+     \AttributeTok{col =} \StringTok{"blue"}
+\NormalTok{     )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/nome-do-chunk2-4.pdf}
+\caption{\label{fig:nome-do-chunk2-4}Gráficos com R base}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#argumento para mudar o formato dos pontos}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+     \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{"Sepal Width"}\NormalTok{,}
+     \AttributeTok{col =} \DecValTok{3}\NormalTok{,}
+     \AttributeTok{pch =} \DecValTok{2}
+\NormalTok{     )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/nome-do-chunk2-5.pdf}
+\caption{\label{fig:nome-do-chunk2-5}Gráficos com R base}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#argumento para adicionar um titulo no grafico}
+\FunctionTok{plot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width, iris}\SpecialCharTok{$}\NormalTok{Petal.Width, }
+     \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
+     \AttributeTok{xlab =} \StringTok{"Sepal Width"}\NormalTok{,}
+     \AttributeTok{col =} \DecValTok{3}\NormalTok{,}
+     \AttributeTok{pch =} \DecValTok{2}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{"Titulo do grafico"}
+\NormalTok{     )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/nome-do-chunk2-6.pdf}
+\caption{\label{fig:nome-do-chunk2-6}Gráficos com R base}
+\end{figure}
 
 \hypertarget{grafico-boxplot}{%
 \subsection{Grafico boxplot}\label{grafico-boxplot}}
@@ -603,7 +664,17 @@ Para criar o grafico de boxplot, iremos utilizar a variavel numerica Sepal.Width
 
 \CommentTok{\#Cria o grafico de boxplot basico}
 \FunctionTok{boxplot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width }\SpecialCharTok{\textasciitilde{}}\NormalTok{ iris}\SpecialCharTok{$}\NormalTok{Species)}
+\end{Highlighting}
+\end{Shaded}
 
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/3_basic_boxplot-1.pdf}
+\caption{(\#fig:3\_basic\_boxplot-1)Boxplot com R base utilizando o banco de dados iris}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{\#Boxplot personalizado}
 \FunctionTok{boxplot}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width }\SpecialCharTok{\textasciitilde{}}\NormalTok{ iris}\SpecialCharTok{$}\NormalTok{Species,}
       \AttributeTok{ylab =} \StringTok{"Petal Width"}\NormalTok{, }
@@ -613,6 +684,12 @@ Para criar o grafico de boxplot, iremos utilizar a variavel numerica Sepal.Width
 \NormalTok{      )}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/3_basic_boxplot-2.pdf}
+\caption{(\#fig:3\_basic\_boxplot-2)Boxplot com R base utilizando o banco de dados iris}
+\end{figure}
 
 Perceba que o argumento col pode ser um vetor, e pode receber mais de um valor. Nesse caso, demos uma cor para cada fator de Species. Tente substituir os numeros por outros, ou colocar o nome das principais cores como: red, green, blue, yellow\ldots{} So nao esqueca de colocar entre aspas.
 
@@ -647,6 +724,7 @@ Para criar um grafico de barras de contagem, vamos criar nosso proprio data fram
 \end{Highlighting}
 \end{Shaded}
 
+\includegraphics{_main_files/figure-latex/4_basic_hist-1.pdf}
 Faca as seguintes modificacoes no codigo e veja o que acontece:
 
 \begin{itemize}
@@ -704,6 +782,52 @@ Pacote instalado, agora eh so dizer que queremos utilizar o pacote. O processo d
 \end{Shaded}
 
 Se voce carregou o pacote e o R nao te retornou nenhum erro, ta tudo certo. As vezes ele te retorna um Warning message, tambem esta tudo certo. Vamos adiante.
+
+O pacote lattice que acabamos de instalar nos fornece varias funcoes para criacao de graficos. Tenha em mente que existem milhares de pacotes cada um trazendo um conjunto de funcoes e banco de dados de diferentes contextos, tanto para criar graficos, quanto para realizar modelos estatisticos avancados.
+
+Vamos criar alguns graficos utilizando as funcoes que o pacote lattice nos forneceu.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Se o pacote já estiver instalado, você só precisa carregar o pacote}
+\FunctionTok{library}\NormalTok{(lattice) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'lattice' was built under R version 4.3.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Gráfico de dispersão condicionado por uma variável}
+\FunctionTok{xyplot}\NormalTok{(Sepal.Length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Sepal.Width }\SpecialCharTok{|}\NormalTok{ Species, }\AttributeTok{data =}\NormalTok{ iris,}
+       \AttributeTok{main =} \StringTok{"Scatterplot Condicionado por Espécie"}\NormalTok{,}
+       \AttributeTok{xlab =} \StringTok{"Largura da Sépala"}\NormalTok{, }
+       \AttributeTok{ylab =} \StringTok{"Comprimento da Sépala"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/nome-do-chunk-1.pdf}
+\caption{\label{fig:nome-do-chunk-1}Gráficos com Lattice}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Histograma condicionado por uma variável}
+\FunctionTok{histogram}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{ Petal.Length }\SpecialCharTok{|}\NormalTok{ Species, }\AttributeTok{data =}\NormalTok{ iris,}
+          \AttributeTok{main =} \StringTok{"Histograma Condicionado por Espécie"}\NormalTok{,}
+          \AttributeTok{xlab =} \StringTok{"Comprimento da Pétala"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{_main_files/figure-latex/nome-do-chunk-2.pdf}
+\caption{\label{fig:nome-do-chunk-2}Gráficos com Lattice}
+\end{figure}
 
 \hypertarget{parts}{%
 \chapter{Parts}\label{parts}}
