@@ -120,7 +120,7 @@
 
 \title{R Zero - do simples ao complexo}
 \author{Diogo J. A. Silva}
-\date{2023-12-15}
+\date{2023-12-17}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -829,16 +829,52 @@ Vamos criar alguns graficos utilizando as funcoes que o pacote lattice nos forne
 \caption{\label{fig:nome-do-chunk-2}Gráficos com Lattice}
 \end{figure}
 
-\hypertarget{parts}{%
-\chapter{Parts}\label{parts}}
+Acho que ja deu pra entender como o R funciona ne? Nos proximos capitulos, voce vai aprender a como trabalhar de forma eficiente no R, seguindo um fluxo de trabalho eficiente, e o melhor de tudo, reproduzivel.
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
+\hypertarget{como-trabalhar-no-r}{%
+\chapter{Como trabalhar no R}\label{como-trabalhar-no-r}}
 
-Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+Se voce ja tem uma nocao de R, mas ainda sente dificuldade de organizar seu fluxo de trabalho, esse capitulo eh pra voce! Utilizaremos tecnicas de ciencia de dados e repositorios como o github para tornar o trabalho no R prazeroso e eficiente!
 
-Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+Se voce possuir um banco de dados para analizar a quantidade de parasitas de aves da mata atlantica, ou o comportamento sexual de caranguejos chama-mares (ou seja la qual for o seu estudo), aproveite para utiliza-lo aqui nesse capitulo. Caso voce ainda nao possua seu banco de dados, trabalharemos com algum banco de dados nativo do R. Optei por utilizar o banco de dados ``iris'', mas sinta-se a vontade para utilizar qualquer outro.
 
-Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
+Primeiro vamos exportar o banco de dados iris para que possamos simularmos todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao \emph{data()}, e utilizaremos a funcao \emph{write.csv()} para exportar, no formato csv, a planilha ``iris'' para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\#Carregando pacote de dados iris}
+\FunctionTok{data}\NormalTok{(iris)}
+
+\CommentTok{\#Salvando (exportando) iris no computador}
+\FunctionTok{write.csv}\NormalTok{(}\AttributeTok{x =}\NormalTok{ iris,            }\CommentTok{\#nome do banco de dados do R}
+          \AttributeTok{file =} \StringTok{"iris.csv"}\NormalTok{,   }\CommentTok{\#nome do banco de dados salvo no computador}
+          \AttributeTok{row.names =} \ConstantTok{FALSE}\NormalTok{)   }\CommentTok{\#Mostrar o nome das linhas na planilha salva utilizando TRUE ou nao utilizando FALSE.}
+\end{Highlighting}
+\end{Shaded}
+
+Para entender a funcao \emph{write.csv()} modifique alguns argumentos:
+
+\begin{itemize}
+\tightlist
+\item
+  Substitua: file = ``iris.csv'' por file = ``planilha\_do\_R.csv''.
+\item
+  Substitua: row.names = FALSE, por row.names = TRUE.
+\end{itemize}
+
+Por padrao, iremos utilizar sempre row.names = FALSE.
+
+\hypertarget{criando-um-projeto-de-r}{%
+\section{Criando um projeto de R}\label{criando-um-projeto-de-r}}
+
+Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito e clicar em ``project (none)'' \textgreater{} new project.
+
+\hypertarget{git-e-github}{%
+\section{Git e GitHub}\label{git-e-github}}
+
+\hypertarget{section}{%
+\section{}\label{section}}
 
 \hypertarget{footnotes-and-citations}{%
 \chapter{Footnotes and citations}\label{footnotes-and-citations}}

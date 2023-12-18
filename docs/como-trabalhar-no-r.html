@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 6 Blocks | R Zero - do simples ao complexo</title>
+  <title>Capítulo 4 Como trabalhar no R | R Zero - do simples ao complexo</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 6 Blocks | R Zero - do simples ao complexo" />
+  <meta property="og:title" content="Capítulo 4 Como trabalhar no R | R Zero - do simples ao complexo" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 6 Blocks | R Zero - do simples ao complexo" />
+  <meta name="twitter:title" content="Capítulo 4 Como trabalhar no R | R Zero - do simples ao complexo" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="footnotes-and-citations.html"/>
-<link rel="next" href="sharing-your-book.html"/>
+<link rel="prev" href="r-para-iniciantes.html"/>
+<link rel="next" href="footnotes-and-citations.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -241,30 +241,34 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="blocks" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Capítulo 6</span> Blocks<a href="blocks.html#blocks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="equations" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Equations<a href="blocks.html#equations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here is an equation.</p>
-<p><span class="math display" id="eq:binom">\[\begin{equation}
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \tag{6.1}
-\end{equation}\]</span></p>
-<p>You may refer to using <code>\@ref(eq:binom)</code>, like see Equation <a href="blocks.html#eq:binom">(6.1)</a>.</p>
+<div id="como-trabalhar-no-r" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Como trabalhar no R<a href="como-trabalhar-no-r.html#como-trabalhar-no-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Se voce ja tem uma nocao de R, mas ainda sente dificuldade de organizar seu fluxo de trabalho, esse capitulo eh pra voce! Utilizaremos tecnicas de ciencia de dados e repositorios como o github para tornar o trabalho no R prazeroso e eficiente!</p>
+<p>Se voce possuir um banco de dados para analizar a quantidade de parasitas de aves da mata atlantica, ou o comportamento sexual de caranguejos chama-mares (ou seja la qual for o seu estudo), aproveite para utiliza-lo aqui nesse capitulo. Caso voce ainda nao possua seu banco de dados, trabalharemos com algum banco de dados nativo do R. Optei por utilizar o banco de dados “iris”, mas sinta-se a vontade para utilizar qualquer outro.</p>
+<p>Primeiro vamos exportar o banco de dados iris para que possamos simularmos todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao <em>data()</em>, e utilizaremos a funcao <em>write.csv()</em> para exportar, no formato csv, a planilha “iris” para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="como-trabalhar-no-r.html#cb36-1" tabindex="-1"></a></span>
+<span id="cb36-2"><a href="como-trabalhar-no-r.html#cb36-2" tabindex="-1"></a><span class="co">#Carregando pacote de dados iris</span></span>
+<span id="cb36-3"><a href="como-trabalhar-no-r.html#cb36-3" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb36-4"><a href="como-trabalhar-no-r.html#cb36-4" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="como-trabalhar-no-r.html#cb36-5" tabindex="-1"></a><span class="co">#Salvando (exportando) iris no computador</span></span>
+<span id="cb36-6"><a href="como-trabalhar-no-r.html#cb36-6" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> iris,            <span class="co">#nome do banco de dados do R</span></span>
+<span id="cb36-7"><a href="como-trabalhar-no-r.html#cb36-7" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">&quot;iris.csv&quot;</span>,   <span class="co">#nome do banco de dados salvo no computador</span></span>
+<span id="cb36-8"><a href="como-trabalhar-no-r.html#cb36-8" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)   <span class="co">#Mostrar o nome das linhas na planilha salva utilizando TRUE ou nao utilizando FALSE.</span></span></code></pre></div>
+<p>Para entender a funcao <em>write.csv()</em> modifique alguns argumentos:</p>
+<ul>
+<li>Substitua: file = “iris.csv” por file = “planilha_do_R.csv”.</li>
+<li>Substitua: row.names = FALSE, por row.names = TRUE.</li>
+</ul>
+<p>Por padrao, iremos utilizar sempre row.names = FALSE.</p>
+<div id="criando-um-projeto-de-r" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Criando um projeto de R<a href="como-trabalhar-no-r.html#criando-um-projeto-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito e clicar em “project (none)” &gt; new project.</p>
 </div>
-<div id="theorems-and-proofs" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Theorems and proofs<a href="blocks.html#theorems-and-proofs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Labeled theorems can be referenced in text using <code>\@ref(thm:tri)</code>, for example, check out this smart theorem <a href="blocks.html#thm:tri">6.1</a>.</p>
-<div class="theorem">
-<p><span id="thm:tri" class="theorem"><strong>Theorem 6.1  </strong></span>For a right triangle, if <span class="math inline">\(c\)</span> denotes the <em>length</em> of the hypotenuse
-and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote the lengths of the <strong>other</strong> two sides, we have
-<span class="math display">\[a^2 + b^2 = c^2\]</span></p>
+<div id="git-e-github" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Git e GitHub<a href="como-trabalhar-no-r.html#git-e-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<p>Read more here <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html" class="uri">https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html</a>.</p>
-</div>
-<div id="callout-blocks" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Callout blocks<a href="blocks.html#callout-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html</a></p>
+<div id="section" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> </h2>
 
 </div>
 </div>
@@ -273,8 +277,8 @@ and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</
           </div>
         </div>
       </div>
-<a href="footnotes-and-citations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sharing-your-book.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="r-para-iniciantes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="footnotes-and-citations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -305,7 +309,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-blocks.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-parts.Rmd",
 "text": "Edit"
 },
 "history": {

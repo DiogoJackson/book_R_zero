@@ -496,3 +496,5 @@ histogram(~ Petal.Length | Species, data = iris,
           main = "Histograma Condicionado por Espécie",
           xlab = "Comprimento da Pétala")
 ```
+  
+Acho que ja deu pra entender como o R funciona ne? Nos proximos capitulos, voce vai aprender a como trabalhar de forma eficiente no R, seguindo um fluxo de trabalho eficiente, e o melhor de tudo, reproduzivel.

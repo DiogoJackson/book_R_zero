@@ -27,7 +27,10 @@ grafico-de-dispersao
 grafico-boxplot
 grafico-de-barras
 pacotes
-parts
+como-trabalhar-no-r
+criando-um-projeto-de-r
+git-e-github
+section
 footnotes-and-citations
 footnotes
 citations
