@@ -4,7 +4,7 @@ Se voce ja tem uma nocao de R, mas ainda sente dificuldade de organizar seu flux
   
 Se voce possuir um banco de dados para analizar a quantidade de parasitas de aves da mata atlantica, ou o comportamento sexual de caranguejos chama-mares (ou seja la qual for o seu estudo), aproveite para utiliza-lo aqui nesse capitulo. Caso voce ainda nao possua seu banco de dados, trabalharemos com algum banco de dados nativo do R. Optei por utilizar o banco de dados "iris", mas sinta-se a vontade para utilizar qualquer outro.
 
-Primeiro vamos exportar o banco de dados iris para que possamos simularmos todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao *data()*, e utilizaremos a funcao *write.csv()* para exportar, no formato csv, a planilha "iris" para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.
+Primeiro vamos exportar o banco de dados iris para que possamos simular todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao *data()*, e utilizaremos a funcao *write.csv()* para exportar, no formato csv, a planilha "iris" para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.
 
 ```r
 
@@ -26,8 +26,17 @@ Por padrao, iremos utilizar sempre row.names = FALSE.
   
 ## Criando um projeto de R
   
-Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito e clicar em "project (none)" > new project.
-
+Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito do RStudio (proximo a janela de environment e history) e clica :
+  
+**project (none)" > new project > new directory > new project**
+  
+Ao clicar em new project, ira aparecer uma janela para escolher o nome do projeto e o local no computador que seu projeto ira ficar. Coloque o nome desejado (sugestao: "projeto_caranguejo"), selecione qualquer pasta no computador (sugestao: desktop) e clique em "criar projeto".
+  
+Se voce fez tudo direitinho, o RStudio estara do seguinte forma. Note que ao inves de project (none), estara o nome do projeto que voce criou.
+  
+![](img/tela_do_projeto.png)
+  
+Depois clica em new directory
 ## Git e GitHub
   
 ## 
