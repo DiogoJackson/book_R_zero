@@ -956,6 +956,118 @@ Para limpar a planilha de dados brutos, iremos criar um script para isso. Utiliz
 \hypertarget{etapa-1-limpar-dados}{%
 \subsection{Etapa 1: limpar dados}\label{etapa-1-limpar-dados}}
 
+Vamos criar um script para limpar nossos dados brutos. Monte o script completo utilizando os codigos que irei fornecendo a seguir copiando e colando no seu RStudio. Assim, a primeira coisa que iremos fazer do script eh seu cabecalho. Utilizaremos os comentarios para criar um cabecalho com as informacoes de titulo, autores e data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# Script to load and clean raw data flores iris}
+\CommentTok{\# Author: Marilia T. Ericcson}
+\CommentTok{\# Data: 2019{-}11{-}06}
+\end{Highlighting}
+\end{Shaded}
+
+Apos isso, utilizaremos os comentarios, para organizar o script em topicos fazendo manualmente ou utilizando o atalho: \textbf{ctrl + shift + R}. A primeira parte do codigo eh a instalacao dos pacotes que iremos utilizar no processo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# Packages {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(dplyr)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{) }\CommentTok{\#se o pacote dplyr nao estiver sido instalado, ele sera instalado.}
+\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\#carregar pacote}
+\end{Highlighting}
+\end{Shaded}
+
+Segundo, importamos o banco de dados a ser processado (limpado) utilizando a funcao \emph{read.csv()} e atribuindo (\textless-) a um objeto que iremos chamar de ``dados''. Para importar voce so precisa especificar o caminho do diretorio em que o arquivo ta inserido. Como estamos utilizando o projeto de R, o diretorio eh onde o projeto esta. Dessa forma, nao ha necessidade de dizer para o R qual o seu diretorio de trabalho. Logo fica facil importar os dados brutos pois sabemos que ele esta na pasta dados \textgreater{} raw \textgreater{} iris.csv. Dizemos isso para o R utilizando os nomes das pastas separado por barras e por fim, o nome do arquivo (iris) e suas extensao (.csv).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# Load data {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{dados }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/raw/iris.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Agora que o banco de dados foi importado, podemos fazer um check up basico utilizando algumas funcoes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# 1. Basic checks {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\FunctionTok{nrow}\NormalTok{(dados)             }\CommentTok{\# How many rows}
+\FunctionTok{str}\NormalTok{(dados)              }\CommentTok{\# Variables classes}
+\FunctionTok{attributes}\NormalTok{(dados)       }\CommentTok{\# Attributres}
+\FunctionTok{head}\NormalTok{(dados)             }\CommentTok{\# First rows}
+\FunctionTok{any}\NormalTok{(}\FunctionTok{duplicated}\NormalTok{(dados))  }\CommentTok{\# There is any duplicated rows?}
+\FunctionTok{any}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(dados))       }\CommentTok{\# There are NAs in the data?}
+\end{Highlighting}
+\end{Shaded}
+
+As vezes os nomes das variaveis nao sao faceis de trabalhar, possuindo espaco, acentos, letras maiusculas e minusculas, e nomes confusos. Alem de complicar o codigo, o nome de algumas variaveis podem bugar o script (caso das acentuacoes de palavras em portugues). Entao vamos mudar o nome das variaveis utilizando a funcao \emph{rename()} do pacote \textbf{dplyr}. Iremos deixar os nomes mais faceis de trabalhar, deixando todas as letras minusculas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# 3. Rename columns names{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\FunctionTok{head}\NormalTok{(dados)}
+\NormalTok{dados2 }\OtherTok{\textless{}{-}} \FunctionTok{rename}\NormalTok{(iris,                         }\CommentTok{\#sua planilha bruta}
+                 \AttributeTok{sepal\_length =}\NormalTok{ Sepal.Length,  }\CommentTok{\#nomes das variaveis (nome\_novo = nome antigo)}
+                 \AttributeTok{sepal\_width  =}\NormalTok{ Sepal.Width,}
+                 \AttributeTok{petal\_length =}\NormalTok{ Petal.Length,}
+                 \AttributeTok{petal\_width  =}\NormalTok{ Petal.Width,}
+                 \AttributeTok{species      =}\NormalTok{ Species)}
+\FunctionTok{head}\NormalTok{(dados2)}
+\end{Highlighting}
+\end{Shaded}
+
+Agora vamos dizer para o R os tipos de nossas variaveis. Um problema muito comum, eh o R nao reconhecer que a variavel categorica, nao possui fatores, mesmo possuindo. Por exemplo, em ``iris'', temos a variavel categorica `Species' com seus fatores (setosa, versicolor, virginica). Eh possivel que no seu banco de dados, o R nao reconheca isso, entao vamos utilizar a funcao \emph{levels()} para verificar se o R entendeu quais sao os fatores. Se o R retornar NULL, voce precisa dizer para o R utilizando a funcao \emph{as.factor()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# 4. Fix factor variables{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\# check factor variable}
+\FunctionTok{levels}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species)}
+
+\CommentTok{\# making factor variables}
+\NormalTok{dados2}\SpecialCharTok{$}\NormalTok{species }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species) }\CommentTok{\#atribuindo a variavel specie transformada a ela mesma.}
+
+\CommentTok{\# check factor variable}
+\FunctionTok{levels}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species)}
+\end{Highlighting}
+\end{Shaded}
+
+Agora podemos renomear o nome dos fatores de uma variavel categorica utilizando a funcao \emph{recode\_factor()}. Nesse processo podemos identificar erros de digitacao que ocorreram durante o planilhamento dos dados. Por exemplo, voce pode ter digitado ``Macho'', ``macho'' e ``male'' na variavel sexo durante o planilhamento. O R vai identificar os tres como sendo fatores diferentes mas na verdade sao o mesmo fator. Portanto eh necessario que seja padronizado.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 4.1 fix species factors}
+
+\CommentTok{\#check factors}
+\FunctionTok{levels}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species)}
+
+\CommentTok{\#rename factors}
+\NormalTok{dados2}\SpecialCharTok{$}\NormalTok{species }\OtherTok{\textless{}{-}} \FunctionTok{recode\_factor}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species,                 }\CommentTok{\#variavel categorica}
+                                \AttributeTok{setosa =} \StringTok{"iris\_setosa"}\NormalTok{,         }\CommentTok{\#mudando nome setosa para iris\_setosa}
+                                \AttributeTok{versicolor =} \StringTok{"iris\_versicolor"}\NormalTok{,}
+                                \AttributeTok{virginica =} \StringTok{"iris\_virginica"}\NormalTok{)}
+
+\CommentTok{\#check factors}
+\FunctionTok{levels}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species)}
+\end{Highlighting}
+\end{Shaded}
+
+Agora que limpamos nossos dados brutos, iremos exportar nossa planilha limpa. Perceba que o processo do script eh colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. Eh com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato csv por ser um formato mais simples, leve e estavel.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 8. Save processed data {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\FunctionTok{write.csv}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dados2,                                 }\CommentTok{\#nome da planilha que voce quer exportar}
+          \AttributeTok{file =} \StringTok{"data/processed/processed\_iris.csv"}\NormalTok{, }\CommentTok{\#local e nome da planilha exportada}
+          \AttributeTok{row.names =} \ConstantTok{FALSE}\NormalTok{)                          }\CommentTok{\#sempre utilizaremos row.names = FALSE}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{etapa-2-fazer-analise}{%
 \subsection{Etapa 2: fazer analise}\label{etapa-2-fazer-analise}}
 

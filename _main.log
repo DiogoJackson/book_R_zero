@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  19 DEC 2023 15:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  19 DEC 2023 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -838,26 +838,26 @@ File: img/tela_do_projeto.png Graphic file (type bmp)
 [32] [33]
 File: img/pastas_do_projeto.png Graphic file (type bmp)
 <img/pastas_do_projeto.png>
-[34]
+[34] [35] [36] [37] [38
+
+]
 Chapter 5.
 
-Package natbib Warning: Citation `R-bookdown' on page 35 undefined on input line 981.
+Package natbib Warning: Citation `R-bookdown' on page 39 undefined on input line 1093.
 
-[35
-
-] [36
+[39] [40
 
 ]
 Chapter 6.
-[37] [38
+[41] [42
 
 ]
 Chapter 7.
-[39] (./_main.bbl [40])
+[43] (./_main.bbl [44])
 
 Package natbib Warning: There were undefined citations.
 
-[41
+[45
 
 ] (./_main.aux)
  ***********
@@ -870,10 +870,10 @@ Package rerunfilecheck Info: File `_main.out' has not changed.
 Here is how much of TeX's memory you used:
  17660 strings out of 476826
  327530 string characters out of 5802357
- 1929122 words of memory out of 5000000
+ 1934122 words of memory out of 5000000
  39362 multiletter control sequences out of 15000+600000
  564576 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  90i,8n,120p,790b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (41 pages).
+Output written on _main.pdf (45 pages).
