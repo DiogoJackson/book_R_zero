@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  19 DEC 2023 13:08
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  19 DEC 2023 13:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -835,16 +835,13 @@ Chapter 4.
 [31]
 File: img/tela_do_projeto.png Graphic file (type bmp)
 <img/tela_do_projeto.png>
-[32]
+[32] [33]
 File: img/pastas_do_projeto.png Graphic file (type bmp)
 <img/pastas_do_projeto.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[33] [34]
+[34]
 Chapter 5.
 
-Package natbib Warning: Citation `R-bookdown' on page 35 undefined on input line 948.
+Package natbib Warning: Citation `R-bookdown' on page 35 undefined on input line 966.
 
 [35
 
@@ -868,13 +865,13 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-08>
  ***********
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: FFC961B50B66E88E101A653260723DDB;2968.
+(rerunfilecheck)             Checksum: 908D161A492DBB94F591BB183D574D61;3385.
  ) 
 Here is how much of TeX's memory you used:
- 17655 strings out of 476826
- 327401 string characters out of 5802357
+ 17657 strings out of 476826
+ 327461 string characters out of 5802357
  1929122 words of memory out of 5000000
- 39357 multiletter control sequences out of 15000+600000
+ 39359 multiletter control sequences out of 15000+600000
  564576 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  90i,8n,120p,790b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
