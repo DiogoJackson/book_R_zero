@@ -880,15 +880,21 @@ Se voce fez tudo direitinho, o RStudio estara do seguinte forma. Note que ao inv
 
 Sugiro meu nobre consagrado leitor, que voce va no local do computador que voce criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Voce tambem pode fazer isso utilizando a janela de Files, onde mostrara todas as pastas do seu diretorio que, a partir de agora, sera a pasta que o seu arquivo de projeto de R esta situado. Todos os scripts, arquivos e planilhas que voce ira utilizar nas suas analises, ficara dentro da pasta do projeto. Isso significa que vai ficar tudo solto, baguncado? Claro que nao. Iremos criar pastas organizadas onde hospedara cada coisa que iremos trabalhar como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Voce pode criar manualmente, mas porque fariamos isso se temos o R para fazer por nos?
 
-Para criar as pastas organizadas, voce precisara instalar o pacote ``here''.
+\hypertarget{organizando-o-projeto-de-r}{%
+\section{Organizando o projeto de R}\label{organizando-o-projeto-de-r}}
+
+Para criar as pastas de forma organizada, voce pode fazer manualmente ou utilizando o pacote ``here''.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{install.packages}\NormalTok{(}\StringTok{"here"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(here)}
 \end{Highlighting}
 \end{Shaded}
 
-Apos a instalacao do pacote ``here'' iremos criar uma funcao que criara as pastas automaticamente no nosso diretorio. Lembre que antes disso, voce precisa estar no projeto de R que voce criou.
+Apos a instalacao do pacote ``here'' iremos criar uma funcao que criara as pastas automaticamente no nosso diretorio. Nao se assuste com o script da funcao, ela eh mais simples do que parece e voce nao precisa entende-lo por completo. Apenas rode o codigo para criar a funcao e depois rode o codigo que utiliza a funcao para criar as pastas.
+
+Antes de rodar o codigo, certifique-se de que voce esta no projeto de R que voce criou.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -924,10 +930,22 @@ Apos a instalacao do pacote ``here'' iremos criar uma funcao que criara as pasta
 \end{Highlighting}
 \end{Shaded}
 
-Se tudo ocorreu bem as pastas estao assim:
+Se tudo ocorreu bem, as pastas estao assim:
 
 \includegraphics{img/pastas_do_projeto.png}
-Dentro da pasta data voce encontra as pastas ``raw'' e ``processed''. Em outputs voce encontra ``figures'', ``temp'' e ``tables''. Em script, voce encontrara nada (por enquanto). O arquivo com o simbolo do R ``projeto\_caranguejos.Rproj'' eh o seu projeto se R. Toda vez que voce for trabalhar nas suas analises desse projeto, voce iniciar o R (ja no projeto) ao abrir esse arquivo (dando clique duplo nele).
+
+Dentro da pasta data voce encontra as pastas ``raw'' e ``processed''. Em outputs voce encontra ``figures'', ``temp'' e ``tables''. Em script, voce encontrara nada (por enquanto). O arquivo com o simbolo do R ``projeto\_caranguejos.Rproj'' eh o seu projeto de R. Voce pode abri-lo (dando duplo clique) toda vez que voce for trabalhar no projeto. Isso abrira o Rstudio ja com o seu projeto aberto e pronto para trabalhar.
+
+\begin{itemize}
+\tightlist
+\item
+  Feche o RStudio e abra-o novamente dando clique duplo no seu projeto de R.
+\end{itemize}
+
+Agora voce tem tudo pronto para comecar a trabalhar com um fluxo de trabalho eficiente e reprodutivel!
+
+\hypertarget{trabalhando-em-um-projeto-de-r}{%
+\section{Trabalhando em um projeto de R}\label{trabalhando-em-um-projeto-de-r}}
 
 \hypertarget{git-e-github}{%
 \section{Git e GitHub}\label{git-e-github}}
