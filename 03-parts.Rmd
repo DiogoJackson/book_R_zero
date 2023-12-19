@@ -36,9 +36,55 @@ Se voce fez tudo direitinho, o RStudio estara do seguinte forma. Note que ao inv
   
 ![](img/tela_do_projeto.png)
   
-Depois clica em new directory
-## Git e GitHub
+Sugiro meu nobre consagrado leitor, que voce va no local do computador que voce criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Voce tambem pode fazer isso utilizando a janela de Files, onde mostrara todas as pastas do seu diretorio que, a partir de agora, sera a pasta que o seu arquivo de projeto de R esta situado. Todos os scripts, arquivos e planilhas que voce ira utilizar nas suas analises, ficara dentro da pasta do projeto. Isso significa que vai ficar tudo solto, baguncado? Claro que nao. Iremos criar pastas organizadas onde hospedara cada coisa que iremos trabalhar como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Voce pode criar manualmente, mas porque fariamos isso se temos o R para fazer por nos?
   
-## 
+Para criar as pastas organizadas, voce precisara instalar o pacote "here".
+
+```r
+install.packages("here")
+
+```
+
+Apos a instalacao do pacote "here" iremos criar uma funcao que criara as pastas automaticamente no nosso diretorio. Lembre que antes disso, voce precisa estar no projeto de R que voce criou.
+  
+```r
+# Criando funcao para criacao das pastas do projeto
+build_project <- function(type = "analysis",
+                          temp = TRUE) {
+  
+  if(type == "analysis"){
+    # Data
+    dir.create(path = here::here("data"))
+    dir.create(path = here::here("data", "raw"))
+    dir.create(path = here::here("data", "processed"))
+    
+    # outputs
+    dir.create(path = here::here("outputs"))
+    dir.create(path = here::here("outputs", "figures"))
+    dir.create(path = here::here("outputs", "tables"))
+    if(isTRUE(temp)){
+      dir.create(path = here::here("outputs", "temp"))
+    }
+    
+    # scripts
+    dir.create(path = here::here("scripts"))
+    
+    # docs
+    #dir.create(path = here::here("docs")) #para criar a pasta docs, so tirar o comentario dessa linha
+  }
+}
+
+#Utilizando a funcao criada para gerar as pastas
+build_project(type = "analysis",
+              temp = TRUE) #se FALSE, nao cria a pasta temp.
+```
+  
+  Se tudo ocorreu bem as pastas estao assim:
+  
+![](img/pastas_do_projeto.png)
+  
+Dentro da pasta data voce encontra as pastas "raw" e "processed". Em outputs voce encontra "figures", "temp" e "tables". Em script, voce encontrara nada (por enquanto). O arquivo com o simbolo do R "projeto_caranguejos.Rproj" eh o seu projeto se R. Voce pode abri-lo (dando duplo clique) toda vez que voce for trabalhar no projeto. Isso abrira o Rstudio ja com o seu projeto.
+  
+## Git e GitHub
 
 

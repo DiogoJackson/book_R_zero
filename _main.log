@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  17 DEC 2023 21:36
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.10)  19 DEC 2023 13:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -832,26 +832,35 @@ File: _main_files/figure-latex/nome-do-chunk-2.pdf Graphic file (type pdf)
 
 ]
 Chapter 4.
-[31] [32]
+[31]
+File: img/tela_do_projeto.png Graphic file (type bmp)
+<img/tela_do_projeto.png>
+[32]
+File: img/pastas_do_projeto.png Graphic file (type bmp)
+<img/pastas_do_projeto.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[33] [34]
 Chapter 5.
 
-Package natbib Warning: Citation `R-bookdown' on page 33 undefined on input line 892.
+Package natbib Warning: Citation `R-bookdown' on page 35 undefined on input line 948.
 
-[33
+[35
 
-] [34
+] [36
 
 ]
 Chapter 6.
-[35] [36
+[37] [38
 
 ]
 Chapter 7.
-[37] (./_main.bbl [38])
+[39] (./_main.bbl [40])
 
 Package natbib Warning: There were undefined citations.
 
-[39
+[41
 
 ] (./_main.aux)
  ***********
@@ -859,15 +868,15 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-08>
  ***********
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: D59DDD7159614B76927C4118286A19EE;3015.
+(rerunfilecheck)             Checksum: FFC961B50B66E88E101A653260723DDB;2968.
  ) 
 Here is how much of TeX's memory you used:
- 17638 strings out of 476826
- 326890 string characters out of 5802357
+ 17655 strings out of 476826
+ 327401 string characters out of 5802357
  1929122 words of memory out of 5000000
- 39342 multiletter control sequences out of 15000+600000
+ 39357 multiletter control sequences out of 15000+600000
  564576 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,8n,120p,750b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,8n,120p,790b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (39 pages).
+Output written on _main.pdf (41 pages).

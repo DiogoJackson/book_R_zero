@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Diogo J. A. Silva" />
 
 
-<meta name="date" content="2023-12-17" />
+<meta name="date" content="2023-12-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,7 +201,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="4.1" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#criando-um-projeto-de-r"><i class="fa fa-check"></i><b>4.1</b> Criando um projeto de R</a></li>
 <li class="chapter" data-level="4.2" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#git-e-github"><i class="fa fa-check"></i><b>4.2</b> Git e GitHub</a></li>
-<li class="chapter" data-level="4.3" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#section"><i class="fa fa-check"></i><b>4.3</b> </a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
 <ul>
@@ -245,7 +244,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Capítulo 4</span> Como trabalhar no R<a href="como-trabalhar-no-r.html#como-trabalhar-no-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Se voce ja tem uma nocao de R, mas ainda sente dificuldade de organizar seu fluxo de trabalho, esse capitulo eh pra voce! Utilizaremos tecnicas de ciencia de dados e repositorios como o github para tornar o trabalho no R prazeroso e eficiente!</p>
 <p>Se voce possuir um banco de dados para analizar a quantidade de parasitas de aves da mata atlantica, ou o comportamento sexual de caranguejos chama-mares (ou seja la qual for o seu estudo), aproveite para utiliza-lo aqui nesse capitulo. Caso voce ainda nao possua seu banco de dados, trabalharemos com algum banco de dados nativo do R. Optei por utilizar o banco de dados “iris”, mas sinta-se a vontade para utilizar qualquer outro.</p>
-<p>Primeiro vamos exportar o banco de dados iris para que possamos simularmos todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao <em>data()</em>, e utilizaremos a funcao <em>write.csv()</em> para exportar, no formato csv, a planilha “iris” para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.</p>
+<p>Primeiro vamos exportar o banco de dados iris para que possamos simular todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao <em>data()</em>, e utilizaremos a funcao <em>write.csv()</em> para exportar, no formato csv, a planilha “iris” para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="como-trabalhar-no-r.html#cb36-1" tabindex="-1"></a></span>
 <span id="cb36-2"><a href="como-trabalhar-no-r.html#cb36-2" tabindex="-1"></a><span class="co">#Carregando pacote de dados iris</span></span>
 <span id="cb36-3"><a href="como-trabalhar-no-r.html#cb36-3" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
@@ -262,13 +261,50 @@ div.csl-indent {
 <p>Por padrao, iremos utilizar sempre row.names = FALSE.</p>
 <div id="criando-um-projeto-de-r" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Criando um projeto de R<a href="como-trabalhar-no-r.html#criando-um-projeto-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito e clicar em “project (none)” &gt; new project.</p>
+<p>Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito do RStudio (proximo a janela de environment e history) e clica :</p>
+<p><strong>project (none)” &gt; new project &gt; new directory &gt; new project</strong></p>
+<p>Ao clicar em new project, ira aparecer uma janela para escolher o nome do projeto e o local no computador que seu projeto ira ficar. Coloque o nome desejado (sugestao: “projeto_caranguejo”), selecione qualquer pasta no computador (sugestao: desktop) e clique em “criar projeto”.</p>
+<p>Se voce fez tudo direitinho, o RStudio estara do seguinte forma. Note que ao inves de project (none), estara o nome do projeto que voce criou.</p>
+<p><img src="img/tela_do_projeto.png" /></p>
+<p>Sugiro meu nobre consagrado leitor, que voce va no local do computador que voce criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Voce tambem pode fazer isso utilizando a janela de Files, onde mostrara todas as pastas do seu diretorio que, a partir de agora, sera a pasta que o seu arquivo de projeto de R esta situado. Todos os scripts, arquivos e planilhas que voce ira utilizar nas suas analises, ficara dentro da pasta do projeto. Isso significa que vai ficar tudo solto, baguncado? Claro que nao. Iremos criar pastas organizadas onde hospedara cada coisa que iremos trabalhar como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Voce pode criar manualmente, mas porque fariamos isso se temos o R para fazer por nos?</p>
+<p>Para criar as pastas organizadas, voce precisara instalar o pacote “here”.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="como-trabalhar-no-r.html#cb37-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;here&quot;</span>)</span></code></pre></div>
+<p>Apos a instalacao do pacote “here” iremos criar uma funcao que criara as pastas automaticamente no nosso diretorio. Lembre que antes disso, voce precisa estar no projeto de R que voce criou.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="como-trabalhar-no-r.html#cb38-1" tabindex="-1"></a><span class="co"># Criando funcao para criacao das pastas do projeto</span></span>
+<span id="cb38-2"><a href="como-trabalhar-no-r.html#cb38-2" tabindex="-1"></a>build_project <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">type =</span> <span class="st">&quot;analysis&quot;</span>,</span>
+<span id="cb38-3"><a href="como-trabalhar-no-r.html#cb38-3" tabindex="-1"></a>                          <span class="at">temp =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb38-4"><a href="como-trabalhar-no-r.html#cb38-4" tabindex="-1"></a>  </span>
+<span id="cb38-5"><a href="como-trabalhar-no-r.html#cb38-5" tabindex="-1"></a>  <span class="cf">if</span>(type <span class="sc">==</span> <span class="st">&quot;analysis&quot;</span>){</span>
+<span id="cb38-6"><a href="como-trabalhar-no-r.html#cb38-6" tabindex="-1"></a>    <span class="co"># Data</span></span>
+<span id="cb38-7"><a href="como-trabalhar-no-r.html#cb38-7" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>))</span>
+<span id="cb38-8"><a href="como-trabalhar-no-r.html#cb38-8" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;raw&quot;</span>))</span>
+<span id="cb38-9"><a href="como-trabalhar-no-r.html#cb38-9" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;processed&quot;</span>))</span>
+<span id="cb38-10"><a href="como-trabalhar-no-r.html#cb38-10" tabindex="-1"></a>    </span>
+<span id="cb38-11"><a href="como-trabalhar-no-r.html#cb38-11" tabindex="-1"></a>    <span class="co"># outputs</span></span>
+<span id="cb38-12"><a href="como-trabalhar-no-r.html#cb38-12" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>))</span>
+<span id="cb38-13"><a href="como-trabalhar-no-r.html#cb38-13" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>, <span class="st">&quot;figures&quot;</span>))</span>
+<span id="cb38-14"><a href="como-trabalhar-no-r.html#cb38-14" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>, <span class="st">&quot;tables&quot;</span>))</span>
+<span id="cb38-15"><a href="como-trabalhar-no-r.html#cb38-15" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">isTRUE</span>(temp)){</span>
+<span id="cb38-16"><a href="como-trabalhar-no-r.html#cb38-16" tabindex="-1"></a>      <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>, <span class="st">&quot;temp&quot;</span>))</span>
+<span id="cb38-17"><a href="como-trabalhar-no-r.html#cb38-17" tabindex="-1"></a>    }</span>
+<span id="cb38-18"><a href="como-trabalhar-no-r.html#cb38-18" tabindex="-1"></a>    </span>
+<span id="cb38-19"><a href="como-trabalhar-no-r.html#cb38-19" tabindex="-1"></a>    <span class="co"># scripts</span></span>
+<span id="cb38-20"><a href="como-trabalhar-no-r.html#cb38-20" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;scripts&quot;</span>))</span>
+<span id="cb38-21"><a href="como-trabalhar-no-r.html#cb38-21" tabindex="-1"></a>    </span>
+<span id="cb38-22"><a href="como-trabalhar-no-r.html#cb38-22" tabindex="-1"></a>    <span class="co"># docs</span></span>
+<span id="cb38-23"><a href="como-trabalhar-no-r.html#cb38-23" tabindex="-1"></a>    <span class="co">#dir.create(path = here::here(&quot;docs&quot;)) #para criar a pasta docs, so tirar o comentario dessa linha</span></span>
+<span id="cb38-24"><a href="como-trabalhar-no-r.html#cb38-24" tabindex="-1"></a>  }</span>
+<span id="cb38-25"><a href="como-trabalhar-no-r.html#cb38-25" tabindex="-1"></a>}</span>
+<span id="cb38-26"><a href="como-trabalhar-no-r.html#cb38-26" tabindex="-1"></a></span>
+<span id="cb38-27"><a href="como-trabalhar-no-r.html#cb38-27" tabindex="-1"></a><span class="co">#Utilizando a funcao criada para gerar as pastas</span></span>
+<span id="cb38-28"><a href="como-trabalhar-no-r.html#cb38-28" tabindex="-1"></a><span class="fu">build_project</span>(<span class="at">type =</span> <span class="st">&quot;analysis&quot;</span>,</span>
+<span id="cb38-29"><a href="como-trabalhar-no-r.html#cb38-29" tabindex="-1"></a>              <span class="at">temp =</span> <span class="cn">TRUE</span>) <span class="co">#se FALSE, nao cria a pasta temp.</span></span></code></pre></div>
+<p>Se tudo ocorreu bem as pastas estao assim:</p>
+<p><img src="img/pastas_do_projeto.png" />
+Dentro da pasta data voce encontra as pastas “raw” e “processed”. Em outputs voce encontra “figures”, “temp” e “tables”. Em script, voce encontrara nada (por enquanto). O arquivo com o simbolo do R “projeto_caranguejos.Rproj” eh o seu projeto se R. Toda vez que voce for trabalhar nas suas analises desse projeto, voce iniciar o R (ja no projeto) ao abrir esse arquivo (dando clique duplo nele).</p>
 </div>
 <div id="git-e-github" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Git e GitHub<a href="como-trabalhar-no-r.html#git-e-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="section" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> </h2>
 
 </div>
 </div>

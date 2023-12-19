@@ -120,7 +120,7 @@
 
 \title{R Zero - do simples ao complexo}
 \author{Diogo J. A. Silva}
-\date{2023-12-17}
+\date{2023-12-19}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -838,7 +838,7 @@ Se voce ja tem uma nocao de R, mas ainda sente dificuldade de organizar seu flux
 
 Se voce possuir um banco de dados para analizar a quantidade de parasitas de aves da mata atlantica, ou o comportamento sexual de caranguejos chama-mares (ou seja la qual for o seu estudo), aproveite para utiliza-lo aqui nesse capitulo. Caso voce ainda nao possua seu banco de dados, trabalharemos com algum banco de dados nativo do R. Optei por utilizar o banco de dados ``iris'', mas sinta-se a vontade para utilizar qualquer outro.
 
-Primeiro vamos exportar o banco de dados iris para que possamos simularmos todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao \emph{data()}, e utilizaremos a funcao \emph{write.csv()} para exportar, no formato csv, a planilha ``iris'' para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.
+Primeiro vamos exportar o banco de dados iris para que possamos simular todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao \emph{data()}, e utilizaremos a funcao \emph{write.csv()} para exportar, no formato csv, a planilha ``iris'' para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -868,13 +868,69 @@ Por padrao, iremos utilizar sempre row.names = FALSE.
 \hypertarget{criando-um-projeto-de-r}{%
 \section{Criando um projeto de R}\label{criando-um-projeto-de-r}}
 
-Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito e clicar em ``project (none)'' \textgreater{} new project.
+Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito do RStudio (proximo a janela de environment e history) e clica :
+
+\textbf{project (none)'' \textgreater{} new project \textgreater{} new directory \textgreater{} new project}
+
+Ao clicar em new project, ira aparecer uma janela para escolher o nome do projeto e o local no computador que seu projeto ira ficar. Coloque o nome desejado (sugestao: ``projeto\_caranguejo''), selecione qualquer pasta no computador (sugestao: desktop) e clique em ``criar projeto''.
+
+Se voce fez tudo direitinho, o RStudio estara do seguinte forma. Note que ao inves de project (none), estara o nome do projeto que voce criou.
+
+\includegraphics{img/tela_do_projeto.png}
+
+Sugiro meu nobre consagrado leitor, que voce va no local do computador que voce criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Voce tambem pode fazer isso utilizando a janela de Files, onde mostrara todas as pastas do seu diretorio que, a partir de agora, sera a pasta que o seu arquivo de projeto de R esta situado. Todos os scripts, arquivos e planilhas que voce ira utilizar nas suas analises, ficara dentro da pasta do projeto. Isso significa que vai ficar tudo solto, baguncado? Claro que nao. Iremos criar pastas organizadas onde hospedara cada coisa que iremos trabalhar como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Voce pode criar manualmente, mas porque fariamos isso se temos o R para fazer por nos?
+
+Para criar as pastas organizadas, voce precisara instalar o pacote ``here''.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"here"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Apos a instalacao do pacote ``here'' iremos criar uma funcao que criara as pastas automaticamente no nosso diretorio. Lembre que antes disso, voce precisa estar no projeto de R que voce criou.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Criando funcao para criacao das pastas do projeto}
+\NormalTok{build\_project }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(}\AttributeTok{type =} \StringTok{"analysis"}\NormalTok{,}
+                          \AttributeTok{temp =} \ConstantTok{TRUE}\NormalTok{) \{}
+  
+  \ControlFlowTok{if}\NormalTok{(type }\SpecialCharTok{==} \StringTok{"analysis"}\NormalTok{)\{}
+    \CommentTok{\# Data}
+    \FunctionTok{dir.create}\NormalTok{(}\AttributeTok{path =}\NormalTok{ here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{))}
+    \FunctionTok{dir.create}\NormalTok{(}\AttributeTok{path =}\NormalTok{ here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"raw"}\NormalTok{))}
+    \FunctionTok{dir.create}\NormalTok{(}\AttributeTok{path =}\NormalTok{ here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"processed"}\NormalTok{))}
+    
+    \CommentTok{\# outputs}
+    \FunctionTok{dir.create}\NormalTok{(}\AttributeTok{path =}\NormalTok{ here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"outputs"}\NormalTok{))}
+    \FunctionTok{dir.create}\NormalTok{(}\AttributeTok{path =}\NormalTok{ here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"outputs"}\NormalTok{, }\StringTok{"figures"}\NormalTok{))}
+    \FunctionTok{dir.create}\NormalTok{(}\AttributeTok{path =}\NormalTok{ here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"outputs"}\NormalTok{, }\StringTok{"tables"}\NormalTok{))}
+    \ControlFlowTok{if}\NormalTok{(}\FunctionTok{isTRUE}\NormalTok{(temp))\{}
+      \FunctionTok{dir.create}\NormalTok{(}\AttributeTok{path =}\NormalTok{ here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"outputs"}\NormalTok{, }\StringTok{"temp"}\NormalTok{))}
+\NormalTok{    \}}
+    
+    \CommentTok{\# scripts}
+    \FunctionTok{dir.create}\NormalTok{(}\AttributeTok{path =}\NormalTok{ here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"scripts"}\NormalTok{))}
+    
+    \CommentTok{\# docs}
+    \CommentTok{\#dir.create(path = here::here("docs")) \#para criar a pasta docs, so tirar o comentario dessa linha}
+\NormalTok{  \}}
+\NormalTok{\}}
+
+\CommentTok{\#Utilizando a funcao criada para gerar as pastas}
+\FunctionTok{build\_project}\NormalTok{(}\AttributeTok{type =} \StringTok{"analysis"}\NormalTok{,}
+              \AttributeTok{temp =} \ConstantTok{TRUE}\NormalTok{) }\CommentTok{\#se FALSE, nao cria a pasta temp.}
+\end{Highlighting}
+\end{Shaded}
+
+Se tudo ocorreu bem as pastas estao assim:
+
+\includegraphics{img/pastas_do_projeto.png}
+Dentro da pasta data voce encontra as pastas ``raw'' e ``processed''. Em outputs voce encontra ``figures'', ``temp'' e ``tables''. Em script, voce encontrara nada (por enquanto). O arquivo com o simbolo do R ``projeto\_caranguejos.Rproj'' eh o seu projeto se R. Toda vez que voce for trabalhar nas suas analises desse projeto, voce iniciar o R (ja no projeto) ao abrir esse arquivo (dando clique duplo nele).
 
 \hypertarget{git-e-github}{%
 \section{Git e GitHub}\label{git-e-github}}
-
-\hypertarget{section}{%
-\section{}\label{section}}
 
 \hypertarget{footnotes-and-citations}{%
 \chapter{Footnotes and citations}\label{footnotes-and-citations}}
