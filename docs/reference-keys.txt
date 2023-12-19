@@ -31,6 +31,9 @@ como-trabalhar-no-r
 criando-um-projeto-de-r
 organizando-o-projeto-de-r
 trabalhando-em-um-projeto-de-r
+etapa-1-limpar-dados
+etapa-2-fazer-analise
+etapa-3-criar-graficos
 git-e-github
 footnotes-and-citations
 footnotes

@@ -95,7 +95,119 @@ Agora voce tem tudo pronto para comecar a trabalhar com um fluxo de trabalho efi
   
 ## Trabalhando em um projeto de R
  
+Na pasta **data > raw** voce adiciona sua planilha de dados brutos. Para aqueles que nao possuem nenhum dados, utilize a planilha "iris". O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.
+  
+  **Limpar dados brutos > Realizar analise > Mostrar graficos**
+  
+Para limpar a planilha de dados brutos, iremos criar um script para isso. Utilizaremos funcoes do pacote dplyr para modificar nome das variaveis, nome dos fatores, analisar dados faltantes, entre outras coisas.
+  
+### Etapa 1: limpar dados
 
+ Vamos criar um script para limpar nossos dados brutos. Monte o script completo utilizando os codigos que irei fornecendo a seguir copiando e colando no seu RStudio. Assim, a primeira coisa que iremos fazer do script eh seu cabecalho. Utilizaremos os comentarios para criar um cabecalho com as informacoes de titulo, autores e data. 
+  
+ ```r
+ 
+# Script to load and clean raw data flores iris
+# Author: Marilia T. Ericcson
+# Data: 2019-11-06
+
+```
+  
+Apos isso, utilizaremos os comentarios, para organizar o script em topicos fazendo manualmente ou utilizando o atalho: **ctrl + shift + R**. A primeira parte do codigo eh a instalacao dos pacotes que iremos utilizar no processo.
+  
+```r
+
+# Packages -------------------------------------------------------------
+if(!require(dplyr)) install.packages("dplyr") #se o pacote dplyr nao estiver sido instalado, ele sera instalado.
+library(dplyr) #carregar pacote
+
+```
+Segundo, importamos o banco de dados a ser processado (limpado) utilizando a funcao *read.csv()* e atribuindo (<-) a um objeto que iremos chamar de "dados". Para importar voce so precisa especificar o caminho do diretorio em que o arquivo ta inserido. Como estamos utilizando o projeto de R, o diretorio eh onde o projeto esta. Dessa forma, nao ha necessidade de dizer para o R qual o seu diretorio de trabalho. Logo fica facil importar os dados brutos pois sabemos que ele esta na pasta dados > raw > iris.csv. Dizemos isso para o R utilizando os nomes das pastas separado por barras e por fim, o nome do arquivo (iris) e suas extensao (.csv).
+
+
+ ```r
+
+# Load data ---------------------------------------------------------------
+dados <- read.csv("data/raw/iris.csv")
+
+```
+Agora que o banco de dados foi importado, podemos fazer um check up basico utilizando algumas funcoes.
+  
+```r
+
+# 1. Basic checks --------------------------------------------------------------
+nrow(dados)             # How many rows
+str(dados)              # Variables classes
+attributes(dados)       # Attributres
+head(dados)             # First rows
+any(duplicated(dados))  # There is any duplicated rows?
+any(is.na(dados))       # There are NAs in the data?
+
+```
+As vezes os nomes das variaveis nao sao faceis de trabalhar, possuindo espaco, acentos, letras maiusculas e minusculas, e nomes confusos. Alem de complicar o codigo, o nome de algumas variaveis podem bugar o script (caso das acentuacoes de palavras em portugues). Entao vamos mudar o nome das variaveis utilizando a funcao *rename()* do pacote **dplyr**. Iremos deixar os nomes mais faceis de trabalhar, deixando todas as letras minusculas.
+  
+```r
+
+# 3. Rename columns names-------------------------------------------------------
+head(dados)
+dados2 <- rename(iris,                         #sua planilha bruta
+                 sepal_length = Sepal.Length,  #nomes das variaveis (nome_novo = nome antigo)
+                 sepal_width  = Sepal.Width,
+                 petal_length = Petal.Length,
+                 petal_width  = Petal.Width,
+                 species      = Species)
+head(dados2)
+
+```
+Agora vamos dizer para o R os tipos de nossas variaveis. Um problema muito comum, eh o R nao reconhecer que a variavel categorica, nao possui fatores, mesmo possuindo. Por exemplo, em "iris", temos a variavel categorica 'Species' com seus fatores (setosa, versicolor, virginica). Eh possivel que no seu banco de dados, o R nao reconheca isso, entao vamos utilizar a funcao *levels()* para verificar se o R entendeu quais sao os fatores. Se o R retornar NULL, voce precisa dizer para o R utilizando a funcao *as.factor()*.
+
+```r
+
+# 4. Fix factor variables-------------------------------------------------------
+# check factor variable
+levels(dados2$species)
+
+# making factor variables
+dados2$species <- as.factor(dados2$species) #atribuindo a variavel specie transformada a ela mesma.
+
+# check factor variable
+levels(dados2$species)
+
+```
+
+Agora podemos renomear o nome dos fatores de uma variavel categorica utilizando a funcao *recode_factor()*. Nesse processo podemos identificar erros de digitacao que ocorreram durante o planilhamento dos dados. Por exemplo, voce pode ter digitado "Macho", "macho" e "male" na variavel sexo durante o planilhamento. O R vai identificar os tres como sendo fatores diferentes mas na verdade sao o mesmo fator. Portanto eh necessario que seja padronizado.
+  
+```r
+# 4.1 fix species factors
+
+#check factors
+levels(dados2$species)
+
+#rename factors
+dados2$species <- recode_factor(dados2$species,                 #variavel categorica
+                                setosa = "iris_setosa",         #mudando nome setosa para iris_setosa
+                                versicolor = "iris_versicolor",
+                                virginica = "iris_virginica")
+
+#check factors
+levels(dados2$species)
+
+```
+  
+Agora que limpamos nossos dados brutos, iremos exportar nossa planilha limpa. Perceba que o processo do script eh colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. Eh com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato csv por ser um formato mais simples, leve e estavel.
+  
+```r
+# 8. Save processed data -----------------------------------------------------
+write.csv(x = dados2,                                 #nome da planilha que voce quer exportar
+          file = "data/processed/processed_iris.csv", #local e nome da planilha exportada
+          row.names = FALSE)                          #sempre utilizaremos row.names = FALSE
+
+```
+  
+### Etapa 2: fazer analise
+
+### Etapa 3: criar graficos
+  
 ## Git e GitHub
 
 
