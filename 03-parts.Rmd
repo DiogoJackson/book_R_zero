@@ -206,10 +206,158 @@ write.csv(x = dados2,                                 #nome da planilha que voce
   
 O processo de manipulacao de dados no R eh bastante completo e existem diferentes formas de limpar seus dados brutos. O pacote **dplyr** possui funcoes capazes de selecionar variaveis, selecionar linhas, criar variaveis, criar subsets, entre outras. Para aprimorar seu script de limpeza de dados, voce precisara aprender sobre manipulacao de dados e incluir no processo, os codigos no seu script. Por sorte, existe muito material disponivel na internet sobre o assunto. Talvez algum dia eu crie um material sobre manipulacao de dados com dplyr, mas aqui esse nao eh meu objetivo. Meu objetivo eh simplesmente fornecer o esqueleto teorico, te dando base para crescer de forma mais direcionada.
   
+Por fim, nao esqueca de salvar o script na pasta script com o nome '01_clean_raw_data'.
+  
 ### Etapa 2: fazer analise
   
-### Etapa 3: criar graficos
+Com a planilha bruta processada, podemos realizar testes estatisticos para responder nossa hipotese. Vamos supor que nossa pergunta seja saber se existe diferenca entre o tamanho das petalas entre as tres especies. Organizaremos o script de analise de forma similar ao script de limpeza, ou seja, escreveremos um cabecalho, carregaremos pacotes, importaremos e analisaremos dados de forma organizada.
   
-## Git e GitHub
+Vamos fazer um cabecalho para nosso script de analise.
+  
+ ```r
+ 
+# Script to load and analyse processed data iris
+# Author: Marilia T. Ericcson
+# Data: 2019-11-07
+
+```
+
+Vamos criar o codigo para carregar os pacotes que iremos utilizar
+
+ ```r
+ 
+#Carregar pacotes
+library(broom)
+
+```
+  
+Dessa vez iremos importar a planilha limpa e processada. Note que o caminho de importacao eh similar ao caminho que exportamos no script de limpeza.
+  
+ ```r
+
+# Load data ---------------------------------------------------------------
+dados <- read.csv("data/processed/processed_iris.csv")
+
+```
+  
+Vamos fazer um check basico.
+
+```r
+
+# 1. Basic checks --------------------------------------------------------------
+head(dados)
+str(dados)
+leves(dados$species)
+
+```
+
+Vamos realizar uma analise para comparar a largura das petalas entre as especies. Para isso, iremos utilizar o teste nao parametrico de kruskal-wallis atraves da funcao kruskal.test(). Nessa funcao, voce precisa dizer qual sua variavel numerica de interesse em relacao a (~) sua variavel categorica e seus grupos (fatores). Veja que o p-value eh menor que 0.05, entao dizemos que existe diferenca da largura entre as tres especies.
+  
+```r
+
+#realizando o teste
+kw <- kruskal.test(iris$Sepal.Width ~ iris$Species)
+kw
+
+```
+   
+Vamos salvar o resultado em uma tabela organizada (tidy) utilizando a funcao *tidy()* do pacote **broom**.
+
+```r
+
+#Ajeitando tabela para formato tidy
+table_kw <- tidy(kw_test)
+table_kw
+
+```
+
+Agora salvaremos essa tabela na nossa pasta outputs em tables.
+
+```r
+
+#Exportando resultado
+write.csv(x = table_kw,                                 
+          file = "outputs/tables/resultado_kw.csv",
+          row.names = FALSE)
+
+```
+Maravilha! Ja temos nosso segundo script pronto. Agora eh so salva-lo na pasta script com o nome: '02_kruskal_test'.
+  
+### Etapa 3: criar grafico
+  
+Agora vamos criar o grafico para representar nosso resultado de que existe diferenca da largura das petadas entre as especies de iris.
+  
+```r
+ 
+# Script to load and analyse processed data iris
+# Author: Marilia T. Ericcson
+# Data: 2019-11-07
+ 
+#Carregar pacotes
+library(ggplot2)
+
+# Load data ---------------------------------------------------------------
+dados <- read.csv("data/processed/processed_iris.csv")
+
+# 1. Basic checks --------------------------------------------------------------
+head(dados)
+str(dados)
+leves(dados$species)
+
+# 2. Criar grafico boxplot -----------------------------------------------------
+
+grafico <- ggplot(dados, aes(x = species, y = petal_width))+
+  geom_boxplot()
+
+grafico
+
+# 3. Salvando grafico ----------------------------------------------------------
+
+ggsave(plot = grafico,    #nome do grafico
+       filename = "output/figures/Grafico_boxplot.png", #nome do grafico exportado
+       width = 10,                             #largura do grafico
+       height = 10,                            #Altura do grafico
+       dpi = 300)                              #resolucao do grafico
+
+```
+
+```{r graph, fig.show='asis',fig.cap='ggplot2', echo=FALSE}
+
+#Carregar pacotes
+library(ggplot2)
+data(iris)
+
+ggplot(iris, aes(x = Species, y = Petal.Width))+
+  geom_boxplot()
+
+```
+  
+Voce acabou de criar um grafico utilizando o pacote ggplot2 que eh o pacote mais utilizado para producao de graficos no R. O codigo pode parecer um pouco confuso no inicio, mas nao precisa estudar muito para perceber que ele eh muito simples e intuitivo. Para aprender mais sobre graficos, sugiro os livros: https://rkabacoff.github.io/datavis/ e https://r-graphics.org/
+  
+Nao esqueca de salvar o script com o nome '03_grafico'
+#Etapa 4: Replicabilidade
+  
+O seu projeto esta organizado de forma que se torna facil a replicabilidade em qualquer computador gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, voce precisa manter e JAMAIS deletar ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um click a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna util ao compartilhar seus dados com alguem, em que voce pode zipar todo seu projeto, enviar para um contribuidor e ele podera ter acesso a tudo rodando apenas um script. Eh esse script que iremos fazer agora.
+
+```r
+# Script to run all project code
+# Importante: reinicie o R antes de rodar esse script session > restart R
+
+# Start----
+# 1. Run all scripts again on a fresh R section---------------------------------
+# 1.1 Load and clean data----
+source(file = "script/01_clean_raw_data.R")
+
+# 1.2 Run analysis -------------------------------------------------------------
+source(file = "script/02_kruskal_test.R")
+
+# 1.3 Plot figures--------------------------------------------------------------
+source(file = "script/03_grafico.R")
+
+```
+  
+Ao rodar esse codigo, todos os seus scripts sao rodados e todos os seus outputs e planilhas processadas sao geradas. Mas lembre, seu dado bruto contido na pasta data/raw, nao pode ser deletada ou modificada.
+  
+Salve esse script com o nome "run_project".
   
 

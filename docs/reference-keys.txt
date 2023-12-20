@@ -7,7 +7,7 @@ fig:nome-do-chunk2-5
 fig:nome-do-chunk2-6
 fig:nome-do-chunk-1
 fig:nome-do-chunk-2
-eq:binom
+fig:graph
 bem-vindos
 pre-requisitos
 instalando-r-e-rstudio
@@ -33,16 +33,5 @@ organizando-o-projeto-de-r
 trabalhando-em-um-projeto-de-r
 etapa-1-limpar-dados
 etapa-2-fazer-analise
-etapa-3-criar-graficos
+etapa-3-criar-grafico
 git-e-github
-footnotes-and-citations
-footnotes
-citations
-blocks
-equations
-theorems-and-proofs
-callout-blocks
-sharing-your-book
-publishing
-pages
-metadata-for-sharing

@@ -4,6 +4,6 @@ h2:organizando-o-projeto-de-r Organizando o projeto de R
 h2:trabalhando-em-um-projeto-de-r Trabalhando em um projeto de R
 h3:etapa-1-limpar-dados Etapa 1: limpar dados
 h3:etapa-2-fazer-analise Etapa 2: fazer analise
-h3:etapa-3-criar-graficos Etapa 3: criar graficos
-h2:git-e-github Git e GitHub
+h3:etapa-3-criar-grafico Etapa 3: criar grafico
+fig:graph ggplot2
 
