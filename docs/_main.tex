@@ -120,7 +120,7 @@
 
 \title{R Zero - do simples ao complexo}
 \author{Diogo J. A. Silva}
-\date{2023-12-19}
+\date{2023-12-20}
 
 \begin{document}
 \maketitle
@@ -132,11 +132,25 @@
 \hypertarget{bem-vindos}{%
 \chapter{Bem-vindos}\label{bem-vindos}}
 
-Esse livro foi criado para organizar, de forma fácil, os códigos dos tipos de gráficos que podem ser criados utilizando o R, trazendo um compilado essencial da Visualização de dados. Claro que já existem livros muito bons sobre o assunto (\url{https://rkabacoff.github.io/datavis/} e \url{https://r-graphics.org/}), porém são livros em inglês e pouco amigáveis para iniciantes. Claro que existe um livro muito bom em português e serve para iniciantes (\url{https://analises-ecologicas.netlify.app/}), mas não é focado em visualização de dados. Portanto, nesse livro, iniciantes terão uma boa base introdutória no R e serão direcionados para a visualização de dados de forma mais simples e organizada.
+R zero foi criado para introduzir e orientar novos usuários acadêmicos do programa R e RStudio do absoluto ZERO. A ideia é fornecer os conceitos essenciais para a utilização do R, guiando o leitor através da linguagem R, introduzindo pílulas de conceitos que irão se complementando ao longo dos capítulos.
 
-Neste livro, você encontrará o essencial para produzir gráficos em R utilizando o pacote ggplot2. Para o melhor aproveitamento do conteúdo, você precisará entender como o R funciona e também compreender de forma clara os conceitos de variáveis estatísticas (ou seja, variável nominal, quantitativa, etc.). Com isso em mente, você poderá pular para qualquer parte do livro e aproveitar seu conteúdo, que se mostrará independente caso você tenha todos os pré-requisitos (ou seja, R + RStudio instalados).
+Já existem livros muito bons sobre o assunto, mas então por que utilizar esse em específico? Eu acredito que o diferencial desse livro é como ele está organizado. Começando com conceitos básicos, e adicionando complexidade de uma forma fluída e didática. Além da introdução ao R, é mostrado como trabalhar de forma eficiente utilizando projetos reprodutíveis e fáceis de compartilhar. Muitos conceitos serão deixados de lado para focar no que realmente é essencial e assim criando um esqueleto conceitual que pode ser aprimorado com o tempo. Portanto, nesse livro, iniciantes terão uma boa base introdutória no R mostrando de forma prática como trabalhar com seus dados de forma mais simples.
 
-Se você já possui os conhecimentos básicos de estatística e R, sinta-se livre para pular para qualquer parte do livro e aproveitar os códigos dos gráficos. :)
+A ideia é que esse seja o primeiro livro de uma coleção de quatro livros que se complementarão:
+
+\begin{itemize}
+\tightlist
+\item
+  R zero: uma introdução ao R
+\item
+  R zero: manipulação e limpeza de dados
+\item
+  R zero: análise estatística
+\item
+  R zero: visualização de dados
+\end{itemize}
+
+Juntos esses materiais fornecerão, de forma simples, o arcabouço essencial da ciência de dados acadêmica.
 
 \hypertarget{pre-requisitos}{%
 \chapter{Pre-requisitos}\label{pre-requisitos}}
@@ -146,7 +160,7 @@ Se você já possui os conhecimentos básicos de estatística e R, sinta-se livr
 
 Para você usar esse livro de forma otimizada, precisará ter o R e RStudio instalados. Nem vou falar sobre a instalação, pois sei que você é capaz de encontrar um tutorial feito por uma criança de 8 anos no YouTube.
 
-Se voce eh um completo iniciante, a forma ideal de utilizar esse livro, eh seguir o que o livro pede executando os comandos no RStudio.
+Se você é um completo iniciante, a forma ideal de utilizar esse livro é seguir o que o livro pede, executando os comandos no RStudio.
 
 \hypertarget{r-para-iniciantes}{%
 \chapter{R para iniciantes}\label{r-para-iniciantes}}
@@ -158,96 +172,208 @@ A tendência é que quanto mais você utiliza o R, mais fácil sua vida se torna
 \hypertarget{entendendo-o-rstudio}{%
 \section{Entendendo o RStudio}\label{entendendo-o-rstudio}}
 
-Tudo que iremos fazer será através do R Studio devido à organização que ele nos fornece. Ao abrir o R Studio, você verá o seguinte:
+Tudo que iremos fazer será através do R Studio devido à organização que ele nos fornece. O RStudio eh uma roupagem para o R, que nos fornece um ambiente de trabalho mais amigavel e organizado. Se voce seguiu as instrucoes de instalacao corretamente, voce tera dois icones, o do R base e o do RStudio. Vamos abrir o programa RStudio dando dois cliques sobre seu icone (Figura 1).
+
+\begin{figure}
+\centering
+\includegraphics[width=2.08333in,height=\textheight]{img/rstudio_logo.png}
+\caption{Figura 1. Icone do RStudio}
+\end{figure}
+
+Ao abrir o R Studio, você verá o seguinte:
 \includegraphics{img/cara_do_rstudio1.png}
 
-Não tem a aparência convencional dos programas estatísticos, mas isso acontece porque não se realizam tarefas clicando em abas ou botões. No R Studio, você executa comandos por meio de códigos! No futuro, é provável que exista um programa com o qual você poderá conversar em qualquer idioma e ele realizará as tarefas que você pedir. Até onde sei, ainda não existe nenhum programa com a precisão do R. No entanto, para utilizar o R, é necessário falar a linguagem dele.
+Não tem a aparência convencional dos programas estatísticos, mas isso acontece porque não se realizam tarefas clicando em abas ou botões. No R Studio, você executa comandos por meio de códigos! No futuro, é provável que exista um programa com o qual você poderá conversar em qualquer idioma e ele realizará as tarefas que você pedir. Nao, pera, isso ja existe! Se chama inteligencia artificial! Entretanto, nao se deixe enganar. Os conhecimentos intimos de como pensar, organizar, analisar e mostrar seus dados sao importantissimos para todo um projeto cientifico. Mas se isso nao te convence, as melhores inteligencias artificiais do mercado sao pagas e podem te retornar resultados enganosos. Entao tenha muito cuidado e utilize as inteligencias artificiais disponiveis apenas como uma ferramenta auxiliar!
 
-Se voce for ``falar'' diretamente com o R no console e digitar e apertar o botao ``Enter'' do teclado: \emph{``Ei R, faz um grafico pra mim ai na moral hehe''}. Ele vai te retornar um erro em vermelho.
-
-\includegraphics{img/cara_do_rstudio2.png}
-
-Ele está basicamente indicando que não entendeu o que você disse. Vamos tentar usar a linguagem dele. Digite: \textbf{1 + 1}
-
-Você vai notar que ele retornará o resultado \textbf{2}. Você pode realizar qualquer operação matemática, desde que utilize uma linguagem que ele possa compreender.
-
-\textbf{2+2 (soma)}\\
-\textbf{2-2 (subtração)}\\
-\textbf{2*2 (multiplicação)}\\
-\textbf{2/2 (divisão)}\\
-\textbf{2\^{}2 (potenciação)}
-
-Agora digite uma equacao mais complexa:
-
-\textbf{2+2-2\^{}2/2}
-
-O resultado sera \textbf{2}. Mas e se voce quiser mudar? Trocar a raiz quadrada de 10 (sqrt(10)) para a raiz quadrada de 4 (sqrt(4))? Voce vai ter que digitar tudo de novo? De fato, sim, vai ter que digitar tudo de novo, porem voce pode usar a tecla ``seta para cima'' do teclado, e ele vai te mostrando os ultimos comando dados.
-
-Mas eh por essa falta de praticidade de conversar com o R, que o R studio ganha sua importancia na janela de Script.
-
-Vamos criar um pequeno script e aprender algumas coisas. Copie o codigo abaixo e cole na janela de script.
+Vamos ao que importa e entender como o R funciona. O R possui uma linguagem, e tudo que voce vai fazer no R eh utilizando essa linguagem que sao verdadeiros comandos. Importe essa planilha! Crie esse grafico! Faca a media dessa variavel! E por ai vai. Entao vamos dar o nosso primeiro comando para o R e falar diretamente com ele. Pediremos que ele some 1 + 1, e para fazer isso iremos digitar 1 + 1 no console (Figura 2 - janela 2) e apertar a tecla ``Enter''.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Mini Script  }
-\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{1}  
-\NormalTok{b }\OtherTok{\textless{}{-}} \DecValTok{2}  
-\NormalTok{a }\SpecialCharTok{+}\NormalTok{ b}
+\DecValTok{1}\SpecialCharTok{+}\DecValTok{1}
 \end{Highlighting}
 \end{Shaded}
 
-Veja que no Script, o documento eh organizado por linhas (1, 2, 3, 4\ldots). Nesse caso, cada linha representa um comando. Com excesao da linha 1 que eh na verdade um comentario ou uma nota. Qualquer codigo pode ser transformado em um comentario, para isso, eh so adicionar o \textbf{\#} no inicio da linha. Comentarios, nao sao comandos, e se voce tentar executa-los, automaticamente irao pular e executar a proxima linha.
-
-Para executar um comando no script nao utilizamos apenas o ``Enter'' e sim o ``Ctrl + Enter''. Ao executar a segunda linha \textbf{a \textless- 1}, voce pediu para o R atribuir o numero \textbf{1} a letra \textbf{a}. Ao executar a terceira linha, voce atribui o numero \textbf{2} a letra \textbf{b}. E por fim, ao executar a quarta linha, voce realiza uma soma de \textbf{a + b}, ou seja \textbf{1 + 2}.
-
-Voce ja deve ter percebido que o codigo \textbf{\textless-} significa \textbf{atribuir}.
-
-\emph{Nesse momento, nobre leitor, eu espero que voce esteja realizando diferentes operacoes matematicas, utilizando diferentes atribuicoes.}
-
-Vamos continuar! Um objeto pode possuir mais de um valor ao mesmo tempo. Vamos fazer uma atribuicao chamada de \textbf{v} e outro chamado de \textbf{V}. Note que para o R, o v minusculo e V maiusculo sao coisas diferentes. Muitos erros acontecem por causa desse pequeno detalhe. Vamos realizar essas atribuicoes com o codigo abaixo:
+Ao fazer isso, ele vai te retornar o valor 2. Voce pode utilizar o R como uma calculadora e e realizar as operacoes basicas normalmente. Agora vamos pedir para ele diminuir 10 - 5, digitando no console e dando enter. Perceba que nao faz diferenca se voce digitar 10-5, 10 - 5, 10-5, ou ate mesmo 10 -5. Mas claro que ao escrever codigos iremos utilizar a forma que mantem o codigo mais organizado. Minha sugestao eh utilizar 10 - 5.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{10}\NormalTok{)  }
-\NormalTok{V }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{20}\NormalTok{)}
+\DecValTok{10} \SpecialCharTok{{-}} \DecValTok{5}
 \end{Highlighting}
 \end{Shaded}
 
-Note que para fazer uma atribuicao de muitos valores, eles precisam estar entre parenteses, separados por virgula antecedidos do \textbf{c}.
+Agora vamos pedir para ele multiplicar:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{5} \SpecialCharTok{*} \DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+E dividir:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{10} \SpecialCharTok{/} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+Voce pode encontrar como realizar potenciacao, raiz quadrada, entre outras coisas pesquisando facilmente na internet. Essa eh uma das vantagens do R. Ser gratuito, possuir codigo aberto, e uma comunidade altamente ativa, torna o R unico. Ao longo do livro voce encontrara alguns topicos onde eu peco para voce realizar pequenas tarefas para voce compreender o codigo e desenvolver autonomia.
+
+\begin{itemize}
+\tightlist
+\item
+  Pesquise como realizar potenciacao no R e calcule 2 elevado a 2.
+  \emph{Dica: voce pode utilizar o chatgpt.}
+\end{itemize}
+
+Massa! Mas voce deve concordar comigo que essa forma de conversar com o R nao eh muito eficiente. Apesar de mostrar o historico, se voce quiser realizar a primeira operacao que fizemos (1 + 1), voce precisara digitar de novo, e de novo sempre que quiser fazer algo. Por esse motivo, a janela de script (Figura 2 - janela 1) se torna tao importante.
+
+Vamos criar um script e utiliza-lo em uma situacao pratica. Mas antes precisamos aprender mais alguns botoes. Veja a figura abaixo:
+
+\includegraphics{img/Figura3_script.png}
+Vamos criar um novo Script clicando no \textbf{botao ``A'' \textgreater{} New Script}. No Script, podemos digitar livremente sem que o codigo seja executado, inclusive podemos fazer comentarios utilizando o simbolo \textbf{\#} antes do que foi digitado. Podemos dar enter sem enviar o codigo para o R. O codigo apenas sera executado se clicarmos na linha do codigo e apertarmos o botao ``C'' (Run) ou \textbf{Ctrl + Enter}. Copie e cole o codigo abaixo no seu script e execute apertando Ctrl + Enter linha por linha. Perceba que a \# impede do nome Script ser executado. Se voce executar Script sem a \# o R nao vai entender e vai dar erro.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Script}
+
+\DecValTok{1} \SpecialCharTok{+} \DecValTok{1}
+\DecValTok{2}\SpecialCharTok{+} \DecValTok{2}
+\DecValTok{10}\SpecialCharTok{/}\DecValTok{2}
+\DecValTok{5}\SpecialCharTok{+}\DecValTok{5{-}2}\SpecialCharTok{/}\DecValTok{2}
+
+\CommentTok{\#Fim}
+\end{Highlighting}
+\end{Shaded}
+
+O comentario tambem pode ser feito na mesma linha depois do codigo, e assim, utilizar comentarios para explicar o que o codigo faz.
+
+\begin{verbatim}
+2*50 #Esse codigo realiza uma multiplicacao.
+\end{verbatim}
+
+Por fim, voce pode salvar o Script para acessa-lo sempre que quiser clicando no \textbf{botao ``B''} e selecionando um local no computador.
 
 \hypertarget{objetos-vetores-e-funuxe7uxf5es}{%
 \section{Objetos, vetores e funções}\label{objetos-vetores-e-funuxe7uxf5es}}
 
-Dando nome aos bois! Entender que cada parte e cada coisa que voce faz possui uma nomeclatura, ajuda voce a se comunicar com outros, seja lendo um livro, seja assistindo um video ou conversando com um colega sobre R. Entao vamos entender alguns conceitos.
-
-\hypertarget{objetos}{%
-\subsection{Objetos}\label{objetos}}
-
-Quando atribuimos o numero \textbf{1} a letra \textbf{a}, a gente criou um objeto de nome \textbf{a}. Abaixo mais alguns exemplos de objetos.
+Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra \textbf{``a''}, e para isso utilizamos o sinal de igual (=). O a agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{objeto\_a }\OtherTok{\textless{}{-}} \DecValTok{10}
-\NormalTok{objeto\_b }\OtherTok{\textless{}{-}} \DecValTok{20}
-\NormalTok{melhor\_comida }\OtherTok{\textless{}{-}} \StringTok{"Coxinha de frango!"}
-\NormalTok{Brasil }\OtherTok{\textless{}{-}} \StringTok{"Pentacampeao!"}
-\NormalTok{Marilia }\OtherTok{\textless{}{-}} \StringTok{"Troxa!"}
+\CommentTok{\# Mini Script  }
+\NormalTok{a }\OtherTok{=} \DecValTok{1}  
+\NormalTok{b }\OtherTok{=} \DecValTok{2}  
 \end{Highlighting}
 \end{Shaded}
 
-Note que eh possivel atribuir letras, caracteres ou frases a um objeto. Mas eh necessario que o conteudo esteja entre aspas.
-
-Toda vez que voce executa o objeto, o R ira retornar seu valor correspondente. Execute os objetos um por um e veja o resultado.
+Entretanto, o sinal de atribuicao mais utilizado eh a setinha (\textless-), devido a sua direcionalidade. Entao vamos adotar esse simbolo de atribuicao. Entao guarde isso na sua cabecinha: o codigo \textbf{\textless-} significa \textbf{atribuir}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{objeto\_a}
-\NormalTok{objeto\_b}
+\NormalTok{c }\OtherTok{\textless{}{-}} \DecValTok{3} \CommentTok{\# c recebe 3}
+\NormalTok{d }\OtherTok{\textless{}{-}} \DecValTok{5} \CommentTok{\# atribuimos 5 ao d}
+\end{Highlighting}
+\end{Shaded}
+
+Se voce esta copiando e colocando os codigos do livro no seu script, e apertando \textbf{Ctrl + Enter} em cada linha. Voce criou quatro objetos atraves das atribuicoes. Objetos a, b, c, d.~Mas voce so recebera o seu respectivo valor se voce digitar o objeto e executa-lo com Ctrl + Enter.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a}
+\NormalTok{b}
+\NormalTok{c}
+\NormalTok{d}
+\end{Highlighting}
+\end{Shaded}
+
+Com esses objetos podemos realizar operacoes matematicas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Operacoes com objetos}
+
+\NormalTok{a }\SpecialCharTok{+}\NormalTok{ b}
+\NormalTok{c }\SpecialCharTok{*}\NormalTok{ d}
+\NormalTok{b}\SpecialCharTok{/}\DecValTok{2}
+\DecValTok{2} \SpecialCharTok{*}\NormalTok{ d}
+
+\CommentTok{\#Fim}
+\end{Highlighting}
+\end{Shaded}
+
+\emph{Nesse momento, nobre leitor, eu espero que voce esteja realizando diferentes operacoes matematicas, utilizando diferentes atribuicoes.}
+
+Podemos atribuir valores em palavras inteiras. Como por exemplo, atribuir 10 ao objeto chamado ``nota'' (ou qualquer outra palavra).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nota }\OtherTok{\textless{}{-}} \DecValTok{10}
+\NormalTok{Nota }\OtherTok{\textless{}{-}} \DecValTok{0}
+\end{Highlighting}
+\end{Shaded}
+
+Perceba que o R detecta as diferencas entre letras maiusculas e minusculas. Portanto, ``nota'' eh diferente de ``Nota''. Muito cuidado com isso. Para evitar erros, sugiro sempre utilizar letras minusculas.
+
+Alguns simbolos nao podem ser utilizados para criar objetos, uma vez que eles sao reservados no R. Como por exemplo o ``-'', ou TRUE / FALSE. Perceba que ao rodar os codigos abaixo, o R ira retornar um erro.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ConstantTok{FALSE} \OtherTok{\textless{}{-}} \DecValTok{2}
+\ConstantTok{TRUE} \OtherTok{\textless{}{-}} \DecValTok{5}
+\NormalTok{guarda}\SpecialCharTok{{-}}\NormalTok{chuva }\OtherTok{\textless{}{-}} \DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+Tambem podemos atribuir uma equacao inteira a um objeto. Na verdade podemos atribuir quase tudo a um objeto, graficos, resultados, planilhas, etc. Mas isso veremos mais a frente.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Note que o underline (\_) funciona bem para separar palavras, assim como ponto (.)}
+\NormalTok{guarda\_chuva }\OtherTok{\textless{}{-}} \DecValTok{2}\SpecialCharTok{*}\DecValTok{10}\SpecialCharTok{/}\DecValTok{2}
+\NormalTok{guarda\_chuva}
+
+\NormalTok{guarda.roupa }\OtherTok{\textless{}{-}} \DecValTok{2}\SpecialCharTok{*}\DecValTok{100}\SpecialCharTok{/}\DecValTok{10}
+\NormalTok{guarda.roupa}
+\end{Highlighting}
+\end{Shaded}
+
+Alem disso tudo, podemos atribuir um texto a um objeto. Mas para isso o texto precisa estar entre aspas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{melhor\_comida }\OtherTok{\textless{}{-}} \StringTok{"coxinha"}
 \NormalTok{melhor\_comida}
-\NormalTok{Brasil}
-\NormalTok{Marilia}
 \end{Highlighting}
 \end{Shaded}
+
+Mas para o que serve tudo isso? Para que aprender essas coisas? A resposta principal eh a capacidade de automatizacao e reprodutibilidade das suas analises.
+
+Vamos criar um exemplo pratico para fixar conceitos. Vamos imaginar que queremos calcular quanto gastamos de aluguel por mes e ano, considerando que pagamos o aluguel semanalmente. Vamos supor que o aluguel por semana seja 200 reais.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Calculando o aluguel}
+
+\NormalTok{aluguel\_semana }\OtherTok{\textless{}{-}} \DecValTok{200}              \CommentTok{\#valor do aluguel por semana}
+\NormalTok{aluguel\_mes }\OtherTok{\textless{}{-}} \DecValTok{4} \SpecialCharTok{*}\NormalTok{ aluguel\_semana  }\CommentTok{\#considerando que 1 mes possui 4 semanas.}
+\NormalTok{aluguel\_ano }\OtherTok{\textless{}{-}} \DecValTok{12} \SpecialCharTok{*}\NormalTok{ aluguel\_mes    }\CommentTok{\#o ano possui 12 meses eh serio}
+
+\NormalTok{aluguel\_semana}
+\NormalTok{aluguel\_mes}
+\NormalTok{aluguel\_ano}
+\end{Highlighting}
+\end{Shaded}
+
+Veja que massa! Criamos um script para calcular o valor do aluguel por mes e ano. Com esse script, voce pode calcular facilmente diferentes situacoes, simulando diferentes valores de aluguel. Para isso, eh so alterar o valor 200 de aluguel\_semana para o valor desejado e rodar linha por linha.
+
+\begin{itemize}
+\tightlist
+\item
+  Substititua ``aluguel\_semana \textless- 200'' por ``aluguel\_semana \textless- 247.53''
+\end{itemize}
+
+Se voce pode fazer isso para calcular o aluguel, imagina o que esse sistema pode fazer com sua analise de dados.
 
 \hypertarget{vetores}{%
 \subsection{Vetores}\label{vetores}}

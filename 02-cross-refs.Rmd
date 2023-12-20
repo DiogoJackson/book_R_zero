@@ -3,91 +3,165 @@
 Caro iniciante, meu objetivo aqui é mostrar que utilizar o R é muito divertido e recompensador. Você vai perceber que cada código rodado (e que funciona) vai te dar um pouquinho de dopamina e uma sensação de prazer. Claro que alguns erros vão te deixar maluco, mas você vai perceber que tudo é culpa sua. Mas não se preocupe, se é culpa sua, você pode consertá-los facilmente :)
 
 A tendência é que quanto mais você utiliza o R, mais fácil sua vida se torna, e apesar da curva de aprendizagem ser um pouco desestimuladora, é 1000 vezes recompensadora. Como alguns gostam de dizer, você conseguirá fazer um gráfico até 30 vezes mais rápido!!! Não sei de onde veio esse cálculo, mas se está na internet é verdade.
-
+  
 ## Entendendo o RStudio
-
-Tudo que iremos fazer será através do R Studio devido à organização que ele nos fornece. Ao abrir o R Studio, você verá o seguinte:
-![1. Script: local onde você vai preparar os comandos para enviar para o R. 2. Console: local onde você de fato conversa com o R. 3. Ambiente e histórico: mostra seus objetos, vetores e listas. 4. Janela onde o R te mostra o histórico, plots, te fornece informações de ajuda e mais.](img/cara_do_rstudio1.png)
-
-Não tem a aparência convencional dos programas estatísticos, mas isso acontece porque não se realizam tarefas clicando em abas ou botões. No R Studio, você executa comandos por meio de códigos! No futuro, é provável que exista um programa com o qual você poderá conversar em qualquer idioma e ele realizará as tarefas que você pedir. Até onde sei, ainda não existe nenhum programa com a precisão do R. No entanto, para utilizar o R, é necessário falar a linguagem dele.
-
-Se voce for "falar" diretamente com o R no console e digitar e apertar o botao "Enter" do teclado: *"Ei R, faz um grafico pra mim ai na moral hehe"*. Ele vai te retornar um erro em vermelho. 
-
-![](img/cara_do_rstudio2.png)
-
-Ele está basicamente indicando que não entendeu o que você disse. Vamos tentar usar a linguagem dele. Digite: **1 + 1**
-
-Você vai notar que ele retornará o resultado **2**. Você pode realizar qualquer operação matemática, desde que utilize uma linguagem que ele possa compreender.
-
-  **2+2 (soma)**  
-  **2-2 (subtração)**  
- **2\*2 (multiplicação)**  
-  __2/2 (divisão)__    
-  __2^2 (potenciação)__ 
   
-Agora digite uma equacao mais complexa:
+Tudo que iremos fazer será através do R Studio devido à organização que ele nos fornece. O RStudio eh uma roupagem para o R, que nos fornece um ambiente de trabalho mais amigavel e organizado. Se voce seguiu as instrucoes de instalacao corretamente, voce tera dois icones, o do R base e o do RStudio. Vamos abrir o programa RStudio dando dois cliques sobre seu icone (Figura 1). 
 
-__2+2-2^2/2__
+![Figura 1. Icone do RStudio](img/rstudio_logo.png){ width=200px }
   
-O resultado sera __2__. Mas e se voce quiser mudar? Trocar a raiz quadrada de 10 (sqrt(10)) para a raiz quadrada de 4 (sqrt(4))? Voce vai ter que digitar tudo de novo? De fato, sim, vai ter que digitar tudo de novo, porem voce pode usar a tecla "seta para cima" do teclado, e ele vai te mostrando os ultimos comando dados.
+Ao abrir o R Studio, você verá o seguinte:
+![Figura 2. Tela do RStudio](img/cara_do_rstudio1.png)
 
-Mas eh por essa falta de praticidade de conversar com o R, que o R studio ganha sua importancia na janela de Script.
-
-Vamos criar um pequeno script e aprender algumas coisas. Copie o codigo abaixo e cole na janela de script.
-
+Não tem a aparência convencional dos programas estatísticos, mas isso acontece porque não se realizam tarefas clicando em abas ou botões. No R Studio, você executa comandos por meio de códigos! No futuro, é provável que exista um programa com o qual você poderá conversar em qualquer idioma e ele realizará as tarefas que você pedir. Nao, pera, isso ja existe! Se chama inteligencia artificial! Entretanto, nao se deixe enganar. Os conhecimentos intimos de como pensar, organizar, analisar e mostrar seus dados sao importantissimos para todo um projeto cientifico. Mas se isso nao te convence, as melhores inteligencias artificiais do mercado sao pagas e podem te retornar resultados enganosos. Entao tenha muito cuidado e utilize as inteligencias artificiais disponiveis apenas como uma ferramenta auxiliar!
+  
+Vamos ao que importa e entender como o R funciona. O R possui uma linguagem, e tudo que voce vai fazer no R eh utilizando essa linguagem que sao verdadeiros comandos. Importe essa planilha! Crie esse grafico! Faca a media dessa variavel! E por ai vai. Entao vamos dar o nosso primeiro comando para o R e falar diretamente com ele. Pediremos que ele some 1 + 1, e para fazer isso iremos digitar 1 + 1 no console (Figura 2 - janela 2) e apertar a tecla "Enter".
+  
 ```r
-# Mini Script  
-a <- 1  
-b <- 2  
-a + b
+1+1
 ```
   
-Veja que no Script, o documento eh organizado por linhas (1, 2, 3, 4...). Nesse caso, cada linha representa um comando. Com excesao da linha 1 que eh na verdade um comentario ou uma nota. Qualquer codigo pode ser transformado em um comentario, para isso, eh so adicionar o **#** no inicio da linha. Comentarios, nao sao comandos, e se voce tentar executa-los, automaticamente irao pular e executar a proxima linha.
-  
-Para executar um comando no script nao utilizamos apenas o "Enter" e sim o "Ctrl + Enter". Ao executar a segunda linha **a <- 1**, voce pediu para o R atribuir o numero **1** a letra **a**. Ao executar a terceira linha, voce atribui o numero **2** a letra **b**. E por fim, ao executar a quarta linha, voce realiza uma soma de **a + b**, ou seja **1 + 2**.
-  
-Voce ja deve ter percebido que o codigo **<-** significa **atribuir**.
-  
-*Nesse momento, nobre leitor, eu espero que voce esteja realizando diferentes operacoes matematicas, utilizando diferentes atribuicoes.*
-
-Vamos continuar! Um objeto pode possuir mais de um valor ao mesmo tempo. Vamos fazer uma atribuicao chamada de **v** e outro chamado de **V**. Note que para o R, o v minusculo e V maiusculo sao coisas diferentes. Muitos erros acontecem por causa desse pequeno detalhe. Vamos realizar essas atribuicoes com o codigo abaixo:
+Ao fazer isso, ele vai te retornar o valor 2. Voce pode utilizar o R como uma calculadora e e realizar as operacoes basicas normalmente. Agora vamos pedir para ele diminuir 10 - 5, digitando no console e dando enter. Perceba que nao faz diferenca se voce digitar 10-5, 10 - 5, 10-5, ou ate mesmo 10      -5. Mas claro que ao escrever codigos iremos utilizar a forma que mantem o codigo mais organizado. Minha sugestao eh utilizar 10 - 5.
 
 ```r
-v <- c(2,4,10)  
-V <- c(4,8,20)
-
+10 - 5
 ```
   
-Note que para fazer uma atribuicao de muitos valores, eles precisam estar entre parenteses, separados por virgula antecedidos do **c**.
+Agora vamos pedir para ele multiplicar:
+
+```r
+5 * 5
+```
+E dividir:
+
+```r
+10 / 2
+```
+Voce pode encontrar como realizar potenciacao, raiz quadrada, entre outras coisas pesquisando facilmente na internet. Essa eh uma das vantagens do R. Ser gratuito, possuir codigo aberto, e uma comunidade altamente ativa, torna o R unico. Ao longo do livro voce encontrara alguns topicos onde eu peco para voce realizar pequenas tarefas para voce compreender o codigo e desenvolver autonomia.
+
+  - Pesquise como realizar potenciacao no R e calcule 2 elevado a 2.
+  *Dica: voce pode utilizar o chatgpt.*
+  
+Massa! Mas voce deve concordar comigo que essa forma de conversar com o R nao eh muito eficiente. Apesar de mostrar o historico, se voce quiser realizar a primeira operacao que fizemos (1 + 1), voce precisara digitar de novo, e de novo sempre que quiser fazer algo. Por esse motivo, a janela de script (Figura 2 - janela 1) se torna tao importante. 
+  
+Vamos criar um script e utiliza-lo em uma situacao pratica. Mas antes precisamos aprender mais alguns botoes. Veja a figura abaixo:
+
+![Figura 3. Script](img/Figura3_script.png)
+Vamos criar um novo Script clicando no **botao "A" > New Script**. No Script, podemos digitar livremente sem que o codigo seja executado, inclusive podemos fazer comentarios utilizando o simbolo **#** antes do que foi digitado. Podemos dar enter sem enviar o codigo para o R. O codigo apenas sera executado se clicarmos na linha do codigo e apertarmos o botao "C" (Run) ou **Ctrl + Enter**. Copie e cole o codigo abaixo no seu script e execute apertando Ctrl + Enter linha por linha. Perceba que a # impede do nome Script ser executado. Se voce executar Script sem a # o R nao vai entender e vai dar erro. 
+  
+```r
+#Script
+
+1 + 1
+2+ 2
+10/2
+5+5-2/2
+
+#Fim
+```
+
+O comentario tambem pode ser feito na mesma linha depois do codigo, e assim, utilizar comentarios para explicar o que o codigo faz.
+
+```
+2*50 #Esse codigo realiza uma multiplicacao.
+```
+Por fim, voce pode salvar o Script para acessa-lo sempre que quiser clicando no **botao "B"** e selecionando um local no computador.
   
 ## Objetos, vetores e funções
 
-Dando nome aos bois! Entender que cada parte e cada coisa que voce faz possui uma nomeclatura, ajuda voce a se comunicar com outros, seja lendo um livro, seja assistindo um video ou conversando com um colega sobre R. Entao vamos entender alguns conceitos.
+Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra **"a"**, e para isso utilizamos o sinal de igual (=). O a agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).
+
+```r
+# Mini Script  
+a = 1  
+b = 2  
+```
   
-### Objetos
+Entretanto, o sinal de atribuicao mais utilizado eh a setinha (<-), devido a sua direcionalidade. Entao vamos adotar esse simbolo de atribuicao. Entao guarde isso na sua cabecinha: o codigo **<-** significa **atribuir**.
+
+```r
+c <- 3 # c recebe 3
+d <- 5 # atribuimos 5 ao d
+```
   
-Quando atribuimos o numero **1** a letra **a**, a gente criou um objeto de nome **a**. Abaixo mais alguns exemplos de objetos.
+Se voce esta copiando e colocando os codigos do livro no seu script, e apertando **Ctrl + Enter** em cada linha. Voce criou quatro objetos atraves das atribuicoes. Objetos a, b, c, d. Mas voce so recebera o seu respectivo valor se voce digitar o objeto e executa-lo com Ctrl + Enter. 
+
+```r
+a
+b
+c
+d
+```
   
-  ```r
-objeto_a <- 10
-objeto_b <- 20
-melhor_comida <- "Coxinha de frango!"
-Brasil <- "Pentacampeao!"
-Marilia <- "Troxa!"
+Com esses objetos podemos realizar operacoes matematicas.
+
+```r
+#Operacoes com objetos
+
+a + b
+c * d
+b/2
+2 * d
+
+#Fim
+```
+  
+*Nesse momento, nobre leitor, eu espero que voce esteja realizando diferentes operacoes matematicas, utilizando diferentes atribuicoes.*
+  
+Podemos atribuir valores em palavras inteiras. Como por exemplo, atribuir 10 ao objeto chamado "nota" (ou qualquer outra palavra).
+
+```r
+nota <- 10
+Nota <- 0
+```
+Perceba que o R detecta as diferencas entre letras maiusculas e minusculas. Portanto, "nota" eh diferente de "Nota". Muito cuidado com isso. Para evitar erros, sugiro sempre utilizar letras minusculas.
+  
+Alguns simbolos nao podem ser utilizados para criar objetos, uma vez que eles sao reservados no R. Como por exemplo o "-", ou TRUE / FALSE. Perceba que ao rodar os codigos abaixo, o R ira retornar um erro.
+
+```r
+FALSE <- 2
+TRUE <- 5
+guarda-chuva <- 2
+```
+Tambem podemos atribuir uma equacao inteira a um objeto. Na verdade podemos atribuir quase tudo a um objeto, graficos, resultados, planilhas, etc. Mas isso veremos mais a frente.
+
+```r
+#Note que o underline (_) funciona bem para separar palavras, assim como ponto (.)
+guarda_chuva <- 2*10/2
+guarda_chuva
+
+guarda.roupa <- 2*100/10
+guarda.roupa
 
 ```
-Note que eh possivel atribuir letras, caracteres ou frases a um objeto. Mas eh necessario que o conteudo esteja entre aspas.
- 
-Toda vez que voce executa o objeto, o R ira retornar seu valor correspondente. Execute os objetos um por um e veja o resultado.
-  
-  ```r
-objeto_a
-objeto_b
+Alem disso tudo, podemos atribuir um texto a um objeto. Mas para isso o texto precisa estar entre aspas.
+
+```r
+melhor_comida <- "coxinha"
 melhor_comida
-Brasil
-Marilia
 
 ```
+ 
+Mas para o que serve tudo isso? Para que aprender essas coisas? A resposta principal eh a capacidade de automatizacao e reprodutibilidade das suas analises.
+  
+Vamos criar um exemplo pratico para fixar conceitos. Vamos imaginar que queremos calcular quanto gastamos de aluguel por mes e ano, considerando que pagamos o aluguel semanalmente. Vamos supor que o aluguel por semana seja 200 reais.
+
+```r
+#Calculando o aluguel
+
+aluguel_semana <- 200              #valor do aluguel por semana
+aluguel_mes <- 4 * aluguel_semana  #considerando que 1 mes possui 4 semanas.
+aluguel_ano <- 12 * aluguel_mes    #o ano possui 12 meses eh serio
+
+aluguel_semana
+aluguel_mes
+aluguel_ano
+```
+Veja que massa! Criamos um script para calcular o valor do aluguel por mes e ano. Com esse script, voce pode calcular facilmente diferentes situacoes, simulando diferentes valores de aluguel. Para isso, eh so alterar o valor 200 de aluguel_semana para o valor desejado e rodar linha por linha.
+  
+  - Substititua "aluguel_semana <- 200" por "aluguel_semana <- 247.53"
+  
+Se voce pode fazer isso para calcular o aluguel, imagina o que esse sistema pode fazer com sua analise de dados. 
   
 ### Vetores
   
