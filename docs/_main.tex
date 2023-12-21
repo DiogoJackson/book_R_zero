@@ -120,7 +120,7 @@
 
 \title{R Zero - do simples ao complexo}
 \author{Diogo J. A. Silva}
-\date{2023-12-20}
+\date{2023-12-21}
 
 \begin{document}
 \maketitle
@@ -257,7 +257,7 @@ Por fim, voce pode salvar o Script para acessa-lo sempre que quiser clicando no 
 \hypertarget{objetos-vetores-e-funuxe7uxf5es}{%
 \section{Objetos, vetores e funções}\label{objetos-vetores-e-funuxe7uxf5es}}
 
-Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra \textbf{``a''}, e para isso utilizamos o sinal de igual (=). O a agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).
+Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra \textbf{``a''}, e para isso utilizamos o sinal de igual (=). O ``\textbf{a}'' agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -342,6 +342,7 @@ Alem disso tudo, podemos atribuir um texto a um objeto. Mas para isso o texto pr
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\#Atribuindo a palavra "coxinha" ao objeto melhor\_comida}
 \NormalTok{melhor\_comida }\OtherTok{\textless{}{-}} \StringTok{"coxinha"}
 \NormalTok{melhor\_comida}
 \end{Highlighting}
@@ -370,7 +371,7 @@ Veja que massa! Criamos um script para calcular o valor do aluguel por mes e ano
 \begin{itemize}
 \tightlist
 \item
-  Substititua ``aluguel\_semana \textless- 200'' por ``aluguel\_semana \textless- 247.53''
+  \emph{Substititua ``aluguel\_semana \textless- 200'' por ``aluguel\_semana \textless- 247.53}''
 \end{itemize}
 
 Se voce pode fazer isso para calcular o aluguel, imagina o que esse sistema pode fazer com sua analise de dados.
@@ -378,13 +379,13 @@ Se voce pode fazer isso para calcular o aluguel, imagina o que esse sistema pode
 \hypertarget{vetores}{%
 \subsection{Vetores}\label{vetores}}
 
-Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores.
+Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores. Para criar um objeto vetor inserimos os valores dentro de parenteses separados por virgulas. Virgulas no R servem para separar o codigo. Entao se voce quiser digitar numeros quebrados nunca utilize \textbf{virgula}, utilize \textbf{ponto}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{vetor.A }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{ (}\DecValTok{10}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{30}\NormalTok{)}
-\NormalTok{vetor.B }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{ (}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{)}
-\NormalTok{melhores.comidas }\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{ (}\StringTok{"coxinha"}\NormalTok{,}\StringTok{"pastel"}\NormalTok{,}\StringTok{"lasanha"}\NormalTok{)}
+\NormalTok{vetor.A }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{10.5}\NormalTok{, }\FloatTok{20.6}\NormalTok{, }\FloatTok{30.2}\NormalTok{)}
+\NormalTok{vetor.B }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{melhores.comidas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"coxinha"}\NormalTok{,}\StringTok{"pastel"}\NormalTok{,}\StringTok{"lasanha"}\NormalTok{) }\CommentTok{\#Lembre{-}se, caracteres precisam estar dentro de aspas.}
 
 \NormalTok{vetor.A}
 \NormalTok{vetor.B}
@@ -395,18 +396,15 @@ Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores.
 \hypertarget{funuxe7uxf5es}{%
 \subsection{Funções}\label{funuxe7uxf5es}}
 
-No R, as funcoes servem para processar de alguma forma os dados. No codigo abaixo, vamos criar dois objetos e utilizar a funcao de adicao para soma-los.
+No R, as funcoes servem para processar de alguma forma os dados. O R ja possui algumas funcoes nativas, como por exemplo para calcular a raiz quadrada de um numero. A funcao possui um nome, geralmente associado ao que ela faz, e argumentos que eh o tipo de dado que voce precisa inserir nela para ser calculado. Vamos dar uma olhada na funcao \emph{sqrt()}. A sigla ``sqrt'' representa ``square root'' em ingles. Primeiro vamos rodar a funcao sem argumentos, apenas o \emph{sqrt()} e depois inserimos o argumento, que nesse caso, eh um numero.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Objetos}
-\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{2}
-\NormalTok{b }\OtherTok{\textless{}{-}} \DecValTok{8}
-\NormalTok{vetor }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\CommentTok{\#funcao que calcula raiz quadrada}
 
-\CommentTok{\#Funcao de soma}
-\FunctionTok{sum}\NormalTok{(a,b)}
-\FunctionTok{sum}\NormalTok{(vetor)}
+\FunctionTok{sqrt}\NormalTok{()}
+
+\FunctionTok{sqrt}\NormalTok{(}\DecValTok{25}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -435,7 +433,10 @@ Existem funcoes dentro do R para todo tipo de coisa! Vamos criar um conjunto de 
 \end{Highlighting}
 \end{Shaded}
 
-Cada uma dessas funcoes realiza algum calculo em especifico, no caso de \emph{summary()}, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce.
+Cada uma dessas funcoes realiza algum calculo em especifico, no caso de \emph{summary()}, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce. Por enquanto, vamos apenas ser usuario de funcoes e nao criadores. Mas se voce realmente quer saber como criar uma funcao, nao irei te limitar. Abaixo voce encontra um dos exemplos mais simples de funcao. Utilize sua criatividade, seus conhecimentos de objetos, funcoes e vetores para criar alguma funcao. Mas sinta-se a vontade para pular essa parte, uma vez que ela nao eh essencial ao uso do R.
+
+\hypertarget{criando-uma-funcao-opcional}{%
+\subsubsection{Criando uma funcao (opcional)}\label{criando-uma-funcao-opcional}}
 
 Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Eu sei, eh uma funcao simples, mas vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de \emph{function()}.
 
@@ -488,13 +489,13 @@ Vamos usar nossa funcao personalizada para calcular nosso objeto ``notas''.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Usando a funcao my\_function()}
+\CommentTok{\#Usando a funcao my\_summary()}
 
-\FunctionTok{my\_function}\NormalTok{(notas)}
+\FunctionTok{my\_summary}\NormalTok{(notas)}
 \end{Highlighting}
 \end{Shaded}
 
-Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para frente, a gente ve como criar funcoes mais elaboradas.
+Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para frente, a gente ve como criar funcoes mais elaboradas, como por exemplo para simular gastos de alugueis como anteriormente.
 
 \hypertarget{tabela-de-dados}{%
 \section{Tabela de dados}\label{tabela-de-dados}}

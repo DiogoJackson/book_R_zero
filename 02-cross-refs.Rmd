@@ -69,7 +69,9 @@ Por fim, voce pode salvar o Script para acessa-lo sempre que quiser clicando no 
   
 ## Objetos, vetores e funções
 
-Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra **"a"**, e para isso utilizamos o sinal de igual (=). O a agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).
+### Objetos
+  
+Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra **"a"**, e para isso utilizamos o sinal de igual (=). O "**a**" agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).
 
 ```r
 # Mini Script  
@@ -137,6 +139,7 @@ guarda.roupa
 Alem disso tudo, podemos atribuir um texto a um objeto. Mas para isso o texto precisa estar entre aspas.
 
 ```r
+#Atribuindo a palavra "coxinha" ao objeto melhor_comida
 melhor_comida <- "coxinha"
 melhor_comida
 
@@ -145,7 +148,7 @@ melhor_comida
 Mas para o que serve tudo isso? Para que aprender essas coisas? A resposta principal eh a capacidade de automatizacao e reprodutibilidade das suas analises.
   
 Vamos criar um exemplo pratico para fixar conceitos. Vamos imaginar que queremos calcular quanto gastamos de aluguel por mes e ano, considerando que pagamos o aluguel semanalmente. Vamos supor que o aluguel por semana seja 200 reais.
-
+  
 ```r
 #Calculando o aluguel
 
@@ -159,18 +162,18 @@ aluguel_ano
 ```
 Veja que massa! Criamos um script para calcular o valor do aluguel por mes e ano. Com esse script, voce pode calcular facilmente diferentes situacoes, simulando diferentes valores de aluguel. Para isso, eh so alterar o valor 200 de aluguel_semana para o valor desejado e rodar linha por linha.
   
-  - Substititua "aluguel_semana <- 200" por "aluguel_semana <- 247.53"
+  - *Substititua "aluguel_semana <- 200" por "aluguel_semana <- 247.53*"
   
 Se voce pode fazer isso para calcular o aluguel, imagina o que esse sistema pode fazer com sua analise de dados. 
   
 ### Vetores
   
-Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores.
+Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores. Para criar um objeto vetor inserimos os valores dentro de parenteses separados por virgulas. Virgulas no R servem para separar o codigo. Entao se voce quiser digitar numeros quebrados nunca utilize **virgula**, utilize **ponto**.
   
   ```r
-vetor.A <-c (10, 20, 30)
-vetor.B <-c (2, 2, 2)
-melhores.comidas <-c ("coxinha","pastel","lasanha")
+vetor.A <- c(10.5, 20.6, 30.2)
+vetor.B <- c(2, 2, 2)
+melhores.comidas <- c("coxinha","pastel","lasanha") #Lembre-se, caracteres precisam estar dentro de aspas.
   
 vetor.A
 vetor.B
@@ -180,17 +183,14 @@ melhores.comidas
   
 ### Funções
   
-No R, as funcoes servem para processar de alguma forma os dados. No codigo abaixo, vamos criar dois objetos e utilizar a funcao de adicao para soma-los.
+No R, as funcoes servem para processar de alguma forma os dados. O R ja possui algumas funcoes nativas, como por exemplo para calcular a raiz quadrada de um numero. A funcao possui um nome, geralmente associado ao que ela faz, e argumentos que eh o tipo de dado que voce precisa inserir nela para ser calculado. Vamos dar uma olhada na funcao *sqrt()*. A sigla "sqrt" representa "square root" em ingles. Primeiro vamos rodar a funcao sem argumentos, apenas o *sqrt()* e depois inserimos o argumento, que nesse caso, eh um numero. 
 
-  ```r
-#Objetos
-a <- 2
-b <- 8
-vetor <- c(5,5,10)
+```r
+#funcao que calcula raiz quadrada
 
-#Funcao de soma
-sum(a,b)
-sum(vetor)
+sqrt()
+
+sqrt(25)
 
 ```
   
@@ -218,7 +218,9 @@ summary(notas)
 
 ```
   
-Cada uma dessas funcoes realiza algum calculo em especifico, no caso de *summary()*, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce.
+Cada uma dessas funcoes realiza algum calculo em especifico, no caso de *summary()*, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce. Por enquanto, vamos apenas ser usuario de funcoes e nao criadores. Mas se voce realmente quer saber como criar uma funcao, nao irei te limitar. Abaixo voce encontra um dos exemplos mais simples de funcao. Utilize sua criatividade, seus conhecimentos de objetos, funcoes e vetores para criar alguma funcao. Mas sinta-se a vontade para pular essa parte, uma vez que ela nao eh essencial ao uso do R.
+  
+#### Criando uma funcao (opcional)
   
 Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Eu sei, eh uma funcao simples, mas vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de *function()*.
   
@@ -249,11 +251,11 @@ Nesse caso, podemos criar a funcao *my_summary()* utilizando a funcao *function(
   ```r
 #Criando a funcao my_summary()
 
-my_summary <- function(vetor) {
+my_summary <- function(v) {
 
-media   <- mean(vetor)
-mediana <- median(vetor)
-desvio  <- sd(vetor)
+media   <- mean(v)
+mediana <- median(v)
+desvio  <- sd(v)
 
 resultado <- c(media, mediana, desvio)
 print(resultado)
@@ -262,19 +264,22 @@ print(resultado)
 
 ```
  
-Calma, tem muita coisa ai, mas eh tudo o que a gente ja sabe. Na funcao *my_summary()*, precisamos inserir apenas um argumento do tipo vetor, como por exemplo, "notas". Mais uma vez, as chaves que abre e fecha contem tudo o que a gente quer que a funcao realize, linha por linha. Primeiro, queremos que a nossa funcao calcule a media e atribua o resultado a um objeto chamado "media". Segundo, calcular a mediana e atribuir o resultado a um objeto chamado "mediana", depois o desvio. Depois criamos um vetor chamado de "resultado" que armazena os objetos "media", "mediana" e "desvio". Em seguida, pedimos para o R nos mostrar os valores desse vetor "resultado" utilizando a funcao *print()*.
+Calma, tem muita coisa ai, mas eh tudo o que a gente ja sabe. Na funcao *my_summary()*, precisamos inserir apenas um argumento do tipo vetor, como por exemplo, nosso objeto "notas". Esse argumento sera aplicado a tudo que possuir o caractere "v" dentro da funcao. O "v" a gente definiu em function(v). Mais uma vez, as chaves **{}** que abre e fecha contem tudo o que a gente quer que a funcao realize, linha por linha. Primeiro, queremos que a nossa funcao calcule a media e atribua o resultado a um objeto chamado "media". Segundo, calcular a mediana e atribuir o resultado a um objeto chamado "mediana", depois o desvio. Depois criamos um vetor chamado de "resultado" que armazena os objetos "media", "mediana" e "desvio". Em seguida, pedimos para o R nos mostrar os valores desse vetor "resultado" utilizando a funcao *print()*.
   
 Vamos usar nossa funcao personalizada para calcular nosso objeto "notas".
   
   ```r
-#Usando a funcao my_function()
+#Notas do terceiro ano A
+notas <- c(7, 8, 10, 5, 2, 4, 6.6, 7.9, 8.9, 0)
 
-my_function(notas)
+#Utilizando a funcao my_summary()
+
+my_summary(notas)
 
 ```
   
-Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para frente, a gente ve como criar funcoes mais elaboradas.
-
+Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para frente, a gente ve como criar funcoes mais elaboradas, como por exemplo para simular gastos de alugueis como anteriormente.
+  
 ## Tabela de dados
  
 ### Data frame
@@ -298,12 +303,12 @@ tabela
 Esse data.frame (tabela), eh uma forma muito simplificada das tabelas que iremos importar de nossos dados reais. Porem, ela nos serve muito bem para entendermos como funciona uma planilha no R.
   
 A partir de agora eu quero que voce perceba uma coisa muito importante e leve isso para a vida. Uma planilha organizada deve ser construida da seguinte forma:
-
+  
   -Variaveis sao colunas;
   -Observacoes sao linhas;
   -Cada valor na sua celula.
   
-Com essa formatacao de planilha, voce consegue fazer quase tudo no R, utilizando pacotes como 'dplyr' e 'ggplot2', para manipulacao de dados e construcao de graficos, respectivamente.
+Com essa formatacao de planilha, voce consegue fazer quase tudo no R, para manipulacao de dados, construcao de graficos e analises estatisticas.
  
 Logo, para voce acessar uma variavel de uma tabela, voce pode usar o **$** da seguinte forma:
 
@@ -315,43 +320,49 @@ tabela$notas
 
 ```
 
-Perceba que quando voce digita tabela$ voce pode apertar a tecla TAB para mostrar e selecionar as variaveis de sua tabela. Caso alguma nota esteja errada e voce queira corrigi-la, voce pode utilizar a funcao *fix()*. Essa funcao abre uma janela onde voce pode clicar e modificar o valor desejado.
+Perceba que quando voce digita **tabela$** voce pode apertar a tecla TAB para mostrar e selecionar as variaveis de sua tabela. Caso alguma nota esteja errada e voce queira corrigi-la, voce pode utilizar a funcao *fix()*. Essa funcao abre uma janela onde voce pode clicar e modificar o valor desejado. 
   
   ```r
 
 fix(tabela)
 
 ```
+Quse nunca utilizamos a funcao *fix()* para corrigir os dados, mas eh interessante saber que o R pode abrir novas janelas e criar coisas interativas.
   
 Agora sabendo como acessar as variaveis de uma tabela, voce pode utilizar funcoes para calcular uma variavel especifica do data frame.
 
   ```r
-
-summary(tabela$notas)
+mean(tabela$notas)
 
 ```
-
+  Utilize as funcoes abaixo para calcular mediana, maximo, minimo:
+    
+  - median()
+  - max()
+  - min()
+  - summary()
+  
 ### Planilha de dados nativa do R
 O R possui um banco de dados que nos fornece algumas tabelas de estudo reais o quais podemos utilizar para treinar nossas habilidades. Para isso, precisamos dizer para o R qual banco de dados queremos invocar utilizando a funcao *data()*.
 
   ```r
-#Importando o banco de dados do R
+#Importando o banco de dados "iris" do R
 data(iris)
 
 #Funcoes exploratorias
 head(iris) #Mostra a parte de cima da planilha 
 tail(iris) #Mostra a parte de baixo
-str(iris)  #Mostra os tipos de variaveis
+str(iris)  #Mostra os tipos das variaveis
 
 ```
   
 Veja que ao usarmos a funcao *str()* o R retorna a natureza das variaveis da planilha. 
-
-  -num significa numerica.
-  -Factor significa que eh uma variavel qualitativa com fatores (setosa,     versicolor, virginica).
+  
+  - *num* significa numerica.
+  - *Factor* significa que eh uma variavel qualitativa com fatores (setosa,     versicolor, virginica).
   
 As vezes a planilha eh importada com as variaveis mal formatadas e isso pode gerar problemas de reconhecimento por parte do R. Nesse caso, eh sempre interessante realizar a verificacao dos dados utilizando a funcao *str()* ou outras funcoes similares. Caso o R nao esteja identificando as variaveis corretamente, duas funcoes muito uteis podem ser utilizadas: *as.numeric()* e *as.factor()*.
-
+  
   ```r
 data(iris)
   
@@ -384,8 +395,8 @@ No RStudio podemos importar uma planilha do formato excel (xlsx) utilizando o bo
 
   Environment > Import Dataset > From excel
   
-Acho pouco eficiente ensinar a importar dados de um diretorio, acho pouco pratico, uma vez que temos o botao de importar. Ao inves disso, irei treina-lo a utilizar projetos de R reprodutiveis e organizados. Ao trabalhar no R, voce seguira um protocolo basico de como tratar os dados a serem analisados. Ao longo do tempo, voce sera capaz de otimizar esse protocolo e aplicar para quase todo tipo de dado que voce possuir. De qualquer forma, saiba que o R trabalha com uma pasta especifica chamada de diretorio, e para saber qual eh o seu diretorio padrao, utilize a funcao *getwd()*:
-
+Acho pouco eficiente ensinar a importar dados de um diretorio. Acho pouco pratico, uma vez que temos o botao de importar. Ao inves disso, irei treina-lo a utilizar projetos de R reprodutiveis e organizados. Ao trabalhar no R, voce seguira um protocolo basico de como tratar os dados a serem analisados. Ao longo do tempo, voce sera capaz de otimizar esse protocolo e aplicar para quase todo tipo de dado que voce possuir. De qualquer forma, saiba que o R trabalha com uma pasta especifica chamada de diretorio, e para saber qual eh o seu diretorio padrao, utilize a funcao *getwd()*:
+  
   ```r
 getwd()
 

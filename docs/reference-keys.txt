@@ -16,6 +16,7 @@ entendendo-o-rstudio
 objetos-vetores-e-funções
 vetores
 funções
+criando-uma-funcao-opcional
 tabela-de-dados
 data-frame
 planilha-de-dados-nativa-do-r

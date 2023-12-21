@@ -1,8 +1,10 @@
 h1:r-para-iniciantes R para iniciantes
 h2:entendendo-o-rstudio Entendendo o RStudio
 h2:objetos-vetores-e-funções Objetos, vetores e funções
+h3:objetos Objetos
 h3:vetores Vetores
 h3:funções Funções
+h4:criando-uma-funcao-opcional Criando uma funcao (opcional)
 h2:tabela-de-dados Tabela de dados
 h3:data-frame Data frame
 h3:planilha-de-dados-nativa-do-r Planilha de dados nativa do R

@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Diogo J. A. Silva" />
 
 
-<meta name="date" content="2023-12-20" />
+<meta name="date" content="2023-12-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -251,7 +251,7 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 </div>
 <div id="objetos-vetores-e-funções" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Objetos, vetores e funções<a href="r-para-iniciantes.html#objetos-vetores-e-funções" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra <strong>“a”</strong>, e para isso utilizamos o sinal de igual (=). O a agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).</p>
+<p>Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra <strong>“a”</strong>, e para isso utilizamos o sinal de igual (=). O “<strong>a</strong>” agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r-para-iniciantes.html#cb7-1" tabindex="-1"></a><span class="co"># Mini Script  </span></span>
 <span id="cb7-2"><a href="r-para-iniciantes.html#cb7-2" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">1</span>  </span>
 <span id="cb7-3"><a href="r-para-iniciantes.html#cb7-3" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">2</span>  </span></code></pre></div>
@@ -289,8 +289,9 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <span id="cb13-5"><a href="r-para-iniciantes.html#cb13-5" tabindex="-1"></a>guarda.roupa <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="dv">100</span><span class="sc">/</span><span class="dv">10</span></span>
 <span id="cb13-6"><a href="r-para-iniciantes.html#cb13-6" tabindex="-1"></a>guarda.roupa</span></code></pre></div>
 <p>Alem disso tudo, podemos atribuir um texto a um objeto. Mas para isso o texto precisa estar entre aspas.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="r-para-iniciantes.html#cb14-1" tabindex="-1"></a>melhor_comida <span class="ot">&lt;-</span> <span class="st">&quot;coxinha&quot;</span></span>
-<span id="cb14-2"><a href="r-para-iniciantes.html#cb14-2" tabindex="-1"></a>melhor_comida</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="r-para-iniciantes.html#cb14-1" tabindex="-1"></a><span class="co">#Atribuindo a palavra &quot;coxinha&quot; ao objeto melhor_comida</span></span>
+<span id="cb14-2"><a href="r-para-iniciantes.html#cb14-2" tabindex="-1"></a>melhor_comida <span class="ot">&lt;-</span> <span class="st">&quot;coxinha&quot;</span></span>
+<span id="cb14-3"><a href="r-para-iniciantes.html#cb14-3" tabindex="-1"></a>melhor_comida</span></code></pre></div>
 <p>Mas para o que serve tudo isso? Para que aprender essas coisas? A resposta principal eh a capacidade de automatizacao e reprodutibilidade das suas analises.</p>
 <p>Vamos criar um exemplo pratico para fixar conceitos. Vamos imaginar que queremos calcular quanto gastamos de aluguel por mes e ano, considerando que pagamos o aluguel semanalmente. Vamos supor que o aluguel por semana seja 200 reais.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="r-para-iniciantes.html#cb15-1" tabindex="-1"></a><span class="co">#Calculando o aluguel</span></span>
@@ -304,15 +305,15 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <span id="cb15-9"><a href="r-para-iniciantes.html#cb15-9" tabindex="-1"></a>aluguel_ano</span></code></pre></div>
 <p>Veja que massa! Criamos um script para calcular o valor do aluguel por mes e ano. Com esse script, voce pode calcular facilmente diferentes situacoes, simulando diferentes valores de aluguel. Para isso, eh so alterar o valor 200 de aluguel_semana para o valor desejado e rodar linha por linha.</p>
 <ul>
-<li>Substititua “aluguel_semana &lt;- 200” por “aluguel_semana &lt;- 247.53”</li>
+<li><em>Substititua “aluguel_semana &lt;- 200” por “aluguel_semana &lt;- 247.53</em>”</li>
 </ul>
 <p>Se voce pode fazer isso para calcular o aluguel, imagina o que esse sistema pode fazer com sua analise de dados.</p>
 <div id="vetores" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Vetores<a href="r-para-iniciantes.html#vetores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-para-iniciantes.html#cb16-1" tabindex="-1"></a>vetor.A <span class="ot">&lt;-</span><span class="fu">c</span> (<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
-<span id="cb16-2"><a href="r-para-iniciantes.html#cb16-2" tabindex="-1"></a>vetor.B <span class="ot">&lt;-</span><span class="fu">c</span> (<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb16-3"><a href="r-para-iniciantes.html#cb16-3" tabindex="-1"></a>melhores.comidas <span class="ot">&lt;-</span><span class="fu">c</span> (<span class="st">&quot;coxinha&quot;</span>,<span class="st">&quot;pastel&quot;</span>,<span class="st">&quot;lasanha&quot;</span>)</span>
+<p>Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores. Para criar um objeto vetor inserimos os valores dentro de parenteses separados por virgulas. Virgulas no R servem para separar o codigo. Entao se voce quiser digitar numeros quebrados nunca utilize <strong>virgula</strong>, utilize <strong>ponto</strong>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-para-iniciantes.html#cb16-1" tabindex="-1"></a>vetor.A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">10.5</span>, <span class="fl">20.6</span>, <span class="fl">30.2</span>)</span>
+<span id="cb16-2"><a href="r-para-iniciantes.html#cb16-2" tabindex="-1"></a>vetor.B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb16-3"><a href="r-para-iniciantes.html#cb16-3" tabindex="-1"></a>melhores.comidas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;coxinha&quot;</span>,<span class="st">&quot;pastel&quot;</span>,<span class="st">&quot;lasanha&quot;</span>) <span class="co">#Lembre-se, caracteres precisam estar dentro de aspas.</span></span>
 <span id="cb16-4"><a href="r-para-iniciantes.html#cb16-4" tabindex="-1"></a></span>
 <span id="cb16-5"><a href="r-para-iniciantes.html#cb16-5" tabindex="-1"></a>vetor.A</span>
 <span id="cb16-6"><a href="r-para-iniciantes.html#cb16-6" tabindex="-1"></a>vetor.B</span>
@@ -320,15 +321,12 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 </div>
 <div id="funções" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Funções<a href="r-para-iniciantes.html#funções" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>No R, as funcoes servem para processar de alguma forma os dados. No codigo abaixo, vamos criar dois objetos e utilizar a funcao de adicao para soma-los.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="r-para-iniciantes.html#cb17-1" tabindex="-1"></a><span class="co">#Objetos</span></span>
-<span id="cb17-2"><a href="r-para-iniciantes.html#cb17-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb17-3"><a href="r-para-iniciantes.html#cb17-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">8</span></span>
-<span id="cb17-4"><a href="r-para-iniciantes.html#cb17-4" tabindex="-1"></a>vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">10</span>)</span>
-<span id="cb17-5"><a href="r-para-iniciantes.html#cb17-5" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="r-para-iniciantes.html#cb17-6" tabindex="-1"></a><span class="co">#Funcao de soma</span></span>
-<span id="cb17-7"><a href="r-para-iniciantes.html#cb17-7" tabindex="-1"></a><span class="fu">sum</span>(a,b)</span>
-<span id="cb17-8"><a href="r-para-iniciantes.html#cb17-8" tabindex="-1"></a><span class="fu">sum</span>(vetor)</span></code></pre></div>
+<p>No R, as funcoes servem para processar de alguma forma os dados. O R ja possui algumas funcoes nativas, como por exemplo para calcular a raiz quadrada de um numero. A funcao possui um nome, geralmente associado ao que ela faz, e argumentos que eh o tipo de dado que voce precisa inserir nela para ser calculado. Vamos dar uma olhada na funcao <em>sqrt()</em>. A sigla “sqrt” representa “square root” em ingles. Primeiro vamos rodar a funcao sem argumentos, apenas o <em>sqrt()</em> e depois inserimos o argumento, que nesse caso, eh um numero.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="r-para-iniciantes.html#cb17-1" tabindex="-1"></a><span class="co">#funcao que calcula raiz quadrada</span></span>
+<span id="cb17-2"><a href="r-para-iniciantes.html#cb17-2" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="r-para-iniciantes.html#cb17-3" tabindex="-1"></a><span class="fu">sqrt</span>()</span>
+<span id="cb17-4"><a href="r-para-iniciantes.html#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="r-para-iniciantes.html#cb17-5" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">25</span>)</span></code></pre></div>
 <p>Existem funcoes dentro do R para todo tipo de coisa! Vamos criar um conjunto de dados e fazer alguns calculos utilizando algumas funcoes.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="r-para-iniciantes.html#cb18-1" tabindex="-1"></a><span class="co">#Notas do terceiro ano A</span></span>
 <span id="cb18-2"><a href="r-para-iniciantes.html#cb18-2" tabindex="-1"></a>notas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="fl">6.6</span>, <span class="fl">7.9</span>, <span class="fl">8.9</span>, <span class="dv">0</span>)</span>
@@ -348,7 +346,9 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <span id="cb18-16"><a href="r-para-iniciantes.html#cb18-16" tabindex="-1"></a></span>
 <span id="cb18-17"><a href="r-para-iniciantes.html#cb18-17" tabindex="-1"></a><span class="co">#resumo das notas</span></span>
 <span id="cb18-18"><a href="r-para-iniciantes.html#cb18-18" tabindex="-1"></a><span class="fu">summary</span>(notas)</span></code></pre></div>
-<p>Cada uma dessas funcoes realiza algum calculo em especifico, no caso de <em>summary()</em>, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce.</p>
+<p>Cada uma dessas funcoes realiza algum calculo em especifico, no caso de <em>summary()</em>, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce. Por enquanto, vamos apenas ser usuario de funcoes e nao criadores. Mas se voce realmente quer saber como criar uma funcao, nao irei te limitar. Abaixo voce encontra um dos exemplos mais simples de funcao. Utilize sua criatividade, seus conhecimentos de objetos, funcoes e vetores para criar alguma funcao. Mas sinta-se a vontade para pular essa parte, uma vez que ela nao eh essencial ao uso do R.</p>
+<div id="criando-uma-funcao-opcional" class="section level4 hasAnchor" number="3.2.2.1">
+<h4><span class="header-section-number">3.2.2.1</span> Criando uma funcao (opcional)<a href="r-para-iniciantes.html#criando-uma-funcao-opcional" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Eu sei, eh uma funcao simples, mas vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de <em>function()</em>.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="r-para-iniciantes.html#cb19-1" tabindex="-1"></a><span class="co">#Estrutura de uma funcao</span></span>
 <span id="cb19-2"><a href="r-para-iniciantes.html#cb19-2" tabindex="-1"></a>nome <span class="ot">&lt;-</span> <span class="cf">function</span>(variables) {</span>
@@ -382,10 +382,11 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <span id="cb20-12"><a href="r-para-iniciantes.html#cb20-12" tabindex="-1"></a>}</span></code></pre></div>
 <p>Calma, tem muita coisa ai, mas eh tudo o que a gente ja sabe. Na funcao <em>my_summary()</em>, precisamos inserir apenas um argumento do tipo vetor, como por exemplo, “notas”. Mais uma vez, as chaves que abre e fecha contem tudo o que a gente quer que a funcao realize, linha por linha. Primeiro, queremos que a nossa funcao calcule a media e atribua o resultado a um objeto chamado “media”. Segundo, calcular a mediana e atribuir o resultado a um objeto chamado “mediana”, depois o desvio. Depois criamos um vetor chamado de “resultado” que armazena os objetos “media”, “mediana” e “desvio”. Em seguida, pedimos para o R nos mostrar os valores desse vetor “resultado” utilizando a funcao <em>print()</em>.</p>
 <p>Vamos usar nossa funcao personalizada para calcular nosso objeto “notas”.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-para-iniciantes.html#cb21-1" tabindex="-1"></a><span class="co">#Usando a funcao my_function()</span></span>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-para-iniciantes.html#cb21-1" tabindex="-1"></a><span class="co">#Usando a funcao my_summary()</span></span>
 <span id="cb21-2"><a href="r-para-iniciantes.html#cb21-2" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="r-para-iniciantes.html#cb21-3" tabindex="-1"></a><span class="fu">my_function</span>(notas)</span></code></pre></div>
-<p>Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para frente, a gente ve como criar funcoes mais elaboradas.</p>
+<span id="cb21-3"><a href="r-para-iniciantes.html#cb21-3" tabindex="-1"></a><span class="fu">my_summary</span>(notas)</span></code></pre></div>
+<p>Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para frente, a gente ve como criar funcoes mais elaboradas, como por exemplo para simular gastos de alugueis como anteriormente.</p>
+</div>
 </div>
 </div>
 <div id="tabela-de-dados" class="section level2 hasAnchor" number="3.3">
