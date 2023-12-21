@@ -403,7 +403,11 @@ getwd()
 ```
 
 Ao executar esse funcao, o R te retornara o caminho da pasta do diretorio padrao atual que provavelmente eh a pasta "documentos" do seu computador.
-
+  
+Para baixar uma planilha de dados ficticios clique no link abaixo e tente importa-la atraves do botao **Import from excel**.
+  
+[Clique aqui para baixar a planilha ficticia](data/fake_data.xlsx)
+  
 ## Graficos
 
 Agora comeca a parte divertida! A visualizacao de dados no R tem um potencial quase infinito devido as sua grande capacidade de personalizar cada pedacinho da figura.

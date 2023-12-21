@@ -257,6 +257,9 @@ Por fim, voce pode salvar o Script para acessa-lo sempre que quiser clicando no 
 \hypertarget{objetos-vetores-e-funuxe7uxf5es}{%
 \section{Objetos, vetores e funções}\label{objetos-vetores-e-funuxe7uxf5es}}
 
+\hypertarget{objetos}{%
+\subsection{Objetos}\label{objetos}}
+
 Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra \textbf{``a''}, e para isso utilizamos o sinal de igual (=). O ``\textbf{a}'' agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).
 
 \begin{Shaded}
@@ -470,11 +473,11 @@ Nesse caso, podemos criar a funcao \emph{my\_summary()} utilizando a funcao \emp
 \begin{Highlighting}[]
 \CommentTok{\#Criando a funcao my\_summary()}
 
-\NormalTok{my\_summary }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(vetor) \{}
+\NormalTok{my\_summary }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(v) \{}
 
-\NormalTok{media   }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(vetor)}
-\NormalTok{mediana }\OtherTok{\textless{}{-}} \FunctionTok{median}\NormalTok{(vetor)}
-\NormalTok{desvio  }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(vetor)}
+\NormalTok{media   }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v)}
+\NormalTok{mediana }\OtherTok{\textless{}{-}} \FunctionTok{median}\NormalTok{(v)}
+\NormalTok{desvio  }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(v)}
 
 \NormalTok{resultado }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(media, mediana, desvio)}
 \FunctionTok{print}\NormalTok{(resultado)}
@@ -483,13 +486,16 @@ Nesse caso, podemos criar a funcao \emph{my\_summary()} utilizando a funcao \emp
 \end{Highlighting}
 \end{Shaded}
 
-Calma, tem muita coisa ai, mas eh tudo o que a gente ja sabe. Na funcao \emph{my\_summary()}, precisamos inserir apenas um argumento do tipo vetor, como por exemplo, ``notas''. Mais uma vez, as chaves que abre e fecha contem tudo o que a gente quer que a funcao realize, linha por linha. Primeiro, queremos que a nossa funcao calcule a media e atribua o resultado a um objeto chamado ``media''. Segundo, calcular a mediana e atribuir o resultado a um objeto chamado ``mediana'', depois o desvio. Depois criamos um vetor chamado de ``resultado'' que armazena os objetos ``media'', ``mediana'' e ``desvio''. Em seguida, pedimos para o R nos mostrar os valores desse vetor ``resultado'' utilizando a funcao \emph{print()}.
+Calma, tem muita coisa ai, mas eh tudo o que a gente ja sabe. Na funcao \emph{my\_summary()}, precisamos inserir apenas um argumento do tipo vetor, como por exemplo, nosso objeto ``notas''. Esse argumento sera aplicado a tudo que possuir o caractere ``v'' dentro da funcao. O ``v'' a gente definiu em function(v). Mais uma vez, as chaves \textbf{\{\}} que abre e fecha contem tudo o que a gente quer que a funcao realize, linha por linha. Primeiro, queremos que a nossa funcao calcule a media e atribua o resultado a um objeto chamado ``media''. Segundo, calcular a mediana e atribuir o resultado a um objeto chamado ``mediana'', depois o desvio. Depois criamos um vetor chamado de ``resultado'' que armazena os objetos ``media'', ``mediana'' e ``desvio''. Em seguida, pedimos para o R nos mostrar os valores desse vetor ``resultado'' utilizando a funcao \emph{print()}.
 
 Vamos usar nossa funcao personalizada para calcular nosso objeto ``notas''.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Usando a funcao my\_summary()}
+\CommentTok{\#Notas do terceiro ano A}
+\NormalTok{notas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{6.6}\NormalTok{, }\FloatTok{7.9}\NormalTok{, }\FloatTok{8.9}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+
+\CommentTok{\#Utilizando a funcao my\_summary()}
 
 \FunctionTok{my\_summary}\NormalTok{(notas)}
 \end{Highlighting}
@@ -530,7 +536,7 @@ A partir de agora eu quero que voce perceba uma coisa muito importante e leve is
 -Observacoes sao linhas;
 -Cada valor na sua celula.
 
-Com essa formatacao de planilha, voce consegue fazer quase tudo no R, utilizando pacotes como `dplyr' e `ggplot2', para manipulacao de dados e construcao de graficos, respectivamente.
+Com essa formatacao de planilha, voce consegue fazer quase tudo no R, para manipulacao de dados, construcao de graficos e analises estatisticas.
 
 Logo, para voce acessar uma variavel de uma tabela, voce pode usar o \textbf{\$} da seguinte forma:
 
@@ -543,7 +549,7 @@ Logo, para voce acessar uma variavel de uma tabela, voce pode usar o \textbf{\$}
 \end{Highlighting}
 \end{Shaded}
 
-Perceba que quando voce digita tabela\$ voce pode apertar a tecla TAB para mostrar e selecionar as variaveis de sua tabela. Caso alguma nota esteja errada e voce queira corrigi-la, voce pode utilizar a funcao \emph{fix()}. Essa funcao abre uma janela onde voce pode clicar e modificar o valor desejado.
+Perceba que quando voce digita \textbf{tabela\$} voce pode apertar a tecla TAB para mostrar e selecionar as variaveis de sua tabela. Caso alguma nota esteja errada e voce queira corrigi-la, voce pode utilizar a funcao \emph{fix()}. Essa funcao abre uma janela onde voce pode clicar e modificar o valor desejado.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -552,14 +558,29 @@ Perceba que quando voce digita tabela\$ voce pode apertar a tecla TAB para mostr
 \end{Highlighting}
 \end{Shaded}
 
+Quse nunca utilizamos a funcao \emph{fix()} para corrigir os dados, mas eh interessante saber que o R pode abrir novas janelas e criar coisas interativas.
+
 Agora sabendo como acessar as variaveis de uma tabela, voce pode utilizar funcoes para calcular uma variavel especifica do data frame.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
-\FunctionTok{summary}\NormalTok{(tabela}\SpecialCharTok{$}\NormalTok{notas)}
+\FunctionTok{mean}\NormalTok{(tabela}\SpecialCharTok{$}\NormalTok{notas)}
 \end{Highlighting}
 \end{Shaded}
+
+Utilize as funcoes abaixo para calcular mediana, maximo, minimo:
+
+\begin{itemize}
+\tightlist
+\item
+  median()
+\item
+  max()
+\item
+  min()
+\item
+  summary()
+\end{itemize}
 
 \hypertarget{planilha-de-dados-nativa-do-r}{%
 \subsection{Planilha de dados nativa do R}\label{planilha-de-dados-nativa-do-r}}
@@ -568,20 +589,25 @@ O R possui um banco de dados que nos fornece algumas tabelas de estudo reais o q
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Importando o banco de dados do R}
+\CommentTok{\#Importando o banco de dados "iris" do R}
 \FunctionTok{data}\NormalTok{(iris)}
 
 \CommentTok{\#Funcoes exploratorias}
 \FunctionTok{head}\NormalTok{(iris) }\CommentTok{\#Mostra a parte de cima da planilha }
 \FunctionTok{tail}\NormalTok{(iris) }\CommentTok{\#Mostra a parte de baixo}
-\FunctionTok{str}\NormalTok{(iris)  }\CommentTok{\#Mostra os tipos de variaveis}
+\FunctionTok{str}\NormalTok{(iris)  }\CommentTok{\#Mostra os tipos das variaveis}
 \end{Highlighting}
 \end{Shaded}
 
 Veja que ao usarmos a funcao \emph{str()} o R retorna a natureza das variaveis da planilha.
 
--num significa numerica.
--Factor significa que eh uma variavel qualitativa com fatores (setosa, versicolor, virginica).
+\begin{itemize}
+\tightlist
+\item
+  \emph{num} significa numerica.
+\item
+  \emph{Factor} significa que eh uma variavel qualitativa com fatores (setosa, versicolor, virginica).
+\end{itemize}
 
 As vezes a planilha eh importada com as variaveis mal formatadas e isso pode gerar problemas de reconhecimento por parte do R. Nesse caso, eh sempre interessante realizar a verificacao dos dados utilizando a funcao \emph{str()} ou outras funcoes similares. Caso o R nao esteja identificando as variaveis corretamente, duas funcoes muito uteis podem ser utilizadas: \emph{as.numeric()} e \emph{as.factor()}.
 
@@ -622,7 +648,7 @@ No RStudio podemos importar uma planilha do formato excel (xlsx) utilizando o bo
 
 Environment \textgreater{} Import Dataset \textgreater{} From excel
 
-Acho pouco eficiente ensinar a importar dados de um diretorio, acho pouco pratico, uma vez que temos o botao de importar. Ao inves disso, irei treina-lo a utilizar projetos de R reprodutiveis e organizados. Ao trabalhar no R, voce seguira um protocolo basico de como tratar os dados a serem analisados. Ao longo do tempo, voce sera capaz de otimizar esse protocolo e aplicar para quase todo tipo de dado que voce possuir. De qualquer forma, saiba que o R trabalha com uma pasta especifica chamada de diretorio, e para saber qual eh o seu diretorio padrao, utilize a funcao \emph{getwd()}:
+Acho pouco eficiente ensinar a importar dados de um diretorio. Acho pouco pratico, uma vez que temos o botao de importar. Ao inves disso, irei treina-lo a utilizar projetos de R reprodutiveis e organizados. Ao trabalhar no R, voce seguira um protocolo basico de como tratar os dados a serem analisados. Ao longo do tempo, voce sera capaz de otimizar esse protocolo e aplicar para quase todo tipo de dado que voce possuir. De qualquer forma, saiba que o R trabalha com uma pasta especifica chamada de diretorio, e para saber qual eh o seu diretorio padrao, utilize a funcao \emph{getwd()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -631,6 +657,10 @@ Acho pouco eficiente ensinar a importar dados de um diretorio, acho pouco pratic
 \end{Shaded}
 
 Ao executar esse funcao, o R te retornara o caminho da pasta do diretorio padrao atual que provavelmente eh a pasta ``documentos'' do seu computador.
+
+Para baixar uma planilha de dados ficticios clique no link abaixo e tente importa-la atraves do botao \textbf{Import from excel}.
+
+\href{data/fake_data.xlsx}{Clique aqui para baixar a planilha ficticia}
 
 \hypertarget{graficos}{%
 \section{Graficos}\label{graficos}}
@@ -1057,7 +1087,11 @@ Agora voce tem tudo pronto para comecar a trabalhar com um fluxo de trabalho efi
 \hypertarget{trabalhando-em-um-projeto-de-r}{%
 \section{Trabalhando em um projeto de R}\label{trabalhando-em-um-projeto-de-r}}
 
-Na pasta \textbf{data \textgreater{} raw} voce adiciona sua planilha de dados brutos. Para aqueles que nao possuem nenhum dados, utilize a planilha ``iris''. O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.
+Antes de tudo baixe a planilha de dados ficticios de uma especie de passarinho (tambem ficticia), que contem informacoes ficticias sobre peso (g) e quantidade de parasitas de tres diferentes localidades (A, B, C):
+
+\href{data/fake_data.xlsx}{Clique aqui para baixar a planilha ficticia}
+
+Na pasta \textbf{data \textgreater{} raw} voce adiciona sua planilha de dados brutos ficticias (fake\_data.xlsx). O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.
 
 \textbf{Limpar dados brutos \textgreater{} Realizar analise \textgreater{} Mostrar graficos}
 

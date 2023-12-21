@@ -14,6 +14,7 @@ instalando-r-e-rstudio
 r-para-iniciantes
 entendendo-o-rstudio
 objetos-vetores-e-funções
+objetos
 vetores
 funções
 criando-uma-funcao-opcional

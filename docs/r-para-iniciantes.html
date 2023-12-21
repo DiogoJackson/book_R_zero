@@ -156,8 +156,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#entendendo-o-rstudio"><i class="fa fa-check"></i><b>3.1</b> Entendendo o RStudio</a></li>
 <li class="chapter" data-level="3.2" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#objetos-vetores-e-funções"><i class="fa fa-check"></i><b>3.2</b> Objetos, vetores e funções</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#vetores"><i class="fa fa-check"></i><b>3.2.1</b> Vetores</a></li>
-<li class="chapter" data-level="3.2.2" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#funções"><i class="fa fa-check"></i><b>3.2.2</b> Funções</a></li>
+<li class="chapter" data-level="3.2.1" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#objetos"><i class="fa fa-check"></i><b>3.2.1</b> Objetos</a></li>
+<li class="chapter" data-level="3.2.2" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#vetores"><i class="fa fa-check"></i><b>3.2.2</b> Vetores</a></li>
+<li class="chapter" data-level="3.2.3" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#funções"><i class="fa fa-check"></i><b>3.2.3</b> Funções</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#tabela-de-dados"><i class="fa fa-check"></i><b>3.3</b> Tabela de dados</a>
 <ul>
@@ -251,6 +252,8 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 </div>
 <div id="objetos-vetores-e-funções" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Objetos, vetores e funções<a href="r-para-iniciantes.html#objetos-vetores-e-funções" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="objetos" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Objetos<a href="r-para-iniciantes.html#objetos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra <strong>“a”</strong>, e para isso utilizamos o sinal de igual (=). O “<strong>a</strong>” agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r-para-iniciantes.html#cb7-1" tabindex="-1"></a><span class="co"># Mini Script  </span></span>
 <span id="cb7-2"><a href="r-para-iniciantes.html#cb7-2" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">1</span>  </span>
@@ -308,8 +311,9 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <li><em>Substititua “aluguel_semana &lt;- 200” por “aluguel_semana &lt;- 247.53</em>”</li>
 </ul>
 <p>Se voce pode fazer isso para calcular o aluguel, imagina o que esse sistema pode fazer com sua analise de dados.</p>
-<div id="vetores" class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Vetores<a href="r-para-iniciantes.html#vetores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="vetores" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Vetores<a href="r-para-iniciantes.html#vetores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores. Para criar um objeto vetor inserimos os valores dentro de parenteses separados por virgulas. Virgulas no R servem para separar o codigo. Entao se voce quiser digitar numeros quebrados nunca utilize <strong>virgula</strong>, utilize <strong>ponto</strong>.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-para-iniciantes.html#cb16-1" tabindex="-1"></a>vetor.A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">10.5</span>, <span class="fl">20.6</span>, <span class="fl">30.2</span>)</span>
 <span id="cb16-2"><a href="r-para-iniciantes.html#cb16-2" tabindex="-1"></a>vetor.B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
@@ -319,8 +323,8 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <span id="cb16-6"><a href="r-para-iniciantes.html#cb16-6" tabindex="-1"></a>vetor.B</span>
 <span id="cb16-7"><a href="r-para-iniciantes.html#cb16-7" tabindex="-1"></a>melhores.comidas</span></code></pre></div>
 </div>
-<div id="funções" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Funções<a href="r-para-iniciantes.html#funções" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="funções" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Funções<a href="r-para-iniciantes.html#funções" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>No R, as funcoes servem para processar de alguma forma os dados. O R ja possui algumas funcoes nativas, como por exemplo para calcular a raiz quadrada de um numero. A funcao possui um nome, geralmente associado ao que ela faz, e argumentos que eh o tipo de dado que voce precisa inserir nela para ser calculado. Vamos dar uma olhada na funcao <em>sqrt()</em>. A sigla “sqrt” representa “square root” em ingles. Primeiro vamos rodar a funcao sem argumentos, apenas o <em>sqrt()</em> e depois inserimos o argumento, que nesse caso, eh um numero.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="r-para-iniciantes.html#cb17-1" tabindex="-1"></a><span class="co">#funcao que calcula raiz quadrada</span></span>
 <span id="cb17-2"><a href="r-para-iniciantes.html#cb17-2" tabindex="-1"></a></span>
@@ -347,8 +351,8 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <span id="cb18-17"><a href="r-para-iniciantes.html#cb18-17" tabindex="-1"></a><span class="co">#resumo das notas</span></span>
 <span id="cb18-18"><a href="r-para-iniciantes.html#cb18-18" tabindex="-1"></a><span class="fu">summary</span>(notas)</span></code></pre></div>
 <p>Cada uma dessas funcoes realiza algum calculo em especifico, no caso de <em>summary()</em>, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce. Por enquanto, vamos apenas ser usuario de funcoes e nao criadores. Mas se voce realmente quer saber como criar uma funcao, nao irei te limitar. Abaixo voce encontra um dos exemplos mais simples de funcao. Utilize sua criatividade, seus conhecimentos de objetos, funcoes e vetores para criar alguma funcao. Mas sinta-se a vontade para pular essa parte, uma vez que ela nao eh essencial ao uso do R.</p>
-<div id="criando-uma-funcao-opcional" class="section level4 hasAnchor" number="3.2.2.1">
-<h4><span class="header-section-number">3.2.2.1</span> Criando uma funcao (opcional)<a href="r-para-iniciantes.html#criando-uma-funcao-opcional" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="criando-uma-funcao-opcional" class="section level4 hasAnchor" number="3.2.3.1">
+<h4><span class="header-section-number">3.2.3.1</span> Criando uma funcao (opcional)<a href="r-para-iniciantes.html#criando-uma-funcao-opcional" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Eu sei, eh uma funcao simples, mas vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de <em>function()</em>.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="r-para-iniciantes.html#cb19-1" tabindex="-1"></a><span class="co">#Estrutura de uma funcao</span></span>
 <span id="cb19-2"><a href="r-para-iniciantes.html#cb19-2" tabindex="-1"></a>nome <span class="ot">&lt;-</span> <span class="cf">function</span>(variables) {</span>
@@ -370,21 +374,24 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <p>Nesse caso, podemos criar a funcao <em>my_summary()</em> utilizando a funcao <em>function()</em>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="r-para-iniciantes.html#cb20-1" tabindex="-1"></a><span class="co">#Criando a funcao my_summary()</span></span>
 <span id="cb20-2"><a href="r-para-iniciantes.html#cb20-2" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="r-para-iniciantes.html#cb20-3" tabindex="-1"></a>my_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(vetor) {</span>
+<span id="cb20-3"><a href="r-para-iniciantes.html#cb20-3" tabindex="-1"></a>my_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(v) {</span>
 <span id="cb20-4"><a href="r-para-iniciantes.html#cb20-4" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="r-para-iniciantes.html#cb20-5" tabindex="-1"></a>media   <span class="ot">&lt;-</span> <span class="fu">mean</span>(vetor)</span>
-<span id="cb20-6"><a href="r-para-iniciantes.html#cb20-6" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(vetor)</span>
-<span id="cb20-7"><a href="r-para-iniciantes.html#cb20-7" tabindex="-1"></a>desvio  <span class="ot">&lt;-</span> <span class="fu">sd</span>(vetor)</span>
+<span id="cb20-5"><a href="r-para-iniciantes.html#cb20-5" tabindex="-1"></a>media   <span class="ot">&lt;-</span> <span class="fu">mean</span>(v)</span>
+<span id="cb20-6"><a href="r-para-iniciantes.html#cb20-6" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(v)</span>
+<span id="cb20-7"><a href="r-para-iniciantes.html#cb20-7" tabindex="-1"></a>desvio  <span class="ot">&lt;-</span> <span class="fu">sd</span>(v)</span>
 <span id="cb20-8"><a href="r-para-iniciantes.html#cb20-8" tabindex="-1"></a></span>
 <span id="cb20-9"><a href="r-para-iniciantes.html#cb20-9" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">c</span>(media, mediana, desvio)</span>
 <span id="cb20-10"><a href="r-para-iniciantes.html#cb20-10" tabindex="-1"></a><span class="fu">print</span>(resultado)</span>
 <span id="cb20-11"><a href="r-para-iniciantes.html#cb20-11" tabindex="-1"></a></span>
 <span id="cb20-12"><a href="r-para-iniciantes.html#cb20-12" tabindex="-1"></a>}</span></code></pre></div>
-<p>Calma, tem muita coisa ai, mas eh tudo o que a gente ja sabe. Na funcao <em>my_summary()</em>, precisamos inserir apenas um argumento do tipo vetor, como por exemplo, “notas”. Mais uma vez, as chaves que abre e fecha contem tudo o que a gente quer que a funcao realize, linha por linha. Primeiro, queremos que a nossa funcao calcule a media e atribua o resultado a um objeto chamado “media”. Segundo, calcular a mediana e atribuir o resultado a um objeto chamado “mediana”, depois o desvio. Depois criamos um vetor chamado de “resultado” que armazena os objetos “media”, “mediana” e “desvio”. Em seguida, pedimos para o R nos mostrar os valores desse vetor “resultado” utilizando a funcao <em>print()</em>.</p>
+<p>Calma, tem muita coisa ai, mas eh tudo o que a gente ja sabe. Na funcao <em>my_summary()</em>, precisamos inserir apenas um argumento do tipo vetor, como por exemplo, nosso objeto “notas”. Esse argumento sera aplicado a tudo que possuir o caractere “v” dentro da funcao. O “v” a gente definiu em function(v). Mais uma vez, as chaves <strong>{}</strong> que abre e fecha contem tudo o que a gente quer que a funcao realize, linha por linha. Primeiro, queremos que a nossa funcao calcule a media e atribua o resultado a um objeto chamado “media”. Segundo, calcular a mediana e atribuir o resultado a um objeto chamado “mediana”, depois o desvio. Depois criamos um vetor chamado de “resultado” que armazena os objetos “media”, “mediana” e “desvio”. Em seguida, pedimos para o R nos mostrar os valores desse vetor “resultado” utilizando a funcao <em>print()</em>.</p>
 <p>Vamos usar nossa funcao personalizada para calcular nosso objeto “notas”.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-para-iniciantes.html#cb21-1" tabindex="-1"></a><span class="co">#Usando a funcao my_summary()</span></span>
-<span id="cb21-2"><a href="r-para-iniciantes.html#cb21-2" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="r-para-iniciantes.html#cb21-3" tabindex="-1"></a><span class="fu">my_summary</span>(notas)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-para-iniciantes.html#cb21-1" tabindex="-1"></a><span class="co">#Notas do terceiro ano A</span></span>
+<span id="cb21-2"><a href="r-para-iniciantes.html#cb21-2" tabindex="-1"></a>notas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="fl">6.6</span>, <span class="fl">7.9</span>, <span class="fl">8.9</span>, <span class="dv">0</span>)</span>
+<span id="cb21-3"><a href="r-para-iniciantes.html#cb21-3" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="r-para-iniciantes.html#cb21-4" tabindex="-1"></a><span class="co">#Utilizando a funcao my_summary()</span></span>
+<span id="cb21-5"><a href="r-para-iniciantes.html#cb21-5" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="r-para-iniciantes.html#cb21-6" tabindex="-1"></a><span class="fu">my_summary</span>(notas)</span></code></pre></div>
 <p>Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para frente, a gente ve como criar funcoes mais elaboradas, como por exemplo para simular gastos de alugueis como anteriormente.</p>
 </div>
 </div>
@@ -411,32 +418,41 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <p>-Variaveis sao colunas;
 -Observacoes sao linhas;
 -Cada valor na sua celula.</p>
-<p>Com essa formatacao de planilha, voce consegue fazer quase tudo no R, utilizando pacotes como ‘dplyr’ e ‘ggplot2’, para manipulacao de dados e construcao de graficos, respectivamente.</p>
+<p>Com essa formatacao de planilha, voce consegue fazer quase tudo no R, para manipulacao de dados, construcao de graficos e analises estatisticas.</p>
 <p>Logo, para voce acessar uma variavel de uma tabela, voce pode usar o <strong>$</strong> da seguinte forma:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="r-para-iniciantes.html#cb23-1" tabindex="-1"></a><span class="co">#Acessando uma variavel</span></span>
 <span id="cb23-2"><a href="r-para-iniciantes.html#cb23-2" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="r-para-iniciantes.html#cb23-3" tabindex="-1"></a>tabela<span class="sc">$</span>nomes</span>
 <span id="cb23-4"><a href="r-para-iniciantes.html#cb23-4" tabindex="-1"></a>tabela<span class="sc">$</span>notas</span></code></pre></div>
-<p>Perceba que quando voce digita tabela$ voce pode apertar a tecla TAB para mostrar e selecionar as variaveis de sua tabela. Caso alguma nota esteja errada e voce queira corrigi-la, voce pode utilizar a funcao <em>fix()</em>. Essa funcao abre uma janela onde voce pode clicar e modificar o valor desejado.</p>
+<p>Perceba que quando voce digita <strong>tabela$</strong> voce pode apertar a tecla TAB para mostrar e selecionar as variaveis de sua tabela. Caso alguma nota esteja errada e voce queira corrigi-la, voce pode utilizar a funcao <em>fix()</em>. Essa funcao abre uma janela onde voce pode clicar e modificar o valor desejado.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="r-para-iniciantes.html#cb24-1" tabindex="-1"></a></span>
 <span id="cb24-2"><a href="r-para-iniciantes.html#cb24-2" tabindex="-1"></a><span class="fu">fix</span>(tabela)</span></code></pre></div>
+<p>Quse nunca utilizamos a funcao <em>fix()</em> para corrigir os dados, mas eh interessante saber que o R pode abrir novas janelas e criar coisas interativas.</p>
 <p>Agora sabendo como acessar as variaveis de uma tabela, voce pode utilizar funcoes para calcular uma variavel especifica do data frame.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="r-para-iniciantes.html#cb25-1" tabindex="-1"></a></span>
-<span id="cb25-2"><a href="r-para-iniciantes.html#cb25-2" tabindex="-1"></a><span class="fu">summary</span>(tabela<span class="sc">$</span>notas)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="r-para-iniciantes.html#cb25-1" tabindex="-1"></a><span class="fu">mean</span>(tabela<span class="sc">$</span>notas)</span></code></pre></div>
+<p>Utilize as funcoes abaixo para calcular mediana, maximo, minimo:</p>
+<ul>
+<li>median()</li>
+<li>max()</li>
+<li>min()</li>
+<li>summary()</li>
+</ul>
 </div>
 <div id="planilha-de-dados-nativa-do-r" class="section level3 hasAnchor" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Planilha de dados nativa do R<a href="r-para-iniciantes.html#planilha-de-dados-nativa-do-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>O R possui um banco de dados que nos fornece algumas tabelas de estudo reais o quais podemos utilizar para treinar nossas habilidades. Para isso, precisamos dizer para o R qual banco de dados queremos invocar utilizando a funcao <em>data()</em>.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="r-para-iniciantes.html#cb26-1" tabindex="-1"></a><span class="co">#Importando o banco de dados do R</span></span>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="r-para-iniciantes.html#cb26-1" tabindex="-1"></a><span class="co">#Importando o banco de dados &quot;iris&quot; do R</span></span>
 <span id="cb26-2"><a href="r-para-iniciantes.html#cb26-2" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
 <span id="cb26-3"><a href="r-para-iniciantes.html#cb26-3" tabindex="-1"></a></span>
 <span id="cb26-4"><a href="r-para-iniciantes.html#cb26-4" tabindex="-1"></a><span class="co">#Funcoes exploratorias</span></span>
 <span id="cb26-5"><a href="r-para-iniciantes.html#cb26-5" tabindex="-1"></a><span class="fu">head</span>(iris) <span class="co">#Mostra a parte de cima da planilha </span></span>
 <span id="cb26-6"><a href="r-para-iniciantes.html#cb26-6" tabindex="-1"></a><span class="fu">tail</span>(iris) <span class="co">#Mostra a parte de baixo</span></span>
-<span id="cb26-7"><a href="r-para-iniciantes.html#cb26-7" tabindex="-1"></a><span class="fu">str</span>(iris)  <span class="co">#Mostra os tipos de variaveis</span></span></code></pre></div>
+<span id="cb26-7"><a href="r-para-iniciantes.html#cb26-7" tabindex="-1"></a><span class="fu">str</span>(iris)  <span class="co">#Mostra os tipos das variaveis</span></span></code></pre></div>
 <p>Veja que ao usarmos a funcao <em>str()</em> o R retorna a natureza das variaveis da planilha.</p>
-<p>-num significa numerica.
--Factor significa que eh uma variavel qualitativa com fatores (setosa, versicolor, virginica).</p>
+<ul>
+<li><em>num</em> significa numerica.</li>
+<li><em>Factor</em> significa que eh uma variavel qualitativa com fatores (setosa, versicolor, virginica).</li>
+</ul>
 <p>As vezes a planilha eh importada com as variaveis mal formatadas e isso pode gerar problemas de reconhecimento por parte do R. Nesse caso, eh sempre interessante realizar a verificacao dos dados utilizando a funcao <em>str()</em> ou outras funcoes similares. Caso o R nao esteja identificando as variaveis corretamente, duas funcoes muito uteis podem ser utilizadas: <em>as.numeric()</em> e <em>as.factor()</em>.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="r-para-iniciantes.html#cb27-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
 <span id="cb27-2"><a href="r-para-iniciantes.html#cb27-2" tabindex="-1"></a></span>
@@ -455,9 +471,11 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <h3><span class="header-section-number">3.3.3</span> Importando sua planilha<a href="r-para-iniciantes.html#importando-sua-planilha" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>No RStudio podemos importar uma planilha do formato excel (xlsx) utilizando o botao na janela Environment (superior direita):</p>
 <p>Environment &gt; Import Dataset &gt; From excel</p>
-<p>Acho pouco eficiente ensinar a importar dados de um diretorio, acho pouco pratico, uma vez que temos o botao de importar. Ao inves disso, irei treina-lo a utilizar projetos de R reprodutiveis e organizados. Ao trabalhar no R, voce seguira um protocolo basico de como tratar os dados a serem analisados. Ao longo do tempo, voce sera capaz de otimizar esse protocolo e aplicar para quase todo tipo de dado que voce possuir. De qualquer forma, saiba que o R trabalha com uma pasta especifica chamada de diretorio, e para saber qual eh o seu diretorio padrao, utilize a funcao <em>getwd()</em>:</p>
+<p>Acho pouco eficiente ensinar a importar dados de um diretorio. Acho pouco pratico, uma vez que temos o botao de importar. Ao inves disso, irei treina-lo a utilizar projetos de R reprodutiveis e organizados. Ao trabalhar no R, voce seguira um protocolo basico de como tratar os dados a serem analisados. Ao longo do tempo, voce sera capaz de otimizar esse protocolo e aplicar para quase todo tipo de dado que voce possuir. De qualquer forma, saiba que o R trabalha com uma pasta especifica chamada de diretorio, e para saber qual eh o seu diretorio padrao, utilize a funcao <em>getwd()</em>:</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="r-para-iniciantes.html#cb30-1" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
 <p>Ao executar esse funcao, o R te retornara o caminho da pasta do diretorio padrao atual que provavelmente eh a pasta “documentos” do seu computador.</p>
+<p>Para baixar uma planilha de dados ficticios clique no link abaixo e tente importa-la atraves do botao <strong>Import from excel</strong>.</p>
+<p><a href="data/fake_data.xlsx">Clique aqui para baixar a planilha ficticia</a></p>
 </div>
 </div>
 <div id="graficos" class="section level2 hasAnchor" number="3.4">

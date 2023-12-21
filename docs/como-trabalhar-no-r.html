@@ -156,8 +156,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#entendendo-o-rstudio"><i class="fa fa-check"></i><b>3.1</b> Entendendo o RStudio</a></li>
 <li class="chapter" data-level="3.2" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#objetos-vetores-e-funções"><i class="fa fa-check"></i><b>3.2</b> Objetos, vetores e funções</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#vetores"><i class="fa fa-check"></i><b>3.2.1</b> Vetores</a></li>
-<li class="chapter" data-level="3.2.2" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#funções"><i class="fa fa-check"></i><b>3.2.2</b> Funções</a></li>
+<li class="chapter" data-level="3.2.1" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#objetos"><i class="fa fa-check"></i><b>3.2.1</b> Objetos</a></li>
+<li class="chapter" data-level="3.2.2" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#vetores"><i class="fa fa-check"></i><b>3.2.2</b> Vetores</a></li>
+<li class="chapter" data-level="3.2.3" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#funções"><i class="fa fa-check"></i><b>3.2.3</b> Funções</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="r-para-iniciantes.html"><a href="r-para-iniciantes.html#tabela-de-dados"><i class="fa fa-check"></i><b>3.3</b> Tabela de dados</a>
 <ul>
@@ -280,7 +281,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="trabalhando-em-um-projeto-de-r" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Trabalhando em um projeto de R<a href="como-trabalhar-no-r.html#trabalhando-em-um-projeto-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Na pasta <strong>data &gt; raw</strong> voce adiciona sua planilha de dados brutos. Para aqueles que nao possuem nenhum dados, utilize a planilha “iris”. O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.</p>
+<p>Antes de tudo baixe a planilha de dados ficticios de uma especie de passarinho (tambem ficticia), que contem informacoes ficticias sobre peso (g) e quantidade de parasitas de tres diferentes localidades (A, B, C):</p>
+<p><a href="data/fake_data.xlsx">Clique aqui para baixar a planilha ficticia</a></p>
+<p>Na pasta <strong>data &gt; raw</strong> voce adiciona sua planilha de dados brutos ficticias (fake_data.xlsx). O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.</p>
 <p><strong>Limpar dados brutos &gt; Realizar analise &gt; Mostrar graficos</strong></p>
 <p>Para limpar a planilha de dados brutos, iremos criar um script para isso. Utilizaremos funcoes do pacote dplyr para modificar nome das variaveis, nome dos fatores, analisar dados faltantes, entre outras coisas.</p>
 <div id="etapa-1-limpar-dados" class="section level3 hasAnchor" number="4.3.1">

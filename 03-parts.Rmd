@@ -95,7 +95,11 @@ Agora voce tem tudo pronto para comecar a trabalhar com um fluxo de trabalho efi
   
 ## Trabalhando em um projeto de R
  
-Na pasta **data > raw** voce adiciona sua planilha de dados brutos. Para aqueles que nao possuem nenhum dados, utilize a planilha "iris". O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.
+Antes de tudo baixe a planilha de dados ficticios de uma especie de passarinho (tambem ficticia), que contem informacoes ficticias sobre peso (g) e quantidade de parasitas de tres diferentes localidades (A, B, C):
+ 
+ [Clique aqui para baixar a planilha ficticia](data/fake_data.xlsx)
+ 
+Na pasta **data > raw** voce adiciona sua planilha de dados brutos ficticias (fake_data.xlsx). O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.
   
   **Limpar dados brutos > Realizar analise > Mostrar graficos**
   
