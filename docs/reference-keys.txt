@@ -9,7 +9,7 @@ fig:nome-do-chunk-1
 fig:nome-do-chunk-2
 fig:graph
 bem-vindos
-pre-requisitos
+pré-requisitos
 instalando-r-e-rstudio
 r-para-iniciantes
 entendendo-o-rstudio

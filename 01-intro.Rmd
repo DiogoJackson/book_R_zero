@@ -1,6 +1,17 @@
-# Pre-requisitos
+# Pré-requisitos
 
 ## Instalando R e RStudio
-Para você usar esse livro de forma otimizada, precisará ter o R e RStudio instalados. Nem vou falar sobre a instalação, pois sei que você é capaz de encontrar um tutorial feito por uma criança de 8 anos no YouTube.
-
-Se você é um completo iniciante, a forma ideal de utilizar esse livro é seguir o que o livro pede, executando os comandos no RStudio.
+Para utilizar este livro de maneira otimizada, é necessário ter o **R** e o **RStudio** instalados. Não vou abordar a instalação aqui, pois acredito que você é capaz de encontrar tutoriais simples feitos por uma crianca de 8 anos no YouTube.
+  
+Brincadeiras à parte, a ideia é facilitar sua vida. Então saiba o seguinte. O R é o programa principal, o RStudio é uma "skin", uma "roupagem" do R. Alguns chamam essa roupagem de Ambiente de Desenvolvimento Integrado (IDE - Integrated Development Environment), mas você só precisa saber disso por um motivo: você precisa instalar o R primeiro, depois sua skin (o RStudio), caso contrário ocorrerão problemas.
+  
+O **RStudio** requer **R 3.3.0** ou superior. Clique no link abaixo, acesse o site para baixar o **R** e escolha uma versão compatível com o sistema operacional do seu computador.
+  
+1. Para baixar e instalar o **R**, acesse:
+  
+[https://cran.r-project.org/](https://cran.r-project.org/)
+  
+2. Em seguida, faça o download e instale o **RStudio** através do link:
+  
+[https://posit.co/download/rstudio-desktop/#download](https://posit.co/download/rstudio-desktop/#download)
+  

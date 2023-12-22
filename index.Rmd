@@ -17,7 +17,7 @@ github-repo: rstudio/bookdown-demo
 
 # Bem-vindos
 
-<img src="img/capa_livro_datavisu.png" alt="Texto Alternativo" style="width: 200px; float: right; margin: 0px 0px 10px 10px;">
+<img src="img/capa_R_zero_intro.png" alt="Texto Alternativo" style="width: 250px; float: right; margin: 0px 0px 10px 10px;">
 
 R zero foi criado para introduzir e orientar novos usuários acadêmicos do programa R e RStudio do absoluto ZERO. A ideia é fornecer os conceitos essenciais para a utilização do R, guiando o leitor através da linguagem R, introduzindo pílulas de conceitos que irão se complementando ao longo dos capítulos.
 
