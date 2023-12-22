@@ -193,6 +193,7 @@ sqrt()
 sqrt(25)
 
 ```
+  Note que quando nao colocamos (ou erramos) o argumento, a R vai te retornar um erro, geralmente, explicando o problema.
   
 Existem funcoes dentro do R para todo tipo de coisa! Vamos criar um conjunto de dados e fazer alguns calculos utilizando algumas funcoes.
 
@@ -222,27 +223,24 @@ Cada uma dessas funcoes realiza algum calculo em especifico, no caso de *summary
   
 #### Criando uma funcao (opcional)
   
-Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Eu sei, eh uma funcao simples, mas vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de *function()*.
+Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Uma funcao simples mas que vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de *function()*.
   
 ```r
-#Estrutura de uma funcao
-nome <- function(variables) {
-    
-    #dentro das chaves adicionamos o processo que queremos realizar.
-    #Nesse caso, somar dois numeros.
-}
+#Estrutura de uma funcao:
+
+nome_da_funcao <- function() { }
 
 #Criando a funcao soma
 
-soma <- function(primeiro_numero, segundo_numero) {
+soma <- function(n1, n2) {
 
-add <- primeiro_numero + segundo_numero
+add <- n1 + n2
 print(add)
 
 }
 ```
   
-Essa eh uma funcao que possui dois argumentos (primeiro_numero, segundo_numero) e utilizando esses argumentos ela realiza um calculo de soma e atribui esse resultado a um objeto que chamamos de "add". Por fim, utilizamos a funcao *print()* para mostrar o valor embutido em "add".
+Essa eh uma funcao que possui dois argumentos (n1, n2) e utilizando esses argumentos ela realiza um calculo de soma e atribui esse resultado a um objeto que chamamos de "add". Por fim, utilizamos a funcao *print()* para mostrar o valor embutido em "add".
   
 Agora, vamos imaginar que talvez a funcao *summary()* nao seja o que voce precisa. Voce precisa mesmo eh de uma funcao que te forneca, media, mediana e desvio padrao dos seus dados.
  
