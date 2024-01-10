@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Diogo J. A. Silva" />
 
 
-<meta name="date" content="2023-12-23" />
+<meta name="date" content="2023-12-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -331,6 +331,7 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <span id="cb17-3"><a href="r-para-iniciantes.html#cb17-3" tabindex="-1"></a><span class="fu">sqrt</span>()</span>
 <span id="cb17-4"><a href="r-para-iniciantes.html#cb17-4" tabindex="-1"></a></span>
 <span id="cb17-5"><a href="r-para-iniciantes.html#cb17-5" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">25</span>)</span></code></pre></div>
+<p>Note que quando nao colocamos (ou erramos) o argumento, a R vai te retornar um erro, geralmente, explicando o problema.</p>
 <p>Existem funcoes dentro do R para todo tipo de coisa! Vamos criar um conjunto de dados e fazer alguns calculos utilizando algumas funcoes.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="r-para-iniciantes.html#cb18-1" tabindex="-1"></a><span class="co">#Notas do terceiro ano A</span></span>
 <span id="cb18-2"><a href="r-para-iniciantes.html#cb18-2" tabindex="-1"></a>notas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="fl">6.6</span>, <span class="fl">7.9</span>, <span class="fl">8.9</span>, <span class="dv">0</span>)</span>
@@ -353,23 +354,20 @@ Vamos criar um novo Script clicando no <strong>botao “A” &gt; New Script</st
 <p>Cada uma dessas funcoes realiza algum calculo em especifico, no caso de <em>summary()</em>, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce. Por enquanto, vamos apenas ser usuario de funcoes e nao criadores. Mas se voce realmente quer saber como criar uma funcao, nao irei te limitar. Abaixo voce encontra um dos exemplos mais simples de funcao. Utilize sua criatividade, seus conhecimentos de objetos, funcoes e vetores para criar alguma funcao. Mas sinta-se a vontade para pular essa parte, uma vez que ela nao eh essencial ao uso do R.</p>
 <div id="criando-uma-funcao-opcional" class="section level4 hasAnchor" number="3.2.3.1">
 <h4><span class="header-section-number">3.2.3.1</span> Criando uma funcao (opcional)<a href="r-para-iniciantes.html#criando-uma-funcao-opcional" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Eu sei, eh uma funcao simples, mas vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de <em>function()</em>.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="r-para-iniciantes.html#cb19-1" tabindex="-1"></a><span class="co">#Estrutura de uma funcao</span></span>
-<span id="cb19-2"><a href="r-para-iniciantes.html#cb19-2" tabindex="-1"></a>nome <span class="ot">&lt;-</span> <span class="cf">function</span>(variables) {</span>
-<span id="cb19-3"><a href="r-para-iniciantes.html#cb19-3" tabindex="-1"></a>    </span>
-<span id="cb19-4"><a href="r-para-iniciantes.html#cb19-4" tabindex="-1"></a>    <span class="co">#dentro das chaves adicionamos o processo que queremos realizar.</span></span>
-<span id="cb19-5"><a href="r-para-iniciantes.html#cb19-5" tabindex="-1"></a>    <span class="co">#Nesse caso, somar dois numeros.</span></span>
-<span id="cb19-6"><a href="r-para-iniciantes.html#cb19-6" tabindex="-1"></a>}</span>
-<span id="cb19-7"><a href="r-para-iniciantes.html#cb19-7" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="r-para-iniciantes.html#cb19-8" tabindex="-1"></a><span class="co">#Criando a funcao soma</span></span>
-<span id="cb19-9"><a href="r-para-iniciantes.html#cb19-9" tabindex="-1"></a></span>
-<span id="cb19-10"><a href="r-para-iniciantes.html#cb19-10" tabindex="-1"></a>soma <span class="ot">&lt;-</span> <span class="cf">function</span>(primeiro_numero, segundo_numero) {</span>
+<p>Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Uma funcao simples mas que vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de <em>function()</em>.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="r-para-iniciantes.html#cb19-1" tabindex="-1"></a><span class="co">#Estrutura de uma funcao:</span></span>
+<span id="cb19-2"><a href="r-para-iniciantes.html#cb19-2" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="r-para-iniciantes.html#cb19-3" tabindex="-1"></a>nome_da_funcao <span class="ot">&lt;-</span> <span class="cf">function</span>() { }</span>
+<span id="cb19-4"><a href="r-para-iniciantes.html#cb19-4" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="r-para-iniciantes.html#cb19-5" tabindex="-1"></a><span class="co">#Criando a funcao soma</span></span>
+<span id="cb19-6"><a href="r-para-iniciantes.html#cb19-6" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="r-para-iniciantes.html#cb19-7" tabindex="-1"></a>soma <span class="ot">&lt;-</span> <span class="cf">function</span>(n1, n2) {</span>
+<span id="cb19-8"><a href="r-para-iniciantes.html#cb19-8" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="r-para-iniciantes.html#cb19-9" tabindex="-1"></a>add <span class="ot">&lt;-</span> n1 <span class="sc">+</span> n2</span>
+<span id="cb19-10"><a href="r-para-iniciantes.html#cb19-10" tabindex="-1"></a><span class="fu">print</span>(add)</span>
 <span id="cb19-11"><a href="r-para-iniciantes.html#cb19-11" tabindex="-1"></a></span>
-<span id="cb19-12"><a href="r-para-iniciantes.html#cb19-12" tabindex="-1"></a>add <span class="ot">&lt;-</span> primeiro_numero <span class="sc">+</span> segundo_numero</span>
-<span id="cb19-13"><a href="r-para-iniciantes.html#cb19-13" tabindex="-1"></a><span class="fu">print</span>(add)</span>
-<span id="cb19-14"><a href="r-para-iniciantes.html#cb19-14" tabindex="-1"></a></span>
-<span id="cb19-15"><a href="r-para-iniciantes.html#cb19-15" tabindex="-1"></a>}</span></code></pre></div>
-<p>Essa eh uma funcao que possui dois argumentos (primeiro_numero, segundo_numero) e utilizando esses argumentos ela realiza um calculo de soma e atribui esse resultado a um objeto que chamamos de “add”. Por fim, utilizamos a funcao <em>print()</em> para mostrar o valor embutido em “add”.</p>
+<span id="cb19-12"><a href="r-para-iniciantes.html#cb19-12" tabindex="-1"></a>}</span></code></pre></div>
+<p>Essa eh uma funcao que possui dois argumentos (n1, n2) e utilizando esses argumentos ela realiza um calculo de soma e atribui esse resultado a um objeto que chamamos de “add”. Por fim, utilizamos a funcao <em>print()</em> para mostrar o valor embutido em “add”.</p>
 <p>Agora, vamos imaginar que talvez a funcao <em>summary()</em> nao seja o que voce precisa. Voce precisa mesmo eh de uma funcao que te forneca, media, mediana e desvio padrao dos seus dados.</p>
 <p>Nesse caso, podemos criar a funcao <em>my_summary()</em> utilizando a funcao <em>function()</em>.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="r-para-iniciantes.html#cb20-1" tabindex="-1"></a><span class="co">#Criando a funcao my_summary()</span></span>

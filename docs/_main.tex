@@ -120,7 +120,7 @@
 
 \title{R Zero - do simples ao complexo}
 \author{Diogo J. A. Silva}
-\date{2023-12-23}
+\date{2023-12-30}
 
 \begin{document}
 \maketitle
@@ -432,6 +432,8 @@ No R, as funcoes servem para processar de alguma forma os dados. O R ja possui a
 \end{Highlighting}
 \end{Shaded}
 
+Note que quando nao colocamos (ou erramos) o argumento, a R vai te retornar um erro, geralmente, explicando o problema.
+
 Existem funcoes dentro do R para todo tipo de coisa! Vamos criar um conjunto de dados e fazer alguns calculos utilizando algumas funcoes.
 
 \begin{Shaded}
@@ -462,29 +464,26 @@ Cada uma dessas funcoes realiza algum calculo em especifico, no caso de \emph{su
 \hypertarget{criando-uma-funcao-opcional}{%
 \subsubsection{Criando uma funcao (opcional)}\label{criando-uma-funcao-opcional}}
 
-Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Eu sei, eh uma funcao simples, mas vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de \emph{function()}.
+Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Uma funcao simples mas que vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de \emph{function()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Estrutura de uma funcao}
-\NormalTok{nome }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(variables) \{}
-    
-    \CommentTok{\#dentro das chaves adicionamos o processo que queremos realizar.}
-    \CommentTok{\#Nesse caso, somar dois numeros.}
-\NormalTok{\}}
+\CommentTok{\#Estrutura de uma funcao:}
+
+\NormalTok{nome\_da\_funcao }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{() \{ \}}
 
 \CommentTok{\#Criando a funcao soma}
 
-\NormalTok{soma }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(primeiro\_numero, segundo\_numero) \{}
+\NormalTok{soma }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n1, n2) \{}
 
-\NormalTok{add }\OtherTok{\textless{}{-}}\NormalTok{ primeiro\_numero }\SpecialCharTok{+}\NormalTok{ segundo\_numero}
+\NormalTok{add }\OtherTok{\textless{}{-}}\NormalTok{ n1 }\SpecialCharTok{+}\NormalTok{ n2}
 \FunctionTok{print}\NormalTok{(add)}
 
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
-Essa eh uma funcao que possui dois argumentos (primeiro\_numero, segundo\_numero) e utilizando esses argumentos ela realiza um calculo de soma e atribui esse resultado a um objeto que chamamos de ``add''. Por fim, utilizamos a funcao \emph{print()} para mostrar o valor embutido em ``add''.
+Essa eh uma funcao que possui dois argumentos (n1, n2) e utilizando esses argumentos ela realiza um calculo de soma e atribui esse resultado a um objeto que chamamos de ``add''. Por fim, utilizamos a funcao \emph{print()} para mostrar o valor embutido em ``add''.
 
 Agora, vamos imaginar que talvez a funcao \emph{summary()} nao seja o que voce precisa. Voce precisa mesmo eh de uma funcao que te forneca, media, mediana e desvio padrao dos seus dados.
 
