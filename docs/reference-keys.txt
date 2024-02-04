@@ -17,7 +17,7 @@ objetos-vetores-e-funções
 objetos
 vetores
 funções
-criando-uma-funcao-opcional
+criando-uma-funcao---parte-i-opcional
 tabela-de-dados
 data-frame
 planilha-de-dados-nativa-do-r
@@ -35,4 +35,7 @@ trabalhando-em-um-projeto-de-r
 etapa-1-limpar-dados
 etapa-2-fazer-analise
 etapa-3-criar-grafico
+etapa-4-replicabilidade
 git-e-github
+criando-funcoes-avancadas
+criando-pacotes

@@ -217,7 +217,7 @@ Vamos ao que importa: entender como o R funciona. O R possui uma linguagem, e tu
 \begin{itemize}
 \tightlist
 \item
-  Utilize este livro realizando os comandos sugeridos diretamente no R Studio. Sinta-se livre para executar outros comandos similares.
+  \emph{Dica: Utilize este livro realizando os comandos sugeridos diretamente no R Studio. Sinta-se livre para executar outros comandos similares.}
 \end{itemize}
 
 Ao fazer isso, ele vai te retornar o valor 2. Você pode utilizar o R como uma calculadora e realizar as operações básicas normalmente. Agora, vamos pedir para ele subtrair 10 - 5, digitando no console e pressionando Enter. Perceba que não faz diferença se você digitar 10-5, 10 - 5, 10-5, ou até mesmo 10 -5. Mas claro que ao escrever códigos, iremos utilizar a forma que mantém o código mais organizado. Minha sugestão é utilizar 10 - 5.
@@ -244,13 +244,12 @@ E dividir:
 \end{Highlighting}
 \end{Shaded}
 
-Você deve ter percebido que cada operação matemática possui seu próprio símbolo. A facilidade de encontrar informações, como realizar potenciação, entre outras, na internet é uma das vantagens do R. Ser gratuito, de código aberto e contar com uma comunidade altamente ativa torna o R singular. Ao longo do livro, você encontrará alguns tópicos nos quais peço que realize pequenas tarefas para compreender o código e desenvolver autonomia.
+Você deve ter percebido que cada operação matemática possui seu próprio símbolo. A facilidade de encontrar informações na internet é uma das vantagens do R. Ser gratuito, de código aberto e contar com uma comunidade altamente ativa torna o R singular. Ao longo do livro, você encontrará alguns tópicos nos quais peço que realize pequenas tarefas para compreender o código e desenvolver autonomia.
 
 \begin{itemize}
 \tightlist
 \item
-  Pesquise como realizar potenciacao no R e calcule 2 elevado a 2.
-  \emph{Dica: voce pode utilizar o chatgpt.}
+  \emph{Dica: Pesquise como realizar potenciacao no R e calcule 2 elevado a 2. voce pode utilizar o chatgpt!}
 \end{itemize}
 
 Massa! Mas você deve concordar comigo que essa forma de interagir com o R não é muito eficiente. Apesar de mostrar o histórico, se você quiser realizar a primeira operação que fizemos (1 + 1), precisará digitar novamente sempre que quiser fazer algo. Por esse motivo, a janela de script (Figura 2 - janela 1) se torna tão importante.
@@ -258,7 +257,7 @@ Massa! Mas você deve concordar comigo que essa forma de interagir com o R não 
 Vamos criar um script e utilizá-lo em uma situação prática. Mas antes, precisamos aprender mais alguns botões. Veja a figura abaixo:
 
 \includegraphics{img/Figura3_script.png}
-Vamos criar um novo Script clicando no \textbf{botão ``A'' \textgreater{} New Script}. No Script, podemos digitar livremente sem que o código seja executado; inclusive, podemos fazer comentários utilizando o símbolo \textbf{\#} antes do que foi digitado. Podemos dar enter sem enviar o código para o R. O código apenas será executado se clicarmos na linha do código e apertarmos o botão \textbf{``C''} (Run) ou \textbf{Ctrl + Enter}. Copie e cole o código abaixo no seu script e execute, apertando Ctrl + Enter linha por linha. Perceba que o \textbf{\#} impede que o nome Script seja executado. Se você executar Script sem a \#, o R não vai entender e vai dar erro.
+Vamos criar um novo Script clicando no \textbf{botão ``A'' \textgreater{} New Script}. No Script, podemos digitar livremente sem que o código seja executado; inclusive, podemos fazer comentários utilizando o símbolo \textbf{\#} antes do que foi digitado. Podemos apertar \textbf{Enter} sem enviar o código para o R. O código apenas será executado se clicarmos na linha do código e apertarmos o botão \textbf{``C''} (Run) ou \textbf{Ctrl + Enter}. Copie e cole o código abaixo no seu script e execute, apertando Ctrl + Enter linha por linha. Perceba que o \textbf{\#} impede que o nome Script seja executado. Se você executar Script sem a \#, o R não vai entender e vai dar erro (voce pode tentar fazer isso para ver o que acontece).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -279,13 +278,13 @@ O comentário também pode ser feito na mesma linha após o código, permitindo 
 2*50 #Esse codigo realiza uma multiplicacao.
 \end{verbatim}
 
-Por fim, voce pode salvar o Script para acessá-lo sempre que quiser clicando no \textbf{botao ``B''} e selecionando um local no computador.
+Por fim, voce pode salvar o Script para acessá-lo sempre que quiser clicando no \textbf{botao ``B''} e selecionando um local no computador. Voce pode acessar esse script salvo sempre que quiser retornar e continuar um trabalho.
 
 \begin{itemize}
-\tightlist
 \item
-  \emph{Crie um mini script com diferentes funções matematicas do jeito que voce quiser
-  Incluindo comentarios e explicando como realizar isso no R. Use o chatgpt para criar equacoes mais complexas so para ver o poder do R como uma calculadora e como ferramenta auxiliar.}
+  \emph{Dica: Crie um mini script com diferentes funções matematicas do jeito que voce quiser, incluindo comentarios e explicando como realizar isso no R. Use o chatgpt para criar equacoes mais complexas so para ver o poder do R como uma calculadora e como ferramenta auxiliar.}
+\item
+  \emph{Outra dica: sempre que você estiver no computador e quiser fazer algum cálculo, por mais simples que seja, não use uma calculadora (do PC ou celular), use o R. Praticar é a chave!}
 \end{itemize}
 
 \hypertarget{objetos-vetores-e-funuxe7uxf5es}{%
@@ -294,7 +293,7 @@ Por fim, voce pode salvar o Script para acessá-lo sempre que quiser clicando no
 \hypertarget{objetos}{%
 \subsection{Objetos}\label{objetos}}
 
-Uma das funções mais importantes do R é a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o número 1 será atribuído à letra ``\textbf{a}'', e para isso utilizamos o sinal de igual (=). O ``\textbf{a}'' agora é considerado um objeto e aparecerá na janela de Environment (Figura 2 - janela 3).
+Uma das funções mais importantes do R é a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o número 1 será atribuído à letra ``\textbf{a}'', e para isso utilizamos o sinal de igual (\textbf{=}). O ``\textbf{a}'' agora é considerado um objeto e aparecerá na janela de Environment (Figura 2 - janela 3).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -308,7 +307,7 @@ Entretanto, o sinal de atribuição mais utilizado é a seta (\textbf{\textless-
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Criando Objetos}
+\CommentTok{\# Criando Objetos}
 \NormalTok{c }\OtherTok{\textless{}{-}} \DecValTok{3} \CommentTok{\# c recebe 3}
 \NormalTok{d }\OtherTok{\textless{}{-}} \DecValTok{5} \CommentTok{\# atribuimos 5 ao d}
 \end{Highlighting}
@@ -340,7 +339,7 @@ Com esses objetos podemos realizar operacoes matematicas.
 \end{Highlighting}
 \end{Shaded}
 
-\emph{Nesse momento, nobre leitor, eu espero que voce esteja realizando diferentes operacoes matematicas, utilizando diferentes atribuicoes.}
+\emph{Nesse momento, meu consagrado aprendiz, eu espero que você esteja realizando diferentes operações matemáticas, utilizando diferentes atribuições}
 
 Podemos atribuir valores em palavras inteiras. Como por exemplo, atribuir 10 ao objeto chamado ``nota'' (ou qualquer outra palavra).
 
@@ -351,9 +350,9 @@ Podemos atribuir valores em palavras inteiras. Como por exemplo, atribuir 10 ao 
 \end{Highlighting}
 \end{Shaded}
 
-Perceba que o R detecta as diferencas entre letras maiusculas e minusculas. Portanto, ``nota'' eh diferente de ``Nota''. Muito cuidado com isso. Para evitar erros, sugiro sempre utilizar letras minusculas.
+Perceba que o R detecta as diferenças entre letras maiúsculas (caixa alta) e minúsculas (caixa baixa). Portanto, ``nota'' é diferente de ``Nota''. Muito cuidado com isso. Conheço um rapaz que sempre aparece desesperado dizendo que o código não está funcionando, e 100\% das vezes, é um erro de digitação. Para evitar erros, sugiro sempre utilizar letras minúsculas.
 
-Alguns simbolos nao podem ser utilizados para criar objetos, uma vez que eles sao reservados no R. Como por exemplo o ``-'', ou TRUE / FALSE. Perceba que ao rodar os codigos abaixo, o R ira retornar um erro.
+Alguns símbolos não podem ser utilizados para criar objetos, uma vez que são reservados para finalidades internas no R, como por exemplo o `\textbf{-}', ou \textbf{TRUE} / \textbf{FALSE}. Perceba que ao rodar os códigos abaixo, o R irá retornar um erro.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -363,7 +362,7 @@ Alguns simbolos nao podem ser utilizados para criar objetos, uma vez que eles sa
 \end{Highlighting}
 \end{Shaded}
 
-Tambem podemos atribuir uma equacao inteira a um objeto. Na verdade podemos atribuir quase tudo a um objeto, graficos, resultados, planilhas, etc. Mas isso veremos mais a frente.
+Também podemos atribuir uma equação inteira a um objeto. Na verdade, podemos atribuir quase tudo a um objeto: gráficos, resultados, planilhas, etc. Mas isso veremos mais adiante.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -386,55 +385,58 @@ Alem disso tudo, podemos atribuir um texto a um objeto. Mas para isso o texto pr
 \end{Highlighting}
 \end{Shaded}
 
-Mas para o que serve tudo isso? Para que aprender essas coisas? A resposta principal eh a capacidade de automatizacao e reprodutibilidade das suas analises.
+Mas para que serve tudo isso? Por que aprender essas coisas de objetos, atribuições, e sei que lá? A resposta principal é a capacidade de automação e reprodutibilidade das suas análises. Você poderia usar outro programa estatístico? Poderia. Mas confie que o negócio aqui não possui limites.
 
-Vamos criar um exemplo pratico para fixar conceitos. Vamos imaginar que queremos calcular quanto gastamos de aluguel por mes e ano, considerando que pagamos o aluguel semanalmente. Vamos supor que o aluguel por semana seja 200 reais.
+Vamos criar um exemplo prático para fixar conceitos. Vamos imaginar que queremos calcular quanto gastamos de aluguel por mês e por ano, considerando que pagamos o aluguel semanalmente. Vamos supor que o aluguel por semana seja de 200 reais.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#Calculando o aluguel}
 
-\NormalTok{aluguel\_semana }\OtherTok{\textless{}{-}} \DecValTok{200}              \CommentTok{\#valor do aluguel por semana}
+\NormalTok{aluguel\_semana }\OtherTok{\textless{}{-}} \DecValTok{200}              \CommentTok{\#valor do aluguel por semana (em reais)}
 \NormalTok{aluguel\_mes }\OtherTok{\textless{}{-}} \DecValTok{4} \SpecialCharTok{*}\NormalTok{ aluguel\_semana  }\CommentTok{\#considerando que 1 mes possui 4 semanas.}
-\NormalTok{aluguel\_ano }\OtherTok{\textless{}{-}} \DecValTok{12} \SpecialCharTok{*}\NormalTok{ aluguel\_mes    }\CommentTok{\#o ano possui 12 meses eh serio}
+\NormalTok{aluguel\_ano }\OtherTok{\textless{}{-}} \DecValTok{12} \SpecialCharTok{*}\NormalTok{ aluguel\_mes    }\CommentTok{\#Para o aluguel por ano basta apenas multiplicar o aluguem mes por 12.}
 
+\CommentTok{\#Aqui vemos o resultado de cada um deles (Ctrl + Enter neles)}
 \NormalTok{aluguel\_semana}
 \NormalTok{aluguel\_mes}
 \NormalTok{aluguel\_ano}
 \end{Highlighting}
 \end{Shaded}
 
-Veja que massa! Criamos um script para calcular o valor do aluguel por mes e ano. Com esse script, voce pode calcular facilmente diferentes situacoes, simulando diferentes valores de aluguel. Para isso, eh so alterar o valor 200 de aluguel\_semana para o valor desejado e rodar linha por linha.
+Veja que massa! Criamos um script para calcular o valor do aluguel por mês e por ano. Com esse script, você pode calcular facilmente diferentes situações, simulando diferentes valores de aluguel. Para isso, é só alterar o valor 200 de \textbf{aluguel\_semana} para o valor desejado e rodar linha por linha.
 
 \begin{itemize}
 \tightlist
 \item
-  \emph{Substititua ``aluguel\_semana \textless- 200'' por ``aluguel\_semana \textless- 247.53}''
+  \emph{Dica: crie o objeto aluguel\_dia que te dara a possibilidade de contabilizar qualquer quantidade de dias, bastando apenas multiplicar o objeto (aluguel\_dia) pela quantidade de dias desejado.}
 \end{itemize}
 
-Se voce pode fazer isso para calcular o aluguel, imagina o que esse sistema pode fazer com sua analise de dados.
+Se você pode fazer isso para calcular o aluguel, imagine o que esse sistema pode fazer pela sua análise de dados.
 
 \hypertarget{vetores}{%
 \subsection{Vetores}\label{vetores}}
 
-Os objetos com multiplos valores de um mesmo tipo sao chamados de vetores. Para criar um objeto vetor inserimos os valores dentro de parenteses separados por virgulas. Virgulas no R servem para separar o codigo. Entao se voce quiser digitar numeros quebrados nunca utilize \textbf{virgula}, utilize \textbf{ponto}.
+Os objetos com múltiplos valores do mesmo tipo são chamados de vetores. Para criar um vetor, inserimos os valores dentro de parênteses separados por vírgulas. Vírgulas no R servem para separar o código. Então, se você quiser digitar números quebrados, nunca utilize \textbf{vírgula}, utilize \textbf{ponto}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{vetor.A }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{10.5}\NormalTok{, }\FloatTok{20.6}\NormalTok{, }\FloatTok{30.2}\NormalTok{)}
-\NormalTok{vetor.B }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{)}
-\NormalTok{melhores.comidas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"coxinha"}\NormalTok{,}\StringTok{"pastel"}\NormalTok{,}\StringTok{"lasanha"}\NormalTok{) }\CommentTok{\#Lembre{-}se, caracteres precisam estar dentro de aspas.}
+\NormalTok{vetor.a }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{15}\NormalTok{)}
+\NormalTok{vetor.b }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\FloatTok{2.2}\NormalTok{, }\FloatTok{2.1}\NormalTok{)}
+\NormalTok{melhores\_comidas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"coxinha"}\NormalTok{,}\StringTok{"pastel"}\NormalTok{,}\StringTok{"lasanha"}\NormalTok{) }\CommentTok{\#Lembre{-}se, caracteres precisam estar dentro de aspas.}
 
-\NormalTok{vetor.A}
-\NormalTok{vetor.B}
-\NormalTok{melhores.comidas}
+\NormalTok{vetor.a}
+\NormalTok{vetor.b}
+\NormalTok{Melhores\_comidas}
 \end{Highlighting}
 \end{Shaded}
+
+Opa, deu um erro, né? Estou marcando o tempo de quanto tempo você demorou para perceber que o nome do objeto é ``melhores\_comidas'' e não ``Melhores\_comidas'' com M maiúsculo. É só pra ficar ligado.
 
 \hypertarget{funuxe7uxf5es}{%
 \subsection{Funções}\label{funuxe7uxf5es}}
 
-No R, as funcoes servem para processar de alguma forma os dados. O R ja possui algumas funcoes nativas, como por exemplo para calcular a raiz quadrada de um numero. A funcao possui um nome, geralmente associado ao que ela faz, e argumentos que eh o tipo de dado que voce precisa inserir nela para ser calculado. Vamos dar uma olhada na funcao \emph{sqrt()}. A sigla ``sqrt'' representa ``square root'' em ingles. Primeiro vamos rodar a funcao sem argumentos, apenas o \emph{sqrt()} e depois inserimos o argumento, que nesse caso, eh um numero.
+No R, as funções servem para processar de alguma forma os dados. O R já possui algumas funções nativas, como, por exemplo, para calcular a raiz quadrada de um número. A função possui um nome, geralmente associado ao que ela faz, e argumentos que são o tipo de dado que você precisa inserir nela para ser calculado. Vamos dar uma olhada na função sqrt(). A sigla ``sqrt'' representa ``square root'' em inglês. Primeiro, vamos rodar a função sem argumentos, apenas o \textbf{sqrt()}, e depois inserimos o argumento, que nesse caso, é um número.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -446,14 +448,15 @@ No R, as funcoes servem para processar de alguma forma os dados. O R ja possui a
 \end{Highlighting}
 \end{Shaded}
 
-Note que quando nao colocamos (ou erramos) o argumento, a R vai te retornar um erro, geralmente, explicando o problema.
+Note que quando não colocamos (ou erramos) o argumento, o R vai te retornar um erro, geralmente, explicando o problema.
 
-Existem funcoes dentro do R para todo tipo de coisa! Vamos criar um conjunto de dados e fazer alguns calculos utilizando algumas funcoes.
+Existem funções dentro do R para todo tipo de coisa! Vamos criar um vetor (conjunto de dados) e fazer alguns cálculos utilizando algumas funções.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#Notas do terceiro ano A}
-\NormalTok{notas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{6.6}\NormalTok{, }\FloatTok{7.9}\NormalTok{, }\FloatTok{8.9}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\CommentTok{\#Cada um desses numeros representa uma nota de um aluno}
+\NormalTok{notas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{6.6}\NormalTok{, }\FloatTok{7.9}\NormalTok{, }\FloatTok{8.9}\NormalTok{, }\FloatTok{9.5}\NormalTok{)}
 
 \CommentTok{\#Qual a media da turma?}
 \FunctionTok{mean}\NormalTok{(notas)}
@@ -462,7 +465,7 @@ Existem funcoes dentro do R para todo tipo de coisa! Vamos criar um conjunto de 
 \FunctionTok{median}\NormalTok{(notas)}
 
 \CommentTok{\#Qual o desvio padrao das notas?}
-\FunctionTok{sd}\NormalTok{(notas)}
+\FunctionTok{sd}\NormalTok{(notas) }\CommentTok{\#sd vem de standard deviation}
 
 \CommentTok{\#Qual a menor e a maior nota?}
 \FunctionTok{min}\NormalTok{(notas)}
@@ -473,69 +476,57 @@ Existem funcoes dentro do R para todo tipo de coisa! Vamos criar um conjunto de 
 \end{Highlighting}
 \end{Shaded}
 
-Cada uma dessas funcoes realiza algum calculo em especifico, no caso de \emph{summary()}, ela realiza o calculo da media, mediana, maximo, minimo e quartis, tudo ao mesmo tempo. Talvez em algum momento voce nao encontre a funcao que voce precisa para determinada tarefa, nesse caso, voce pode criar sua propria funcao! Voce pode criar uma funcao utilizando outras funcoes, para fazer algo especifico para voce. Por enquanto, vamos apenas ser usuario de funcoes e nao criadores. Mas se voce realmente quer saber como criar uma funcao, nao irei te limitar. Abaixo voce encontra um dos exemplos mais simples de funcao. Utilize sua criatividade, seus conhecimentos de objetos, funcoes e vetores para criar alguma funcao. Mas sinta-se a vontade para pular essa parte, uma vez que ela nao eh essencial ao uso do R.
+Cada uma dessas funções realiza algum cálculo específico. No caso de summary(), ela realiza o cálculo da média, mediana, máximo, mínimo e quartis, tudo ao mesmo tempo. Talvez em algum momento você não encontre a função que precisa para determinada tarefa; nesse caso, você pode criar sua própria função! Pode criar uma função utilizando outras funções para fazer algo específico para você. Por enquanto, vamos apenas ser usuários de funções e não criadores. Mas se você realmente quer saber como criar uma função, não irei te limitar. Abaixo, você encontra um dos exemplos mais simples de função. Utilize sua criatividade, seus conhecimentos de objetos, funções e vetores para criar alguma função. Mas sinta-se à vontade para pular essa parte, uma vez que ela não é essencial ao uso do R.
 
-\hypertarget{criando-uma-funcao-opcional}{%
-\subsubsection{Criando uma funcao (opcional)}\label{criando-uma-funcao-opcional}}
+\hypertarget{criando-uma-funcao---parte-i-opcional}{%
+\subsubsection{Criando uma funcao - parte I (opcional)}\label{criando-uma-funcao---parte-i-opcional}}
 
-Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Uma funcao simples mas que vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao, precisamos utilizar a funcao chamada de \emph{function()}.
+Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Uma funcao simples mas que vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao utilizamos uma funcao chamada ``\textbf{function()}''. Essa eh uma funcao que possui dois argumentos numericos que chamamos de x e y. A funcao vai pegar esses dois valores e realizar um calculo, que no caso, eh uma soma simples. O resultado da soma sera atribuido a um objeto chamado ``resultado'', e ele sera mostrado atraves da funcao ``print''. Agora que criamos a funcao, vamos utiliza-la para somar dois numeros qualquer.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Estrutura de uma funcao:}
-
-\NormalTok{nome\_da\_funcao }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{() \{ \}}
-
 \CommentTok{\#Criando a funcao soma}
 
-\NormalTok{soma }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n1, n2) \{}
+\NormalTok{soma }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x, y) \{}
 
-\NormalTok{add }\OtherTok{\textless{}{-}}\NormalTok{ n1 }\SpecialCharTok{+}\NormalTok{ n2}
-\FunctionTok{print}\NormalTok{(add)}
-
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-Essa eh uma funcao que possui dois argumentos (n1, n2) e utilizando esses argumentos ela realiza um calculo de soma e atribui esse resultado a um objeto que chamamos de ``add''. Por fim, utilizamos a funcao \emph{print()} para mostrar o valor embutido em ``add''.
-
-Agora, vamos imaginar que talvez a funcao \emph{summary()} nao seja o que voce precisa. Voce precisa mesmo eh de uma funcao que te forneca, media, mediana e desvio padrao dos seus dados.
-
-Nesse caso, podemos criar a funcao \emph{my\_summary()} utilizando a funcao \emph{function()}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\#Criando a funcao my\_summary()}
-
-\NormalTok{my\_summary }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(v) \{}
-
-\NormalTok{media   }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v)}
-\NormalTok{mediana }\OtherTok{\textless{}{-}} \FunctionTok{median}\NormalTok{(v)}
-\NormalTok{desvio  }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(v)}
-
-\NormalTok{resultado }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(media, mediana, desvio)}
+\NormalTok{resultado }\OtherTok{\textless{}{-}}\NormalTok{ x }\SpecialCharTok{+}\NormalTok{ y}
 \FunctionTok{print}\NormalTok{(resultado)}
 
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
-Calma, tem muita coisa ai, mas eh tudo o que a gente ja sabe. Na funcao \emph{my\_summary()}, precisamos inserir apenas um argumento do tipo vetor, como por exemplo, nosso objeto ``notas''. Esse argumento sera aplicado a tudo que possuir o caractere ``v'' dentro da funcao. O ``v'' a gente definiu em function(v). Mais uma vez, as chaves \textbf{\{\}} que abre e fecha contem tudo o que a gente quer que a funcao realize, linha por linha. Primeiro, queremos que a nossa funcao calcule a media e atribua o resultado a um objeto chamado ``media''. Segundo, calcular a mediana e atribuir o resultado a um objeto chamado ``mediana'', depois o desvio. Depois criamos um vetor chamado de ``resultado'' que armazena os objetos ``media'', ``mediana'' e ``desvio''. Em seguida, pedimos para o R nos mostrar os valores desse vetor ``resultado'' utilizando a funcao \emph{print()}.
+Veja que: o nome ``soma'', a gente que criou, poderia ter sido ``add'' ou ``adição''. Os argumentos da função ficam dentro do parênteses; se existir mais de um, são separados por vírgulas. Dentro das chaves, vem todo o processamento que a gente quis que a função realizasse, no caso, apenas uma soma, e que esse resultado seja mostrado para a gente.
 
-Vamos usar nossa funcao personalizada para calcular nosso objeto ``notas''.
+Agora vamos usar essa função. Uma vez criada, ela fica armazenada no R e podemos utilizá-la. Para usá-la, só precisamos fornecer dois números para que esses sejam somados.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Notas do terceiro ano A}
-\NormalTok{notas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{6.6}\NormalTok{, }\FloatTok{7.9}\NormalTok{, }\FloatTok{8.9}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\CommentTok{\#Utilizando a funcao soma}
 
-\CommentTok{\#Utilizando a funcao my\_summary()}
-
-\FunctionTok{my\_summary}\NormalTok{(notas)}
+\FunctionTok{soma}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{) }\CommentTok{\#pode colocar qualquer numero}
 \end{Highlighting}
 \end{Shaded}
 
-Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para frente, a gente ve como criar funcoes mais elaboradas, como por exemplo para simular gastos de alugueis como anteriormente.
+Agora, vamos criar uma função para calcular a velocidade média. Para isso, a gente precisa dividir a distância pelo tempo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Criando funcao}
+\NormalTok{vm }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(distancia, tempo) \{}
+\NormalTok{  resultado }\OtherTok{\textless{}{-}}\NormalTok{ distancia }\SpecialCharTok{/}\NormalTok{ tempo}
+  \FunctionTok{print}\NormalTok{(resultado)}
+\NormalTok{\}}
+
+\CommentTok{\#Utilizando funcao vm (velocidade media)}
+\CommentTok{\#a distancia percorrida foi 100km}
+\CommentTok{\#o tempo gasto foi 2 horas}
+
+\FunctionTok{vm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DecValTok{2}\NormalTok{) }\CommentTok{\#resultado deve ser interpretado em km por hora.}
+\end{Highlighting}
+\end{Shaded}
+
+Você deve estar dizendo ``vish que lezeira, já daria pra ter feito direto haha''. Sim, daria, mas a ideia é aprender a criar uma função. Mais para frente voce vai ver o potencial disso.
 
 \hypertarget{tabela-de-dados}{%
 \section{Tabela de dados}\label{tabela-de-dados}}
@@ -543,18 +534,20 @@ Veja que a funcao retornou os valores do nosso vetor, mas apenas isso. Mais para
 \hypertarget{data-frame}{%
 \subsection{Data frame}\label{data-frame}}
 
-Data frame nada mais eh do que uma tabela de dados. Vamos direto ao que interessa e usar a funcao \emph{data.frame()} para criar uma tabela. Iremos criar as notas de 10 alunos e seus respectivos nomes. Se voce ainda estiver na mesma sessao de R, podemos ver que o objeto ``notas'' ainda esta salvo na janela 3 (Environment e History) e podemos aproveita-lo. De qualquer forma vou recriar ``notas'', caso por algum motivo voce SAIU do R, um absurdo, mas acontece.
+DataFrame nada mais é do que uma tabela de dados. Vamos direto ao que interessa e usar a função \emph{data.frame()} para criar uma tabela. Iremos criar as notas de 10 alunos e seus respectivos nomes. Se você ainda estiver na mesma sessão de R, podemos ver que o objeto ``notas'' ainda está salvo na janela 3 (Environment e History) e podemos aproveitá-lo. De qualquer forma, vou recriar ``notas'', caso por algum motivo você TENHA SAÍDO do R, um absurdo, mas acontece.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\#Criando um data frame contendo as notas e os nomes de cada aluno}
 
-\CommentTok{\#Primeiro criamos as notas}
-\NormalTok{notas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{6.6}\NormalTok{, }\FloatTok{7.9}\NormalTok{, }\FloatTok{8.9}\NormalTok{, }\DecValTok{0}\NormalTok{) }
+\CommentTok{\#Primeiro criamos as notas (cada numero representa a nota de um aluno)}
+\NormalTok{notas }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{6.6}\NormalTok{, }\FloatTok{7.9}\NormalTok{, }\FloatTok{8.9}\NormalTok{, }\FloatTok{9.5}\NormalTok{) }
 
-\CommentTok{\#Segundo criamos os nomes}
-\NormalTok{nomes }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Marilia"}\NormalTok{, }\StringTok{"Jonatas"}\NormalTok{, }\StringTok{"Guilherme"}\NormalTok{, }\StringTok{"Camila"}\NormalTok{, }
-\StringTok{"Fiuza"}\NormalTok{, }\StringTok{"Brunno"}\NormalTok{, }\StringTok{"Diego"}\NormalTok{, }\StringTok{"Mathews"}\NormalTok{, }\StringTok{"Biny"}\NormalTok{, }\StringTok{"Rebecca"}\NormalTok{)}
+\CommentTok{\#Segundo criamos os nomes (na ordem das notas)}
+\CommentTok{\#Ex: o primeiro valor do objeto nota (10) representara a nota de Marilia que eh o primeiro nome.}
+
+\NormalTok{nomes }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Marilia"}\NormalTok{, }\StringTok{"Jonatas"}\NormalTok{, }\StringTok{"Guilherme"}\NormalTok{, }\StringTok{"Thiago"}\NormalTok{, }
+\StringTok{"Fifi"}\NormalTok{, }\StringTok{"Brunnin"}\NormalTok{, }\StringTok{"Diego"}\NormalTok{, }\StringTok{"Mazana"}\NormalTok{, }\StringTok{"Bruna"}\NormalTok{, }\StringTok{"Vitoria"}\NormalTok{)}
 
 \CommentTok{\#Terceiro utilizamos a funcao data.frame() para criar a tabela}
 \NormalTok{tabela }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(nomes, notas)}
@@ -562,17 +555,17 @@ Data frame nada mais eh do que uma tabela de dados. Vamos direto ao que interess
 \end{Highlighting}
 \end{Shaded}
 
-Esse data.frame (tabela), eh uma forma muito simplificada das tabelas que iremos importar de nossos dados reais. Porem, ela nos serve muito bem para entendermos como funciona uma planilha no R.
+Esse data.frame (tabela) é uma forma muito simplificada das tabelas que iremos importar de nossos dados reais. No entanto, ela nos serve muito bem para entender como funciona uma planilha no R.
 
-A partir de agora eu quero que voce perceba uma coisa muito importante e leve isso para a vida. Uma planilha organizada deve ser construida da seguinte forma:
+A partir de agora, quero que você perceba uma coisa muito importante e leve isso para a vida. Uma planilha organizada deve ser construída da seguinte forma:
 
--Variaveis sao colunas;
--Observacoes sao linhas;
--Cada valor na sua celula.
+-Variáveis são colunas;
+-Observações são linhas;
+-Cada valor na sua célula.
 
-Com essa formatacao de planilha, voce consegue fazer quase tudo no R, para manipulacao de dados, construcao de graficos e analises estatisticas.
+Com essa formatação de planilha, você consegue fazer quase tudo no R, para manipulação de dados, construção de gráficos e análises estatísticas.
 
-Logo, para voce acessar uma variavel de uma tabela, voce pode usar o \textbf{\$} da seguinte forma:
+Logo, para você acessar uma variável de uma tabela, usamos o \textbf{\$} da seguinte forma:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -583,7 +576,7 @@ Logo, para voce acessar uma variavel de uma tabela, voce pode usar o \textbf{\$}
 \end{Highlighting}
 \end{Shaded}
 
-Perceba que quando voce digita \textbf{tabela\$} voce pode apertar a tecla TAB para mostrar e selecionar as variaveis de sua tabela. Caso alguma nota esteja errada e voce queira corrigi-la, voce pode utilizar a funcao \emph{fix()}. Essa funcao abre uma janela onde voce pode clicar e modificar o valor desejado.
+Perceba que quando você digita \textbf{tabela\$}, pode apertar a tecla TAB para mostrar e selecionar as variáveis de sua tabela. Caso alguma nota esteja errada e você queira corrigi-la, pode utilizar a função \emph{fix()}. Essa função abre uma janela onde você pode clicar e modificar o valor desejado.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -592,17 +585,18 @@ Perceba que quando voce digita \textbf{tabela\$} voce pode apertar a tecla TAB p
 \end{Highlighting}
 \end{Shaded}
 
-Quse nunca utilizamos a funcao \emph{fix()} para corrigir os dados, mas eh interessante saber que o R pode abrir novas janelas e criar coisas interativas.
+Quase nunca utilizamos a função \emph{fix()} para corrigir os dados, mas é interessante saber que o R pode abrir novas janelas e criar coisas interativas.
 
-Agora sabendo como acessar as variaveis de uma tabela, voce pode utilizar funcoes para calcular uma variavel especifica do data frame.
+Agora, sabendo como acessar as variáveis de uma tabela, você pode utilizar funções para calcular uma variável específica do data frame.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\#Calculando a media da variavel notas da tabela}
 \FunctionTok{mean}\NormalTok{(tabela}\SpecialCharTok{$}\NormalTok{notas)}
 \end{Highlighting}
 \end{Shaded}
 
-Utilize as funcoes abaixo para calcular mediana, maximo, minimo:
+Utilize as funções abaixo para calcular mediana, máximo, mínimo:
 
 \begin{itemize}
 \tightlist
@@ -619,7 +613,7 @@ Utilize as funcoes abaixo para calcular mediana, maximo, minimo:
 \hypertarget{planilha-de-dados-nativa-do-r}{%
 \subsection{Planilha de dados nativa do R}\label{planilha-de-dados-nativa-do-r}}
 
-O R possui um banco de dados que nos fornece algumas tabelas de estudo reais o quais podemos utilizar para treinar nossas habilidades. Para isso, precisamos dizer para o R qual banco de dados queremos invocar utilizando a funcao \emph{data()}.
+O R possui um banco de dados que nos fornece algumas tabelas de estudo reais, as quais podemos utilizar para treinar nossas habilidades. Para isso, precisamos dizer para o R qual banco de dados queremos invocar utilizando a função \emph{data()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -643,13 +637,14 @@ Veja que ao usarmos a funcao \emph{str()} o R retorna a natureza das variaveis d
   \emph{Factor} significa que eh uma variavel qualitativa com fatores (setosa, versicolor, virginica).
 \end{itemize}
 
-As vezes a planilha eh importada com as variaveis mal formatadas e isso pode gerar problemas de reconhecimento por parte do R. Nesse caso, eh sempre interessante realizar a verificacao dos dados utilizando a funcao \emph{str()} ou outras funcoes similares. Caso o R nao esteja identificando as variaveis corretamente, duas funcoes muito uteis podem ser utilizadas: \emph{as.numeric()} e \emph{as.factor()}.
+Às vezes, a planilha é importada com as variáveis mal formatadas, e isso pode gerar problemas de reconhecimento por parte do R. Nesse caso, é sempre interessante realizar a verificação dos dados utilizando a função \emph{str()} ou outras funções similares. Caso o R não esteja identificando as variáveis corretamente, duas funções muito úteis podem ser utilizadas: \emph{as.numeric()} e \emph{as.factor()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{data}\NormalTok{(iris)}
 
 \CommentTok{\#Convertendo variavel para numerica}
+\CommentTok{\#a variavel sepal lenght da tabela iris recebe ela mesma transformado em numera}
 \NormalTok{iris}\SpecialCharTok{$}\NormalTok{Sepal.Length }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Length)}
 
 \CommentTok{\#Convertendo variavel para fator}
@@ -657,9 +652,9 @@ As vezes a planilha eh importada com as variaveis mal formatadas e isso pode ger
 \end{Highlighting}
 \end{Shaded}
 
-Basicamente voce ta transformando em numerica a variavel Sepal length da planilha iris e atribuindo a ela mesma. Dessa forma, voce faz a alteracao de forma permanente. A mesma coisa ocorre com as.factor.
+Basicamente, você está transformando em numérica a variável Sepal length da planilha iris e atribuindo a ela mesma. Dessa forma, você faz a alteração de forma permanente. A mesma coisa ocorre com \emph{as.factor()}.
 
-Vamos brincar um pouco com a planilha iris. Primeiro veja que ela esta construida de forma organizada (variaveis nas colunas, observacoes nas linhas, cada celula um valor). Podemos entao realizar o summary() para saber a media, mediana, maximo e minimo da largura da petala (Petal.Width).
+Vamos brincar um pouco com a planilha iris. Primeiro, veja que ela está construída de forma organizada (variáveis nas colunas, observações nas linhas, cada célula um valor). Podemos então realizar o \emph{summary()} para saber a média, mediana, máximo e mínimo da largura da pétala (Petal.Width).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -667,10 +662,11 @@ Vamos brincar um pouco com a planilha iris. Primeiro veja que ela esta construid
 \end{Highlighting}
 \end{Shaded}
 
-Porem note que existe 3 especies diferentes. A funcao \emph{summary()} nao leva isso em consideracao. O ideal seria calcular o \emph{summary()} para cada especie. Para isso temos uma funcao muito legal chamada \emph{tapply()}, onde: o primeiro argumento eh a variavel numerica, o segundo a variavel com os fatores, e o terceiro argumento eh a funcao que voce quer aplicar.
+Porém, note que existem 3 espécies diferentes. A função \emph{summary()} não leva isso em consideração. O ideal seria calcular o \emph{summary()} para cada espécie. Para isso, temos uma função muito legal chamada \emph{tapply()}, onde: o primeiro argumento é a variável numérica, o segundo é a variável com os fatores, e o terceiro argumento é a função que você quer aplicar.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\#Calculando por especie}
 \FunctionTok{tapply}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Petal.Width, iris}\SpecialCharTok{$}\NormalTok{Species, summary)}
 \end{Highlighting}
 \end{Shaded}
@@ -678,11 +674,11 @@ Porem note que existe 3 especies diferentes. A funcao \emph{summary()} nao leva 
 \hypertarget{importando-sua-planilha}{%
 \subsection{Importando sua planilha}\label{importando-sua-planilha}}
 
-No RStudio podemos importar uma planilha do formato excel (xlsx) utilizando o botao na janela Environment (superior direita):
+No RStudio, podemos importar uma planilha no formato Excel (xlsx) utilizando o botão na janela Environment (canto superior direito):
 
-Environment \textgreater{} Import Dataset \textgreater{} From excel
+\emph{Environment \textgreater{} Import Dataset \textgreater{} From Excel}
 
-Acho pouco eficiente ensinar a importar dados de um diretorio. Acho pouco pratico, uma vez que temos o botao de importar. Ao inves disso, irei treina-lo a utilizar projetos de R reprodutiveis e organizados. Ao trabalhar no R, voce seguira um protocolo basico de como tratar os dados a serem analisados. Ao longo do tempo, voce sera capaz de otimizar esse protocolo e aplicar para quase todo tipo de dado que voce possuir. De qualquer forma, saiba que o R trabalha com uma pasta especifica chamada de diretorio, e para saber qual eh o seu diretorio padrao, utilize a funcao \emph{getwd()}:
+Acho pouco eficiente ensinar a importar dados de um diretório. Acho pouco prático, uma vez que temos o botão de importar. Ao invés disso, irei treiná-lo a utilizar projetos de R reprodutíveis e organizados. Ao trabalhar no R, você seguirá um protocolo básico de como tratar os dados a serem analisados. Ao longo do tempo, você será capaz de otimizar esse protocolo e aplicá-lo para quase todo tipo de dado que você possuir. De qualquer forma, saiba que o R trabalha com uma pasta específica chamada de diretório, e para saber qual é o seu diretório padrão, utilize a função \emph{getwd()}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -690,21 +686,21 @@ Acho pouco eficiente ensinar a importar dados de um diretorio. Acho pouco pratic
 \end{Highlighting}
 \end{Shaded}
 
-Ao executar esse funcao, o R te retornara o caminho da pasta do diretorio padrao atual que provavelmente eh a pasta ``documentos'' do seu computador.
+Ao executar essa função, o R te retornará o caminho da pasta do diretório padrão atual, que provavelmente é a pasta ``Documentos'' do seu computador.
 
-Para baixar uma planilha de dados ficticios clique no link abaixo e tente importa-la atraves do botao \textbf{Import from excel}.
+Para baixar uma planilha de dados fictícios, clique no link abaixo e tente importá-la através do botão \textbf{Import from Excel}.
 
 \href{data/fake_data.xlsx}{Clique aqui para baixar a planilha ficticia}
 
 \hypertarget{graficos}{%
 \section{Graficos}\label{graficos}}
 
-Agora comeca a parte divertida! A visualizacao de dados no R tem um potencial quase infinito devido as sua grande capacidade de personalizar cada pedacinho da figura.
+Agora começa a parte divertida! A visualização de dados no R tem um potencial quase infinito devido à sua grande capacidade de personalizar cada pedacinho da figura.
 
 \hypertarget{grafico-de-histograma}{%
 \subsection{Grafico de histograma}\label{grafico-de-histograma}}
 
-Esse grafico nos mostra a frequencia dos valores da variavel de interesse, como por exemplo comprimento da petala das flores do banco de dados iris.
+Esse gráfico nos mostra a frequência dos valores da variável de interesse, como por exemplo, o comprimento da pétala das flores do banco de dados iris.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -722,12 +718,12 @@ Esse grafico nos mostra a frequencia dos valores da variavel de interesse, como 
 \caption{\label{fig:nome-do-chunk1}Gráficos com R base}
 \end{figure}
 
-Simples nao eh? Mas podemos modificar ainda mais nosso grafico. Alterar cores, nomes dos eixos, titulo, etc. Vamos ver mais argumentos com o grafico de dispersao de pontos.
+Simples, não é? Mas podemos modificar ainda mais nosso gráfico. Alterar cores, nomes dos eixos, título, etc. Vamos ver mais argumentos com o gráfico de dispersão de pontos.
 
 \hypertarget{grafico-de-dispersao}{%
 \subsection{Grafico de dispersao}\label{grafico-de-dispersao}}
 
-Esse grafico nos mostra a relacao entre duas variaveis continuas. Vamos utilizar o banco de dados ``iris'' para construir e visualizar alguns graficos. Para construir um grafico de dispersao utilizamos a funcao \emph{plot()}. Note que a funcao plot, possui varios argumentos que podemos ir adicionando para personalizar o grafico. Alem disso, para deixar o codigo mais organizado, sempre apos a virgula de um argumento, pulamos a linha, de forma que cada argumento fique numa linha.
+Esse gráfico nos mostra a relação entre duas variáveis contínuas. Vamos utilizar o banco de dados ``iris'' para construir e visualizar alguns gráficos. Para construir um gráfico de dispersão, utilizamos a função \emph{plot()}. Note que a função plot possui vários argumentos que podemos ir adicionando para personalizar o gráfico. Além disso, para deixar o código mais organizado, sempre após a vírgula de um argumento, pulamos a linha, de forma que cada argumento fique numa linha.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -829,7 +825,7 @@ Esse grafico nos mostra a relacao entre duas variaveis continuas. Vamos utilizar
 \hypertarget{grafico-boxplot}{%
 \subsection{Grafico boxplot}\label{grafico-boxplot}}
 
-Para criar o grafico de boxplot, iremos utilizar a variavel numerica Sepal.Width do banco de dados iris em relacao a variavel Species. Note que na funcao plot, as duas variaveis (argumentos) eram separados por virgula, aqui utilizamos o \textbf{\textasciitilde{}} para relacionar a variavel numerica com a categorica.
+Para criar o gráfico de boxplot, iremos utilizar a variável numérica Sepal.Width do banco de dados iris em relação à variável Species. Note que na função plot, as duas variáveis (argumentos) eram separadas por vírgula; aqui utilizamos o \textbf{\textasciitilde{}} para relacionar a variável numérica com a categórica.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -865,12 +861,12 @@ Para criar o grafico de boxplot, iremos utilizar a variavel numerica Sepal.Width
 \caption{(\#fig:3\_basic\_boxplot-2)Boxplot com R base utilizando o banco de dados iris}
 \end{figure}
 
-Perceba que o argumento col pode ser um vetor, e pode receber mais de um valor. Nesse caso, demos uma cor para cada fator de Species. Tente substituir os numeros por outros, ou colocar o nome das principais cores como: red, green, blue, yellow\ldots{} So nao esqueca de colocar entre aspas.
+Perceba que o argumento \textbf{col} pode ser um vetor e pode receber mais de um valor. Nesse caso, demos uma cor para cada fator de Species. Tente substituir os números por outros ou colocar o nome das principais cores como: red, green, blue, yellow\ldots{} Só não esqueça de colocar entre aspas.
 
 \hypertarget{grafico-de-barras}{%
 \subsection{Grafico de barras}\label{grafico-de-barras}}
 
-Para criar um grafico de barras de contagem, vamos criar nosso proprio data frame. Imagine que queremos tabular a contagem total de ectoparasitas (piolho) de ave de cada parte corporal. Como eh algo simples, podemos criar direto no R.
+Para criar um gráfico de barras de contagem, vamos criar nosso próprio data frame. Imagine que queremos tabular a contagem total de ectoparasitas (piolho) de aves em cada parte corporal. Como é algo simples, podemos criar diretamente no R.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -899,42 +895,42 @@ Para criar um grafico de barras de contagem, vamos criar nosso proprio data fram
 \end{Shaded}
 
 \includegraphics{_main_files/figure-latex/4_basic_hist-1.pdf}
-Faca as seguintes modificacoes no codigo e veja o que acontece:
+Faça as seguintes modificações no código e veja o que acontece:
 
 \begin{itemize}
 \tightlist
 \item
-  Veja o que acontece se voce deletar a linha completa do argumento names.arg.\\
+  Veja o que acontece se você deletar a linha completa do argumento names.arg.
 \item
-  Troque o valor 35 de ylim por 50.\\
+  Troque o valor 35 de ylim por 50.
 \item
-  No argumento border, troque ``black'' por ``red'' e depois ``white''.\\
+  No argumento border, troque ``black'' por ``red'' e depois ``white''.
 \item
-  Na funcao text(), troque pos = 3, por pos = 1.\\
-  (rode o grafico antes para nao sobrepor os numeros)
+  Na função text(), troque pos = 3 por pos = 1.
+  (rode o gráfico antes para não sobrepor os números)
 \end{itemize}
 
-Eh possivel fazer muitos outros tipos de graficos, utilizando diferentes funcoes. Mas a ideia desse capitulo eh ensinar a utilizar o R, e nao a criar graficos. Entao vamos com calma, pois quando voce pensar que nao, ja foi.
+É possível fazer muitos outros tipos de gráficos, utilizando diferentes funções. Mas a ideia desse capítulo é ensinar a utilizar o R, e não a criar gráficos. Então vamos com calma, pois quando você pensar que não, já foi.
 
 \hypertarget{pacotes}{%
 \section{Pacotes}\label{pacotes}}
 
-Agora ja podemos comecar a expandir nosso universo do R. Tudo que fizemos ate agora foi utilizando o proprio R base. A partir de agora, iremos incluir um conjunto de novas funcoes atraves dos pacotes de R.
-Antes de tudo, precisamos instalar o pacote que queremos utilizar, e para isso existe duas formas:
+Agora já podemos começar a expandir nosso universo do R. Tudo que fizemos até agora foi utilizando o próprio R base. A partir de agora, iremos incluir um conjunto de novas funções através dos pacotes de R.
+Antes de tudo, precisamos instalar o pacote que queremos utilizar, e para isso existem duas formas:
 
 \begin{itemize}
 \tightlist
 \item
-  Utilizando o botao \emph{Tools} do RStudio.\\
+  Utilizando o botão \emph{Tools} do RStudio.
 \item
-  Utilizando a funcao \emph{install.packages(``nome\_do\_pacote'')}
+  Utilizando a função \emph{install.packages(``nome\_do\_pacote'')}
 \end{itemize}
 
-Vamos instalar o pacote ``lattice'' para criarmos uns graficos diferentes do que fizemos anteriormente.
+Vamos instalar o pacote ``lattice'' para criarmos uns gráficos diferentes do que fizemos anteriormente.
 
-Utilizando o botao \emph{Tools} do RStudio click em: \textbf{Tools \textgreater{} Install package \textgreater{} digite o nome ``lattice''.} Ao comecar a digitar o R ira sugerir opcoes de pacotes com as iniciais que voce digitou. Depois clica em ``instalar''.
+Utilizando o botão \emph{Tools} do RStudio clique em: \textbf{Tools \textgreater{} Install package \textgreater{} digite o nome ``lattice''.} Ao começar a digitar, o R irá sugerir opções de pacotes com as iniciais que você digitou. Depois, clique em ``instalar''.
 
-Utilizando a funcao \emph{install.packages()}
+Utilizando a função \emph{install.packages()}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -942,11 +938,11 @@ Utilizando a funcao \emph{install.packages()}
 \end{Highlighting}
 \end{Shaded}
 
-O processo de instalacao mostra no console varios processos e enquanto isso acontece, um icone de ``stop'' vermelho aparece na parte superior direita da janela do console. O processo so termina quando esse icone some e um aviso aparece:
+O processo de instalação mostra no console vários processos, e enquanto isso acontece, um ícone de ``stop'' vermelho aparece na parte superior direita da janela do console. O processo só termina quando esse ícone some e um aviso aparece:
 
 \includegraphics{img/install_package.png}
 
-Pacote instalado, agora eh so dizer que queremos utilizar o pacote. O processo de instalacao em um determinado computador so precisa ser feito uma vez. Porem, toda vez, voce precisa dizer para o R, qual pacote voce estar utilizando. Para isso utilizamos a funcao \emph{library()}.
+Pacote instalado, agora é só dizer que queremos utilizar o pacote. O processo de instalação em um determinado computador só precisa ser feito uma vez. Porém, toda vez, você precisa dizer para o R qual pacote você está utilizando. Para isso, utilizamos a função \emph{library()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -955,11 +951,11 @@ Pacote instalado, agora eh so dizer que queremos utilizar o pacote. O processo d
 \end{Highlighting}
 \end{Shaded}
 
-Se voce carregou o pacote e o R nao te retornou nenhum erro, ta tudo certo. As vezes ele te retorna um Warning message, tambem esta tudo certo. Vamos adiante.
+Se você carregou o pacote e o R não te retornou nenhum erro, está tudo certo. Às vezes, ele te retorna um Warning message, também está tudo certo. Vamos adiante.
 
-O pacote lattice que acabamos de instalar nos fornece varias funcoes para criacao de graficos. Tenha em mente que existem milhares de pacotes cada um trazendo um conjunto de funcoes e banco de dados de diferentes contextos, tanto para criar graficos, quanto para realizar modelos estatisticos avancados.
+O pacote lattice que acabamos de instalar nos fornece várias funções para criação de gráficos. Tenha em mente que existem milhares de pacotes, cada um trazendo um conjunto de funções e bancos de dados de diferentes contextos, tanto para criar gráficos quanto para realizar modelos estatísticos avançados.
 
-Vamos criar alguns graficos utilizando as funcoes que o pacote lattice nos forneceu.
+Vamos criar alguns gráficos utilizando as funções que o pacote lattice nos forneceu.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1003,56 +999,35 @@ Vamos criar alguns graficos utilizando as funcoes que o pacote lattice nos forne
 \caption{\label{fig:nome-do-chunk-2}Gráficos com Lattice}
 \end{figure}
 
-Acho que ja deu pra entender como o R funciona ne? Nos proximos capitulos, voce vai aprender a como trabalhar de forma eficiente no R, seguindo um fluxo de trabalho eficiente, e o melhor de tudo, reproduzivel.
+Acho que já deu para entender como o R funciona, né? Nos próximos capítulos, você vai aprender como trabalhar de forma eficiente no R, seguindo um fluxo de trabalho eficiente e, o melhor de tudo, reproduzível.
 
 \hypertarget{como-trabalhar-no-r}{%
 \chapter{Como trabalhar no R}\label{como-trabalhar-no-r}}
 
-Se voce ja tem uma nocao de R, mas ainda sente dificuldade de organizar seu fluxo de trabalho, esse capitulo eh pra voce! Utilizaremos tecnicas de ciencia de dados e repositorios como o github para tornar o trabalho no R prazeroso e eficiente!
+Se você já tem uma noção de R, mas ainda sente dificuldade em organizar seu fluxo de trabalho, este capítulo é para você! Utilizaremos técnicas de ciência de dados e repositórios como o GitHub para tornar o trabalho no R prazeroso e eficiente!
 
-Se voce possuir um banco de dados para analizar a quantidade de parasitas de aves da mata atlantica, ou o comportamento sexual de caranguejos chama-mares (ou seja la qual for o seu estudo), aproveite para utiliza-lo aqui nesse capitulo. Caso voce ainda nao possua seu banco de dados, trabalharemos com algum banco de dados nativo do R. Optei por utilizar o banco de dados ``iris'', mas sinta-se a vontade para utilizar qualquer outro.
+Iremos utilizar o banco de dados ficticios que possui erros comuns que podemos utilizar para aprender a lidar com eles sem precisar de utilizar o Excel.
 
-Primeiro vamos exportar o banco de dados iris para que possamos simular todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao \emph{data()}, e utilizaremos a funcao \emph{write.csv()} para exportar, no formato csv, a planilha ``iris'' para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.
+Baixe a planilha fake e veja que ela possui quatro variaveis (ID, peso, numero de parasitas e local) coletadas do passarinho bem-te-vi.
 
-\begin{Shaded}
-\begin{Highlighting}[]
+\href{data/fake_data.xlsx}{Clique aqui para baixar a planilha ficticia}
 
-\CommentTok{\#Carregando pacote de dados iris}
-\FunctionTok{data}\NormalTok{(iris)}
-
-\CommentTok{\#Salvando (exportando) iris no computador}
-\FunctionTok{write.csv}\NormalTok{(}\AttributeTok{x =}\NormalTok{ iris,            }\CommentTok{\#nome do banco de dados do R}
-          \AttributeTok{file =} \StringTok{"iris.csv"}\NormalTok{,   }\CommentTok{\#nome do banco de dados salvo no computador}
-          \AttributeTok{row.names =} \ConstantTok{FALSE}\NormalTok{)   }\CommentTok{\#Mostrar o nome das linhas na planilha salva utilizando TRUE ou nao utilizando FALSE.}
-\end{Highlighting}
-\end{Shaded}
-
-Para entender a funcao \emph{write.csv()} modifique alguns argumentos:
-
-\begin{itemize}
-\tightlist
-\item
-  Substitua: file = ``iris.csv'' por file = ``planilha\_do\_R.csv''.
-\item
-  Substitua: row.names = FALSE, por row.names = TRUE.
-\end{itemize}
-
-Por padrao, iremos utilizar sempre row.names = FALSE.
+Vamos importar a planilha fictícia mais para frente. Relaxe aí e finja que ela é sua.
 
 \hypertarget{criando-um-projeto-de-r}{%
 \section{Criando um projeto de R}\label{criando-um-projeto-de-r}}
 
-Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito do RStudio (proximo a janela de environment e history) e clica :
+Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito do RStudio (proximo a janela de environment e history) e clica:
 
 \textbf{project (none)'' \textgreater{} new project \textgreater{} new directory \textgreater{} new project}
 
-Ao clicar em new project, ira aparecer uma janela para escolher o nome do projeto e o local no computador que seu projeto ira ficar. Coloque o nome desejado (sugestao: ``projeto\_caranguejo''), selecione qualquer pasta no computador (sugestao: desktop) e clique em ``criar projeto''.
+Ao clicar em ``New Project'', aparecerá uma janela para escolher o nome do projeto e o local no computador onde seu projeto irá ficar. Coloque o nome desejado (sugestão: ``projeto\_caranguejo''), selecione qualquer pasta no computador (sugestão: desktop) e clique em ``Criar Projeto''.
 
-Se voce fez tudo direitinho, o RStudio estara do seguinte forma. Note que ao inves de project (none), estara o nome do projeto que voce criou.
+Se você fez tudo direitinho, o RStudio estará da seguinte forma. Note que ao invés de ``Project (None)'', estará o nome do projeto que você criou.
 
 \includegraphics{img/tela_do_projeto.png}
 
-Sugiro meu nobre consagrado leitor, que voce va no local do computador que voce criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Voce tambem pode fazer isso utilizando a janela de Files, onde mostrara todas as pastas do seu diretorio que, a partir de agora, sera a pasta que o seu arquivo de projeto de R esta situado. Todos os scripts, arquivos e planilhas que voce ira utilizar nas suas analises, ficara dentro da pasta do projeto. Isso significa que vai ficar tudo solto, baguncado? Claro que nao. Iremos criar pastas organizadas onde hospedara cada coisa que iremos trabalhar como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Voce pode criar manualmente, mas porque fariamos isso se temos o R para fazer por nos?
+Sugiro, meu nobre consagrado Rzeiro, que você vá no local do computador onde você criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Você também pode fazer isso utilizando a janela de ``Files'', onde mostrará todas as pastas do seu diretório que, a partir de agora, será a pasta que o seu arquivo de projeto de R está situado. Todos os scripts, arquivos e planilhas que você irá utilizar nas suas análises, ficarão dentro da pasta do projeto. Isso significa que vai ficar tudo solto, bagunçado? Claro que não. Iremos criar pastas organizadas onde hospedarão cada coisa que iremos trabalhar, como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Você pode criar manualmente, mas por que faríamos isso se temos o R para fazer por nós?
 
 \hypertarget{organizando-o-projeto-de-r}{%
 \section{Organizando o projeto de R}\label{organizando-o-projeto-de-r}}
@@ -1066,13 +1041,15 @@ Para criar as pastas de forma organizada, voce pode fazer manualmente ou utiliza
 \end{Highlighting}
 \end{Shaded}
 
-Apos a instalacao do pacote ``here'' iremos criar uma funcao que criara as pastas automaticamente no nosso diretorio. Nao se assuste com o script da funcao, ela eh mais simples do que parece e voce nao precisa entende-lo por completo. Apenas rode o codigo para criar a funcao e depois rode o codigo que utiliza a funcao para criar as pastas.
+Após a instalação do pacote ``here'', iremos criar uma função que criará as pastas automaticamente no nosso diretório. Não se assuste com o script da função, ela é mais simples do que parece e você não precisa entendê-lo por completo. Apenas rode o código para criar a função e depois rode o código que utiliza a função para criar as pastas.
 
-Antes de rodar o codigo, certifique-se de que voce esta no projeto de R que voce criou.
+Antes de rodar o código, certifique-se de que você está no projeto de R que você criou.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Criando funcao para criacao das pastas do projeto}
+\CommentTok{\# Codigo disponibilizado pelo Gustavo Paterno (https://github.com/paternogbc)}
+
 \NormalTok{build\_project }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(}\AttributeTok{type =} \StringTok{"analysis"}\NormalTok{,}
                           \AttributeTok{temp =} \ConstantTok{TRUE}\NormalTok{) \{}
   
@@ -1108,7 +1085,7 @@ Se tudo ocorreu bem, as pastas estao assim:
 
 \includegraphics{img/pastas_do_projeto.png}
 
-Dentro da pasta data voce encontra as pastas ``raw'' e ``processed''. Em outputs voce encontra ``figures'', ``temp'' e ``tables''. Em script, voce encontrara nada (por enquanto). O arquivo com o simbolo do R ``projeto\_caranguejos.Rproj'' eh o seu projeto de R. Voce pode abri-lo (dando duplo clique) toda vez que voce for trabalhar no projeto. Isso abrira o Rstudio ja com o seu projeto aberto e pronto para trabalhar.
+Dentro da pasta ``data'', você encontra as subpastas ``raw'' e ``processed''. Em ``outputs'', você encontra as subpastas ``figures'', ``temp'' e ``tables''. Em ``script'', você não encontrará nada (por enquanto). O arquivo com o símbolo do R ``projeto\_caranguejos.Rproj'' é o seu projeto de R. Você pode abri-lo (dando duplo clique) toda vez que você for trabalhar no projeto. Isso abrirá o RStudio já com o seu projeto aberto e pronto para trabalhar.
 
 \begin{itemize}
 \tightlist
@@ -1116,20 +1093,20 @@ Dentro da pasta data voce encontra as pastas ``raw'' e ``processed''. Em outputs
   Feche o RStudio e abra-o novamente dando clique duplo no seu projeto de R.
 \end{itemize}
 
-Agora voce tem tudo pronto para comecar a trabalhar com um fluxo de trabalho eficiente e reprodutivel!
+Agora você tem tudo pronto para começar a trabalhar com um fluxo de trabalho eficiente e reprodutível!
 
 \hypertarget{trabalhando-em-um-projeto-de-r}{%
 \section{Trabalhando em um projeto de R}\label{trabalhando-em-um-projeto-de-r}}
 
-Antes de tudo baixe a planilha de dados ficticios de uma especie de passarinho (tambem ficticia), que contem informacoes ficticias sobre peso (g) e quantidade de parasitas de tres diferentes localidades (A, B, C):
+Antes de tudo baixe a planilha de dados ficticios (caso nao tenha baixado ainda) de uma especie de passarinho (tambem ficticia), que contem informacoes ficticias sobre peso (g) e quantidade de parasitas de tres diferentes localidades do bem-te-vi:
 
 \href{data/fake_data.xlsx}{Clique aqui para baixar a planilha ficticia}
 
-Na pasta \textbf{data \textgreater{} raw} voce adiciona sua planilha de dados brutos ficticias (fake\_data.xlsx). O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.
+Na pasta \textbf{data \textgreater{} raw}, você adiciona sua planilha de dados brutos fictícia (fake\_data.xlsx). O fluxo de trabalho será o mais simples possível, mas envolverá etapas essenciais da análise de dados.
 
-\textbf{Limpar dados brutos \textgreater{} Realizar analise \textgreater{} Mostrar graficos}
+\textbf{Limpar dados brutos \textgreater{} Realizar análise \textgreater{} Mostrar gráficos}
 
-Para limpar a planilha de dados brutos, iremos criar um script para isso. Utilizaremos funcoes do pacote dplyr para modificar nome das variaveis, nome dos fatores, analisar dados faltantes, entre outras coisas.
+Para limpar a planilha de dados brutos, iremos criar um script para isso. Utilizaremos funções do pacote \emph{dplyr} para modificar nomes das variáveis, nomes dos fatores, analisar dados faltantes, entre outras coisas.
 
 \hypertarget{etapa-1-limpar-dados}{%
 \subsection{Etapa 1: limpar dados}\label{etapa-1-limpar-dados}}
@@ -1145,128 +1122,143 @@ Vamos criar um script para limpar nossos dados brutos. Monte o script completo u
 \end{Highlighting}
 \end{Shaded}
 
-Apos isso, utilizaremos os comentarios, para organizar o script em topicos fazendo manualmente ou utilizando o atalho: \textbf{ctrl + shift + R}. A primeira parte do codigo eh a instalacao dos pacotes que iremos utilizar no processo.
+Após isso, utilizaremos os comentários para organizar o script em tópicos, fazendo isso manualmente ou utilizando o atalho: \textbf{Ctrl + Shift + R}. A primeira parte do código é a instalação dos pacotes que iremos utilizar no processo.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 
 \CommentTok{\# Packages {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(dplyr)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{) }\CommentTok{\#se o pacote dplyr nao estiver sido instalado, ele sera instalado.}
-\FunctionTok{library}\NormalTok{(dplyr) }\CommentTok{\#carregar pacote}
+\CommentTok{\# Caso nao tenha os pacotes instalados, instale!}
+
+\FunctionTok{library}\NormalTok{(dplyr)  }\CommentTok{\#Pacote com funcoes para manipular dados}
+\FunctionTok{library}\NormalTok{(readxl) }\CommentTok{\#Pacote com funcao para importar planilha em formato de excel (xlsx)}
 \end{Highlighting}
 \end{Shaded}
 
-Segundo, importamos o banco de dados a ser processado (limpado) utilizando a funcao \emph{read.csv()} e atribuindo (\textless-) a um objeto que iremos chamar de ``dados''. Para importar voce so precisa especificar o caminho do diretorio em que o arquivo ta inserido. Como estamos utilizando o projeto de R, o diretorio eh onde o projeto esta. Dessa forma, nao ha necessidade de dizer para o R qual o seu diretorio de trabalho. Logo fica facil importar os dados brutos pois sabemos que ele esta na pasta dados \textgreater{} raw \textgreater{} iris.csv. Dizemos isso para o R utilizando os nomes das pastas separado por barras e por fim, o nome do arquivo (iris) e suas extensao (.csv).
+Segundo, importamos o banco de dados a ser processado (limpado) utilizando a função \emph{read.csv()} e atribuindo (\textless-) a um objeto que iremos chamar de ``dados''. Para importar, você só precisa especificar o caminho do diretório em que o arquivo está inserido. Como estamos utilizando o projeto de R, o diretório é onde o projeto está. Dessa forma, não há necessidade de dizer para o R qual é o seu diretório de trabalho. Logo, fica fácil importar os dados brutos pois sabemos que ele está na pasta ``dados \textgreater{} raw \textgreater{} iris.csv''. Dizemos isso para o R utilizando os nomes das pastas separados por barras e, por fim, o nome do arquivo (iris) e sua extensão (.csv).
 
 \begin{Shaded}
 \begin{Highlighting}[]
 
 \CommentTok{\# Load data {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\NormalTok{dados }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/raw/iris.csv"}\NormalTok{)}
+\NormalTok{dados }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/raw/fake\_data.xlsx"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-Agora que o banco de dados foi importado, podemos fazer um check up basico utilizando algumas funcoes.
+Agora que o banco de dados foi importado, podemos fazer um check up basico utilizando algumas funcoes. Como assim check up basico? Ver o numero de observacoes, se tem dado faltando ou observacao duplicada, essas coisas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 
-\CommentTok{\# 1. Basic checks {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\FunctionTok{nrow}\NormalTok{(dados)             }\CommentTok{\# How many rows}
-\FunctionTok{str}\NormalTok{(dados)              }\CommentTok{\# Variables classes}
-\FunctionTok{attributes}\NormalTok{(dados)       }\CommentTok{\# Attributres}
-\FunctionTok{head}\NormalTok{(dados)             }\CommentTok{\# First rows}
-\FunctionTok{any}\NormalTok{(}\FunctionTok{duplicated}\NormalTok{(dados))  }\CommentTok{\# There is any duplicated rows?}
-\FunctionTok{any}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(dados))       }\CommentTok{\# There are NAs in the data?}
+\CommentTok{\# 1. Check up basico {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\FunctionTok{nrow}\NormalTok{(dados)             }\CommentTok{\# Quantas linhas (observacoes) tem no banco de dados?}
+\FunctionTok{str}\NormalTok{(dados)              }\CommentTok{\# quais as classes das variaveis?}
+\FunctionTok{attributes}\NormalTok{(dados)       }\CommentTok{\# quais atributos?}
+\FunctionTok{head}\NormalTok{(dados)             }\CommentTok{\# Primeiras linhas do banco de dados.}
+\FunctionTok{any}\NormalTok{(}\FunctionTok{duplicated}\NormalTok{(dados))  }\CommentTok{\# Checar se tem linhas duplicadas.}
+\FunctionTok{any}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(dados))       }\CommentTok{\# Checar se tem dado faltando (NA).}
 \end{Highlighting}
 \end{Shaded}
 
-As vezes os nomes das variaveis nao sao faceis de trabalhar, possuindo espaco, acentos, letras maiusculas e minusculas, e nomes confusos. Alem de complicar o codigo, o nome de algumas variaveis podem bugar o script (caso das acentuacoes de palavras em portugues). Entao vamos mudar o nome das variaveis utilizando a funcao \emph{rename()} do pacote \textbf{dplyr}. Iremos deixar os nomes mais faceis de trabalhar, deixando todas as letras minusculas.
+Às vezes, os nomes das variáveis não são fáceis de trabalhar, possuindo espaços, acentos, letras maiúsculas e minúsculas, e nomes confusos. Além de complicar o código, o nome de algumas variáveis pode bugá-lo (caso das acentuações de palavras em português). Então, vamos mudar o nome das variáveis utilizando a função \emph{rename()} do pacote \textbf{dplyr}. Iremos deixar os nomes mais fáceis de trabalhar, deixando todas as letras minúsculas.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 
-\CommentTok{\# 3. Rename columns names{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\FunctionTok{head}\NormalTok{(dados)}
-\NormalTok{dados2 }\OtherTok{\textless{}{-}} \FunctionTok{rename}\NormalTok{(iris,                         }\CommentTok{\#sua planilha bruta}
-                 \AttributeTok{sepal\_length =}\NormalTok{ Sepal.Length,  }\CommentTok{\#nomes das variaveis (nome\_novo = nome antigo)}
-                 \AttributeTok{sepal\_width  =}\NormalTok{ Sepal.Width,}
-                 \AttributeTok{petal\_length =}\NormalTok{ Petal.Length,}
-                 \AttributeTok{petal\_width  =}\NormalTok{ Petal.Width,}
-                 \AttributeTok{species      =}\NormalTok{ Species)}
-\FunctionTok{head}\NormalTok{(dados2)}
+\CommentTok{\# 3. Renomeando o nome das variaveis {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\#ver nome das colunas (variaveis) {-}{-}{-}{-}}
+\FunctionTok{colnames}\NormalTok{(dados)}
+
+\CommentTok{\#Renomeando variaveis {-}{-}{-}{-}}
+\CommentTok{\#Vamos renomear de forma a tirar espacos e manter apenas letras minusculas.}
+\NormalTok{dados\_renamed }\OtherTok{\textless{}{-}} \FunctionTok{rename}\NormalTok{(dados,           }
+                        \AttributeTok{id =}\NormalTok{ ID,  }\CommentTok{\#nomes das variaveis (nome novo = nome antigo)}
+                        \AttributeTok{peso\_g  =} \StringTok{\textasciigrave{}}\AttributeTok{Peso (g)}\StringTok{\textasciigrave{}}\NormalTok{,}
+                        \AttributeTok{total\_parasitas =} \StringTok{\textasciigrave{}}\AttributeTok{Total de parasitas}\StringTok{\textasciigrave{}}\NormalTok{,}
+                        \AttributeTok{local  =}\NormalTok{ Local}
+\NormalTok{                        )}
+\FunctionTok{colnames}\NormalTok{(dados\_renamed)}
 \end{Highlighting}
 \end{Shaded}
 
-Agora vamos dizer para o R os tipos de nossas variaveis. Um problema muito comum, eh o R nao reconhecer que a variavel categorica, nao possui fatores, mesmo possuindo. Por exemplo, em ``iris'', temos a variavel categorica `Species' com seus fatores (setosa, versicolor, virginica). Eh possivel que no seu banco de dados, o R nao reconheca isso, entao vamos utilizar a funcao \emph{levels()} para verificar se o R entendeu quais sao os fatores. Se o R retornar NULL, voce precisa dizer para o R utilizando a funcao \emph{as.factor()}.
+Note que quando existe espaço, o nome da variável precisa estar entre crases.
+Agora vamos dizer para o R os tipos de nossas variáveis. Um problema muito comum é o R não reconhecer que a variável categórica não possui fatores, mesmo possuindo. Por exemplo, em ``iris'', temos a variável categórica `Species' com seus fatores (setosa, versicolor, virginica). É possível que no seu banco de dados, o R não reconheça isso, então vamos utilizar a função \emph{levels()} para verificar se o R entendeu quais são os fatores. Se o R retornar NULL, você precisa dizer para o R utilizando a função \emph{as.factor()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 
-\CommentTok{\# 4. Fix factor variables{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\CommentTok{\# check factor variable}
-\FunctionTok{levels}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species)}
+\CommentTok{\# 4. Consertar fatores  {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\# ver quais fatores estao na variavel local}
+\FunctionTok{levels}\NormalTok{(dados\_renamed}\SpecialCharTok{$}\NormalTok{local) }\CommentTok{\#Se retornar NULL eh porque nao ta reconhecendo como fator.}
 
-\CommentTok{\# making factor variables}
-\NormalTok{dados2}\SpecialCharTok{$}\NormalTok{species }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species) }\CommentTok{\#atribuindo a variavel specie transformada a ela mesma.}
+\CommentTok{\# Transformando em fator {-}{-}{-}{-}}
+\NormalTok{dados\_renamed}\SpecialCharTok{$}\NormalTok{local }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(dados\_renamed}\SpecialCharTok{$}\NormalTok{local)}
 
-\CommentTok{\# check factor variable}
-\FunctionTok{levels}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species)}
+\CommentTok{\# checar fatores}
+\FunctionTok{levels}\NormalTok{(dados\_renamed}\SpecialCharTok{$}\NormalTok{local)}
 \end{Highlighting}
 \end{Shaded}
 
-Agora podemos renomear o nome dos fatores de uma variavel categorica utilizando a funcao \emph{recode\_factor()}. Nesse processo podemos identificar erros de digitacao que ocorreram durante o planilhamento dos dados. Por exemplo, voce pode ter digitado ``Macho'', ``macho'' e ``male'' na variavel sexo durante o planilhamento. O R vai identificar os tres como sendo fatores diferentes mas na verdade sao o mesmo fator. Portanto eh necessario que seja padronizado.
+Agora podemos renomear o nome dos fatores de uma variável categórica utilizando a função \emph{recode\_factor()}. Nesse processo, podemos identificar erros de digitação que ocorreram durante o planilhamento dos dados. Por exemplo, você pode ter digitado ``Macho'', ``macho'' e ``male'' na variável sexo durante o planilhamento. O R vai identificar os três como sendo fatores diferentes, mas na verdade são o mesmo fator. Portanto, é necessário que seja padronizado.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# 4.1 fix species factors}
+\CommentTok{\# 4.1 Renomear fatores}
+
+\CommentTok{\#Checar fatores}
+\FunctionTok{levels}\NormalTok{(dados\_renamed}\SpecialCharTok{$}\NormalTok{local)}
+\end{Highlighting}
+\end{Shaded}
+
+Veja que aqui deveríamos ter apenas três fatores: floresta, urbano e parque. Mas, devido a erros de digitação, o R entende que são fatores diferentes. Isso é muito comum em planilhas de dados grandes, e você teria que fazer isso manualmente, identificando cada erro. Imagina o trabalhão.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Renomear fatores}
+\NormalTok{dados\_renamed}\SpecialCharTok{$}\NormalTok{local }\OtherTok{\textless{}{-}} \FunctionTok{recode\_factor}\NormalTok{(dados\_renamed}\SpecialCharTok{$}\NormalTok{local,   }\CommentTok{\#variavel categorica}
+                                     \AttributeTok{Floresta =} \StringTok{"floresta"}\NormalTok{,         }\CommentTok{\#mudando nome Floresta para floresta}
+                                     \AttributeTok{park =} \StringTok{"parque"}\NormalTok{,}
+                                     \AttributeTok{parque. =} \StringTok{"parque"}\NormalTok{,}
+                                     \AttributeTok{urban =} \StringTok{"urbano"}\NormalTok{,}
+                                     \AttributeTok{Urbano =} \StringTok{"urbano"}\NormalTok{)}
 
 \CommentTok{\#check factors}
-\FunctionTok{levels}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species)}
-
-\CommentTok{\#rename factors}
-\NormalTok{dados2}\SpecialCharTok{$}\NormalTok{species }\OtherTok{\textless{}{-}} \FunctionTok{recode\_factor}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species,                 }\CommentTok{\#variavel categorica}
-                                \AttributeTok{setosa =} \StringTok{"iris\_setosa"}\NormalTok{,         }\CommentTok{\#mudando nome setosa para iris\_setosa}
-                                \AttributeTok{versicolor =} \StringTok{"iris\_versicolor"}\NormalTok{,}
-                                \AttributeTok{virginica =} \StringTok{"iris\_virginica"}\NormalTok{)}
-
-\CommentTok{\#check factors}
-\FunctionTok{levels}\NormalTok{(dados2}\SpecialCharTok{$}\NormalTok{species)}
+\FunctionTok{levels}\NormalTok{(dados\_renamed}\SpecialCharTok{$}\NormalTok{local)}
 \end{Highlighting}
 \end{Shaded}
 
-Agora que limpamos nossos dados brutos, iremos exportar nossa planilha limpa. Perceba que o processo do script eh colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. Eh com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato csv por ser um formato mais simples, leve e estavel.
+Agora sim! Temos os três fatores bonitinhos. Agora que limpamos nossos dados brutos, iremos exportar nossa planilha limpa. Perceba que o processo do script é colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. É com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato CSV, por ser um formato mais simples, leve e estável.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# 8. Save processed data {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\FunctionTok{write.csv}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dados2,                                 }\CommentTok{\#nome da planilha que voce quer exportar}
-          \AttributeTok{file =} \StringTok{"data/processed/processed\_iris.csv"}\NormalTok{, }\CommentTok{\#local e nome da planilha exportada}
-          \AttributeTok{row.names =} \ConstantTok{FALSE}\NormalTok{)                          }\CommentTok{\#sempre utilizaremos row.names = FALSE}
+\CommentTok{\# 8. Salvar dado processado {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\FunctionTok{write.csv}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dados\_renamed,    }\CommentTok{\#nome da planilha que voce quer exportar}
+          \AttributeTok{file =} \StringTok{"data/processed/processed\_fake\_data.csv"}\NormalTok{, }\CommentTok{\#local e nome da planilha exportada}
+          \AttributeTok{row.names =} \ConstantTok{FALSE}\NormalTok{)  }\CommentTok{\#sempre utilizaremos row.names = FALSE}
 \end{Highlighting}
 \end{Shaded}
 
-O processo de manipulacao de dados no R eh bastante completo e existem diferentes formas de limpar seus dados brutos. O pacote \textbf{dplyr} possui funcoes capazes de selecionar variaveis, selecionar linhas, criar variaveis, criar subsets, entre outras. Para aprimorar seu script de limpeza de dados, voce precisara aprender sobre manipulacao de dados e incluir no processo, os codigos no seu script. Por sorte, existe muito material disponivel na internet sobre o assunto. Talvez algum dia eu crie um material sobre manipulacao de dados com dplyr, mas aqui esse nao eh meu objetivo. Meu objetivo eh simplesmente fornecer o esqueleto teorico, te dando base para crescer de forma mais direcionada.
+O processo de manipulação de dados no R é bastante completo, e existem diferentes formas de limpar seus dados brutos. O pacote \textbf{dplyr} possui funções capazes de selecionar variáveis, selecionar linhas, criar variáveis, criar subconjuntos, entre outras. Para aprimorar seu script de limpeza de dados, você precisará aprender sobre manipulação de dados e incluir no processo os códigos no seu script. Por sorte, existe muito material disponível na internet sobre o assunto. Talvez algum dia eu crie um material sobre manipulação de dados com dplyr, mas aqui esse não é meu objetivo. Meu objetivo é simplesmente fornecer o esqueleto teórico, dando base para crescer de forma mais direcionada.
 
-Por fim, nao esqueca de salvar o script na pasta script com o nome `01\_clean\_raw\_data'.
+Por fim, não esqueça de salvar o script na pasta script com o nome `01\_clean\_raw\_data'.
 
 \hypertarget{etapa-2-fazer-analise}{%
 \subsection{Etapa 2: fazer analise}\label{etapa-2-fazer-analise}}
 
-Com a planilha bruta processada, podemos realizar testes estatisticos para responder nossa hipotese. Vamos supor que nossa pergunta seja saber se existe diferenca entre o tamanho das petalas entre as tres especies. Organizaremos o script de analise de forma similar ao script de limpeza, ou seja, escreveremos um cabecalho, carregaremos pacotes, importaremos e analisaremos dados de forma organizada.
+Com a planilha bruta processada, podemos realizar testes estatísticos em um novo script para responder à nossa hipótese. Vamos supor que nossa pergunta seja saber se existe diferença na infestação de parasitas em cada local. Organizaremos o script de análise de forma semelhante ao script de limpeza, ou seja, escreveremos um cabeçalho, carregaremos pacotes, importaremos e analisaremos dados de forma organizada.
 
-Vamos fazer um cabecalho para nosso script de analise.
+Vamos fazer um cabeçalho para nosso script de análise.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 
-\CommentTok{\# Script to load and analyse processed data iris}
-\CommentTok{\# Author: Marilia T. Ericcson}
+\CommentTok{\# Script para analisar dados}
+\CommentTok{\# Author: seu nome}
 \CommentTok{\# Data: 2019{-}11{-}07}
 \end{Highlighting}
 \end{Shaded}
 
-Vamos criar o codigo para carregar os pacotes que iremos utilizar
+Vamos criar o código para carregar os pacotes que iremos utilizar.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1276,7 +1268,7 @@ Vamos criar o codigo para carregar os pacotes que iremos utilizar
 \end{Highlighting}
 \end{Shaded}
 
-Dessa vez iremos importar a planilha limpa e processada. Note que o caminho de importacao eh similar ao caminho que exportamos no script de limpeza.
+Dessa vez, iremos importar a planilha limpa e processada. Note que o caminho de importação é similar ao caminho que exportamos no script de limpeza.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1291,30 +1283,30 @@ Vamos fazer um check basico.
 \begin{Shaded}
 \begin{Highlighting}[]
 
-\CommentTok{\# 1. Basic checks {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\# 1. Check up basico {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
 \FunctionTok{head}\NormalTok{(dados)}
 \FunctionTok{str}\NormalTok{(dados)}
-\FunctionTok{leves}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{species)}
+\FunctionTok{leves}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{local)}
 \end{Highlighting}
 \end{Shaded}
 
-Vamos realizar uma analise para comparar a largura das petalas entre as especies. Para isso, iremos utilizar o teste nao parametrico de kruskal-wallis atraves da funcao kruskal.test(). Nessa funcao, voce precisa dizer qual sua variavel numerica de interesse em relacao a (\textasciitilde) sua variavel categorica e seus grupos (fatores). Veja que o p-value eh menor que 0.05, entao dizemos que existe diferenca da largura entre as tres especies.
+Vamos realizar uma análise para ver se existe diferença na quantidade de parasitas encontrada nos bem-te-vis de cada local. Para isso, iremos utilizar o teste não paramétrico de Kruskal-Wallis através da função kruskal.test(). Nessa função, você precisa dizer qual sua variável numérica de interesse em relação a (\textasciitilde) sua variável categórica e seus grupos (fatores). Veja que o p-value é menor que 0.05, então dizemos que existe diferença da largura entre as três espécies.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 
 \CommentTok{\#realizando o teste}
-\NormalTok{kw }\OtherTok{\textless{}{-}} \FunctionTok{kruskal.test}\NormalTok{(iris}\SpecialCharTok{$}\NormalTok{Sepal.Width }\SpecialCharTok{\textasciitilde{}}\NormalTok{ iris}\SpecialCharTok{$}\NormalTok{Species)}
+\NormalTok{kw }\OtherTok{\textless{}{-}} \FunctionTok{kruskal.test}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{total\_parasitas }\SpecialCharTok{\textasciitilde{}}\NormalTok{ dados}\SpecialCharTok{$}\NormalTok{local)}
 \NormalTok{kw}
 \end{Highlighting}
 \end{Shaded}
 
-Vamos salvar o resultado em uma tabela organizada (tidy) utilizando a funcao \emph{tidy()} do pacote \textbf{broom}.
+Vamos salvar o resultado em uma tabela organizada (tidy) utilizando a função \emph{tidy()} do pacote \textbf{broom}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 
-\CommentTok{\#Ajeitando tabela para formato tidy}
+\CommentTok{\#Convertendo tabela para formato tidy}
 \NormalTok{table\_kw }\OtherTok{\textless{}{-}} \FunctionTok{tidy}\NormalTok{(kw\_test)}
 \NormalTok{table\_kw}
 \end{Highlighting}
@@ -1332,25 +1324,25 @@ Agora salvaremos essa tabela na nossa pasta outputs em tables.
 \end{Highlighting}
 \end{Shaded}
 
-Maravilha! Ja temos nosso segundo script pronto. Agora eh so salva-lo na pasta script com o nome: `02\_kruskal\_test'.
+Maravilha! Já temos nosso segundo script pronto. Agora é só salvá-lo na pasta script com o nome `02\_kruskal\_test'.
 
 \hypertarget{etapa-3-criar-grafico}{%
 \subsection{Etapa 3: criar grafico}\label{etapa-3-criar-grafico}}
 
-Agora vamos criar o grafico para representar nosso resultado de que existe diferenca da largura das petadas entre as especies de iris.
+Agora vamos criar o gráfico para representar nosso resultado de que existe diferença na largura das pétalas entre as espécies de iris.
 
 \begin{Shaded}
 \begin{Highlighting}[]
  
-\CommentTok{\# Script to load and analyse processed data iris}
-\CommentTok{\# Author: Marilia T. Ericcson}
+\CommentTok{\# Script para criar graficos}
+\CommentTok{\# Author: seu nome}
 \CommentTok{\# Data: 2019{-}11{-}07}
  
 \CommentTok{\#Carregar pacotes}
 \FunctionTok{library}\NormalTok{(ggplot2)}
 
 \CommentTok{\# Load data {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
-\NormalTok{dados }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/processed/processed\_iris.csv"}\NormalTok{)}
+\NormalTok{dados }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/processed/processed\_fake\_data.csv"}\NormalTok{)}
 
 \CommentTok{\# 1. Basic checks {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
 \FunctionTok{head}\NormalTok{(dados)}
@@ -1380,12 +1372,14 @@ Agora vamos criar o grafico para representar nosso resultado de que existe difer
 \caption{\label{fig:graph}ggplot2}
 \end{figure}
 
-Voce acabou de criar um grafico utilizando o pacote ggplot2 que eh o pacote mais utilizado para producao de graficos no R. O codigo pode parecer um pouco confuso no inicio, mas nao precisa estudar muito para perceber que ele eh muito simples e intuitivo. Para aprender mais sobre graficos, sugiro os livros: \url{https://rkabacoff.github.io/datavis/} e \url{https://r-graphics.org/}
+Você acabou de criar um gráfico utilizando o pacote ggplot2, que é o pacote mais utilizado para produção de gráficos no R. O código pode parecer um pouco confuso no início, mas não precisa estudar muito para perceber que ele é muito simples e intuitivo. Para aprender mais sobre gráficos, sugiro os livros: \href{https://rkabacoff.github.io/datavis/}{Data Visualization: A practical introduction} e \href{https://r-graphics.org/}{R Graphics Cookbook}.
 
-Nao esqueca de salvar o script com o nome `03\_grafico'
-\#Etapa 4: Replicabilidade
+Não esqueça de salvar o script com o nome `03\_grafico'.
 
-O seu projeto esta organizado de forma que se torna facil a replicabilidade em qualquer computador gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, voce precisa manter e JAMAIS deletar ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um click a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna util ao compartilhar seus dados com alguem, em que voce pode zipar todo seu projeto, enviar para um contribuidor e ele podera ter acesso a tudo rodando apenas um script. Eh esse script que iremos fazer agora.
+\hypertarget{etapa-4-replicabilidade}{%
+\subsection{Etapa 4: Replicabilidade}\label{etapa-4-replicabilidade}}
+
+O seu projeto está organizado de forma que se torna fácil a replicabilidade em qualquer computador, gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, você precisa manter e \textbf{JAMAIS deletar} ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um clique a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna útil ao compartilhar seus dados com alguém, em que você pode zipar todo seu projeto, enviar para um contribuidor, e ele poderá ter acesso a tudo rodando apenas um script. É esse script que iremos fazer agora.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1405,12 +1399,18 @@ O seu projeto esta organizado de forma que se torna facil a replicabilidade em q
 \end{Highlighting}
 \end{Shaded}
 
-Ao rodar esse codigo, todos os seus scripts sao rodados e todos os seus outputs e planilhas processadas sao geradas. Mas lembre, seu dado bruto contido na pasta data/raw, nao pode ser deletada ou modificada.
+Ao rodar este código, todos os seus scripts são executados, e todos os seus outputs e planilhas processadas são gerados. Mas lembre-se, seu dado bruto contido na pasta data/raw não pode ser deletado ou modificado.
 
-Salve esse script com o nome ``run\_project''.
+Salve este script com o nome ``run\_project''.
 
 \hypertarget{git-e-github}{%
 \chapter{Git e GitHub}\label{git-e-github}}
+
+\hypertarget{criando-funcoes-avancadas}{%
+\chapter{Criando funcoes avancadas}\label{criando-funcoes-avancadas}}
+
+\hypertarget{criando-pacotes}{%
+\chapter{Criando pacotes}\label{criando-pacotes}}
 
   \bibliography{book.bib}
 

@@ -6,4 +6,5 @@ h3:etapa-1-limpar-dados Etapa 1: limpar dados
 h3:etapa-2-fazer-analise Etapa 2: fazer analise
 h3:etapa-3-criar-grafico Etapa 3: criar grafico
 fig:graph ggplot2
+h3:etapa-4-replicabilidade Etapa 4: Replicabilidade
 

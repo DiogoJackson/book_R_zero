@@ -184,9 +184,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.1" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#etapa-1-limpar-dados"><i class="fa fa-check"></i><b>4.3.1</b> Etapa 1: limpar dados</a></li>
 <li class="chapter" data-level="4.3.2" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#etapa-2-fazer-analise"><i class="fa fa-check"></i><b>4.3.2</b> Etapa 2: fazer analise</a></li>
 <li class="chapter" data-level="4.3.3" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#etapa-3-criar-grafico"><i class="fa fa-check"></i><b>4.3.3</b> Etapa 3: criar grafico</a></li>
+<li class="chapter" data-level="4.3.4" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#etapa-4-replicabilidade"><i class="fa fa-check"></i><b>4.3.4</b> Etapa 4: Replicabilidade</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="git-e-github.html"><a href="git-e-github.html"><i class="fa fa-check"></i><b>5</b> Git e GitHub</a></li>
+<li class="chapter" data-level="6" data-path="criando-funcoes-avancadas.html"><a href="criando-funcoes-avancadas.html"><i class="fa fa-check"></i><b>6</b> Criando funcoes avancadas</a></li>
+<li class="chapter" data-level="7" data-path="criando-pacotes.html"><a href="criando-pacotes.html"><i class="fa fa-check"></i><b>7</b> Criando pacotes</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -209,182 +212,181 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="como-trabalhar-no-r" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Capítulo 4</span> Como trabalhar no R<a href="como-trabalhar-no-r.html#como-trabalhar-no-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Se voce ja tem uma nocao de R, mas ainda sente dificuldade de organizar seu fluxo de trabalho, esse capitulo eh pra voce! Utilizaremos tecnicas de ciencia de dados e repositorios como o github para tornar o trabalho no R prazeroso e eficiente!</p>
-<p>Se voce possuir um banco de dados para analizar a quantidade de parasitas de aves da mata atlantica, ou o comportamento sexual de caranguejos chama-mares (ou seja la qual for o seu estudo), aproveite para utiliza-lo aqui nesse capitulo. Caso voce ainda nao possua seu banco de dados, trabalharemos com algum banco de dados nativo do R. Optei por utilizar o banco de dados “iris”, mas sinta-se a vontade para utilizar qualquer outro.</p>
-<p>Primeiro vamos exportar o banco de dados iris para que possamos simular todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao <em>data()</em>, e utilizaremos a funcao <em>write.csv()</em> para exportar, no formato csv, a planilha “iris” para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="como-trabalhar-no-r.html#cb47-1" tabindex="-1"></a></span>
-<span id="cb47-2"><a href="como-trabalhar-no-r.html#cb47-2" tabindex="-1"></a><span class="co">#Carregando pacote de dados iris</span></span>
-<span id="cb47-3"><a href="como-trabalhar-no-r.html#cb47-3" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb47-4"><a href="como-trabalhar-no-r.html#cb47-4" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="como-trabalhar-no-r.html#cb47-5" tabindex="-1"></a><span class="co">#Salvando (exportando) iris no computador</span></span>
-<span id="cb47-6"><a href="como-trabalhar-no-r.html#cb47-6" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> iris,            <span class="co">#nome do banco de dados do R</span></span>
-<span id="cb47-7"><a href="como-trabalhar-no-r.html#cb47-7" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">&quot;iris.csv&quot;</span>,   <span class="co">#nome do banco de dados salvo no computador</span></span>
-<span id="cb47-8"><a href="como-trabalhar-no-r.html#cb47-8" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)   <span class="co">#Mostrar o nome das linhas na planilha salva utilizando TRUE ou nao utilizando FALSE.</span></span></code></pre></div>
-<p>Para entender a funcao <em>write.csv()</em> modifique alguns argumentos:</p>
-<ul>
-<li>Substitua: file = “iris.csv” por file = “planilha_do_R.csv”.</li>
-<li>Substitua: row.names = FALSE, por row.names = TRUE.</li>
-</ul>
-<p>Por padrao, iremos utilizar sempre row.names = FALSE.</p>
+<p>Se você já tem uma noção de R, mas ainda sente dificuldade em organizar seu fluxo de trabalho, este capítulo é para você! Utilizaremos técnicas de ciência de dados e repositórios como o GitHub para tornar o trabalho no R prazeroso e eficiente!</p>
+<p>Iremos utilizar o banco de dados ficticios que possui erros comuns que podemos utilizar para aprender a lidar com eles sem precisar de utilizar o Excel.</p>
+<p>Baixe a planilha fake e veja que ela possui quatro variaveis (ID, peso, numero de parasitas e local) coletadas do passarinho bem-te-vi.</p>
+<p><a href="data/fake_data.xlsx">Clique aqui para baixar a planilha ficticia</a></p>
+<p>Vamos importar a planilha fictícia mais para frente. Relaxe aí e finja que ela é sua.</p>
 <div id="criando-um-projeto-de-r" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Criando um projeto de R<a href="como-trabalhar-no-r.html#criando-um-projeto-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito do RStudio (proximo a janela de environment e history) e clica :</p>
+<p>Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito do RStudio (proximo a janela de environment e history) e clica:</p>
 <p><strong>project (none)” &gt; new project &gt; new directory &gt; new project</strong></p>
-<p>Ao clicar em new project, ira aparecer uma janela para escolher o nome do projeto e o local no computador que seu projeto ira ficar. Coloque o nome desejado (sugestao: “projeto_caranguejo”), selecione qualquer pasta no computador (sugestao: desktop) e clique em “criar projeto”.</p>
-<p>Se voce fez tudo direitinho, o RStudio estara do seguinte forma. Note que ao inves de project (none), estara o nome do projeto que voce criou.</p>
+<p>Ao clicar em “New Project”, aparecerá uma janela para escolher o nome do projeto e o local no computador onde seu projeto irá ficar. Coloque o nome desejado (sugestão: “projeto_caranguejo”), selecione qualquer pasta no computador (sugestão: desktop) e clique em “Criar Projeto”.</p>
+<p>Se você fez tudo direitinho, o RStudio estará da seguinte forma. Note que ao invés de “Project (None)”, estará o nome do projeto que você criou.</p>
 <p><img src="img/tela_do_projeto.png" /></p>
-<p>Sugiro meu nobre consagrado leitor, que voce va no local do computador que voce criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Voce tambem pode fazer isso utilizando a janela de Files, onde mostrara todas as pastas do seu diretorio que, a partir de agora, sera a pasta que o seu arquivo de projeto de R esta situado. Todos os scripts, arquivos e planilhas que voce ira utilizar nas suas analises, ficara dentro da pasta do projeto. Isso significa que vai ficar tudo solto, baguncado? Claro que nao. Iremos criar pastas organizadas onde hospedara cada coisa que iremos trabalhar como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Voce pode criar manualmente, mas porque fariamos isso se temos o R para fazer por nos?</p>
+<p>Sugiro, meu nobre consagrado Rzeiro, que você vá no local do computador onde você criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Você também pode fazer isso utilizando a janela de “Files”, onde mostrará todas as pastas do seu diretório que, a partir de agora, será a pasta que o seu arquivo de projeto de R está situado. Todos os scripts, arquivos e planilhas que você irá utilizar nas suas análises, ficarão dentro da pasta do projeto. Isso significa que vai ficar tudo solto, bagunçado? Claro que não. Iremos criar pastas organizadas onde hospedarão cada coisa que iremos trabalhar, como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Você pode criar manualmente, mas por que faríamos isso se temos o R para fazer por nós?</p>
 </div>
 <div id="organizando-o-projeto-de-r" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Organizando o projeto de R<a href="como-trabalhar-no-r.html#organizando-o-projeto-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Para criar as pastas de forma organizada, voce pode fazer manualmente ou utilizando o pacote “here”.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="como-trabalhar-no-r.html#cb48-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;here&quot;</span>)</span>
-<span id="cb48-2"><a href="como-trabalhar-no-r.html#cb48-2" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div>
-<p>Apos a instalacao do pacote “here” iremos criar uma funcao que criara as pastas automaticamente no nosso diretorio. Nao se assuste com o script da funcao, ela eh mais simples do que parece e voce nao precisa entende-lo por completo. Apenas rode o codigo para criar a funcao e depois rode o codigo que utiliza a funcao para criar as pastas.</p>
-<p>Antes de rodar o codigo, certifique-se de que voce esta no projeto de R que voce criou.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="como-trabalhar-no-r.html#cb49-1" tabindex="-1"></a><span class="co"># Criando funcao para criacao das pastas do projeto</span></span>
-<span id="cb49-2"><a href="como-trabalhar-no-r.html#cb49-2" tabindex="-1"></a>build_project <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">type =</span> <span class="st">&quot;analysis&quot;</span>,</span>
-<span id="cb49-3"><a href="como-trabalhar-no-r.html#cb49-3" tabindex="-1"></a>                          <span class="at">temp =</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb49-4"><a href="como-trabalhar-no-r.html#cb49-4" tabindex="-1"></a>  </span>
-<span id="cb49-5"><a href="como-trabalhar-no-r.html#cb49-5" tabindex="-1"></a>  <span class="cf">if</span>(type <span class="sc">==</span> <span class="st">&quot;analysis&quot;</span>){</span>
-<span id="cb49-6"><a href="como-trabalhar-no-r.html#cb49-6" tabindex="-1"></a>    <span class="co"># Data</span></span>
-<span id="cb49-7"><a href="como-trabalhar-no-r.html#cb49-7" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>))</span>
-<span id="cb49-8"><a href="como-trabalhar-no-r.html#cb49-8" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;raw&quot;</span>))</span>
-<span id="cb49-9"><a href="como-trabalhar-no-r.html#cb49-9" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;processed&quot;</span>))</span>
-<span id="cb49-10"><a href="como-trabalhar-no-r.html#cb49-10" tabindex="-1"></a>    </span>
-<span id="cb49-11"><a href="como-trabalhar-no-r.html#cb49-11" tabindex="-1"></a>    <span class="co"># outputs</span></span>
-<span id="cb49-12"><a href="como-trabalhar-no-r.html#cb49-12" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>))</span>
-<span id="cb49-13"><a href="como-trabalhar-no-r.html#cb49-13" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>, <span class="st">&quot;figures&quot;</span>))</span>
-<span id="cb49-14"><a href="como-trabalhar-no-r.html#cb49-14" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>, <span class="st">&quot;tables&quot;</span>))</span>
-<span id="cb49-15"><a href="como-trabalhar-no-r.html#cb49-15" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">isTRUE</span>(temp)){</span>
-<span id="cb49-16"><a href="como-trabalhar-no-r.html#cb49-16" tabindex="-1"></a>      <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>, <span class="st">&quot;temp&quot;</span>))</span>
-<span id="cb49-17"><a href="como-trabalhar-no-r.html#cb49-17" tabindex="-1"></a>    }</span>
-<span id="cb49-18"><a href="como-trabalhar-no-r.html#cb49-18" tabindex="-1"></a>    </span>
-<span id="cb49-19"><a href="como-trabalhar-no-r.html#cb49-19" tabindex="-1"></a>    <span class="co"># scripts</span></span>
-<span id="cb49-20"><a href="como-trabalhar-no-r.html#cb49-20" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;scripts&quot;</span>))</span>
-<span id="cb49-21"><a href="como-trabalhar-no-r.html#cb49-21" tabindex="-1"></a>    </span>
-<span id="cb49-22"><a href="como-trabalhar-no-r.html#cb49-22" tabindex="-1"></a>    <span class="co"># docs</span></span>
-<span id="cb49-23"><a href="como-trabalhar-no-r.html#cb49-23" tabindex="-1"></a>    <span class="co">#dir.create(path = here::here(&quot;docs&quot;)) #para criar a pasta docs, so tirar o comentario dessa linha</span></span>
-<span id="cb49-24"><a href="como-trabalhar-no-r.html#cb49-24" tabindex="-1"></a>  }</span>
-<span id="cb49-25"><a href="como-trabalhar-no-r.html#cb49-25" tabindex="-1"></a>}</span>
-<span id="cb49-26"><a href="como-trabalhar-no-r.html#cb49-26" tabindex="-1"></a></span>
-<span id="cb49-27"><a href="como-trabalhar-no-r.html#cb49-27" tabindex="-1"></a><span class="co">#Utilizando a funcao criada para gerar as pastas</span></span>
-<span id="cb49-28"><a href="como-trabalhar-no-r.html#cb49-28" tabindex="-1"></a><span class="fu">build_project</span>(<span class="at">type =</span> <span class="st">&quot;analysis&quot;</span>,</span>
-<span id="cb49-29"><a href="como-trabalhar-no-r.html#cb49-29" tabindex="-1"></a>              <span class="at">temp =</span> <span class="cn">TRUE</span>) <span class="co">#se FALSE, nao cria a pasta temp.</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="como-trabalhar-no-r.html#cb47-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;here&quot;</span>)</span>
+<span id="cb47-2"><a href="como-trabalhar-no-r.html#cb47-2" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div>
+<p>Após a instalação do pacote “here”, iremos criar uma função que criará as pastas automaticamente no nosso diretório. Não se assuste com o script da função, ela é mais simples do que parece e você não precisa entendê-lo por completo. Apenas rode o código para criar a função e depois rode o código que utiliza a função para criar as pastas.</p>
+<p>Antes de rodar o código, certifique-se de que você está no projeto de R que você criou.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="como-trabalhar-no-r.html#cb48-1" tabindex="-1"></a><span class="co"># Criando funcao para criacao das pastas do projeto</span></span>
+<span id="cb48-2"><a href="como-trabalhar-no-r.html#cb48-2" tabindex="-1"></a><span class="co"># Codigo disponibilizado pelo Gustavo Paterno (https://github.com/paternogbc)</span></span>
+<span id="cb48-3"><a href="como-trabalhar-no-r.html#cb48-3" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="como-trabalhar-no-r.html#cb48-4" tabindex="-1"></a>build_project <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">type =</span> <span class="st">&quot;analysis&quot;</span>,</span>
+<span id="cb48-5"><a href="como-trabalhar-no-r.html#cb48-5" tabindex="-1"></a>                          <span class="at">temp =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb48-6"><a href="como-trabalhar-no-r.html#cb48-6" tabindex="-1"></a>  </span>
+<span id="cb48-7"><a href="como-trabalhar-no-r.html#cb48-7" tabindex="-1"></a>  <span class="cf">if</span>(type <span class="sc">==</span> <span class="st">&quot;analysis&quot;</span>){</span>
+<span id="cb48-8"><a href="como-trabalhar-no-r.html#cb48-8" tabindex="-1"></a>    <span class="co"># Data</span></span>
+<span id="cb48-9"><a href="como-trabalhar-no-r.html#cb48-9" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>))</span>
+<span id="cb48-10"><a href="como-trabalhar-no-r.html#cb48-10" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;raw&quot;</span>))</span>
+<span id="cb48-11"><a href="como-trabalhar-no-r.html#cb48-11" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;processed&quot;</span>))</span>
+<span id="cb48-12"><a href="como-trabalhar-no-r.html#cb48-12" tabindex="-1"></a>    </span>
+<span id="cb48-13"><a href="como-trabalhar-no-r.html#cb48-13" tabindex="-1"></a>    <span class="co"># outputs</span></span>
+<span id="cb48-14"><a href="como-trabalhar-no-r.html#cb48-14" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>))</span>
+<span id="cb48-15"><a href="como-trabalhar-no-r.html#cb48-15" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>, <span class="st">&quot;figures&quot;</span>))</span>
+<span id="cb48-16"><a href="como-trabalhar-no-r.html#cb48-16" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>, <span class="st">&quot;tables&quot;</span>))</span>
+<span id="cb48-17"><a href="como-trabalhar-no-r.html#cb48-17" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">isTRUE</span>(temp)){</span>
+<span id="cb48-18"><a href="como-trabalhar-no-r.html#cb48-18" tabindex="-1"></a>      <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;outputs&quot;</span>, <span class="st">&quot;temp&quot;</span>))</span>
+<span id="cb48-19"><a href="como-trabalhar-no-r.html#cb48-19" tabindex="-1"></a>    }</span>
+<span id="cb48-20"><a href="como-trabalhar-no-r.html#cb48-20" tabindex="-1"></a>    </span>
+<span id="cb48-21"><a href="como-trabalhar-no-r.html#cb48-21" tabindex="-1"></a>    <span class="co"># scripts</span></span>
+<span id="cb48-22"><a href="como-trabalhar-no-r.html#cb48-22" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;scripts&quot;</span>))</span>
+<span id="cb48-23"><a href="como-trabalhar-no-r.html#cb48-23" tabindex="-1"></a>    </span>
+<span id="cb48-24"><a href="como-trabalhar-no-r.html#cb48-24" tabindex="-1"></a>    <span class="co"># docs</span></span>
+<span id="cb48-25"><a href="como-trabalhar-no-r.html#cb48-25" tabindex="-1"></a>    <span class="co">#dir.create(path = here::here(&quot;docs&quot;)) #para criar a pasta docs, so tirar o comentario dessa linha</span></span>
+<span id="cb48-26"><a href="como-trabalhar-no-r.html#cb48-26" tabindex="-1"></a>  }</span>
+<span id="cb48-27"><a href="como-trabalhar-no-r.html#cb48-27" tabindex="-1"></a>}</span>
+<span id="cb48-28"><a href="como-trabalhar-no-r.html#cb48-28" tabindex="-1"></a></span>
+<span id="cb48-29"><a href="como-trabalhar-no-r.html#cb48-29" tabindex="-1"></a><span class="co">#Utilizando a funcao criada para gerar as pastas</span></span>
+<span id="cb48-30"><a href="como-trabalhar-no-r.html#cb48-30" tabindex="-1"></a><span class="fu">build_project</span>(<span class="at">type =</span> <span class="st">&quot;analysis&quot;</span>,</span>
+<span id="cb48-31"><a href="como-trabalhar-no-r.html#cb48-31" tabindex="-1"></a>              <span class="at">temp =</span> <span class="cn">TRUE</span>) <span class="co">#se FALSE, nao cria a pasta temp.</span></span></code></pre></div>
 <p>Se tudo ocorreu bem, as pastas estao assim:</p>
 <p><img src="img/pastas_do_projeto.png" /></p>
-<p>Dentro da pasta data voce encontra as pastas “raw” e “processed”. Em outputs voce encontra “figures”, “temp” e “tables”. Em script, voce encontrara nada (por enquanto). O arquivo com o simbolo do R “projeto_caranguejos.Rproj” eh o seu projeto de R. Voce pode abri-lo (dando duplo clique) toda vez que voce for trabalhar no projeto. Isso abrira o Rstudio ja com o seu projeto aberto e pronto para trabalhar.</p>
+<p>Dentro da pasta “data”, você encontra as subpastas “raw” e “processed”. Em “outputs”, você encontra as subpastas “figures”, “temp” e “tables”. Em “script”, você não encontrará nada (por enquanto). O arquivo com o símbolo do R “projeto_caranguejos.Rproj” é o seu projeto de R. Você pode abri-lo (dando duplo clique) toda vez que você for trabalhar no projeto. Isso abrirá o RStudio já com o seu projeto aberto e pronto para trabalhar.</p>
 <ul>
 <li>Feche o RStudio e abra-o novamente dando clique duplo no seu projeto de R.</li>
 </ul>
-<p>Agora voce tem tudo pronto para comecar a trabalhar com um fluxo de trabalho eficiente e reprodutivel!</p>
+<p>Agora você tem tudo pronto para começar a trabalhar com um fluxo de trabalho eficiente e reprodutível!</p>
 </div>
 <div id="trabalhando-em-um-projeto-de-r" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Trabalhando em um projeto de R<a href="como-trabalhar-no-r.html#trabalhando-em-um-projeto-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Antes de tudo baixe a planilha de dados ficticios de uma especie de passarinho (tambem ficticia), que contem informacoes ficticias sobre peso (g) e quantidade de parasitas de tres diferentes localidades (A, B, C):</p>
+<p>Antes de tudo baixe a planilha de dados ficticios (caso nao tenha baixado ainda) de uma especie de passarinho (tambem ficticia), que contem informacoes ficticias sobre peso (g) e quantidade de parasitas de tres diferentes localidades do bem-te-vi:</p>
 <p><a href="data/fake_data.xlsx">Clique aqui para baixar a planilha ficticia</a></p>
-<p>Na pasta <strong>data &gt; raw</strong> voce adiciona sua planilha de dados brutos ficticias (fake_data.xlsx). O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.</p>
-<p><strong>Limpar dados brutos &gt; Realizar analise &gt; Mostrar graficos</strong></p>
-<p>Para limpar a planilha de dados brutos, iremos criar um script para isso. Utilizaremos funcoes do pacote dplyr para modificar nome das variaveis, nome dos fatores, analisar dados faltantes, entre outras coisas.</p>
+<p>Na pasta <strong>data &gt; raw</strong>, você adiciona sua planilha de dados brutos fictícia (fake_data.xlsx). O fluxo de trabalho será o mais simples possível, mas envolverá etapas essenciais da análise de dados.</p>
+<p><strong>Limpar dados brutos &gt; Realizar análise &gt; Mostrar gráficos</strong></p>
+<p>Para limpar a planilha de dados brutos, iremos criar um script para isso. Utilizaremos funções do pacote <em>dplyr</em> para modificar nomes das variáveis, nomes dos fatores, analisar dados faltantes, entre outras coisas.</p>
 <div id="etapa-1-limpar-dados" class="section level3 hasAnchor" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Etapa 1: limpar dados<a href="como-trabalhar-no-r.html#etapa-1-limpar-dados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Vamos criar um script para limpar nossos dados brutos. Monte o script completo utilizando os codigos que irei fornecendo a seguir copiando e colando no seu RStudio. Assim, a primeira coisa que iremos fazer do script eh seu cabecalho. Utilizaremos os comentarios para criar um cabecalho com as informacoes de titulo, autores e data.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="como-trabalhar-no-r.html#cb49-1" tabindex="-1"></a></span>
+<span id="cb49-2"><a href="como-trabalhar-no-r.html#cb49-2" tabindex="-1"></a><span class="co"># Script to load and clean raw data flores iris</span></span>
+<span id="cb49-3"><a href="como-trabalhar-no-r.html#cb49-3" tabindex="-1"></a><span class="co"># Author: Marilia T. Ericcson</span></span>
+<span id="cb49-4"><a href="como-trabalhar-no-r.html#cb49-4" tabindex="-1"></a><span class="co"># Data: 2019-11-06</span></span></code></pre></div>
+<p>Após isso, utilizaremos os comentários para organizar o script em tópicos, fazendo isso manualmente ou utilizando o atalho: <strong>Ctrl + Shift + R</strong>. A primeira parte do código é a instalação dos pacotes que iremos utilizar no processo.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="como-trabalhar-no-r.html#cb50-1" tabindex="-1"></a></span>
-<span id="cb50-2"><a href="como-trabalhar-no-r.html#cb50-2" tabindex="-1"></a><span class="co"># Script to load and clean raw data flores iris</span></span>
-<span id="cb50-3"><a href="como-trabalhar-no-r.html#cb50-3" tabindex="-1"></a><span class="co"># Author: Marilia T. Ericcson</span></span>
-<span id="cb50-4"><a href="como-trabalhar-no-r.html#cb50-4" tabindex="-1"></a><span class="co"># Data: 2019-11-06</span></span></code></pre></div>
-<p>Apos isso, utilizaremos os comentarios, para organizar o script em topicos fazendo manualmente ou utilizando o atalho: <strong>ctrl + shift + R</strong>. A primeira parte do codigo eh a instalacao dos pacotes que iremos utilizar no processo.</p>
+<span id="cb50-2"><a href="como-trabalhar-no-r.html#cb50-2" tabindex="-1"></a><span class="co"># Packages -------------------------------------------------------------</span></span>
+<span id="cb50-3"><a href="como-trabalhar-no-r.html#cb50-3" tabindex="-1"></a><span class="co"># Caso nao tenha os pacotes instalados, instale!</span></span>
+<span id="cb50-4"><a href="como-trabalhar-no-r.html#cb50-4" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="como-trabalhar-no-r.html#cb50-5" tabindex="-1"></a><span class="fu">library</span>(dplyr)  <span class="co">#Pacote com funcoes para manipular dados</span></span>
+<span id="cb50-6"><a href="como-trabalhar-no-r.html#cb50-6" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co">#Pacote com funcao para importar planilha em formato de excel (xlsx)</span></span></code></pre></div>
+<p>Segundo, importamos o banco de dados a ser processado (limpado) utilizando a função <em>read.csv()</em> e atribuindo (&lt;-) a um objeto que iremos chamar de “dados”. Para importar, você só precisa especificar o caminho do diretório em que o arquivo está inserido. Como estamos utilizando o projeto de R, o diretório é onde o projeto está. Dessa forma, não há necessidade de dizer para o R qual é o seu diretório de trabalho. Logo, fica fácil importar os dados brutos pois sabemos que ele está na pasta “dados &gt; raw &gt; iris.csv”. Dizemos isso para o R utilizando os nomes das pastas separados por barras e, por fim, o nome do arquivo (iris) e sua extensão (.csv).</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="como-trabalhar-no-r.html#cb51-1" tabindex="-1"></a></span>
-<span id="cb51-2"><a href="como-trabalhar-no-r.html#cb51-2" tabindex="-1"></a><span class="co"># Packages -------------------------------------------------------------</span></span>
-<span id="cb51-3"><a href="como-trabalhar-no-r.html#cb51-3" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(dplyr)) <span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>) <span class="co">#se o pacote dplyr nao estiver sido instalado, ele sera instalado.</span></span>
-<span id="cb51-4"><a href="como-trabalhar-no-r.html#cb51-4" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co">#carregar pacote</span></span></code></pre></div>
-<p>Segundo, importamos o banco de dados a ser processado (limpado) utilizando a funcao <em>read.csv()</em> e atribuindo (&lt;-) a um objeto que iremos chamar de “dados”. Para importar voce so precisa especificar o caminho do diretorio em que o arquivo ta inserido. Como estamos utilizando o projeto de R, o diretorio eh onde o projeto esta. Dessa forma, nao ha necessidade de dizer para o R qual o seu diretorio de trabalho. Logo fica facil importar os dados brutos pois sabemos que ele esta na pasta dados &gt; raw &gt; iris.csv. Dizemos isso para o R utilizando os nomes das pastas separado por barras e por fim, o nome do arquivo (iris) e suas extensao (.csv).</p>
+<span id="cb51-2"><a href="como-trabalhar-no-r.html#cb51-2" tabindex="-1"></a><span class="co"># Load data ---------------------------------------------------------------</span></span>
+<span id="cb51-3"><a href="como-trabalhar-no-r.html#cb51-3" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/raw/fake_data.xlsx&quot;</span>)</span></code></pre></div>
+<p>Agora que o banco de dados foi importado, podemos fazer um check up basico utilizando algumas funcoes. Como assim check up basico? Ver o numero de observacoes, se tem dado faltando ou observacao duplicada, essas coisas.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="como-trabalhar-no-r.html#cb52-1" tabindex="-1"></a></span>
-<span id="cb52-2"><a href="como-trabalhar-no-r.html#cb52-2" tabindex="-1"></a><span class="co"># Load data ---------------------------------------------------------------</span></span>
-<span id="cb52-3"><a href="como-trabalhar-no-r.html#cb52-3" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/raw/iris.csv&quot;</span>)</span></code></pre></div>
-<p>Agora que o banco de dados foi importado, podemos fazer um check up basico utilizando algumas funcoes.</p>
+<span id="cb52-2"><a href="como-trabalhar-no-r.html#cb52-2" tabindex="-1"></a><span class="co"># 1. Check up basico --------------------------------------------------------------</span></span>
+<span id="cb52-3"><a href="como-trabalhar-no-r.html#cb52-3" tabindex="-1"></a><span class="fu">nrow</span>(dados)             <span class="co"># Quantas linhas (observacoes) tem no banco de dados?</span></span>
+<span id="cb52-4"><a href="como-trabalhar-no-r.html#cb52-4" tabindex="-1"></a><span class="fu">str</span>(dados)              <span class="co"># quais as classes das variaveis?</span></span>
+<span id="cb52-5"><a href="como-trabalhar-no-r.html#cb52-5" tabindex="-1"></a><span class="fu">attributes</span>(dados)       <span class="co"># quais atributos?</span></span>
+<span id="cb52-6"><a href="como-trabalhar-no-r.html#cb52-6" tabindex="-1"></a><span class="fu">head</span>(dados)             <span class="co"># Primeiras linhas do banco de dados.</span></span>
+<span id="cb52-7"><a href="como-trabalhar-no-r.html#cb52-7" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">duplicated</span>(dados))  <span class="co"># Checar se tem linhas duplicadas.</span></span>
+<span id="cb52-8"><a href="como-trabalhar-no-r.html#cb52-8" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">is.na</span>(dados))       <span class="co"># Checar se tem dado faltando (NA).</span></span></code></pre></div>
+<p>Às vezes, os nomes das variáveis não são fáceis de trabalhar, possuindo espaços, acentos, letras maiúsculas e minúsculas, e nomes confusos. Além de complicar o código, o nome de algumas variáveis pode bugá-lo (caso das acentuações de palavras em português). Então, vamos mudar o nome das variáveis utilizando a função <em>rename()</em> do pacote <strong>dplyr</strong>. Iremos deixar os nomes mais fáceis de trabalhar, deixando todas as letras minúsculas.</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="como-trabalhar-no-r.html#cb53-1" tabindex="-1"></a></span>
-<span id="cb53-2"><a href="como-trabalhar-no-r.html#cb53-2" tabindex="-1"></a><span class="co"># 1. Basic checks --------------------------------------------------------------</span></span>
-<span id="cb53-3"><a href="como-trabalhar-no-r.html#cb53-3" tabindex="-1"></a><span class="fu">nrow</span>(dados)             <span class="co"># How many rows</span></span>
-<span id="cb53-4"><a href="como-trabalhar-no-r.html#cb53-4" tabindex="-1"></a><span class="fu">str</span>(dados)              <span class="co"># Variables classes</span></span>
-<span id="cb53-5"><a href="como-trabalhar-no-r.html#cb53-5" tabindex="-1"></a><span class="fu">attributes</span>(dados)       <span class="co"># Attributres</span></span>
-<span id="cb53-6"><a href="como-trabalhar-no-r.html#cb53-6" tabindex="-1"></a><span class="fu">head</span>(dados)             <span class="co"># First rows</span></span>
-<span id="cb53-7"><a href="como-trabalhar-no-r.html#cb53-7" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">duplicated</span>(dados))  <span class="co"># There is any duplicated rows?</span></span>
-<span id="cb53-8"><a href="como-trabalhar-no-r.html#cb53-8" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">is.na</span>(dados))       <span class="co"># There are NAs in the data?</span></span></code></pre></div>
-<p>As vezes os nomes das variaveis nao sao faceis de trabalhar, possuindo espaco, acentos, letras maiusculas e minusculas, e nomes confusos. Alem de complicar o codigo, o nome de algumas variaveis podem bugar o script (caso das acentuacoes de palavras em portugues). Entao vamos mudar o nome das variaveis utilizando a funcao <em>rename()</em> do pacote <strong>dplyr</strong>. Iremos deixar os nomes mais faceis de trabalhar, deixando todas as letras minusculas.</p>
+<span id="cb53-2"><a href="como-trabalhar-no-r.html#cb53-2" tabindex="-1"></a><span class="co"># 3. Renomeando o nome das variaveis -------------------------------------------------------</span></span>
+<span id="cb53-3"><a href="como-trabalhar-no-r.html#cb53-3" tabindex="-1"></a><span class="co">#ver nome das colunas (variaveis) ----</span></span>
+<span id="cb53-4"><a href="como-trabalhar-no-r.html#cb53-4" tabindex="-1"></a><span class="fu">colnames</span>(dados)</span>
+<span id="cb53-5"><a href="como-trabalhar-no-r.html#cb53-5" tabindex="-1"></a></span>
+<span id="cb53-6"><a href="como-trabalhar-no-r.html#cb53-6" tabindex="-1"></a><span class="co">#Renomeando variaveis ----</span></span>
+<span id="cb53-7"><a href="como-trabalhar-no-r.html#cb53-7" tabindex="-1"></a><span class="co">#Vamos renomear de forma a tirar espacos e manter apenas letras minusculas.</span></span>
+<span id="cb53-8"><a href="como-trabalhar-no-r.html#cb53-8" tabindex="-1"></a>dados_renamed <span class="ot">&lt;-</span> <span class="fu">rename</span>(dados,           </span>
+<span id="cb53-9"><a href="como-trabalhar-no-r.html#cb53-9" tabindex="-1"></a>                        <span class="at">id =</span> ID,  <span class="co">#nomes das variaveis (nome novo = nome antigo)</span></span>
+<span id="cb53-10"><a href="como-trabalhar-no-r.html#cb53-10" tabindex="-1"></a>                        <span class="at">peso_g  =</span> <span class="st">`</span><span class="at">Peso (g)</span><span class="st">`</span>,</span>
+<span id="cb53-11"><a href="como-trabalhar-no-r.html#cb53-11" tabindex="-1"></a>                        <span class="at">total_parasitas =</span> <span class="st">`</span><span class="at">Total de parasitas</span><span class="st">`</span>,</span>
+<span id="cb53-12"><a href="como-trabalhar-no-r.html#cb53-12" tabindex="-1"></a>                        <span class="at">local  =</span> Local</span>
+<span id="cb53-13"><a href="como-trabalhar-no-r.html#cb53-13" tabindex="-1"></a>                        )</span>
+<span id="cb53-14"><a href="como-trabalhar-no-r.html#cb53-14" tabindex="-1"></a><span class="fu">colnames</span>(dados_renamed)</span></code></pre></div>
+<p>Note que quando existe espaço, o nome da variável precisa estar entre crases.
+Agora vamos dizer para o R os tipos de nossas variáveis. Um problema muito comum é o R não reconhecer que a variável categórica não possui fatores, mesmo possuindo. Por exemplo, em “iris”, temos a variável categórica ‘Species’ com seus fatores (setosa, versicolor, virginica). É possível que no seu banco de dados, o R não reconheça isso, então vamos utilizar a função <em>levels()</em> para verificar se o R entendeu quais são os fatores. Se o R retornar NULL, você precisa dizer para o R utilizando a função <em>as.factor()</em>.</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="como-trabalhar-no-r.html#cb54-1" tabindex="-1"></a></span>
-<span id="cb54-2"><a href="como-trabalhar-no-r.html#cb54-2" tabindex="-1"></a><span class="co"># 3. Rename columns names-------------------------------------------------------</span></span>
-<span id="cb54-3"><a href="como-trabalhar-no-r.html#cb54-3" tabindex="-1"></a><span class="fu">head</span>(dados)</span>
-<span id="cb54-4"><a href="como-trabalhar-no-r.html#cb54-4" tabindex="-1"></a>dados2 <span class="ot">&lt;-</span> <span class="fu">rename</span>(iris,                         <span class="co">#sua planilha bruta</span></span>
-<span id="cb54-5"><a href="como-trabalhar-no-r.html#cb54-5" tabindex="-1"></a>                 <span class="at">sepal_length =</span> Sepal.Length,  <span class="co">#nomes das variaveis (nome_novo = nome antigo)</span></span>
-<span id="cb54-6"><a href="como-trabalhar-no-r.html#cb54-6" tabindex="-1"></a>                 <span class="at">sepal_width  =</span> Sepal.Width,</span>
-<span id="cb54-7"><a href="como-trabalhar-no-r.html#cb54-7" tabindex="-1"></a>                 <span class="at">petal_length =</span> Petal.Length,</span>
-<span id="cb54-8"><a href="como-trabalhar-no-r.html#cb54-8" tabindex="-1"></a>                 <span class="at">petal_width  =</span> Petal.Width,</span>
-<span id="cb54-9"><a href="como-trabalhar-no-r.html#cb54-9" tabindex="-1"></a>                 <span class="at">species      =</span> Species)</span>
-<span id="cb54-10"><a href="como-trabalhar-no-r.html#cb54-10" tabindex="-1"></a><span class="fu">head</span>(dados2)</span></code></pre></div>
-<p>Agora vamos dizer para o R os tipos de nossas variaveis. Um problema muito comum, eh o R nao reconhecer que a variavel categorica, nao possui fatores, mesmo possuindo. Por exemplo, em “iris”, temos a variavel categorica ‘Species’ com seus fatores (setosa, versicolor, virginica). Eh possivel que no seu banco de dados, o R nao reconheca isso, entao vamos utilizar a funcao <em>levels()</em> para verificar se o R entendeu quais sao os fatores. Se o R retornar NULL, voce precisa dizer para o R utilizando a funcao <em>as.factor()</em>.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="como-trabalhar-no-r.html#cb55-1" tabindex="-1"></a></span>
-<span id="cb55-2"><a href="como-trabalhar-no-r.html#cb55-2" tabindex="-1"></a><span class="co"># 4. Fix factor variables-------------------------------------------------------</span></span>
-<span id="cb55-3"><a href="como-trabalhar-no-r.html#cb55-3" tabindex="-1"></a><span class="co"># check factor variable</span></span>
-<span id="cb55-4"><a href="como-trabalhar-no-r.html#cb55-4" tabindex="-1"></a><span class="fu">levels</span>(dados2<span class="sc">$</span>species)</span>
-<span id="cb55-5"><a href="como-trabalhar-no-r.html#cb55-5" tabindex="-1"></a></span>
-<span id="cb55-6"><a href="como-trabalhar-no-r.html#cb55-6" tabindex="-1"></a><span class="co"># making factor variables</span></span>
-<span id="cb55-7"><a href="como-trabalhar-no-r.html#cb55-7" tabindex="-1"></a>dados2<span class="sc">$</span>species <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(dados2<span class="sc">$</span>species) <span class="co">#atribuindo a variavel specie transformada a ela mesma.</span></span>
-<span id="cb55-8"><a href="como-trabalhar-no-r.html#cb55-8" tabindex="-1"></a></span>
-<span id="cb55-9"><a href="como-trabalhar-no-r.html#cb55-9" tabindex="-1"></a><span class="co"># check factor variable</span></span>
-<span id="cb55-10"><a href="como-trabalhar-no-r.html#cb55-10" tabindex="-1"></a><span class="fu">levels</span>(dados2<span class="sc">$</span>species)</span></code></pre></div>
-<p>Agora podemos renomear o nome dos fatores de uma variavel categorica utilizando a funcao <em>recode_factor()</em>. Nesse processo podemos identificar erros de digitacao que ocorreram durante o planilhamento dos dados. Por exemplo, voce pode ter digitado “Macho”, “macho” e “male” na variavel sexo durante o planilhamento. O R vai identificar os tres como sendo fatores diferentes mas na verdade sao o mesmo fator. Portanto eh necessario que seja padronizado.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="como-trabalhar-no-r.html#cb56-1" tabindex="-1"></a><span class="co"># 4.1 fix species factors</span></span>
-<span id="cb56-2"><a href="como-trabalhar-no-r.html#cb56-2" tabindex="-1"></a></span>
-<span id="cb56-3"><a href="como-trabalhar-no-r.html#cb56-3" tabindex="-1"></a><span class="co">#check factors</span></span>
-<span id="cb56-4"><a href="como-trabalhar-no-r.html#cb56-4" tabindex="-1"></a><span class="fu">levels</span>(dados2<span class="sc">$</span>species)</span>
-<span id="cb56-5"><a href="como-trabalhar-no-r.html#cb56-5" tabindex="-1"></a></span>
-<span id="cb56-6"><a href="como-trabalhar-no-r.html#cb56-6" tabindex="-1"></a><span class="co">#rename factors</span></span>
-<span id="cb56-7"><a href="como-trabalhar-no-r.html#cb56-7" tabindex="-1"></a>dados2<span class="sc">$</span>species <span class="ot">&lt;-</span> <span class="fu">recode_factor</span>(dados2<span class="sc">$</span>species,                 <span class="co">#variavel categorica</span></span>
-<span id="cb56-8"><a href="como-trabalhar-no-r.html#cb56-8" tabindex="-1"></a>                                <span class="at">setosa =</span> <span class="st">&quot;iris_setosa&quot;</span>,         <span class="co">#mudando nome setosa para iris_setosa</span></span>
-<span id="cb56-9"><a href="como-trabalhar-no-r.html#cb56-9" tabindex="-1"></a>                                <span class="at">versicolor =</span> <span class="st">&quot;iris_versicolor&quot;</span>,</span>
-<span id="cb56-10"><a href="como-trabalhar-no-r.html#cb56-10" tabindex="-1"></a>                                <span class="at">virginica =</span> <span class="st">&quot;iris_virginica&quot;</span>)</span>
-<span id="cb56-11"><a href="como-trabalhar-no-r.html#cb56-11" tabindex="-1"></a></span>
-<span id="cb56-12"><a href="como-trabalhar-no-r.html#cb56-12" tabindex="-1"></a><span class="co">#check factors</span></span>
-<span id="cb56-13"><a href="como-trabalhar-no-r.html#cb56-13" tabindex="-1"></a><span class="fu">levels</span>(dados2<span class="sc">$</span>species)</span></code></pre></div>
-<p>Agora que limpamos nossos dados brutos, iremos exportar nossa planilha limpa. Perceba que o processo do script eh colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. Eh com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato csv por ser um formato mais simples, leve e estavel.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="como-trabalhar-no-r.html#cb57-1" tabindex="-1"></a><span class="co"># 8. Save processed data -----------------------------------------------------</span></span>
-<span id="cb57-2"><a href="como-trabalhar-no-r.html#cb57-2" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> dados2,                                 <span class="co">#nome da planilha que voce quer exportar</span></span>
-<span id="cb57-3"><a href="como-trabalhar-no-r.html#cb57-3" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">&quot;data/processed/processed_iris.csv&quot;</span>, <span class="co">#local e nome da planilha exportada</span></span>
-<span id="cb57-4"><a href="como-trabalhar-no-r.html#cb57-4" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)                          <span class="co">#sempre utilizaremos row.names = FALSE</span></span></code></pre></div>
-<p>O processo de manipulacao de dados no R eh bastante completo e existem diferentes formas de limpar seus dados brutos. O pacote <strong>dplyr</strong> possui funcoes capazes de selecionar variaveis, selecionar linhas, criar variaveis, criar subsets, entre outras. Para aprimorar seu script de limpeza de dados, voce precisara aprender sobre manipulacao de dados e incluir no processo, os codigos no seu script. Por sorte, existe muito material disponivel na internet sobre o assunto. Talvez algum dia eu crie um material sobre manipulacao de dados com dplyr, mas aqui esse nao eh meu objetivo. Meu objetivo eh simplesmente fornecer o esqueleto teorico, te dando base para crescer de forma mais direcionada.</p>
-<p>Por fim, nao esqueca de salvar o script na pasta script com o nome ‘01_clean_raw_data’.</p>
+<span id="cb54-2"><a href="como-trabalhar-no-r.html#cb54-2" tabindex="-1"></a><span class="co"># 4. Consertar fatores  --------------------------------------------------------</span></span>
+<span id="cb54-3"><a href="como-trabalhar-no-r.html#cb54-3" tabindex="-1"></a><span class="co"># ver quais fatores estao na variavel local</span></span>
+<span id="cb54-4"><a href="como-trabalhar-no-r.html#cb54-4" tabindex="-1"></a><span class="fu">levels</span>(dados_renamed<span class="sc">$</span>local) <span class="co">#Se retornar NULL eh porque nao ta reconhecendo como fator.</span></span>
+<span id="cb54-5"><a href="como-trabalhar-no-r.html#cb54-5" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="como-trabalhar-no-r.html#cb54-6" tabindex="-1"></a><span class="co"># Transformando em fator ----</span></span>
+<span id="cb54-7"><a href="como-trabalhar-no-r.html#cb54-7" tabindex="-1"></a>dados_renamed<span class="sc">$</span>local <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(dados_renamed<span class="sc">$</span>local)</span>
+<span id="cb54-8"><a href="como-trabalhar-no-r.html#cb54-8" tabindex="-1"></a></span>
+<span id="cb54-9"><a href="como-trabalhar-no-r.html#cb54-9" tabindex="-1"></a><span class="co"># checar fatores</span></span>
+<span id="cb54-10"><a href="como-trabalhar-no-r.html#cb54-10" tabindex="-1"></a><span class="fu">levels</span>(dados_renamed<span class="sc">$</span>local)</span></code></pre></div>
+<p>Agora podemos renomear o nome dos fatores de uma variável categórica utilizando a função <em>recode_factor()</em>. Nesse processo, podemos identificar erros de digitação que ocorreram durante o planilhamento dos dados. Por exemplo, você pode ter digitado “Macho”, “macho” e “male” na variável sexo durante o planilhamento. O R vai identificar os três como sendo fatores diferentes, mas na verdade são o mesmo fator. Portanto, é necessário que seja padronizado.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="como-trabalhar-no-r.html#cb55-1" tabindex="-1"></a><span class="co"># 4.1 Renomear fatores</span></span>
+<span id="cb55-2"><a href="como-trabalhar-no-r.html#cb55-2" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="como-trabalhar-no-r.html#cb55-3" tabindex="-1"></a><span class="co">#Checar fatores</span></span>
+<span id="cb55-4"><a href="como-trabalhar-no-r.html#cb55-4" tabindex="-1"></a><span class="fu">levels</span>(dados_renamed<span class="sc">$</span>local)</span></code></pre></div>
+<p>Veja que aqui deveríamos ter apenas três fatores: floresta, urbano e parque. Mas, devido a erros de digitação, o R entende que são fatores diferentes. Isso é muito comum em planilhas de dados grandes, e você teria que fazer isso manualmente, identificando cada erro. Imagina o trabalhão.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="como-trabalhar-no-r.html#cb56-1" tabindex="-1"></a><span class="co">#Renomear fatores</span></span>
+<span id="cb56-2"><a href="como-trabalhar-no-r.html#cb56-2" tabindex="-1"></a>dados_renamed<span class="sc">$</span>local <span class="ot">&lt;-</span> <span class="fu">recode_factor</span>(dados_renamed<span class="sc">$</span>local,   <span class="co">#variavel categorica</span></span>
+<span id="cb56-3"><a href="como-trabalhar-no-r.html#cb56-3" tabindex="-1"></a>                                     <span class="at">Floresta =</span> <span class="st">&quot;floresta&quot;</span>,         <span class="co">#mudando nome Floresta para floresta</span></span>
+<span id="cb56-4"><a href="como-trabalhar-no-r.html#cb56-4" tabindex="-1"></a>                                     <span class="at">park =</span> <span class="st">&quot;parque&quot;</span>,</span>
+<span id="cb56-5"><a href="como-trabalhar-no-r.html#cb56-5" tabindex="-1"></a>                                     <span class="at">parque. =</span> <span class="st">&quot;parque&quot;</span>,</span>
+<span id="cb56-6"><a href="como-trabalhar-no-r.html#cb56-6" tabindex="-1"></a>                                     <span class="at">urban =</span> <span class="st">&quot;urbano&quot;</span>,</span>
+<span id="cb56-7"><a href="como-trabalhar-no-r.html#cb56-7" tabindex="-1"></a>                                     <span class="at">Urbano =</span> <span class="st">&quot;urbano&quot;</span>)</span>
+<span id="cb56-8"><a href="como-trabalhar-no-r.html#cb56-8" tabindex="-1"></a></span>
+<span id="cb56-9"><a href="como-trabalhar-no-r.html#cb56-9" tabindex="-1"></a><span class="co">#check factors</span></span>
+<span id="cb56-10"><a href="como-trabalhar-no-r.html#cb56-10" tabindex="-1"></a><span class="fu">levels</span>(dados_renamed<span class="sc">$</span>local)</span></code></pre></div>
+<p>Agora sim! Temos os três fatores bonitinhos. Agora que limpamos nossos dados brutos, iremos exportar nossa planilha limpa. Perceba que o processo do script é colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. É com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato CSV, por ser um formato mais simples, leve e estável.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="como-trabalhar-no-r.html#cb57-1" tabindex="-1"></a><span class="co"># 8. Salvar dado processado ----------------------------------------------------</span></span>
+<span id="cb57-2"><a href="como-trabalhar-no-r.html#cb57-2" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> dados_renamed,    <span class="co">#nome da planilha que voce quer exportar</span></span>
+<span id="cb57-3"><a href="como-trabalhar-no-r.html#cb57-3" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">&quot;data/processed/processed_fake_data.csv&quot;</span>, <span class="co">#local e nome da planilha exportada</span></span>
+<span id="cb57-4"><a href="como-trabalhar-no-r.html#cb57-4" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)  <span class="co">#sempre utilizaremos row.names = FALSE</span></span></code></pre></div>
+<p>O processo de manipulação de dados no R é bastante completo, e existem diferentes formas de limpar seus dados brutos. O pacote <strong>dplyr</strong> possui funções capazes de selecionar variáveis, selecionar linhas, criar variáveis, criar subconjuntos, entre outras. Para aprimorar seu script de limpeza de dados, você precisará aprender sobre manipulação de dados e incluir no processo os códigos no seu script. Por sorte, existe muito material disponível na internet sobre o assunto. Talvez algum dia eu crie um material sobre manipulação de dados com dplyr, mas aqui esse não é meu objetivo. Meu objetivo é simplesmente fornecer o esqueleto teórico, dando base para crescer de forma mais direcionada.</p>
+<p>Por fim, não esqueça de salvar o script na pasta script com o nome ‘01_clean_raw_data’.</p>
 </div>
 <div id="etapa-2-fazer-analise" class="section level3 hasAnchor" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Etapa 2: fazer analise<a href="como-trabalhar-no-r.html#etapa-2-fazer-analise" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Com a planilha bruta processada, podemos realizar testes estatisticos para responder nossa hipotese. Vamos supor que nossa pergunta seja saber se existe diferenca entre o tamanho das petalas entre as tres especies. Organizaremos o script de analise de forma similar ao script de limpeza, ou seja, escreveremos um cabecalho, carregaremos pacotes, importaremos e analisaremos dados de forma organizada.</p>
-<p>Vamos fazer um cabecalho para nosso script de analise.</p>
+<p>Com a planilha bruta processada, podemos realizar testes estatísticos em um novo script para responder à nossa hipótese. Vamos supor que nossa pergunta seja saber se existe diferença na infestação de parasitas em cada local. Organizaremos o script de análise de forma semelhante ao script de limpeza, ou seja, escreveremos um cabeçalho, carregaremos pacotes, importaremos e analisaremos dados de forma organizada.</p>
+<p>Vamos fazer um cabeçalho para nosso script de análise.</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="como-trabalhar-no-r.html#cb58-1" tabindex="-1"></a></span>
-<span id="cb58-2"><a href="como-trabalhar-no-r.html#cb58-2" tabindex="-1"></a><span class="co"># Script to load and analyse processed data iris</span></span>
-<span id="cb58-3"><a href="como-trabalhar-no-r.html#cb58-3" tabindex="-1"></a><span class="co"># Author: Marilia T. Ericcson</span></span>
+<span id="cb58-2"><a href="como-trabalhar-no-r.html#cb58-2" tabindex="-1"></a><span class="co"># Script para analisar dados</span></span>
+<span id="cb58-3"><a href="como-trabalhar-no-r.html#cb58-3" tabindex="-1"></a><span class="co"># Author: seu nome</span></span>
 <span id="cb58-4"><a href="como-trabalhar-no-r.html#cb58-4" tabindex="-1"></a><span class="co"># Data: 2019-11-07</span></span></code></pre></div>
-<p>Vamos criar o codigo para carregar os pacotes que iremos utilizar</p>
+<p>Vamos criar o código para carregar os pacotes que iremos utilizar.</p>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="como-trabalhar-no-r.html#cb59-1" tabindex="-1"></a></span>
 <span id="cb59-2"><a href="como-trabalhar-no-r.html#cb59-2" tabindex="-1"></a><span class="co">#Carregar pacotes</span></span>
 <span id="cb59-3"><a href="como-trabalhar-no-r.html#cb59-3" tabindex="-1"></a><span class="fu">library</span>(broom)</span></code></pre></div>
-<p>Dessa vez iremos importar a planilha limpa e processada. Note que o caminho de importacao eh similar ao caminho que exportamos no script de limpeza.</p>
+<p>Dessa vez, iremos importar a planilha limpa e processada. Note que o caminho de importação é similar ao caminho que exportamos no script de limpeza.</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="como-trabalhar-no-r.html#cb60-1" tabindex="-1"></a></span>
 <span id="cb60-2"><a href="como-trabalhar-no-r.html#cb60-2" tabindex="-1"></a><span class="co"># Load data ---------------------------------------------------------------</span></span>
 <span id="cb60-3"><a href="como-trabalhar-no-r.html#cb60-3" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/processed/processed_iris.csv&quot;</span>)</span></code></pre></div>
 <p>Vamos fazer um check basico.</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="como-trabalhar-no-r.html#cb61-1" tabindex="-1"></a></span>
-<span id="cb61-2"><a href="como-trabalhar-no-r.html#cb61-2" tabindex="-1"></a><span class="co"># 1. Basic checks --------------------------------------------------------------</span></span>
+<span id="cb61-2"><a href="como-trabalhar-no-r.html#cb61-2" tabindex="-1"></a><span class="co"># 1. Check up basico --------------------------------------------------------------</span></span>
 <span id="cb61-3"><a href="como-trabalhar-no-r.html#cb61-3" tabindex="-1"></a><span class="fu">head</span>(dados)</span>
 <span id="cb61-4"><a href="como-trabalhar-no-r.html#cb61-4" tabindex="-1"></a><span class="fu">str</span>(dados)</span>
-<span id="cb61-5"><a href="como-trabalhar-no-r.html#cb61-5" tabindex="-1"></a><span class="fu">leves</span>(dados<span class="sc">$</span>species)</span></code></pre></div>
-<p>Vamos realizar uma analise para comparar a largura das petalas entre as especies. Para isso, iremos utilizar o teste nao parametrico de kruskal-wallis atraves da funcao kruskal.test(). Nessa funcao, voce precisa dizer qual sua variavel numerica de interesse em relacao a (~) sua variavel categorica e seus grupos (fatores). Veja que o p-value eh menor que 0.05, entao dizemos que existe diferenca da largura entre as tres especies.</p>
+<span id="cb61-5"><a href="como-trabalhar-no-r.html#cb61-5" tabindex="-1"></a><span class="fu">leves</span>(dados<span class="sc">$</span>local)</span></code></pre></div>
+<p>Vamos realizar uma análise para ver se existe diferença na quantidade de parasitas encontrada nos bem-te-vis de cada local. Para isso, iremos utilizar o teste não paramétrico de Kruskal-Wallis através da função kruskal.test(). Nessa função, você precisa dizer qual sua variável numérica de interesse em relação a (~) sua variável categórica e seus grupos (fatores). Veja que o p-value é menor que 0.05, então dizemos que existe diferença da largura entre as três espécies.</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="como-trabalhar-no-r.html#cb62-1" tabindex="-1"></a></span>
 <span id="cb62-2"><a href="como-trabalhar-no-r.html#cb62-2" tabindex="-1"></a><span class="co">#realizando o teste</span></span>
-<span id="cb62-3"><a href="como-trabalhar-no-r.html#cb62-3" tabindex="-1"></a>kw <span class="ot">&lt;-</span> <span class="fu">kruskal.test</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">~</span> iris<span class="sc">$</span>Species)</span>
+<span id="cb62-3"><a href="como-trabalhar-no-r.html#cb62-3" tabindex="-1"></a>kw <span class="ot">&lt;-</span> <span class="fu">kruskal.test</span>(dados<span class="sc">$</span>total_parasitas <span class="sc">~</span> dados<span class="sc">$</span>local)</span>
 <span id="cb62-4"><a href="como-trabalhar-no-r.html#cb62-4" tabindex="-1"></a>kw</span></code></pre></div>
-<p>Vamos salvar o resultado em uma tabela organizada (tidy) utilizando a funcao <em>tidy()</em> do pacote <strong>broom</strong>.</p>
+<p>Vamos salvar o resultado em uma tabela organizada (tidy) utilizando a função <em>tidy()</em> do pacote <strong>broom</strong>.</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="como-trabalhar-no-r.html#cb63-1" tabindex="-1"></a></span>
-<span id="cb63-2"><a href="como-trabalhar-no-r.html#cb63-2" tabindex="-1"></a><span class="co">#Ajeitando tabela para formato tidy</span></span>
+<span id="cb63-2"><a href="como-trabalhar-no-r.html#cb63-2" tabindex="-1"></a><span class="co">#Convertendo tabela para formato tidy</span></span>
 <span id="cb63-3"><a href="como-trabalhar-no-r.html#cb63-3" tabindex="-1"></a>table_kw <span class="ot">&lt;-</span> <span class="fu">tidy</span>(kw_test)</span>
 <span id="cb63-4"><a href="como-trabalhar-no-r.html#cb63-4" tabindex="-1"></a>table_kw</span></code></pre></div>
 <p>Agora salvaremos essa tabela na nossa pasta outputs em tables.</p>
@@ -393,21 +395,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb64-3"><a href="como-trabalhar-no-r.html#cb64-3" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> table_kw,                                 </span>
 <span id="cb64-4"><a href="como-trabalhar-no-r.html#cb64-4" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">&quot;outputs/tables/resultado_kw.csv&quot;</span>,</span>
 <span id="cb64-5"><a href="como-trabalhar-no-r.html#cb64-5" tabindex="-1"></a>          <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p>Maravilha! Ja temos nosso segundo script pronto. Agora eh so salva-lo na pasta script com o nome: ‘02_kruskal_test’.</p>
+<p>Maravilha! Já temos nosso segundo script pronto. Agora é só salvá-lo na pasta script com o nome ‘02_kruskal_test’.</p>
 </div>
 <div id="etapa-3-criar-grafico" class="section level3 hasAnchor" number="4.3.3">
 <h3><span class="header-section-number">4.3.3</span> Etapa 3: criar grafico<a href="como-trabalhar-no-r.html#etapa-3-criar-grafico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Agora vamos criar o grafico para representar nosso resultado de que existe diferenca da largura das petadas entre as especies de iris.</p>
+<p>Agora vamos criar o gráfico para representar nosso resultado de que existe diferença na largura das pétalas entre as espécies de iris.</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="como-trabalhar-no-r.html#cb65-1" tabindex="-1"></a> </span>
-<span id="cb65-2"><a href="como-trabalhar-no-r.html#cb65-2" tabindex="-1"></a><span class="co"># Script to load and analyse processed data iris</span></span>
-<span id="cb65-3"><a href="como-trabalhar-no-r.html#cb65-3" tabindex="-1"></a><span class="co"># Author: Marilia T. Ericcson</span></span>
+<span id="cb65-2"><a href="como-trabalhar-no-r.html#cb65-2" tabindex="-1"></a><span class="co"># Script para criar graficos</span></span>
+<span id="cb65-3"><a href="como-trabalhar-no-r.html#cb65-3" tabindex="-1"></a><span class="co"># Author: seu nome</span></span>
 <span id="cb65-4"><a href="como-trabalhar-no-r.html#cb65-4" tabindex="-1"></a><span class="co"># Data: 2019-11-07</span></span>
 <span id="cb65-5"><a href="como-trabalhar-no-r.html#cb65-5" tabindex="-1"></a> </span>
 <span id="cb65-6"><a href="como-trabalhar-no-r.html#cb65-6" tabindex="-1"></a><span class="co">#Carregar pacotes</span></span>
 <span id="cb65-7"><a href="como-trabalhar-no-r.html#cb65-7" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb65-8"><a href="como-trabalhar-no-r.html#cb65-8" tabindex="-1"></a></span>
 <span id="cb65-9"><a href="como-trabalhar-no-r.html#cb65-9" tabindex="-1"></a><span class="co"># Load data ---------------------------------------------------------------</span></span>
-<span id="cb65-10"><a href="como-trabalhar-no-r.html#cb65-10" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/processed/processed_iris.csv&quot;</span>)</span>
+<span id="cb65-10"><a href="como-trabalhar-no-r.html#cb65-10" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/processed/processed_fake_data.csv&quot;</span>)</span>
 <span id="cb65-11"><a href="como-trabalhar-no-r.html#cb65-11" tabindex="-1"></a></span>
 <span id="cb65-12"><a href="como-trabalhar-no-r.html#cb65-12" tabindex="-1"></a><span class="co"># 1. Basic checks --------------------------------------------------------------</span></span>
 <span id="cb65-13"><a href="como-trabalhar-no-r.html#cb65-13" tabindex="-1"></a><span class="fu">head</span>(dados)</span>
@@ -434,10 +436,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Figure 4.1: ggplot2
 </p>
 </div>
-<p>Voce acabou de criar um grafico utilizando o pacote ggplot2 que eh o pacote mais utilizado para producao de graficos no R. O codigo pode parecer um pouco confuso no inicio, mas nao precisa estudar muito para perceber que ele eh muito simples e intuitivo. Para aprender mais sobre graficos, sugiro os livros: <a href="https://rkabacoff.github.io/datavis/" class="uri">https://rkabacoff.github.io/datavis/</a> e <a href="https://r-graphics.org/" class="uri">https://r-graphics.org/</a></p>
-<p>Nao esqueca de salvar o script com o nome ‘03_grafico’
-#Etapa 4: Replicabilidade</p>
-<p>O seu projeto esta organizado de forma que se torna facil a replicabilidade em qualquer computador gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, voce precisa manter e JAMAIS deletar ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um click a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna util ao compartilhar seus dados com alguem, em que voce pode zipar todo seu projeto, enviar para um contribuidor e ele podera ter acesso a tudo rodando apenas um script. Eh esse script que iremos fazer agora.</p>
+<p>Você acabou de criar um gráfico utilizando o pacote ggplot2, que é o pacote mais utilizado para produção de gráficos no R. O código pode parecer um pouco confuso no início, mas não precisa estudar muito para perceber que ele é muito simples e intuitivo. Para aprender mais sobre gráficos, sugiro os livros: <a href="https://rkabacoff.github.io/datavis/">Data Visualization: A practical introduction</a> e <a href="https://r-graphics.org/">R Graphics Cookbook</a>.</p>
+<p>Não esqueça de salvar o script com o nome ‘03_grafico’.</p>
+</div>
+<div id="etapa-4-replicabilidade" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Etapa 4: Replicabilidade<a href="como-trabalhar-no-r.html#etapa-4-replicabilidade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>O seu projeto está organizado de forma que se torna fácil a replicabilidade em qualquer computador, gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, você precisa manter e <strong>JAMAIS deletar</strong> ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um clique a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna útil ao compartilhar seus dados com alguém, em que você pode zipar todo seu projeto, enviar para um contribuidor, e ele poderá ter acesso a tudo rodando apenas um script. É esse script que iremos fazer agora.</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="como-trabalhar-no-r.html#cb66-1" tabindex="-1"></a><span class="co"># Script to run all project code</span></span>
 <span id="cb66-2"><a href="como-trabalhar-no-r.html#cb66-2" tabindex="-1"></a><span class="co"># Importante: reinicie o R antes de rodar esse script session &gt; restart R</span></span>
 <span id="cb66-3"><a href="como-trabalhar-no-r.html#cb66-3" tabindex="-1"></a></span>
@@ -451,8 +455,8 @@ Figure 4.1: ggplot2
 <span id="cb66-11"><a href="como-trabalhar-no-r.html#cb66-11" tabindex="-1"></a></span>
 <span id="cb66-12"><a href="como-trabalhar-no-r.html#cb66-12" tabindex="-1"></a><span class="co"># 1.3 Plot figures--------------------------------------------------------------</span></span>
 <span id="cb66-13"><a href="como-trabalhar-no-r.html#cb66-13" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;script/03_grafico.R&quot;</span>)</span></code></pre></div>
-<p>Ao rodar esse codigo, todos os seus scripts sao rodados e todos os seus outputs e planilhas processadas sao geradas. Mas lembre, seu dado bruto contido na pasta data/raw, nao pode ser deletada ou modificada.</p>
-<p>Salve esse script com o nome “run_project”.</p>
+<p>Ao rodar este código, todos os seus scripts são executados, e todos os seus outputs e planilhas processadas são gerados. Mas lembre-se, seu dado bruto contido na pasta data/raw não pode ser deletado ou modificado.</p>
+<p>Salve este script com o nome “run_project”.</p>
 
 </div>
 </div>

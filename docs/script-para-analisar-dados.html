@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 2 Pré-requisitos | R Zero - do simples ao complexo</title>
+  <title>Capítulo 5 Script para analisar dados | R Zero - do simples ao complexo</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 2 Pré-requisitos | R Zero - do simples ao complexo" />
+  <meta property="og:title" content="Capítulo 5 Script para analisar dados | R Zero - do simples ao complexo" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 2 Pré-requisitos | R Zero - do simples ao complexo" />
+  <meta name="twitter:title" content="Capítulo 5 Script para analisar dados | R Zero - do simples ao complexo" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="r-para-iniciantes.html"/>
+<link rel="prev" href="como-trabalhar-no-r.html"/>
+<link rel="next" href="author-seu-nome.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -183,13 +183,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#etapa-1-limpar-dados"><i class="fa fa-check"></i><b>4.3.1</b> Etapa 1: limpar dados</a></li>
 <li class="chapter" data-level="4.3.2" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#etapa-2-fazer-analise"><i class="fa fa-check"></i><b>4.3.2</b> Etapa 2: fazer analise</a></li>
-<li class="chapter" data-level="4.3.3" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#etapa-3-criar-grafico"><i class="fa fa-check"></i><b>4.3.3</b> Etapa 3: criar grafico</a></li>
-<li class="chapter" data-level="4.3.4" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#etapa-4-replicabilidade"><i class="fa fa-check"></i><b>4.3.4</b> Etapa 4: Replicabilidade</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="git-e-github.html"><a href="git-e-github.html"><i class="fa fa-check"></i><b>5</b> Git e GitHub</a></li>
-<li class="chapter" data-level="6" data-path="criando-funcoes-avancadas.html"><a href="criando-funcoes-avancadas.html"><i class="fa fa-check"></i><b>6</b> Criando funcoes avancadas</a></li>
-<li class="chapter" data-level="7" data-path="criando-pacotes.html"><a href="criando-pacotes.html"><i class="fa fa-check"></i><b>7</b> Criando pacotes</a></li>
+<li class="chapter" data-level="5" data-path="script-para-analisar-dados.html"><a href="script-para-analisar-dados.html"><i class="fa fa-check"></i><b>5</b> Script para analisar dados</a></li>
+<li class="chapter" data-level="6" data-path="author-seu-nome.html"><a href="author-seu-nome.html"><i class="fa fa-check"></i><b>6</b> Author: seu nome</a></li>
+<li class="chapter" data-level="7" data-path="data-2019-11-07.html"><a href="data-2019-11-07.html"><i class="fa fa-check"></i><b>7</b> Data: 2019-11-07</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="data-2019-11-07.html"><a href="data-2019-11-07.html#etapa-3-criar-grafico"><i class="fa fa-check"></i><b>7.0.1</b> Etapa 3: criar grafico</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="etapa-4-replicabilidade.html"><a href="etapa-4-replicabilidade.html"><i class="fa fa-check"></i><b>8</b> Etapa 4: Replicabilidade</a></li>
+<li class="chapter" data-level="9" data-path="git-e-github.html"><a href="git-e-github.html"><i class="fa fa-check"></i><b>9</b> Git e GitHub</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -210,31 +213,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pré-requisitos" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Capítulo 2</span> Pré-requisitos<a href="pré-requisitos.html#pré-requisitos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="instalando-r-e-rstudio" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Instalando R e RStudio<a href="pré-requisitos.html#instalando-r-e-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Para utilizar este livro de maneira otimizada, é necessário ter o <strong>R</strong> e o <strong>RStudio</strong> instalados. Não vou abordar a instalação aqui, pois acredito que você é capaz de encontrar tutoriais simples feitos por uma crianca de 8 anos no YouTube.</p>
-<p>Brincadeiras à parte, a ideia é facilitar sua vida. Então saiba o seguinte. O R é o programa principal, o RStudio é uma “skin”, uma “roupagem” do R. Alguns chamam essa roupagem de Ambiente de Desenvolvimento Integrado (IDE - Integrated Development Environment), mas você só precisa saber disso por um motivo: você precisa instalar o R primeiro, depois sua skin (o RStudio), caso contrário ocorrerão problemas.</p>
-<p>O <strong>RStudio</strong> requer <strong>R 3.3.0</strong> ou superior. Clique no link abaixo, acesse o site para baixar o <strong>R</strong> e escolha uma versão compatível com o sistema operacional do seu computador.</p>
-<ol style="list-style-type: decimal">
-<li>Para baixar e instalar o <strong>R</strong>, acesse:</li>
-</ol>
-<p><a href="https://cran.r-project.org/">https://cran.r-project.org/</a></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Em seguida, faça o download e instale o <strong>RStudio</strong> através do link:</li>
-</ol>
-<p><a href="https://posit.co/download/rstudio-desktop/#download">https://posit.co/download/rstudio-desktop/#download</a></p>
-
-</div>
+<div id="script-para-analisar-dados" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Script para analisar dados<a href="script-para-analisar-dados.html#script-para-analisar-dados" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="r-para-iniciantes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="como-trabalhar-no-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="author-seu-nome.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -265,7 +253,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-parts.Rmd",
 "text": "Edit"
 },
 "history": {

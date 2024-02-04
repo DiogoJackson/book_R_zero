@@ -113,7 +113,7 @@ Após isso, utilizaremos os comentários para organizar o script em tópicos, fa
 # Caso nao tenha os pacotes instalados, instale!
 
 library(dplyr)  #Pacote com funcoes para manipular dados
-library(readlx) #Pacote com funcao para importar planilha em formato de excel (xlsx)
+library(readxl) #Pacote com funcao para importar planilha em formato de excel (xlsx)
 ```
 Segundo, importamos o banco de dados a ser processado (limpado) utilizando a função *read.csv()* e atribuindo (<-) a um objeto que iremos chamar de "dados". Para importar, você só precisa especificar o caminho do diretório em que o arquivo está inserido. Como estamos utilizando o projeto de R, o diretório é onde o projeto está. Dessa forma, não há necessidade de dizer para o R qual é o seu diretório de trabalho. Logo, fica fácil importar os dados brutos pois sabemos que ele está na pasta "dados > raw > iris.csv". Dizemos isso para o R utilizando os nomes das pastas separados por barras e, por fim, o nome do arquivo (iris) e sua extensão (.csv).
   
@@ -124,11 +124,11 @@ Segundo, importamos o banco de dados a ser processado (limpado) utilizando a fun
 dados <- read_excel("data/raw/fake_data.xlsx")
 
 ```
-Agora que o banco de dados foi importado, podemos fazer um check up basico utilizando algumas funcoes.
+Agora que o banco de dados foi importado, podemos fazer um check up basico utilizando algumas funcoes. Como assim check up basico? Ver o numero de observacoes, se tem dado faltando ou observacao duplicada, essas coisas.
   
 ```r
 
-# 1. Basic checks --------------------------------------------------------------
+# 1. Check up basico --------------------------------------------------------------
 nrow(dados)             # Quantas linhas (observacoes) tem no banco de dados?
 str(dados)              # quais as classes das variaveis?
 attributes(dados)       # quais atributos?
@@ -142,89 +142,99 @@ any(is.na(dados))       # Checar se tem dado faltando (NA).
 ```r
 
 # 3. Renomeando o nome das variaveis -------------------------------------------------------
-head(dados)
-dados2 <- rename(iris,                         #sua planilha bruta
-                 sepal_length = Sepal.Length,  #nomes das variaveis (nome_novo = nome antigo)
-                 sepal_width  = Sepal.Width,
-                 petal_length = Petal.Length,
-                 petal_width  = Petal.Width,
-                 species      = Species)
-head(dados2)
+#ver nome das colunas (variaveis) ----
+colnames(dados)
+
+#Renomeando variaveis ----
+#Vamos renomear de forma a tirar espacos e manter apenas letras minusculas.
+dados_renamed <- rename(dados,           
+                        id = ID,  #nomes das variaveis (nome novo = nome antigo)
+                        peso_g  = `Peso (g)`,
+                        total_parasitas = `Total de parasitas`,
+                        local  = Local
+                        )
+colnames(dados_renamed)
 
 ```
-Agora vamos dizer para o R os tipos de nossas variaveis. Um problema muito comum, eh o R nao reconhecer que a variavel categorica, nao possui fatores, mesmo possuindo. Por exemplo, em "iris", temos a variavel categorica 'Species' com seus fatores (setosa, versicolor, virginica). Eh possivel que no seu banco de dados, o R nao reconheca isso, entao vamos utilizar a funcao *levels()* para verificar se o R entendeu quais sao os fatores. Se o R retornar NULL, voce precisa dizer para o R utilizando a funcao *as.factor()*.
+  
+Note que quando existe espaço, o nome da variável precisa estar entre crases.
+Agora vamos dizer para o R os tipos de nossas variáveis. Um problema muito comum é o R não reconhecer que a variável categórica não possui fatores, mesmo possuindo. Por exemplo, em "iris", temos a variável categórica 'Species' com seus fatores (setosa, versicolor, virginica). É possível que no seu banco de dados, o R não reconheça isso, então vamos utilizar a função *levels()* para verificar se o R entendeu quais são os fatores. Se o R retornar NULL, você precisa dizer para o R utilizando a função *as.factor()*.
 
 ```r
 
-# 4. Fix factor variables-------------------------------------------------------
-# check factor variable
-levels(dados2$species)
+# 4. Consertar fatores  --------------------------------------------------------
+# ver quais fatores estao na variavel local
+levels(dados_renamed$local) #Se retornar NULL eh porque nao ta reconhecendo como fator.
 
-# making factor variables
-dados2$species <- as.factor(dados2$species) #atribuindo a variavel specie transformada a ela mesma.
+# Transformando em fator ----
+dados_renamed$local <- as.factor(dados_renamed$local)
 
-# check factor variable
-levels(dados2$species)
+# checar fatores
+levels(dados_renamed$local)
 
 ```
 
-Agora podemos renomear o nome dos fatores de uma variavel categorica utilizando a funcao *recode_factor()*. Nesse processo podemos identificar erros de digitacao que ocorreram durante o planilhamento dos dados. Por exemplo, voce pode ter digitado "Macho", "macho" e "male" na variavel sexo durante o planilhamento. O R vai identificar os tres como sendo fatores diferentes mas na verdade sao o mesmo fator. Portanto eh necessario que seja padronizado.
+Agora podemos renomear o nome dos fatores de uma variável categórica utilizando a função *recode_factor()*. Nesse processo, podemos identificar erros de digitação que ocorreram durante o planilhamento dos dados. Por exemplo, você pode ter digitado "Macho", "macho" e "male" na variável sexo durante o planilhamento. O R vai identificar os três como sendo fatores diferentes, mas na verdade são o mesmo fator. Portanto, é necessário que seja padronizado.
   
 ```r
-# 4.1 fix species factors
+# 4.1 Renomear fatores
+
+#Checar fatores
+levels(dados_renamed$local)
+```
+Veja que aqui deveríamos ter apenas três fatores: floresta, urbano e parque. Mas, devido a erros de digitação, o R entende que são fatores diferentes. Isso é muito comum em planilhas de dados grandes, e você teria que fazer isso manualmente, identificando cada erro. Imagina o trabalhão.
+
+```r
+#Renomear fatores
+dados_renamed$local <- recode_factor(dados_renamed$local,   #variavel categorica
+                                     Floresta = "floresta",         #mudando nome Floresta para floresta
+                                     park = "parque",
+                                     parque. = "parque",
+                                     urban = "urbano",
+                                     Urbano = "urbano")
 
 #check factors
-levels(dados2$species)
-
-#rename factors
-dados2$species <- recode_factor(dados2$species,                 #variavel categorica
-                                setosa = "iris_setosa",         #mudando nome setosa para iris_setosa
-                                versicolor = "iris_versicolor",
-                                virginica = "iris_virginica")
-
-#check factors
-levels(dados2$species)
+levels(dados_renamed$local)
 
 ```
-  
-Agora que limpamos nossos dados brutos, iremos exportar nossa planilha limpa. Perceba que o processo do script eh colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. Eh com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato csv por ser um formato mais simples, leve e estavel.
+Agora sim! Temos os três fatores bonitinhos. Agora que limpamos nossos dados brutos, iremos exportar nossa planilha limpa. Perceba que o processo do script é colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. É com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato CSV, por ser um formato mais simples, leve e estável.
   
 ```r
-# 8. Save processed data -----------------------------------------------------
-write.csv(x = dados2,                                 #nome da planilha que voce quer exportar
-          file = "data/processed/processed_iris.csv", #local e nome da planilha exportada
-          row.names = FALSE)                          #sempre utilizaremos row.names = FALSE
+# 8. Salvar dado processado ----------------------------------------------------
+write.csv(x = dados_renamed,    #nome da planilha que voce quer exportar
+          file = "data/processed/processed_fake_data.csv", #local e nome da planilha exportada
+          row.names = FALSE)  #sempre utilizaremos row.names = FALSE
 
 ```
   
-O processo de manipulacao de dados no R eh bastante completo e existem diferentes formas de limpar seus dados brutos. O pacote **dplyr** possui funcoes capazes de selecionar variaveis, selecionar linhas, criar variaveis, criar subsets, entre outras. Para aprimorar seu script de limpeza de dados, voce precisara aprender sobre manipulacao de dados e incluir no processo, os codigos no seu script. Por sorte, existe muito material disponivel na internet sobre o assunto. Talvez algum dia eu crie um material sobre manipulacao de dados com dplyr, mas aqui esse nao eh meu objetivo. Meu objetivo eh simplesmente fornecer o esqueleto teorico, te dando base para crescer de forma mais direcionada.
-  
-Por fim, nao esqueca de salvar o script na pasta script com o nome '01_clean_raw_data'.
+O processo de manipulação de dados no R é bastante completo, e existem diferentes formas de limpar seus dados brutos. O pacote **dplyr** possui funções capazes de selecionar variáveis, selecionar linhas, criar variáveis, criar subconjuntos, entre outras. Para aprimorar seu script de limpeza de dados, você precisará aprender sobre manipulação de dados e incluir no processo os códigos no seu script. Por sorte, existe muito material disponível na internet sobre o assunto. Talvez algum dia eu crie um material sobre manipulação de dados com dplyr, mas aqui esse não é meu objetivo. Meu objetivo é simplesmente fornecer o esqueleto teórico, dando base para crescer de forma mais direcionada.
+
+Por fim, não esqueça de salvar o script na pasta script com o nome '01_clean_raw_data'.
   
 ### Etapa 2: fazer analise
   
-Com a planilha bruta processada, podemos realizar testes estatisticos para responder nossa hipotese. Vamos supor que nossa pergunta seja saber se existe diferenca entre o tamanho das petalas entre as tres especies. Organizaremos o script de analise de forma similar ao script de limpeza, ou seja, escreveremos um cabecalho, carregaremos pacotes, importaremos e analisaremos dados de forma organizada.
+Com a planilha bruta processada, podemos realizar testes estatísticos em um novo script para responder à nossa hipótese. Vamos supor que nossa pergunta seja saber se existe diferença na infestação de parasitas em cada local. Organizaremos o script de análise de forma semelhante ao script de limpeza, ou seja, escreveremos um cabeçalho, carregaremos pacotes, importaremos e analisaremos dados de forma organizada.
   
-Vamos fazer um cabecalho para nosso script de analise.
+Vamos fazer um cabeçalho para nosso script de análise.
   
  ```r
  
-# Script to load and analyse processed data iris
-# Author: Marilia T. Ericcson
+# Script para analisar dados
+# Author: seu nome
 # Data: 2019-11-07
 
 ```
-
-Vamos criar o codigo para carregar os pacotes que iremos utilizar
-
+  
+Vamos criar o código para carregar os pacotes que iremos utilizar.
+  
  ```r
  
 #Carregar pacotes
 library(broom)
 
 ```
-  
-Dessa vez iremos importar a planilha limpa e processada. Note que o caminho de importacao eh similar ao caminho que exportamos no script de limpeza.
+   
+Dessa vez, iremos importar a planilha limpa e processada. Note que o caminho de importação é similar ao caminho que exportamos no script de limpeza.
   
  ```r
 
@@ -234,36 +244,36 @@ dados <- read.csv("data/processed/processed_iris.csv")
 ```
   
 Vamos fazer um check basico.
-
+  
 ```r
 
-# 1. Basic checks --------------------------------------------------------------
+# 1. Check up basico --------------------------------------------------------------
 head(dados)
 str(dados)
-leves(dados$species)
+leves(dados$local)
 
 ```
-
-Vamos realizar uma analise para comparar a largura das petalas entre as especies. Para isso, iremos utilizar o teste nao parametrico de kruskal-wallis atraves da funcao kruskal.test(). Nessa funcao, voce precisa dizer qual sua variavel numerica de interesse em relacao a (~) sua variavel categorica e seus grupos (fatores). Veja que o p-value eh menor que 0.05, entao dizemos que existe diferenca da largura entre as tres especies.
+  
+Vamos realizar uma análise para ver se existe diferença na quantidade de parasitas encontrada nos bem-te-vis de cada local. Para isso, iremos utilizar o teste não paramétrico de Kruskal-Wallis através da função kruskal.test(). Nessa função, você precisa dizer qual sua variável numérica de interesse em relação a (~) sua variável categórica e seus grupos (fatores). Veja que o p-value é menor que 0.05, então dizemos que existe diferença da largura entre as três espécies.
   
 ```r
 
 #realizando o teste
-kw <- kruskal.test(iris$Sepal.Width ~ iris$Species)
+kw <- kruskal.test(dados$total_parasitas ~ dados$local)
 kw
 
 ```
    
-Vamos salvar o resultado em uma tabela organizada (tidy) utilizando a funcao *tidy()* do pacote **broom**.
-
+Vamos salvar o resultado em uma tabela organizada (tidy) utilizando a função *tidy()* do pacote **broom**.
+  
 ```r
 
-#Ajeitando tabela para formato tidy
+#Convertendo tabela para formato tidy
 table_kw <- tidy(kw_test)
 table_kw
 
 ```
-
+  
 Agora salvaremos essa tabela na nossa pasta outputs em tables.
 
 ```r
@@ -274,23 +284,24 @@ write.csv(x = table_kw,
           row.names = FALSE)
 
 ```
-Maravilha! Ja temos nosso segundo script pronto. Agora eh so salva-lo na pasta script com o nome: '02_kruskal_test'.
+  
+Maravilha! Já temos nosso segundo script pronto. Agora é só salvá-lo na pasta script com o nome '02_kruskal_test'.
   
 ### Etapa 3: criar grafico
   
-Agora vamos criar o grafico para representar nosso resultado de que existe diferenca da largura das petadas entre as especies de iris.
+Agora vamos criar o gráfico para representar nosso resultado de que existe diferença na largura das pétalas entre as espécies de iris.
   
 ```r
  
-# Script to load and analyse processed data iris
-# Author: Marilia T. Ericcson
+# Script para criar graficos
+# Author: seu nome
 # Data: 2019-11-07
  
 #Carregar pacotes
 library(ggplot2)
 
 # Load data ---------------------------------------------------------------
-dados <- read.csv("data/processed/processed_iris.csv")
+dados <- read.csv("data/processed/processed_fake_data.csv")
 
 # 1. Basic checks --------------------------------------------------------------
 head(dados)
@@ -325,12 +336,13 @@ ggplot(iris, aes(x = Species, y = Petal.Width))+
 
 ```
   
-Voce acabou de criar um grafico utilizando o pacote ggplot2 que eh o pacote mais utilizado para producao de graficos no R. O codigo pode parecer um pouco confuso no inicio, mas nao precisa estudar muito para perceber que ele eh muito simples e intuitivo. Para aprender mais sobre graficos, sugiro os livros: https://rkabacoff.github.io/datavis/ e https://r-graphics.org/
-  
-Nao esqueca de salvar o script com o nome '03_grafico'
-#Etapa 4: Replicabilidade
-  
-O seu projeto esta organizado de forma que se torna facil a replicabilidade em qualquer computador gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, voce precisa manter e JAMAIS deletar ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um click a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna util ao compartilhar seus dados com alguem, em que voce pode zipar todo seu projeto, enviar para um contribuidor e ele podera ter acesso a tudo rodando apenas um script. Eh esse script que iremos fazer agora.
+Você acabou de criar um gráfico utilizando o pacote ggplot2, que é o pacote mais utilizado para produção de gráficos no R. O código pode parecer um pouco confuso no início, mas não precisa estudar muito para perceber que ele é muito simples e intuitivo. Para aprender mais sobre gráficos, sugiro os livros: [Data Visualization: A practical introduction](https://rkabacoff.github.io/datavis/) e [R Graphics Cookbook](https://r-graphics.org/).
+
+Não esqueça de salvar o script com o nome '03_grafico'.
+
+### Etapa 4: Replicabilidade
+
+O seu projeto está organizado de forma que se torna fácil a replicabilidade em qualquer computador, gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, você precisa manter e **JAMAIS deletar** ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um clique a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna útil ao compartilhar seus dados com alguém, em que você pode zipar todo seu projeto, enviar para um contribuidor, e ele poderá ter acesso a tudo rodando apenas um script. É esse script que iremos fazer agora.
 
 ```r
 # Script to run all project code
@@ -349,8 +361,7 @@ source(file = "script/03_grafico.R")
 
 ```
   
-Ao rodar esse codigo, todos os seus scripts sao rodados e todos os seus outputs e planilhas processadas sao geradas. Mas lembre, seu dado bruto contido na pasta data/raw, nao pode ser deletada ou modificada.
-  
-Salve esse script com o nome "run_project".
-  
+Ao rodar este código, todos os seus scripts são executados, e todos os seus outputs e planilhas processadas são gerados. Mas lembre-se, seu dado bruto contido na pasta data/raw não pode ser deletado ou modificado.
 
+Salve este script com o nome "run_project".
+  
