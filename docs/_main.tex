@@ -120,7 +120,7 @@
 
 \title{R Zero - do simples ao complexo}
 \author{Diogo J. A. Silva}
-\date{2024-01-10}
+\date{2024-02-04}
 
 \begin{document}
 \maketitle
@@ -186,14 +186,14 @@ O \textbf{RStudio} requer \textbf{R 3.3.0} ou superior. Clique no link abaixo, a
 \hypertarget{r-para-iniciantes}{%
 \chapter{R para iniciantes}\label{r-para-iniciantes}}
 
-Caro iniciante, meu objetivo aqui é mostrar que utilizar o R é muito divertido e recompensador. Você vai perceber que cada código rodado (e que funciona) vai te dar um pouquinho de dopamina e uma sensação de prazer. Claro que alguns erros vão te deixar maluco, mas você vai perceber que tudo é culpa sua. Mas não se preocupe, se é culpa sua, você pode consertá-los facilmente :)
+Caro iniciante, meu objetivo aqui é mostrar que utilizar o R é muito divertido e recompensador. Você vai perceber que cada código rodado (e que funciona) vai te dar um pouquinho de dopamina e uma sensação de prazer. Claro que alguns erros vão te deixar maluco, mas você vai perceber que tudo é culpa sua. Mas não se preocupe, se é culpa sua, você pode consertá-los :)
 
-A tendência é que quanto mais você utiliza o R, mais fácil sua vida se torna, e apesar da curva de aprendizagem ser um pouco desestimuladora, é 1000 vezes recompensadora. Como alguns gostam de dizer, você conseguirá fazer um gráfico até 30 vezes mais rápido!!! Não sei de onde veio esse cálculo, mas se está na internet é verdade.
+A tendência é que, quanto mais você utilizar o R, mais fácil sua vida se tornará, e, apesar da curva de aprendizagem ser um pouco desestimuladora, é 1000 vezes recompensadora. Como alguns gostam de dizer, você conseguirá fazer um gráfico até 30 vezes mais rápido! Não sei de onde veio esse cálculo, mas se está na internet, é verdade.
 
 \hypertarget{entendendo-o-rstudio}{%
 \section{Entendendo o RStudio}\label{entendendo-o-rstudio}}
 
-Tudo que iremos fazer será através do R Studio devido à organização que ele nos fornece. O RStudio eh uma roupagem para o R, que nos fornece um ambiente de trabalho mais amigavel e organizado. Se voce seguiu as instrucoes de instalacao corretamente, voce tera dois icones, o do R base e o do RStudio. Vamos abrir o programa RStudio dando dois cliques sobre seu icone (Figura 1).
+Tudo que faremos será através do R Studio devido à organização que ele nos fornece. O RStudio é uma roupagem para o R, que nos oferece um ambiente de trabalho mais amigável e organizado. Se você seguiu as instruções de instalação corretamente, terá dois ícones, o do R base e o do RStudio. Vamos abrir o programa RStudio dando dois cliques sobre seu ícone (Figura 1).
 
 \begin{figure}
 \centering
@@ -204,9 +204,9 @@ Tudo que iremos fazer será através do R Studio devido à organização que ele
 Ao abrir o R Studio, você verá o seguinte:
 \includegraphics{img/cara_do_rstudio1.png}
 
-Não tem a aparência convencional dos programas estatísticos, mas isso acontece porque não se realizam tarefas clicando em abas ou botões. No R Studio, você executa comandos por meio de códigos! No futuro, é provável que exista um programa com o qual você poderá conversar em qualquer idioma e ele realizará as tarefas que você pedir. Nao, pera, isso ja existe! Se chama inteligencia artificial! Entretanto, nao se deixe enganar. Os conhecimentos intimos de como pensar, organizar, analisar e mostrar seus dados sao importantissimos para todo um projeto cientifico. Mas se isso nao te convence, as melhores inteligencias artificiais do mercado sao pagas e podem te retornar resultados enganosos. Entao tenha muito cuidado e utilize as inteligencias artificiais disponiveis apenas como uma ferramenta auxiliar!
+Não tem a aparência convencional dos programas estatísticos, mas isso acontece porque não se realizam tarefas clicando em abas ou botões. No R Studio, você executa comandos por meio de códigos! No futuro, é provável que exista um programa com o qual você poderá conversar em qualquer idioma, e ele realizará as tarefas que você pedir. Não, pera, isso já existe! Chama-se inteligência artificial! Entretanto, não se deixe enganar. Os conhecimentos íntimos de como pensar, organizar, analisar e mostrar seus dados são importantíssimos para todo um projeto científico. Mas se isso não te convence, as melhores inteligências artificiais do mercado são pagas e podem te retornar resultados enganosos. Então, tenha muito cuidado e utilize as inteligências artificiais disponíveis apenas como uma ferramenta auxiliar!
 
-Vamos ao que importa e entender como o R funciona. O R possui uma linguagem, e tudo que voce vai fazer no R eh utilizando essa linguagem que sao verdadeiros comandos. Importe essa planilha! Crie esse grafico! Faca a media dessa variavel! E por ai vai. Entao vamos dar o nosso primeiro comando para o R e falar diretamente com ele. Pediremos que ele some 1 + 1, e para fazer isso iremos digitar 1 + 1 no console (Figura 2 - janela 2) e apertar a tecla ``Enter''.
+Vamos ao que importa: entender como o R funciona. O R possui uma linguagem, e tudo que você vai fazer no R é utilizando essa linguagem, que são verdadeiros comandos. Importe essa planilha! Crie esse gráfico! Faça a média dessa variável! E por aí vai. Então, vamos dar o nosso primeiro comando para o R e falar diretamente com ele. Pediremos que ele some 1 + 1, e para fazer isso iremos digitar 1 + 1 no console (Figura 2 - janela 2) e apertar a tecla ``Enter''.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -214,7 +214,13 @@ Vamos ao que importa e entender como o R funciona. O R possui uma linguagem, e t
 \end{Highlighting}
 \end{Shaded}
 
-Ao fazer isso, ele vai te retornar o valor 2. Voce pode utilizar o R como uma calculadora e e realizar as operacoes basicas normalmente. Agora vamos pedir para ele diminuir 10 - 5, digitando no console e dando enter. Perceba que nao faz diferenca se voce digitar 10-5, 10 - 5, 10-5, ou ate mesmo 10 -5. Mas claro que ao escrever codigos iremos utilizar a forma que mantem o codigo mais organizado. Minha sugestao eh utilizar 10 - 5.
+\begin{itemize}
+\tightlist
+\item
+  Utilize este livro realizando os comandos sugeridos diretamente no R Studio. Sinta-se livre para executar outros comandos similares.
+\end{itemize}
+
+Ao fazer isso, ele vai te retornar o valor 2. Você pode utilizar o R como uma calculadora e realizar as operações básicas normalmente. Agora, vamos pedir para ele subtrair 10 - 5, digitando no console e pressionando Enter. Perceba que não faz diferença se você digitar 10-5, 10 - 5, 10-5, ou até mesmo 10 -5. Mas claro que ao escrever códigos, iremos utilizar a forma que mantém o código mais organizado. Minha sugestão é utilizar 10 - 5.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -238,7 +244,7 @@ E dividir:
 \end{Highlighting}
 \end{Shaded}
 
-Voce pode encontrar como realizar potenciacao, raiz quadrada, entre outras coisas pesquisando facilmente na internet. Essa eh uma das vantagens do R. Ser gratuito, possuir codigo aberto, e uma comunidade altamente ativa, torna o R unico. Ao longo do livro voce encontrara alguns topicos onde eu peco para voce realizar pequenas tarefas para voce compreender o codigo e desenvolver autonomia.
+Você deve ter percebido que cada operação matemática possui seu próprio símbolo. A facilidade de encontrar informações, como realizar potenciação, entre outras, na internet é uma das vantagens do R. Ser gratuito, de código aberto e contar com uma comunidade altamente ativa torna o R singular. Ao longo do livro, você encontrará alguns tópicos nos quais peço que realize pequenas tarefas para compreender o código e desenvolver autonomia.
 
 \begin{itemize}
 \tightlist
@@ -247,16 +253,16 @@ Voce pode encontrar como realizar potenciacao, raiz quadrada, entre outras coisa
   \emph{Dica: voce pode utilizar o chatgpt.}
 \end{itemize}
 
-Massa! Mas voce deve concordar comigo que essa forma de conversar com o R nao eh muito eficiente. Apesar de mostrar o historico, se voce quiser realizar a primeira operacao que fizemos (1 + 1), voce precisara digitar de novo, e de novo sempre que quiser fazer algo. Por esse motivo, a janela de script (Figura 2 - janela 1) se torna tao importante.
+Massa! Mas você deve concordar comigo que essa forma de interagir com o R não é muito eficiente. Apesar de mostrar o histórico, se você quiser realizar a primeira operação que fizemos (1 + 1), precisará digitar novamente sempre que quiser fazer algo. Por esse motivo, a janela de script (Figura 2 - janela 1) se torna tão importante.
 
-Vamos criar um script e utiliza-lo em uma situacao pratica. Mas antes precisamos aprender mais alguns botoes. Veja a figura abaixo:
+Vamos criar um script e utilizá-lo em uma situação prática. Mas antes, precisamos aprender mais alguns botões. Veja a figura abaixo:
 
 \includegraphics{img/Figura3_script.png}
-Vamos criar um novo Script clicando no \textbf{botao ``A'' \textgreater{} New Script}. No Script, podemos digitar livremente sem que o codigo seja executado, inclusive podemos fazer comentarios utilizando o simbolo \textbf{\#} antes do que foi digitado. Podemos dar enter sem enviar o codigo para o R. O codigo apenas sera executado se clicarmos na linha do codigo e apertarmos o botao ``C'' (Run) ou \textbf{Ctrl + Enter}. Copie e cole o codigo abaixo no seu script e execute apertando Ctrl + Enter linha por linha. Perceba que a \# impede do nome Script ser executado. Se voce executar Script sem a \# o R nao vai entender e vai dar erro.
+Vamos criar um novo Script clicando no \textbf{botão ``A'' \textgreater{} New Script}. No Script, podemos digitar livremente sem que o código seja executado; inclusive, podemos fazer comentários utilizando o símbolo \textbf{\#} antes do que foi digitado. Podemos dar enter sem enviar o código para o R. O código apenas será executado se clicarmos na linha do código e apertarmos o botão \textbf{``C''} (Run) ou \textbf{Ctrl + Enter}. Copie e cole o código abaixo no seu script e execute, apertando Ctrl + Enter linha por linha. Perceba que o \textbf{\#} impede que o nome Script seja executado. Se você executar Script sem a \#, o R não vai entender e vai dar erro.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\#Script}
+\CommentTok{\#Script }
 
 \DecValTok{1} \SpecialCharTok{+} \DecValTok{1}
 \DecValTok{2}\SpecialCharTok{+} \DecValTok{2}
@@ -267,13 +273,20 @@ Vamos criar um novo Script clicando no \textbf{botao ``A'' \textgreater{} New Sc
 \end{Highlighting}
 \end{Shaded}
 
-O comentario tambem pode ser feito na mesma linha depois do codigo, e assim, utilizar comentarios para explicar o que o codigo faz.
+O comentário também pode ser feito na mesma linha após o código, permitindo utilizar comentários para explicar o que o código faz.
 
 \begin{verbatim}
 2*50 #Esse codigo realiza uma multiplicacao.
 \end{verbatim}
 
-Por fim, voce pode salvar o Script para acessa-lo sempre que quiser clicando no \textbf{botao ``B''} e selecionando um local no computador.
+Por fim, voce pode salvar o Script para acessá-lo sempre que quiser clicando no \textbf{botao ``B''} e selecionando um local no computador.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Crie um mini script com diferentes funções matematicas do jeito que voce quiser
+  Incluindo comentarios e explicando como realizar isso no R. Use o chatgpt para criar equacoes mais complexas so para ver o poder do R como uma calculadora e como ferramenta auxiliar.}
+\end{itemize}
 
 \hypertarget{objetos-vetores-e-funuxe7uxf5es}{%
 \section{Objetos, vetores e funções}\label{objetos-vetores-e-funuxe7uxf5es}}
@@ -281,20 +294,21 @@ Por fim, voce pode salvar o Script para acessa-lo sempre que quiser clicando no 
 \hypertarget{objetos}{%
 \subsection{Objetos}\label{objetos}}
 
-Uma das funcoes mais importantes do R eh a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o numero 1 sera atribuido a letra \textbf{``a''}, e para isso utilizamos o sinal de igual (=). O ``\textbf{a}'' agora eh considerado um objeto e ira aparecer na janela de Environment (Figura 2 - janela 3).
+Uma das funções mais importantes do R é a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o número 1 será atribuído à letra ``\textbf{a}'', e para isso utilizamos o sinal de igual (=). O ``\textbf{a}'' agora é considerado um objeto e aparecerá na janela de Environment (Figura 2 - janela 3).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Mini Script  }
+\CommentTok{\# Criando objetos}
 \NormalTok{a }\OtherTok{=} \DecValTok{1}  
 \NormalTok{b }\OtherTok{=} \DecValTok{2}  
 \end{Highlighting}
 \end{Shaded}
 
-Entretanto, o sinal de atribuicao mais utilizado eh a setinha (\textless-), devido a sua direcionalidade. Entao vamos adotar esse simbolo de atribuicao. Entao guarde isso na sua cabecinha: o codigo \textbf{\textless-} significa \textbf{atribuir}.
+Entretanto, o sinal de atribuição mais utilizado é a seta (\textbf{\textless-}), devido à sua direcionalidade. Então, vamos adotar esse símbolo de atribuição. Guarde isso na sua cabeça: o código \textbf{\textless-} significa \textbf{atribuir}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\#Criando Objetos}
 \NormalTok{c }\OtherTok{\textless{}{-}} \DecValTok{3} \CommentTok{\# c recebe 3}
 \NormalTok{d }\OtherTok{\textless{}{-}} \DecValTok{5} \CommentTok{\# atribuimos 5 ao d}
 \end{Highlighting}

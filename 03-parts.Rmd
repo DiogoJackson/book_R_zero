@@ -1,43 +1,29 @@
 # Como trabalhar no R
   
-Se voce ja tem uma nocao de R, mas ainda sente dificuldade de organizar seu fluxo de trabalho, esse capitulo eh pra voce! Utilizaremos tecnicas de ciencia de dados e repositorios como o github para tornar o trabalho no R prazeroso e eficiente!
+Se você já tem uma noção de R, mas ainda sente dificuldade em organizar seu fluxo de trabalho, este capítulo é para você! Utilizaremos técnicas de ciência de dados e repositórios como o GitHub para tornar o trabalho no R prazeroso e eficiente!
+
+Iremos utilizar o banco de dados ficticios que possui erros comuns que podemos utilizar para aprender a lidar com eles sem precisar de utilizar o Excel.
   
-Se voce possuir um banco de dados para analizar a quantidade de parasitas de aves da mata atlantica, ou o comportamento sexual de caranguejos chama-mares (ou seja la qual for o seu estudo), aproveite para utiliza-lo aqui nesse capitulo. Caso voce ainda nao possua seu banco de dados, trabalharemos com algum banco de dados nativo do R. Optei por utilizar o banco de dados "iris", mas sinta-se a vontade para utilizar qualquer outro.
-
-Primeiro vamos exportar o banco de dados iris para que possamos simular todo o precesso desde a sua importacao. Para isso, iremos carregar o banco de dados iris utilizando a funcao *data()*, e utilizaremos a funcao *write.csv()* para exportar, no formato csv, a planilha "iris" para o computador. Deixe essa planilha salva em algum lugar no computador e finja que ela eh sua, mais para frente iremos utiliza-la.
-
-```r
-
-#Carregando pacote de dados iris
-data(iris)
-
-#Salvando (exportando) iris no computador
-write.csv(x = iris,            #nome do banco de dados do R
-          file = "iris.csv",   #nome do banco de dados salvo no computador
-          row.names = FALSE)   #Mostrar o nome das linhas na planilha salva utilizando TRUE ou nao utilizando FALSE.
-```
+Baixe a planilha fake e veja que ela possui quatro variaveis (ID, peso, numero de parasitas e local) coletadas do passarinho bem-te-vi.
   
-Para entender a funcao *write.csv()* modifique alguns argumentos:
+ [Clique aqui para baixar a planilha ficticia](data/fake_data.xlsx)
 
-  - Substitua: file = "iris.csv" por file = "planilha_do_R.csv".
-  - Substitua: row.names = FALSE, por row.names = TRUE.
-  
-Por padrao, iremos utilizar sempre row.names = FALSE.
+Vamos importar a planilha fictícia mais para frente. Relaxe aí e finja que ela é sua.
   
 ## Criando um projeto de R
   
-Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito do RStudio (proximo a janela de environment e history) e clica :
+Imaginemos que precisamos analisar um banco de dados de algum projeto. O primeiro passo eh criar um projeto de R, para isso voce vai no canto superior direito do RStudio (proximo a janela de environment e history) e clica:
   
 **project (none)" > new project > new directory > new project**
   
-Ao clicar em new project, ira aparecer uma janela para escolher o nome do projeto e o local no computador que seu projeto ira ficar. Coloque o nome desejado (sugestao: "projeto_caranguejo"), selecione qualquer pasta no computador (sugestao: desktop) e clique em "criar projeto".
-  
-Se voce fez tudo direitinho, o RStudio estara do seguinte forma. Note que ao inves de project (none), estara o nome do projeto que voce criou.
+Ao clicar em "New Project", aparecerá uma janela para escolher o nome do projeto e o local no computador onde seu projeto irá ficar. Coloque o nome desejado (sugestão: "projeto_caranguejo"), selecione qualquer pasta no computador (sugestão: desktop) e clique em "Criar Projeto".
+
+Se você fez tudo direitinho, o RStudio estará da seguinte forma. Note que ao invés de "Project (None)", estará o nome do projeto que você criou.
   
 ![](img/tela_do_projeto.png)
   
-Sugiro meu nobre consagrado leitor, que voce va no local do computador que voce criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Voce tambem pode fazer isso utilizando a janela de Files, onde mostrara todas as pastas do seu diretorio que, a partir de agora, sera a pasta que o seu arquivo de projeto de R esta situado. Todos os scripts, arquivos e planilhas que voce ira utilizar nas suas analises, ficara dentro da pasta do projeto. Isso significa que vai ficar tudo solto, baguncado? Claro que nao. Iremos criar pastas organizadas onde hospedara cada coisa que iremos trabalhar como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Voce pode criar manualmente, mas porque fariamos isso se temos o R para fazer por nos?
-  
+Sugiro, meu nobre consagrado Rzeiro, que você vá no local do computador onde você criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Você também pode fazer isso utilizando a janela de "Files", onde mostrará todas as pastas do seu diretório que, a partir de agora, será a pasta que o seu arquivo de projeto de R está situado. Todos os scripts, arquivos e planilhas que você irá utilizar nas suas análises, ficarão dentro da pasta do projeto. Isso significa que vai ficar tudo solto, bagunçado? Claro que não. Iremos criar pastas organizadas onde hospedarão cada coisa que iremos trabalhar, como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Você pode criar manualmente, mas por que faríamos isso se temos o R para fazer por nós?
+
 ## Organizando o projeto de R
   
 Para criar as pastas de forma organizada, voce pode fazer manualmente ou utilizando o pacote "here".
@@ -47,12 +33,14 @@ install.packages("here")
 library(here)
 ```
   
-Apos a instalacao do pacote "here" iremos criar uma funcao que criara as pastas automaticamente no nosso diretorio. Nao se assuste com o script da funcao, ela eh mais simples do que parece e voce nao precisa entende-lo por completo. Apenas rode o codigo para criar a funcao e depois rode o codigo que utiliza a funcao para criar as pastas.
-  
-Antes de rodar o codigo, certifique-se de que voce esta no projeto de R que voce criou.
+Após a instalação do pacote "here", iremos criar uma função que criará as pastas automaticamente no nosso diretório. Não se assuste com o script da função, ela é mais simples do que parece e você não precisa entendê-lo por completo. Apenas rode o código para criar a função e depois rode o código que utiliza a função para criar as pastas.
+
+Antes de rodar o código, certifique-se de que você está no projeto de R que você criou.
   
 ```r
 # Criando funcao para criacao das pastas do projeto
+# Codigo disponibilizado pelo Gustavo Paterno (https://github.com/paternogbc)
+
 build_project <- function(type = "analysis",
                           temp = TRUE) {
   
@@ -87,23 +75,23 @@ build_project(type = "analysis",
   
 ![](img/pastas_do_projeto.png)
   
-Dentro da pasta data voce encontra as pastas "raw" e "processed". Em outputs voce encontra "figures", "temp" e "tables". Em script, voce encontrara nada (por enquanto). O arquivo com o simbolo do R "projeto_caranguejos.Rproj" eh o seu projeto de R. Voce pode abri-lo (dando duplo clique) toda vez que voce for trabalhar no projeto. Isso abrira o Rstudio ja com o seu projeto aberto e pronto para trabalhar.
+Dentro da pasta "data", você encontra as subpastas "raw" e "processed". Em "outputs", você encontra as subpastas "figures", "temp" e "tables". Em "script", você não encontrará nada (por enquanto). O arquivo com o símbolo do R "projeto_caranguejos.Rproj" é o seu projeto de R. Você pode abri-lo (dando duplo clique) toda vez que você for trabalhar no projeto. Isso abrirá o RStudio já com o seu projeto aberto e pronto para trabalhar.
 
-  - Feche o RStudio e abra-o novamente dando clique duplo no seu projeto de R.
-  
-Agora voce tem tudo pronto para comecar a trabalhar com um fluxo de trabalho eficiente e reprodutivel!
+- Feche o RStudio e abra-o novamente dando clique duplo no seu projeto de R.
+
+Agora você tem tudo pronto para começar a trabalhar com um fluxo de trabalho eficiente e reprodutível!
   
 ## Trabalhando em um projeto de R
  
-Antes de tudo baixe a planilha de dados ficticios de uma especie de passarinho (tambem ficticia), que contem informacoes ficticias sobre peso (g) e quantidade de parasitas de tres diferentes localidades (A, B, C):
+Antes de tudo baixe a planilha de dados ficticios (caso nao tenha baixado ainda) de uma especie de passarinho (tambem ficticia), que contem informacoes ficticias sobre peso (g) e quantidade de parasitas de tres diferentes localidades do bem-te-vi:
  
  [Clique aqui para baixar a planilha ficticia](data/fake_data.xlsx)
  
-Na pasta **data > raw** voce adiciona sua planilha de dados brutos ficticias (fake_data.xlsx). O fluxo de trabalho sera o mais simples possivel, mas envolvera etapas essenciais da analise de dados.
+Na pasta **data > raw**, você adiciona sua planilha de dados brutos fictícia (fake_data.xlsx). O fluxo de trabalho será o mais simples possível, mas envolverá etapas essenciais da análise de dados.
   
-  **Limpar dados brutos > Realizar analise > Mostrar graficos**
+**Limpar dados brutos > Realizar análise > Mostrar gráficos**
   
-Para limpar a planilha de dados brutos, iremos criar um script para isso. Utilizaremos funcoes do pacote dplyr para modificar nome das variaveis, nome dos fatores, analisar dados faltantes, entre outras coisas.
+Para limpar a planilha de dados brutos, iremos criar um script para isso. Utilizaremos funções do pacote *dplyr* para modificar nomes das variáveis, nomes dos fatores, analisar dados faltantes, entre outras coisas.
   
 ### Etapa 1: limpar dados
 
@@ -117,22 +105,23 @@ Para limpar a planilha de dados brutos, iremos criar um script para isso. Utiliz
 
 ```
   
-Apos isso, utilizaremos os comentarios, para organizar o script em topicos fazendo manualmente ou utilizando o atalho: **ctrl + shift + R**. A primeira parte do codigo eh a instalacao dos pacotes que iremos utilizar no processo.
+Após isso, utilizaremos os comentários para organizar o script em tópicos, fazendo isso manualmente ou utilizando o atalho: **Ctrl + Shift + R**. A primeira parte do código é a instalação dos pacotes que iremos utilizar no processo.
   
 ```r
 
 # Packages -------------------------------------------------------------
-if(!require(dplyr)) install.packages("dplyr") #se o pacote dplyr nao estiver sido instalado, ele sera instalado.
-library(dplyr) #carregar pacote
+# Caso nao tenha os pacotes instalados, instale!
 
+library(dplyr)  #Pacote com funcoes para manipular dados
+library(readlx) #Pacote com funcao para importar planilha em formato de excel (xlsx)
 ```
-Segundo, importamos o banco de dados a ser processado (limpado) utilizando a funcao *read.csv()* e atribuindo (<-) a um objeto que iremos chamar de "dados". Para importar voce so precisa especificar o caminho do diretorio em que o arquivo ta inserido. Como estamos utilizando o projeto de R, o diretorio eh onde o projeto esta. Dessa forma, nao ha necessidade de dizer para o R qual o seu diretorio de trabalho. Logo fica facil importar os dados brutos pois sabemos que ele esta na pasta dados > raw > iris.csv. Dizemos isso para o R utilizando os nomes das pastas separado por barras e por fim, o nome do arquivo (iris) e suas extensao (.csv).
-
+Segundo, importamos o banco de dados a ser processado (limpado) utilizando a função *read.csv()* e atribuindo (<-) a um objeto que iremos chamar de "dados". Para importar, você só precisa especificar o caminho do diretório em que o arquivo está inserido. Como estamos utilizando o projeto de R, o diretório é onde o projeto está. Dessa forma, não há necessidade de dizer para o R qual é o seu diretório de trabalho. Logo, fica fácil importar os dados brutos pois sabemos que ele está na pasta "dados > raw > iris.csv". Dizemos isso para o R utilizando os nomes das pastas separados por barras e, por fim, o nome do arquivo (iris) e sua extensão (.csv).
+  
 
  ```r
 
 # Load data ---------------------------------------------------------------
-dados <- read.csv("data/raw/iris.csv")
+dados <- read_excel("data/raw/fake_data.xlsx")
 
 ```
 Agora que o banco de dados foi importado, podemos fazer um check up basico utilizando algumas funcoes.
@@ -140,19 +129,19 @@ Agora que o banco de dados foi importado, podemos fazer um check up basico utili
 ```r
 
 # 1. Basic checks --------------------------------------------------------------
-nrow(dados)             # How many rows
-str(dados)              # Variables classes
-attributes(dados)       # Attributres
-head(dados)             # First rows
-any(duplicated(dados))  # There is any duplicated rows?
-any(is.na(dados))       # There are NAs in the data?
+nrow(dados)             # Quantas linhas (observacoes) tem no banco de dados?
+str(dados)              # quais as classes das variaveis?
+attributes(dados)       # quais atributos?
+head(dados)             # Primeiras linhas do banco de dados.
+any(duplicated(dados))  # Checar se tem linhas duplicadas.
+any(is.na(dados))       # Checar se tem dado faltando (NA).
 
 ```
-As vezes os nomes das variaveis nao sao faceis de trabalhar, possuindo espaco, acentos, letras maiusculas e minusculas, e nomes confusos. Alem de complicar o codigo, o nome de algumas variaveis podem bugar o script (caso das acentuacoes de palavras em portugues). Entao vamos mudar o nome das variaveis utilizando a funcao *rename()* do pacote **dplyr**. Iremos deixar os nomes mais faceis de trabalhar, deixando todas as letras minusculas.
+Às vezes, os nomes das variáveis não são fáceis de trabalhar, possuindo espaços, acentos, letras maiúsculas e minúsculas, e nomes confusos. Além de complicar o código, o nome de algumas variáveis pode bugá-lo (caso das acentuações de palavras em português). Então, vamos mudar o nome das variáveis utilizando a função *rename()* do pacote **dplyr**. Iremos deixar os nomes mais fáceis de trabalhar, deixando todas as letras minúsculas.
   
 ```r
 
-# 3. Rename columns names-------------------------------------------------------
+# 3. Renomeando o nome das variaveis -------------------------------------------------------
 head(dados)
 dados2 <- rename(iris,                         #sua planilha bruta
                  sepal_length = Sepal.Length,  #nomes das variaveis (nome_novo = nome antigo)
