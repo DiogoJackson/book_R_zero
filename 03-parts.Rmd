@@ -332,9 +332,8 @@ O seu projeto está organizado de forma que se torna fácil a replicabilidade em
 
 ```r
 # Script do projeto
-# Importante: reinicie o R antes de rodar esse script va em *Session* (parte superior do RStudio) e reinicie o R. 
-  
-  **session > restart R**
+# Importante: reinicie o R antes de rodar esse script va em *Session* (parte superior do RStudio) e reinicie o R (Session > restart R).
+
   
 # Rodar todos os scripts ----
 # Certifique-se de que os nomes dos scripts estao corretos.
