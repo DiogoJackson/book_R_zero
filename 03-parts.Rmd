@@ -355,4 +355,8 @@ Vá no dado bruto "fake_data.csv" contido na pasta **raw** e simule que você co
 Em dois segundos, tudo está refeito, todas as suas análises, todos os seus gráficos, todas as suas tabelas de resultado... tudo! Tudo está refeito. 
 
 Agora, meu consagrado aprendiz de R, sugiro apenas que cheque os outputs e fique impressionado... com o poder do R.
+
+Quer aprender mais? Sugiro o livro [Analises ecologicas no R](https://analises-ecologicas.netlify.app/). Agora que voce possui a base, voce vai aproveita-lo melhor.
+  
+
   
