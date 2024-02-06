@@ -450,17 +450,16 @@ Vamos salvar o resultado em uma tabela organizada (tidy) utilizando a função <
 <h3><span class="header-section-number">4.3.4</span> Etapa 4: Replicabilidade<a href="como-trabalhar-no-r.html#etapa-4-replicabilidade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>O seu projeto está organizado de forma que se torna fácil a replicabilidade em qualquer computador, gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, você precisa manter e <strong>JAMAIS deletar</strong> ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um clique a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna útil ao compartilhar seus dados com alguém, em que você pode zipar toda pasta do seu projeto, enviar para um contribuidor, e ele poderá ter acesso a tudo rodando apenas um script. É esse script que iremos fazer agora.</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="como-trabalhar-no-r.html#cb63-1" tabindex="-1"></a><span class="co"># Script do projeto</span></span>
-<span id="cb63-2"><a href="como-trabalhar-no-r.html#cb63-2" tabindex="-1"></a><span class="co"># Importante: reinicie o R antes de rodar esse script va em *Session* (parte superior do RStudio) e reinicie o R. </span></span>
-<span id="cb63-3"><a href="como-trabalhar-no-r.html#cb63-3" tabindex="-1"></a>  </span>
-<span id="cb63-4"><a href="como-trabalhar-no-r.html#cb63-4" tabindex="-1"></a>  <span class="sc">**</span>session <span class="sc">&gt;</span> restart R<span class="sc">**</span></span>
-<span id="cb63-5"><a href="como-trabalhar-no-r.html#cb63-5" tabindex="-1"></a>  </span>
-<span id="cb63-6"><a href="como-trabalhar-no-r.html#cb63-6" tabindex="-1"></a><span class="co"># Rodar todos os scripts ----</span></span>
-<span id="cb63-7"><a href="como-trabalhar-no-r.html#cb63-7" tabindex="-1"></a><span class="co"># Certifique-se de que os nomes dos scripts estao corretos.</span></span>
-<span id="cb63-8"><a href="como-trabalhar-no-r.html#cb63-8" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;scripts/01_clean_raw_data.R&quot;</span>)</span>
-<span id="cb63-9"><a href="como-trabalhar-no-r.html#cb63-9" tabindex="-1"></a></span>
-<span id="cb63-10"><a href="como-trabalhar-no-r.html#cb63-10" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;scripts/02_kruskal_test.R&quot;</span>)</span>
-<span id="cb63-11"><a href="como-trabalhar-no-r.html#cb63-11" tabindex="-1"></a></span>
-<span id="cb63-12"><a href="como-trabalhar-no-r.html#cb63-12" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;scripts/03_grafico.R&quot;</span>)</span></code></pre></div>
+<span id="cb63-2"><a href="como-trabalhar-no-r.html#cb63-2" tabindex="-1"></a><span class="co"># Importante: reinicie o R antes de rodar esse script va em *Session* (parte superior do RStudio) e reinicie o R (Session &gt; restart R).</span></span>
+<span id="cb63-3"><a href="como-trabalhar-no-r.html#cb63-3" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="como-trabalhar-no-r.html#cb63-4" tabindex="-1"></a>  </span>
+<span id="cb63-5"><a href="como-trabalhar-no-r.html#cb63-5" tabindex="-1"></a><span class="co"># Rodar todos os scripts ----</span></span>
+<span id="cb63-6"><a href="como-trabalhar-no-r.html#cb63-6" tabindex="-1"></a><span class="co"># Certifique-se de que os nomes dos scripts estao corretos.</span></span>
+<span id="cb63-7"><a href="como-trabalhar-no-r.html#cb63-7" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;scripts/01_clean_raw_data.R&quot;</span>)</span>
+<span id="cb63-8"><a href="como-trabalhar-no-r.html#cb63-8" tabindex="-1"></a></span>
+<span id="cb63-9"><a href="como-trabalhar-no-r.html#cb63-9" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;scripts/02_kruskal_test.R&quot;</span>)</span>
+<span id="cb63-10"><a href="como-trabalhar-no-r.html#cb63-10" tabindex="-1"></a></span>
+<span id="cb63-11"><a href="como-trabalhar-no-r.html#cb63-11" tabindex="-1"></a><span class="fu">source</span>(<span class="at">file =</span> <span class="st">&quot;scripts/03_grafico.R&quot;</span>)</span></code></pre></div>
 <p>Ao rodar este código, todos os seus scripts são executados, e todos os seus outputs e planilhas processadas são gerados. Mas lembre-se, <strong>seu dado bruto contido na pasta data/raw não pode ser deletado</strong>.</p>
 <p>Salve este script com o nome “run_project”.</p>
 <p>Agora, vamos ver a mágica acontecer. Imagine que seu dado bruto “fake_data.csv” possui um problema (algum valor foi digitado errado), ou você coletou mais dados para aumentar o N do seu projeto. Você vai ter que refazer tudo de novo? Será? Vamos fazer um teste!</p>
