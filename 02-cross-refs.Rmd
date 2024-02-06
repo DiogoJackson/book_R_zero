@@ -64,7 +64,7 @@ Vamos criar um novo Script clicando no **botão "A" > New Script**. No Script, p
   
 O comentário também pode ser feito na mesma linha após o código, permitindo utilizar comentários para explicar o que o código faz.
   
-```
+```r
 2*50 #Esse codigo realiza uma multiplicacao.
 ```
 Por fim, voce pode salvar o Script para acessá-lo sempre que quiser clicando no **botao "B"** (disquete de salvar) e selecionando um local no computador. Voce pode acessar esse script salvo sempre que quiser retornar e continuar um trabalho.
