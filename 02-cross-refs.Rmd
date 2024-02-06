@@ -184,11 +184,11 @@ Se você pode fazer isso para calcular o aluguel, imagine o que esse sistema pod
   
 Os objetos com múltiplos valores do mesmo tipo são chamados de vetores. Para criar um vetor, inserimos os valores dentro de parênteses separados por vírgulas. 
   
-  *-(2, 4, 6, 8)*
+  *(2, 4, 6, 8)*
   
   Mas o R so vai entender que isso eh um conjunto de valores, se voce indicar para ele, e a gente indica isso, utilizando a letra **c**.
   
-  -*c(2, 4, 6, 8)*
+  *c(2, 4, 6, 8)*
   
 Esse **c** vem da palavra "combinar" (combine em ingles) mas eu acho mais facil lembrar desse **c** representando a palavra "conjunto". Sempre que voce quiser criar um conjunto de objetos ou valores, coloque esse **c** antes do parenteses. Vírgulas no R servem para separar o código. Então, se você quiser digitar números quebrados, nunca utilize **vírgula**, utilize **ponto**.
   
