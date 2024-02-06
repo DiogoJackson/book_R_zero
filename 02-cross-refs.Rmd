@@ -190,7 +190,7 @@ Os objetos com múltiplos valores do mesmo tipo são chamados de vetores. Para c
   
   *c(2, 4, 6, 8)*
   
-Esse **c** vem da palavra "combinar" (combine em ingles) mas eu acho mais facil lembrar desse **c** representando a palavra "conjunto". Sempre que voce quiser criar um conjunto de objetos ou valores, coloque esse **c** antes do parenteses. Vírgulas no R servem para separar o código. Então, se você quiser digitar números quebrados, nunca utilize **vírgula**, utilize **ponto**.
+Esse **c** vem da palavra "combinar" (combine ou concatenate em ingles) mas eu acho mais facil lembrar desse **c** representando a palavra "conjunto". Sempre que voce quiser criar um conjunto de objetos ou valores, coloque esse **c** antes do parenteses. Vírgulas no R servem para separar o código. Então, se você quiser digitar números quebrados, nunca utilize **vírgula**, utilize **ponto**.
   
   ```r
 #Criando um vetor
@@ -275,6 +275,10 @@ seq(1, 100, by = 2) #obs: voce pode atribuir isso a um objeto
 rep(5, times = 10)
 rep("troxa", times = 10) #obs: olha so, texto tem que ser entre aspas.
 
+#Criar um vetor
+c(2,5,6)
+
+#Plotwist: sim, aquele "c" na verdade uma funcao c()
 ```
   
   Talvez, em algum momento, você não encontre a função necessária para uma tarefa específica; nesse caso, você pode criar sua própria função! Você pode, inclusive, construir uma função utilizando outras funções para realizar uma tarefa específica. Por enquanto, vamos apenas ser usuários de funções e não criadores. No entanto, se realmente quiseres aprender a criar uma função, não vou te limitar. No capítulo "Criando funções", vou te ensinar o básico de como fazer isso.
@@ -296,11 +300,21 @@ notas <- c(10, 8, 7, 5, 2, 4, 6.6, 7.9, 8.9, 9.5)
 nomes <- c("Marilia", "Jonatas", "Guilherme", "Thiago", 
 "Fifi", "Brunnin", "Diego", "Mazana", "Bruna", "Vitoria")
 
-#Terceiro utilizamos a funcao data.frame() para criar a tabela
-tabela <- data.frame(nomes, notas)
-tabela
 ```
   
+A funcao data.frame() pega cada objeto e coloca na tabela como colunas.
+
+```r
+#Terceiro utilizamos a funcao data.frame() para criar a tabela
+tabela <- data.frame(nomes, notas) #cada argumento aqui sera uma coluna no data.frame
+tabela
+
+#vamos criar mais uma nova coluna no data.frame chamada de ID
+ID <- c("1A","2A","3A","4A","5A","6A","7A","8A","9A","10A")
+
+#Vamos criar uma tabela incluindo essa nova coluna
+tabela2 <- data.frame(ID, nomes, notas)
+```
 Esse data.frame (tabela) é uma forma muito simplificada das tabelas que iremos importar de nossos dados reais. No entanto, ela nos serve muito bem para entender como funciona uma planilha no R.
 
 A partir de agora, quero que você perceba uma coisa muito importante e leve isso para a vida. Uma planilha organizada deve ser construída da seguinte forma:
@@ -318,10 +332,14 @@ Logo, para você acessar uma variável de uma tabela, usamos o **$** da seguinte
 
 tabela$nomes
 tabela$notas
-
+tabela$ID
 ```
 
-Perceba que quando você digita **tabela$**, pode apertar a tecla TAB para mostrar e selecionar as variáveis de sua tabela. Caso alguma nota esteja errada e você queira corrigi-la, pode utilizar a função *fix()*. Essa função abre uma janela onde você pode clicar e modificar o valor desejado.
+Perceba que quando você digita **tabela$**, pode apertar a tecla TAB para mostrar e selecionar as variáveis de sua tabela. 
+
+  - *Dica: crie um novo data.frame das notas dos alunos, mas adicionando uma variavel (coluna) chamada "faltas".*
+
+Caso alguma nota esteja errada e você queira corrigi-la, pode utilizar a função *fix()*. Essa função abre uma janela onde você pode clicar e modificar o valor desejado.
   
   ```r
 
@@ -363,54 +381,58 @@ Veja que ao usarmos a funcao *str()* o R retorna a natureza das variaveis da pla
   - *num* significa numerica.
   - *Factor* significa que eh uma variavel qualitativa com fatores (setosa,     versicolor, virginica).
   
-Às vezes, a planilha é importada com as variáveis mal formatadas, e isso pode gerar problemas de reconhecimento por parte do R. Nesse caso, é sempre interessante realizar a verificação dos dados utilizando a função *str()* ou outras funções similares. Caso o R não esteja identificando as variáveis corretamente, duas funções muito úteis podem ser utilizadas: *as.numeric()* e *as.factor()*.
+Vamos brincar um pouco com a planilha iris. Primeiro, veja que ela está construída de forma organizada (variáveis nas colunas, observações nas linhas, cada célula um valor). Podemos entao calcular a media e desvio padrao da largura da petala.
   
   ```r
-data(iris)
-  
-#Convertendo variavel para numerica
-#a variavel sepal lenght da tabela iris recebe ela mesma transformado em numera
-iris$Sepal.Length <- as.numeric(iris$Sepal.Length)
+# Calculando a media
+mean(iris$Petal.Width)
 
-#Convertendo variavel para fator
-iris$Species <- as.factor(iris$Species)
-
-```
-Basicamente, você está transformando em numérica a variável Sepal length da planilha iris e atribuindo a ela mesma. Dessa forma, você faz a alteração de forma permanente. A mesma coisa ocorre com *as.factor()*.
-
-Vamos brincar um pouco com a planilha iris. Primeiro, veja que ela está construída de forma organizada (variáveis nas colunas, observações nas linhas, cada célula um valor). Podemos então realizar o *summary()* para saber a média, mediana, máximo e mínimo da largura da pétala (Petal.Width).
-  
-  ```r
-summary(iris$Petal.Width)
+# Calculando o desvio padrao
+sd(iris$Petal.Width)
 
 ```
 
-Porém, note que existem 3 espécies diferentes. A função *summary()* não leva isso em consideração. O ideal seria calcular o *summary()* para cada espécie. Para isso, temos uma função muito legal chamada *tapply()*, onde: o primeiro argumento é a variável numérica, o segundo é a variável com os fatores, e o terceiro argumento é a função que você quer aplicar.
- 
+No entanto, observe que existem 3 espécies diferentes, mas a função só entende o que você disse a ela, que foi "calcular a média da variável largura da pétala da planilha iris". As funções não levam em consideração cada espécie. O ideal seria realizar o cálculo para cada espécie. Para isso, temos uma função muito legal chamada *tapply()*, onde: o primeiro argumento é a variável numérica que você quer calcular, o segundo é a variável com os fatores, e o terceiro argumento é a função que você quer aplicar.
+  
   ```r
-#Calculando por especie
-tapply(iris$Petal.Width, iris$Species, summary)
+#Calculando media e desvio padrao por especie
+tapply(iris$Petal.Width, iris$Species, mean)
+tapply(iris$Petal.Width, iris$Species, sd)
 
 ```
+- *Dica: calcule o `summary()` para cada espécie usando a função `tapply()`.*
   
-### Importando sua planilha
+## Importando sua planilha
   
-No RStudio, podemos importar uma planilha no formato Excel (xlsx) utilizando o botão na janela Environment (canto superior direito):
+Aqui iremos importar algumas planilhas do computador. Caso você não tenha nenhuma, clique nos links abaixo para importar planilhas nos formatos Excel (xlsx) e CSV, e selecione onde você quer salvá-las.
+  
+[Planilha ficticia - fake_data.xlsx](data/fake_data.xlsx)
+  
+[Planilha ficticia - fake_data.csv](data/fake_data.csv)
+  
+### Importando planilha Excel (xlsx)
+  
+No RStudio, podemos importar varios tipos de arquivos utilizando o botao **Import Dataset** que fica localizado na janela Environment (canto superior direito). A planilha mais comum que utilizamos eh do Excel (formato: xlsx), entao usamos o **Import Dataset** depois **From excel**.
   
 *Environment > Import Dataset > From Excel*
   
-Acho pouco eficiente ensinar a importar dados de um diretório. Acho pouco prático, uma vez que temos o botão de importar. Ao invés disso, irei treiná-lo a utilizar projetos de R reprodutíveis e organizados. Ao trabalhar no R, você seguirá um protocolo básico de como tratar os dados a serem analisados. Ao longo do tempo, você será capaz de otimizar esse protocolo e aplicá-lo para quase todo tipo de dado que você possuir. De qualquer forma, saiba que o R trabalha com uma pasta específica chamada de diretório, e para saber qual é o seu diretório padrão, utilize a função *getwd()*:
+Ao clicar em **From Excel**, irá abrir uma janela (Figura 4) e, nessa janela, você seleciona o local no computador onde suas planilhas do Excel estão. Você também pode escolher o nome da planilha (nome do objeto que receberá a planilha) e qual planilha você quer importar (caso tenha mais de uma).
   
-  ```r
-getwd()
+![Figura 4. Janela de importar](img/importar_excel.png)
+   
+### Importando planilha CSV
+   
+Se você quer importar uma planilha no formato 'csv' e não 'xlsx', sinto muito, mas não existe um botão para importar esse formato no RStudio. Entretanto, não precisamos de um botão; podemos criar nosso próprio código de importação hehe. Ao rodar esse código, você poderá escolher a planilha no formato CSV que desejar. Maravilha, não é?
+  
+```r
+#Importando CSV
+dados <- read.csv(file.choose())
 
 ```
-
-Ao executar essa função, o R te retornará o caminho da pasta do diretório padrão atual, que provavelmente é a pasta "Documentos" do seu computador.
-
-Para baixar uma planilha de dados fictícios, clique no link abaixo e tente importá-la através do botão **Import from Excel**.
   
-[Clique aqui para baixar a planilha ficticia](data/fake_data.xlsx)
+## Diretório de trabalho
+  
+Diretório? Nao precisamos de diretório.
   
 ## Graficos
 
@@ -570,7 +592,7 @@ library(lattice)
 ```
 Se você carregou o pacote e o R não te retornou nenhum erro, está tudo certo. Às vezes, ele te retorna um Warning message, também está tudo certo. Vamos adiante.
 
-O pacote lattice que acabamos de instalar nos fornece várias funções para criação de gráficos. Tenha em mente que existem milhares de pacotes, cada um trazendo um conjunto de funções e bancos de dados de diferentes contextos, tanto para criar gráficos quanto para realizar modelos estatísticos avançados.
+O pacote "lattice" que acabamos de instalar nos fornece várias funções para criação de gráficos. Tenha em mente que existem milhares de pacotes, cada um trazendo um conjunto de funções e bancos de dados de diferentes contextos, tanto para criar gráficos quanto para realizar modelos estatísticos avançados.
 
 Vamos criar alguns gráficos utilizando as funções que o pacote lattice nos forneceu.
   

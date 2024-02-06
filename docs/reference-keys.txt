@@ -7,7 +7,6 @@ fig:nome-do-chunk2-5
 fig:nome-do-chunk2-6
 fig:nome-do-chunk-1
 fig:nome-do-chunk-2
-fig:graph
 bem-vindos
 pré-requisitos
 instalando-r-e-rstudio
@@ -21,6 +20,9 @@ tabela-de-dados
 data-frame
 planilha-de-dados-nativa-do-r
 importando-sua-planilha
+importando-planilha-excel-xlsx
+importando-planilha-csv
+diretório-de-trabalho
 graficos
 grafico-de-histograma
 grafico-de-dispersao
@@ -33,7 +35,7 @@ organizando-o-projeto-de-r
 trabalhando-em-um-projeto-de-r
 etapa-1-limpar-dados
 etapa-2-fazer-analise
-etapa-3-criar-grafico
+etapa-3-criar-gráfico
 etapa-4-replicabilidade
 git-e-github
 funcoes-avancadas

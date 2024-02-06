@@ -30,5 +30,7 @@ A ideia é que esse seja o primeiro livro de uma coleção de quatro livros que 
   - R zero: análise estatística
   - R zero: visualização de dados
   
-Juntos esses materiais fornecerão, de forma simples, o arcabouço essencial da ciência de dados acadêmica.
+Juntos esses materiais fornecerão, de forma simples, o arcabouço essencial da ciência de dados acadêmica. 
+
+Aproveite e fique impressionado... com o poder do R!
   

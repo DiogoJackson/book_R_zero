@@ -7,7 +7,10 @@ h3:funções Funções
 h2:tabela-de-dados Tabela de dados
 h3:data-frame Data frame
 h3:planilha-de-dados-nativa-do-r Planilha de dados nativa do R
-h3:importando-sua-planilha Importando sua planilha
+h2:importando-sua-planilha Importando sua planilha
+h3:importando-planilha-excel-xlsx Importando planilha Excel (xlsx)
+h3:importando-planilha-csv Importando planilha CSV
+h2:diretório-de-trabalho Diretório de trabalho
 h2:graficos Graficos
 h3:grafico-de-histograma Grafico de histograma
 fig:nome-do-chunk1 Gráficos com R base
