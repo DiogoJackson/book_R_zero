@@ -297,8 +297,8 @@ notas <- c(10, 8, 7, 5, 2, 4, 6.6, 7.9, 8.9, 9.5)
 #Segundo criamos os nomes (na ordem das notas)
 #Ex: o primeiro valor do objeto nota (10) representara a nota de Marilia que eh o primeiro nome.
 
-nomes <- c("Marilia", "Jonatas", "Guilherme", "Thiago", 
-"Fifi", "Brunnin", "Diego", "Mazana", "Bruna", "Vitoria")
+nomes <- c("Mari", "Jojo", "Guigow", "Sofi", 
+"Fifi", "Brunnin", "Aquino", "Mazana", "Thiago", "Belga")
 
 ```
   
