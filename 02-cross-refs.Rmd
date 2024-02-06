@@ -11,6 +11,7 @@ Tudo que faremos será através do R Studio devido à organização que ele nos 
 ![Figura 1. Icone do RStudio](img/rstudio_logo.png){ width=200px }
   
 Ao abrir o R Studio, você verá o seguinte:
+  
 ![Figura 2. Tela do RStudio](img/cara_do_rstudio1.png)
 
 Não tem a aparência convencional dos programas estatísticos, mas isso acontece porque não se realizam tarefas clicando em abas ou botões. No R Studio, você executa comandos por meio de códigos! No futuro, é provável que exista um programa com o qual você poderá conversar em qualquer idioma, e ele realizará as tarefas que você pedir. Não, pera, isso já existe! Chama-se inteligência artificial! Entretanto, não se deixe enganar. Os conhecimentos íntimos de como pensar, organizar, analisar e mostrar seus dados são importantíssimos para todo um projeto científico. Mas se isso não te convence, as melhores inteligências artificiais do mercado são pagas e podem te retornar resultados enganosos. Então, tenha muito cuidado e utilize as inteligências artificiais disponíveis apenas como uma ferramenta auxiliar!
@@ -22,7 +23,7 @@ Vamos ao que importa: entender como o R funciona. O R possui uma linguagem, e tu
 ```
   - *Dica: Utilize este livro realizando os comandos sugeridos diretamente no R Studio.           Sinta-se livre para executar outros comandos similares.*
   
-Ao fazer isso, ele vai te retornar o valor 2. Você pode utilizar o R como uma calculadora e realizar as operações básicas normalmente. Agora, vamos pedir para ele subtrair 10 - 5, digitando no console e pressionando Enter. Perceba que não faz diferença se você digitar 10-5, 10 - 5, 10-5, ou até mesmo 10 -5. Mas claro que ao escrever códigos, iremos utilizar a forma que mantém o código mais organizado. Minha sugestão é utilizar 10 - 5.
+Ao fazer isso, ele vai te retornar o valor 2 (resultado da operacao). Você pode utilizar o R como uma calculadora e realizar as operações básicas normalmente. Agora, vamos pedir para ele subtrair 10 - 5, digitando no console e pressionando Enter. Perceba que não faz diferença se você digitar 10-5, 10 - 5, 10-5, ou até mesmo 10 -5. Mas claro que ao escrever códigos, iremos utilizar a forma que mantém o código mais organizado. Minha sugestão é utilizar 10 - 5.
 
 ```r
 10 - 5
@@ -48,7 +49,7 @@ Massa! Mas você deve concordar comigo que essa forma de interagir com o R não 
 Vamos criar um script e utilizá-lo em uma situação prática. Mas antes, precisamos aprender mais alguns botões. Veja a figura abaixo:
   
 ![Figura 3. Script](img/Figura3_script.png)
-Vamos criar um novo Script clicando no **botão "A" > New Script**. No Script, podemos digitar livremente sem que o código seja executado; inclusive, podemos fazer comentários utilizando o símbolo **#** antes do que foi digitado. Podemos apertar **Enter** sem enviar o código para o R. O código apenas será executado se clicarmos na linha do código e apertarmos o botão **"C"** (Run) ou **Ctrl + Enter**. Copie e cole o código abaixo no seu script e execute, apertando Ctrl + Enter linha por linha. Perceba que o **#** impede que o nome Script seja executado. Se você executar Script sem a #, o R não vai entender e vai dar erro (voce pode tentar fazer isso para ver o que acontece).
+Vamos criar um novo Script clicando no **botão "A" > New Script**. No Script, podemos digitar livremente sem que o código seja executado; inclusive, podemos fazer comentários utilizando o símbolo **#** antes do que foi digitado. Podemos apertar **Enter** para pular a linha sem enviar o código para o R. O código apenas será executado se clicarmos na linha do código e apertarmos o botão **"C"** (Run) ou **Ctrl + Enter**. Copie e cole o código abaixo no seu script e execute, apertando Ctrl + Enter linha por linha. Perceba que o **#** impede que o nome Script seja executado. Se você executar Script sem a #, o R não vai entender e vai dar erro (voce pode tentar fazer isso para ver o que acontece).
   
 ```r
 #Script 
@@ -66,7 +67,7 @@ O comentário também pode ser feito na mesma linha após o código, permitindo 
 ```
 2*50 #Esse codigo realiza uma multiplicacao.
 ```
-Por fim, voce pode salvar o Script para acessá-lo sempre que quiser clicando no **botao "B"** e selecionando um local no computador. Voce pode acessar esse script salvo sempre que quiser retornar e continuar um trabalho.
+Por fim, voce pode salvar o Script para acessá-lo sempre que quiser clicando no **botao "B"** (disquete de salvar) e selecionando um local no computador. Voce pode acessar esse script salvo sempre que quiser retornar e continuar um trabalho.
   
   - *Dica: Crie um mini script com diferentes funções matematicas do jeito que voce quiser, incluindo comentarios e explicando como realizar isso no R. Use o chatgpt para     criar equacoes mais complexas so para ver o poder do R como uma calculadora e como ferramenta auxiliar.*
   
@@ -76,7 +77,7 @@ Por fim, voce pode salvar o Script para acessá-lo sempre que quiser clicando no
 
 ### Objetos
   
-Uma das funções mais importantes do R é a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o número 1 será atribuído à letra "**a**", e para isso utilizamos o sinal de igual (**=**). O "**a**" agora é considerado um objeto e aparecerá na janela de Environment (Figura 2 - janela 3).
+Uma das capacidades mais importantes do R é a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o número 1 será atribuído à letra "**a**", e para isso utilizamos o sinal de igual (**=**). O "**a**" agora é considerado um objeto e aparecerá na janela de Environment (Figura 2 - janela 3).
 
 ```r
 # Criando objetos
@@ -92,7 +93,7 @@ c <- 3 # c recebe 3
 d <- 5 # atribuimos 5 ao d
 ```
   
-Se voce esta copiando e colocando os codigos do livro no seu script, e apertando **Ctrl + Enter** em cada linha. Voce criou quatro objetos atraves das atribuicoes. Objetos a, b, c, d. Mas voce so recebera o seu respectivo valor se voce digitar o objeto e executa-lo com Ctrl + Enter. 
+Se você está copiando e colando os códigos do livro no seu script, e pressionando **Ctrl + Enter** em cada linha, você criou quatro objetos por meio das atribuições. Os objetos são a, b, c e d. No entanto, você só receberá o valor respectivo de cada um se digitar o objeto e executá-lo com Ctrl + Enter. 
 
 ```r
 a
@@ -101,7 +102,7 @@ c
 d
 ```
   
-Com esses objetos podemos realizar operacoes matematicas.
+Com esses objetos, podemos realizar operações matemáticas.
 
 ```r
 #Operacoes com objetos
@@ -142,13 +143,18 @@ guarda.roupa <- 2*100/10
 guarda.roupa
 
 ```
-Alem disso tudo, podemos atribuir um texto a um objeto. Mas para isso o texto precisa estar entre aspas.
+Alem disso tudo, podemos atribuir um texto a um objeto. Mas para isso o texto precisa estar entre aspas. Muito importante esse detalhe!!!
 
 ```r
 #Atribuindo a palavra "coxinha" ao objeto melhor_comida
 melhor_comida <- "coxinha"
 melhor_comida
 
+bingo  <- "10" 
+bingo2 <- "5"
+
+#Somar bingo + bingo2 nao vai funcionar pois o numero 10 e 5 foram atribuidos como texto
+bingo + bingo2
 ```
   
 Mas para que serve tudo isso? Por que aprender essas coisas de objetos, atribuições, e sei que lá? A resposta principal é a capacidade de automação e reprodutibilidade das suas análises. Você poderia usar outro programa estatístico? Poderia. Mas confie que o negócio aqui não possui limites.
@@ -176,9 +182,21 @@ Se você pode fazer isso para calcular o aluguel, imagine o que esse sistema pod
   
 ### Vetores
   
-Os objetos com múltiplos valores do mesmo tipo são chamados de vetores. Para criar um vetor, inserimos os valores dentro de parênteses separados por vírgulas. Vírgulas no R servem para separar o código. Então, se você quiser digitar números quebrados, nunca utilize **vírgula**, utilize **ponto**.
+Os objetos com múltiplos valores do mesmo tipo são chamados de vetores. Para criar um vetor, inserimos os valores dentro de parênteses separados por vírgulas. 
+  
+  *-(2, 4, 6, 8)*
+  
+  Mas o R so vai entender que isso eh um conjunto de valores, se voce indicar para ele, e a gente indica isso, utilizando a letra **c**.
+  
+  -*c(2, 4, 6, 8)*
+  
+Esse **c** vem da palavra "combinar" (combine em ingles) mas eu acho mais facil lembrar desse **c** representando a palavra "conjunto". Sempre que voce quiser criar um conjunto de objetos ou valores, coloque esse **c** antes do parenteses. Vírgulas no R servem para separar o código. Então, se você quiser digitar números quebrados, nunca utilize **vírgula**, utilize **ponto**.
   
   ```r
+#Criando um vetor
+c(2, 8, 15)
+
+#atribuindo esse vetor a um objeto
 vetor.a <- c(2, 8, 15)
 vetor.b <- c(2.5, 2.2, 2.1)
 melhores_comidas <- c("coxinha","pastel","lasanha") #Lembre-se, caracteres precisam estar dentro de aspas.
@@ -229,50 +247,37 @@ summary(notas)
 
 ```
   
-Cada uma dessas funções realiza algum cálculo específico. No caso de summary(), ela realiza o cálculo da média, mediana, máximo, mínimo e quartis, tudo ao mesmo tempo. Talvez em algum momento você não encontre a função que precisa para determinada tarefa; nesse caso, você pode criar sua própria função! Pode criar uma função utilizando outras funções para fazer algo específico para você. Por enquanto, vamos apenas ser usuários de funções e não criadores. Mas se você realmente quer saber como criar uma função, não irei te limitar. Abaixo, você encontra um dos exemplos mais simples de função. Utilize sua criatividade, seus conhecimentos de objetos, funções e vetores para criar alguma função. Mas sinta-se à vontade para pular essa parte, uma vez que ela não é essencial ao uso do R.
-  
-#### Criando uma funcao - parte I (opcional)
-  
-Vamos imaginar que voce precise criar uma funcao para somar dois numeros. Uma funcao simples mas que vai nos ajudar a entender a estrutura de uma funcao. Para criar uma funcao utilizamos uma funcao chamada "**function()**". Essa eh uma funcao que possui dois argumentos numericos que chamamos de x e y. A funcao vai pegar esses dois valores e realizar um calculo, que no caso, eh uma soma simples. O resultado da soma sera atribuido a um objeto chamado "resultado", e ele sera mostrado atraves da funcao "print". Agora que criamos a funcao, vamos utiliza-la para somar dois numeros qualquer.
+Cada uma dessas funções realiza algum cálculo específico. No caso de summary(), ela realiza o cálculo da média, mediana, máximo, mínimo e quartis, tudo ao mesmo tempo. 
+
+Certamente, não existem funções apenas para cálculos; há uma variedade delas com diferentes finalidades. Com o tempo e prática, você incorporará essas funções em seus códigos, o que facilitará bastante seu fluxo de trabalho. Abaixo voce encontra alguns exemplos.
   
 ```r
-#Criando a funcao soma
 
-soma <- function(x, y) {
+#Criando um objeto
+objeto <- 5
 
-resultado <- x + y
-print(resultado)
+#Ver quais objetos voce tem criado
+ls()
 
-}
+#Remover algum objeto
+remove(objeto)
+
+#verificar se o objeto foi removido
+ls()
+
+#saber a hora do sistema
+Sys.time()
+
+#Criar uma sequencia de valores numericos de 1 ate 100 de dois em dois.
+seq(1, 100, by = 2) #obs: voce pode atribuir isso a um objeto
+
+#criar um conjunto de numeros ou texto repetidos
+rep(5, times = 10)
+rep("troxa", times = 10) #obs: olha so, texto tem que ser entre aspas.
+
 ```
   
-Veja que: o nome "soma", a gente que criou, poderia ter sido "add" ou "adição". Os argumentos da função ficam dentro do parênteses; se existir mais de um, são separados por vírgulas. Dentro das chaves, vem todo o processamento que a gente quis que a função realizasse, no caso, apenas uma soma, e que esse resultado seja mostrado para a gente.
-
-Agora vamos usar essa função. Uma vez criada, ela fica armazenada no R e podemos utilizá-la. Para usá-la, só precisamos fornecer dois números para que esses sejam somados.
-  
-```r
-#Utilizando a funcao soma
-
-soma(2,2) #pode colocar qualquer numero
-```
-  
-Agora, vamos criar uma função para calcular a velocidade média. Para isso, a gente precisa dividir a distância pelo tempo.
- 
-```r
-#Criando funcao
-vm <- function(distancia, tempo) {
-  resultado <- distancia / tempo
-  print(resultado)
-}
-
-#Utilizando funcao vm (velocidade media)
-#a distancia percorrida foi 100km
-#o tempo gasto foi 2 horas
-
-vm(100, 2) #resultado deve ser interpretado em km por hora.
-```
-  
-Você deve estar dizendo "vish que lezeira, já daria pra ter feito direto haha". Sim, daria, mas a ideia é aprender a criar uma função. Mais para frente voce vai ver o potencial disso.
+  Talvez, em algum momento, você não encontre a função necessária para uma tarefa específica; nesse caso, você pode criar sua própria função! Você pode, inclusive, construir uma função utilizando outras funções para realizar uma tarefa específica. Por enquanto, vamos apenas ser usuários de funções e não criadores. No entanto, se realmente quiseres aprender a criar uma função, não vou te limitar. No capítulo "Criando funções", vou te ensinar o básico de como fazer isso.
   
 ## Tabela de dados
  

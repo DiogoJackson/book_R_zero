@@ -1,5 +1,17 @@
 # Git e GitHub
+
+# Funcoes avancadas
+
+## ifelse ()
+
+## for()
+
+## while()
+
+# Criando funcoes
+
+## Estrutura de uma função
   
-# Criando funcoes avancadas
+## Criando uma funcao simples
 
 # Criando pacotes
