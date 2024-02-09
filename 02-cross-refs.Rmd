@@ -49,7 +49,7 @@ Massa! Mas você deve concordar comigo que essa forma de interagir com o R não 
 Vamos criar um script e utilizá-lo em uma situação prática. Mas antes, precisamos aprender mais alguns botões. Veja a figura abaixo:
   
 ![Figura 3. Script](img/Figura3_script.png)
-Vamos criar um novo Script clicando no **botão "A" > New Script**. No Script, podemos digitar livremente sem que o código seja executado; inclusive, podemos fazer comentários utilizando o símbolo **#** antes do que foi digitado. Podemos apertar **Enter** para pular a linha sem enviar o código para o R. O código apenas será executado se clicarmos na linha do código e apertarmos o botão **"C"** (Run) ou **Ctrl + Enter**. Copie e cole o código abaixo no seu script e execute, apertando Ctrl + Enter linha por linha. Perceba que o **#** impede que o nome Script seja executado. Se você executar Script sem a #, o R não vai entender e vai dar erro (voce pode tentar fazer isso para ver o que acontece).
+Vamos criar um novo Script clicando no **botão "A" > New Script**. No Script, podemos digitar livremente sem que o código seja executado; inclusive, podemos fazer comentários utilizando o símbolo **#**. Podemos apertar **Enter** para pular a linha sem enviar o código para o R. O código apenas será executado se clicarmos na linha do código e apertarmos o botão **"C"** (Run) ou **Ctrl + Enter**. Copie e cole o código abaixo no seu script e execute, apertando Ctrl + Enter linha por linha. Perceba que o **#** impede que o nome Script seja executado. Se você executar Script sem a #, o R não vai entender e vai dar erro (voce pode tentar fazer isso para ver o que acontece).
   
 ```r
 #Script 
@@ -77,7 +77,7 @@ Por fim, voce pode salvar o Script para acessá-lo sempre que quiser clicando no
 
 ### Objetos
   
-Uma das capacidades mais importantes do R é a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o número 1 será atribuído à letra "**a**", e para isso utilizamos o sinal de igual (**=**). O "**a**" agora é considerado um objeto e aparecerá na janela de Environment (Figura 2 - janela 3).
+Uma das caracteristicas mais importantes do R é a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o número 1 será atribuído à letra "**a**", e para isso utilizamos o sinal de igual (**=**). O "**a**" agora é considerado um objeto e aparecerá na janela de Environment (Figura 2 - janela 3).
 
 ```r
 # Criando objetos
@@ -93,7 +93,7 @@ c <- 3 # c recebe 3
 d <- 5 # atribuimos 5 ao d
 ```
   
-Se você está copiando e colando os códigos do livro no seu script, e pressionando **Ctrl + Enter** em cada linha, você criou quatro objetos por meio das atribuições. Os objetos são a, b, c e d. No entanto, você só receberá o valor respectivo de cada um se digitar o objeto e executá-lo com Ctrl + Enter. 
+Se você está copiando e colando os códigos do livro no seu script, e pressionando **Ctrl + Enter** em cada linha, você criou quatro objetos por meio das atribuições. Os objetos são **a**, **b**, **c** e **d**. No entanto, você só receberá o valor respectivo de cada um se digitar o objeto e executá-lo com **Ctrl + Enter**. 
 
 ```r
 a
@@ -132,10 +132,10 @@ FALSE <- 2
 TRUE <- 5
 guarda-chuva <- 2
 ```
-Também podemos atribuir uma equação inteira a um objeto. Na verdade, podemos atribuir quase tudo a um objeto: gráficos, resultados, planilhas, etc. Mas isso veremos mais adiante.
+Também podemos atribuir uma equação inteira a um objeto. Na verdade, podemos atribuir quase tudo a um objeto: gráficos, resultados, planilhas, etc. Mas isso veremos mais adiante. Note que o underline (_) funciona bem para separar palavras, assim como o ponto (.).
 
 ```r
-#Note que o underline (_) funciona bem para separar palavras, assim como ponto (.)
+#objetos
 guarda_chuva <- 2*10/2
 guarda_chuva
 
@@ -149,6 +149,9 @@ Alem disso tudo, podemos atribuir um texto a um objeto. Mas para isso o texto pr
 #Atribuindo a palavra "coxinha" ao objeto melhor_comida
 melhor_comida <- "coxinha"
 melhor_comida
+
+poesia <- "subi num pe de jambo esperando meu amor passar..."
+poesia
 
 bingo  <- "10" 
 bingo2 <- "5"
@@ -210,23 +213,21 @@ Melhores_comidas
   
 ### Funções
   
-No R, as funções servem para processar de alguma forma os dados. O R já possui algumas funções nativas, como, por exemplo, para calcular a raiz quadrada de um número. A função possui um nome, geralmente associado ao que ela faz, e argumentos que são o tipo de dado que você precisa inserir nela para ser calculado. Vamos dar uma olhada na função sqrt(). A sigla "sqrt" representa "square root" em inglês. Primeiro, vamos rodar a função sem argumentos, apenas o **sqrt()**, e depois inserimos o argumento, que nesse caso, é um número.
+No R, as funções servem para processar de alguma forma os dados. O R já possui algumas funções nativas, como, por exemplo, para calcular a raiz quadrada de um número. A função possui um nome, geralmente associado ao que ela faz, e argumentos (valores ou objetos que vao dentro do parenteses) que você precisa inserir nela para ser calculado. Vamos dar uma olhada na função sqrt(). A sigla "sqrt" vem de "square root" em inglês. Primeiro, vamos rodar a função sem argumentos, apenas o **sqrt()**, e depois inserimos o argumento, que nesse caso, é um número.
 
 ```r
 #funcao que calcula raiz quadrada
-
 sqrt()
-
 sqrt(25)
 
 ```
-  Note que quando não colocamos (ou erramos) o argumento, o R vai te retornar um erro, geralmente, explicando o problema.
-
+  Note que, ao não colocarmos (ou cometermos erro em) um argumento, o R retornará um erro, geralmente explicando o problema. Muitos erros são ocasionados por uma vírgula faltante, erro de digitação ou a falta de aspas em um argumento de texto. Precisamos ser precisos em nossos códigos. Para utilizar uma função corretamente, precisamos saber quais tipos de argumentos (por exemplo, texto específico, objeto, vetor) a função solicita, pois cada função irá tratar um certo tipo de dado.
+  
 Existem funções dentro do R para todo tipo de coisa! Vamos criar um vetor (conjunto de dados) e fazer alguns cálculos utilizando algumas funções.
   
   ```r
 #Notas do terceiro ano A
-#Cada um desses numeros representa uma nota de um aluno
+#Cada um desses numeros representa a nota de um aluno
 notas <- c(10, 8, 7, 5, 2, 4, 6.6, 7.9, 8.9, 9.5)
 
 #Qual a media da turma?
@@ -269,11 +270,11 @@ ls()
 Sys.time()
 
 #Criar uma sequencia de valores numericos de 1 ate 100 de dois em dois.
-seq(1, 100, by = 2) #obs: voce pode atribuir isso a um objeto
+seq(1, 100, by = 2) #obs: isso eh um vetor que pode ser atribuir isso a um objeto
 
 #criar um conjunto de numeros ou texto repetidos
 rep(5, times = 10)
-rep("troxa", times = 10) #obs: olha so, texto tem que ser entre aspas.
+rep("troxa", times = 10) #obs: texto tem que estar entre aspas.
 
 #Criar um vetor
 c(2,5,6)
@@ -286,16 +287,16 @@ c(2,5,6)
 ## Tabela de dados
  
 ### Data frame
-DataFrame nada mais é do que uma tabela de dados. Vamos direto ao que interessa e usar a função *data.frame()* para criar uma tabela. Iremos criar as notas de 10 alunos e seus respectivos nomes. Se você ainda estiver na mesma sessão de R, podemos ver que o objeto "notas" ainda está salvo na janela 3 (Environment e History) e podemos aproveitá-lo. De qualquer forma, vou recriar "notas", caso por algum motivo você TENHA SAÍDO do R, um absurdo, mas acontece.
+DataFrame nada mais é do que uma tabela de dados. Vamos direto ao que interessa e usar a função *data.frame()* para criar uma tabela. Iremos criar as notas de 10 alunos e seus respectivos nomes. Se você ainda estiver na mesma sessão de R, podemos ver que o objeto "notas" ainda está salvo na janela 3 (Environment e History) e podemos aproveitá-lo. De qualquer forma, vou recriar "notas", caso por algum motivo você TENHA SAÍDO do R... 
   
   ```r
 #Criando um data frame contendo as notas e os nomes de cada aluno
 
-#Primeiro criamos as notas (cada numero representa a nota de um aluno)
+#Primeiro, criamos as notas (cada numero representa a nota de um aluno)
 notas <- c(10, 8, 7, 5, 2, 4, 6.6, 7.9, 8.9, 9.5) 
 
-#Segundo criamos os nomes (na ordem das notas)
-#Ex: o primeiro valor do objeto nota (10) representara a nota de Marilia que eh o primeiro nome.
+#Segundo, criamos os nomes (na ordem das notas)
+#Ex: o primeiro valor do objeto nota (10) representara a nota de Mari que eh o primeiro nome.
 
 nomes <- c("Mari", "Jojo", "Guigow", "Sofi", 
 "Fifi", "Brunnin", "Aquino", "Mazana", "Thiago", "Belga")
@@ -305,14 +306,14 @@ nomes <- c("Mari", "Jojo", "Guigow", "Sofi",
 A funcao data.frame() pega cada objeto e coloca na tabela como colunas.
 
 ```r
-#Terceiro utilizamos a funcao data.frame() para criar a tabela
+#Terceiro, utilizamos a funcao data.frame() para criar a tabela
 tabela <- data.frame(nomes, notas) #cada argumento aqui sera uma coluna no data.frame
 tabela
 
 #vamos criar mais uma nova coluna no data.frame chamada de ID
 ID <- c("1A","2A","3A","4A","5A","6A","7A","8A","9A","10A")
 
-#Vamos criar uma tabela incluindo essa nova coluna
+#Vamos criar uma nova tabela incluindo essa nova coluna
 tabela2 <- data.frame(ID, nomes, notas)
 ```
 Esse data.frame (tabela) é uma forma muito simplificada das tabelas que iremos importar de nossos dados reais. No entanto, ela nos serve muito bem para entender como funciona uma planilha no R.
@@ -332,7 +333,7 @@ Logo, para você acessar uma variável de uma tabela, usamos o **$** da seguinte
 
 tabela$nomes
 tabela$notas
-tabela$ID
+tabela2$ID
 ```
 
 Perceba que quando você digita **tabela$**, pode apertar a tecla TAB para mostrar e selecionar as variáveis de sua tabela. 
@@ -355,7 +356,7 @@ Agora, sabendo como acessar as variáveis de uma tabela, você pode utilizar fun
 mean(tabela$notas)
 
 ```
-  Utilize as funções abaixo para calcular mediana, máximo, mínimo:
+  Utilize as funções abaixo para calcular mediana, máximo, mínimo do objeto "tabela":
     
   - median()
   - max()
@@ -402,6 +403,22 @@ tapply(iris$Petal.Width, iris$Species, sd)
 ```
 - *Dica: calcule o `summary()` para cada espécie usando a função `tapply()`.*
   
+Vamos invocar uma outra planilha de dados chamada de "mtcars". Vamos utilizar outras funcoes para acessar informacoes dessa planilha.
+  
+```r
+#Acessando planilha nativa do R com a funcao data()
+data(mtcars)
+
+#Abrir a planilha numa aba
+View(mtcars)
+
+#ver nome das colunas (variaveis)
+colnames(mtcars)
+
+#ver nome das linhas (observacoes)
+rownames(mtcars)
+```
+
 ## Importando sua planilha
   
 Aqui iremos importar algumas planilhas do computador. Caso você não tenha nenhuma, clique nos links abaixo para importar planilhas nos formatos Excel (xlsx) e CSV, e selecione onde você quer salvá-las.

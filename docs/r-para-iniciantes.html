@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Diogo J. A. Silva" />
 
 
-<meta name="date" content="2024-02-06" />
+<meta name="date" content="2024-02-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -260,7 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Massa! Mas você deve concordar comigo que essa forma de interagir com o R não é muito eficiente. Apesar de mostrar o histórico, se você quiser realizar a primeira operação que fizemos (1 + 1), precisará digitar novamente sempre que quiser fazer algo. Por esse motivo, a janela de script (Figura 2 - janela 1) se torna tão importante.</p>
 <p>Vamos criar um script e utilizá-lo em uma situação prática. Mas antes, precisamos aprender mais alguns botões. Veja a figura abaixo:</p>
 <p><img src="img/Figura3_script.png" alt="Figura 3. Script" />
-Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</strong>. No Script, podemos digitar livremente sem que o código seja executado; inclusive, podemos fazer comentários utilizando o símbolo <strong>#</strong> antes do que foi digitado. Podemos apertar <strong>Enter</strong> para pular a linha sem enviar o código para o R. O código apenas será executado se clicarmos na linha do código e apertarmos o botão <strong>“C”</strong> (Run) ou <strong>Ctrl + Enter</strong>. Copie e cole o código abaixo no seu script e execute, apertando Ctrl + Enter linha por linha. Perceba que o <strong>#</strong> impede que o nome Script seja executado. Se você executar Script sem a #, o R não vai entender e vai dar erro (voce pode tentar fazer isso para ver o que acontece).</p>
+Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</strong>. No Script, podemos digitar livremente sem que o código seja executado; inclusive, podemos fazer comentários utilizando o símbolo <strong>#</strong>. Podemos apertar <strong>Enter</strong> para pular a linha sem enviar o código para o R. O código apenas será executado se clicarmos na linha do código e apertarmos o botão <strong>“C”</strong> (Run) ou <strong>Ctrl + Enter</strong>. Copie e cole o código abaixo no seu script e execute, apertando Ctrl + Enter linha por linha. Perceba que o <strong>#</strong> impede que o nome Script seja executado. Se você executar Script sem a #, o R não vai entender e vai dar erro (voce pode tentar fazer isso para ver o que acontece).</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="r-para-iniciantes.html#cb5-1" tabindex="-1"></a><span class="co">#Script </span></span>
 <span id="cb5-2"><a href="r-para-iniciantes.html#cb5-2" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="r-para-iniciantes.html#cb5-3" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
@@ -281,7 +281,7 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <h2><span class="header-section-number">3.2</span> Objetos, vetores e funções<a href="r-para-iniciantes.html#objetos-vetores-e-funções" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="objetos" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Objetos<a href="r-para-iniciantes.html#objetos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Uma das capacidades mais importantes do R é a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o número 1 será atribuído à letra “<strong>a</strong>”, e para isso utilizamos o sinal de igual (<strong>=</strong>). O “<strong>a</strong>” agora é considerado um objeto e aparecerá na janela de Environment (Figura 2 - janela 3).</p>
+<p>Uma das caracteristicas mais importantes do R é a capacidade de armazenar valores em objetos. Por exemplo, podemos dizer que o número 1 será atribuído à letra “<strong>a</strong>”, e para isso utilizamos o sinal de igual (<strong>=</strong>). O “<strong>a</strong>” agora é considerado um objeto e aparecerá na janela de Environment (Figura 2 - janela 3).</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r-para-iniciantes.html#cb7-1" tabindex="-1"></a><span class="co"># Criando objetos</span></span>
 <span id="cb7-2"><a href="r-para-iniciantes.html#cb7-2" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">1</span>  </span>
 <span id="cb7-3"><a href="r-para-iniciantes.html#cb7-3" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">2</span>  </span></code></pre></div>
@@ -289,7 +289,7 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="r-para-iniciantes.html#cb8-1" tabindex="-1"></a><span class="co"># Criando Objetos</span></span>
 <span id="cb8-2"><a href="r-para-iniciantes.html#cb8-2" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="co"># c recebe 3</span></span>
 <span id="cb8-3"><a href="r-para-iniciantes.html#cb8-3" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="co"># atribuimos 5 ao d</span></span></code></pre></div>
-<p>Se você está copiando e colando os códigos do livro no seu script, e pressionando <strong>Ctrl + Enter</strong> em cada linha, você criou quatro objetos por meio das atribuições. Os objetos são a, b, c e d. No entanto, você só receberá o valor respectivo de cada um se digitar o objeto e executá-lo com Ctrl + Enter.</p>
+<p>Se você está copiando e colando os códigos do livro no seu script, e pressionando <strong>Ctrl + Enter</strong> em cada linha, você criou quatro objetos por meio das atribuições. Os objetos são <strong>a</strong>, <strong>b</strong>, <strong>c</strong> e <strong>d</strong>. No entanto, você só receberá o valor respectivo de cada um se digitar o objeto e executá-lo com <strong>Ctrl + Enter</strong>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="r-para-iniciantes.html#cb9-1" tabindex="-1"></a>a</span>
 <span id="cb9-2"><a href="r-para-iniciantes.html#cb9-2" tabindex="-1"></a>b</span>
 <span id="cb9-3"><a href="r-para-iniciantes.html#cb9-3" tabindex="-1"></a>c</span>
@@ -312,8 +312,8 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="r-para-iniciantes.html#cb12-1" tabindex="-1"></a><span class="cn">FALSE</span> <span class="ot">&lt;-</span> <span class="dv">2</span></span>
 <span id="cb12-2"><a href="r-para-iniciantes.html#cb12-2" tabindex="-1"></a><span class="cn">TRUE</span> <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb12-3"><a href="r-para-iniciantes.html#cb12-3" tabindex="-1"></a>guarda<span class="sc">-</span>chuva <span class="ot">&lt;-</span> <span class="dv">2</span></span></code></pre></div>
-<p>Também podemos atribuir uma equação inteira a um objeto. Na verdade, podemos atribuir quase tudo a um objeto: gráficos, resultados, planilhas, etc. Mas isso veremos mais adiante.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="r-para-iniciantes.html#cb13-1" tabindex="-1"></a><span class="co">#Note que o underline (_) funciona bem para separar palavras, assim como ponto (.)</span></span>
+<p>Também podemos atribuir uma equação inteira a um objeto. Na verdade, podemos atribuir quase tudo a um objeto: gráficos, resultados, planilhas, etc. Mas isso veremos mais adiante. Note que o underline (_) funciona bem para separar palavras, assim como o ponto (.).</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="r-para-iniciantes.html#cb13-1" tabindex="-1"></a><span class="co">#objetos</span></span>
 <span id="cb13-2"><a href="r-para-iniciantes.html#cb13-2" tabindex="-1"></a>guarda_chuva <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span><span class="dv">10</span><span class="sc">/</span><span class="dv">2</span></span>
 <span id="cb13-3"><a href="r-para-iniciantes.html#cb13-3" tabindex="-1"></a>guarda_chuva</span>
 <span id="cb13-4"><a href="r-para-iniciantes.html#cb13-4" tabindex="-1"></a></span>
@@ -324,11 +324,14 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <span id="cb14-2"><a href="r-para-iniciantes.html#cb14-2" tabindex="-1"></a>melhor_comida <span class="ot">&lt;-</span> <span class="st">&quot;coxinha&quot;</span></span>
 <span id="cb14-3"><a href="r-para-iniciantes.html#cb14-3" tabindex="-1"></a>melhor_comida</span>
 <span id="cb14-4"><a href="r-para-iniciantes.html#cb14-4" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="r-para-iniciantes.html#cb14-5" tabindex="-1"></a>bingo  <span class="ot">&lt;-</span> <span class="st">&quot;10&quot;</span> </span>
-<span id="cb14-6"><a href="r-para-iniciantes.html#cb14-6" tabindex="-1"></a>bingo2 <span class="ot">&lt;-</span> <span class="st">&quot;5&quot;</span></span>
+<span id="cb14-5"><a href="r-para-iniciantes.html#cb14-5" tabindex="-1"></a>poesia <span class="ot">&lt;-</span> <span class="st">&quot;subi num pe de jambo esperando meu amor passar...&quot;</span></span>
+<span id="cb14-6"><a href="r-para-iniciantes.html#cb14-6" tabindex="-1"></a>poesia</span>
 <span id="cb14-7"><a href="r-para-iniciantes.html#cb14-7" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="r-para-iniciantes.html#cb14-8" tabindex="-1"></a><span class="co">#Somar bingo + bingo2 nao vai funcionar pois o numero 10 e 5 foram atribuidos como texto</span></span>
-<span id="cb14-9"><a href="r-para-iniciantes.html#cb14-9" tabindex="-1"></a>bingo <span class="sc">+</span> bingo2</span></code></pre></div>
+<span id="cb14-8"><a href="r-para-iniciantes.html#cb14-8" tabindex="-1"></a>bingo  <span class="ot">&lt;-</span> <span class="st">&quot;10&quot;</span> </span>
+<span id="cb14-9"><a href="r-para-iniciantes.html#cb14-9" tabindex="-1"></a>bingo2 <span class="ot">&lt;-</span> <span class="st">&quot;5&quot;</span></span>
+<span id="cb14-10"><a href="r-para-iniciantes.html#cb14-10" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="r-para-iniciantes.html#cb14-11" tabindex="-1"></a><span class="co">#Somar bingo + bingo2 nao vai funcionar pois o numero 10 e 5 foram atribuidos como texto</span></span>
+<span id="cb14-12"><a href="r-para-iniciantes.html#cb14-12" tabindex="-1"></a>bingo <span class="sc">+</span> bingo2</span></code></pre></div>
 <p>Mas para que serve tudo isso? Por que aprender essas coisas de objetos, atribuições, e sei que lá? A resposta principal é a capacidade de automação e reprodutibilidade das suas análises. Você poderia usar outro programa estatístico? Poderia. Mas confie que o negócio aqui não possui limites.</p>
 <p>Vamos criar um exemplo prático para fixar conceitos. Vamos imaginar que queremos calcular quanto gastamos de aluguel por mês e por ano, considerando que pagamos o aluguel semanalmente. Vamos supor que o aluguel por semana seja de 200 reais.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="r-para-iniciantes.html#cb15-1" tabindex="-1"></a><span class="co">#Calculando o aluguel</span></span>
@@ -369,16 +372,14 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 </div>
 <div id="funções" class="section level3 hasAnchor" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Funções<a href="r-para-iniciantes.html#funções" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>No R, as funções servem para processar de alguma forma os dados. O R já possui algumas funções nativas, como, por exemplo, para calcular a raiz quadrada de um número. A função possui um nome, geralmente associado ao que ela faz, e argumentos que são o tipo de dado que você precisa inserir nela para ser calculado. Vamos dar uma olhada na função sqrt(). A sigla “sqrt” representa “square root” em inglês. Primeiro, vamos rodar a função sem argumentos, apenas o <strong>sqrt()</strong>, e depois inserimos o argumento, que nesse caso, é um número.</p>
+<p>No R, as funções servem para processar de alguma forma os dados. O R já possui algumas funções nativas, como, por exemplo, para calcular a raiz quadrada de um número. A função possui um nome, geralmente associado ao que ela faz, e argumentos (valores ou objetos que vao dentro do parenteses) que você precisa inserir nela para ser calculado. Vamos dar uma olhada na função sqrt(). A sigla “sqrt” vem de “square root” em inglês. Primeiro, vamos rodar a função sem argumentos, apenas o <strong>sqrt()</strong>, e depois inserimos o argumento, que nesse caso, é um número.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="r-para-iniciantes.html#cb17-1" tabindex="-1"></a><span class="co">#funcao que calcula raiz quadrada</span></span>
-<span id="cb17-2"><a href="r-para-iniciantes.html#cb17-2" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="r-para-iniciantes.html#cb17-3" tabindex="-1"></a><span class="fu">sqrt</span>()</span>
-<span id="cb17-4"><a href="r-para-iniciantes.html#cb17-4" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="r-para-iniciantes.html#cb17-5" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">25</span>)</span></code></pre></div>
-<p>Note que quando não colocamos (ou erramos) o argumento, o R vai te retornar um erro, geralmente, explicando o problema.</p>
+<span id="cb17-2"><a href="r-para-iniciantes.html#cb17-2" tabindex="-1"></a><span class="fu">sqrt</span>()</span>
+<span id="cb17-3"><a href="r-para-iniciantes.html#cb17-3" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">25</span>)</span></code></pre></div>
+<p>Note que, ao não colocarmos (ou cometermos erro em) um argumento, o R retornará um erro, geralmente explicando o problema. Muitos erros são ocasionados por uma vírgula faltante, erro de digitação ou a falta de aspas em um argumento de texto. Precisamos ser precisos em nossos códigos. Para utilizar uma função corretamente, precisamos saber quais tipos de argumentos (por exemplo, texto específico, objeto, vetor) a função solicita, pois cada função irá tratar um certo tipo de dado.</p>
 <p>Existem funções dentro do R para todo tipo de coisa! Vamos criar um vetor (conjunto de dados) e fazer alguns cálculos utilizando algumas funções.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="r-para-iniciantes.html#cb18-1" tabindex="-1"></a><span class="co">#Notas do terceiro ano A</span></span>
-<span id="cb18-2"><a href="r-para-iniciantes.html#cb18-2" tabindex="-1"></a><span class="co">#Cada um desses numeros representa uma nota de um aluno</span></span>
+<span id="cb18-2"><a href="r-para-iniciantes.html#cb18-2" tabindex="-1"></a><span class="co">#Cada um desses numeros representa a nota de um aluno</span></span>
 <span id="cb18-3"><a href="r-para-iniciantes.html#cb18-3" tabindex="-1"></a>notas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="fl">6.6</span>, <span class="fl">7.9</span>, <span class="fl">8.9</span>, <span class="fl">9.5</span>)</span>
 <span id="cb18-4"><a href="r-para-iniciantes.html#cb18-4" tabindex="-1"></a></span>
 <span id="cb18-5"><a href="r-para-iniciantes.html#cb18-5" tabindex="-1"></a><span class="co">#Qual a media da turma?</span></span>
@@ -415,11 +416,11 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <span id="cb19-15"><a href="r-para-iniciantes.html#cb19-15" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
 <span id="cb19-16"><a href="r-para-iniciantes.html#cb19-16" tabindex="-1"></a></span>
 <span id="cb19-17"><a href="r-para-iniciantes.html#cb19-17" tabindex="-1"></a><span class="co">#Criar uma sequencia de valores numericos de 1 ate 100 de dois em dois.</span></span>
-<span id="cb19-18"><a href="r-para-iniciantes.html#cb19-18" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">2</span>) <span class="co">#obs: voce pode atribuir isso a um objeto</span></span>
+<span id="cb19-18"><a href="r-para-iniciantes.html#cb19-18" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">2</span>) <span class="co">#obs: isso eh um vetor que pode ser atribuir isso a um objeto</span></span>
 <span id="cb19-19"><a href="r-para-iniciantes.html#cb19-19" tabindex="-1"></a></span>
 <span id="cb19-20"><a href="r-para-iniciantes.html#cb19-20" tabindex="-1"></a><span class="co">#criar um conjunto de numeros ou texto repetidos</span></span>
 <span id="cb19-21"><a href="r-para-iniciantes.html#cb19-21" tabindex="-1"></a><span class="fu">rep</span>(<span class="dv">5</span>, <span class="at">times =</span> <span class="dv">10</span>)</span>
-<span id="cb19-22"><a href="r-para-iniciantes.html#cb19-22" tabindex="-1"></a><span class="fu">rep</span>(<span class="st">&quot;troxa&quot;</span>, <span class="at">times =</span> <span class="dv">10</span>) <span class="co">#obs: olha so, texto tem que ser entre aspas.</span></span>
+<span id="cb19-22"><a href="r-para-iniciantes.html#cb19-22" tabindex="-1"></a><span class="fu">rep</span>(<span class="st">&quot;troxa&quot;</span>, <span class="at">times =</span> <span class="dv">10</span>) <span class="co">#obs: texto tem que estar entre aspas.</span></span>
 <span id="cb19-23"><a href="r-para-iniciantes.html#cb19-23" tabindex="-1"></a></span>
 <span id="cb19-24"><a href="r-para-iniciantes.html#cb19-24" tabindex="-1"></a><span class="co">#Criar um vetor</span></span>
 <span id="cb19-25"><a href="r-para-iniciantes.html#cb19-25" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
@@ -432,26 +433,26 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <h2><span class="header-section-number">3.3</span> Tabela de dados<a href="r-para-iniciantes.html#tabela-de-dados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="data-frame" class="section level3 hasAnchor" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Data frame<a href="r-para-iniciantes.html#data-frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>DataFrame nada mais é do que uma tabela de dados. Vamos direto ao que interessa e usar a função <em>data.frame()</em> para criar uma tabela. Iremos criar as notas de 10 alunos e seus respectivos nomes. Se você ainda estiver na mesma sessão de R, podemos ver que o objeto “notas” ainda está salvo na janela 3 (Environment e History) e podemos aproveitá-lo. De qualquer forma, vou recriar “notas”, caso por algum motivo você TENHA SAÍDO do R, um absurdo, mas acontece.</p>
+<p>DataFrame nada mais é do que uma tabela de dados. Vamos direto ao que interessa e usar a função <em>data.frame()</em> para criar uma tabela. Iremos criar as notas de 10 alunos e seus respectivos nomes. Se você ainda estiver na mesma sessão de R, podemos ver que o objeto “notas” ainda está salvo na janela 3 (Environment e History) e podemos aproveitá-lo. De qualquer forma, vou recriar “notas”, caso por algum motivo você TENHA SAÍDO do R…</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="r-para-iniciantes.html#cb20-1" tabindex="-1"></a><span class="co">#Criando um data frame contendo as notas e os nomes de cada aluno</span></span>
 <span id="cb20-2"><a href="r-para-iniciantes.html#cb20-2" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="r-para-iniciantes.html#cb20-3" tabindex="-1"></a><span class="co">#Primeiro criamos as notas (cada numero representa a nota de um aluno)</span></span>
+<span id="cb20-3"><a href="r-para-iniciantes.html#cb20-3" tabindex="-1"></a><span class="co">#Primeiro, criamos as notas (cada numero representa a nota de um aluno)</span></span>
 <span id="cb20-4"><a href="r-para-iniciantes.html#cb20-4" tabindex="-1"></a>notas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="fl">6.6</span>, <span class="fl">7.9</span>, <span class="fl">8.9</span>, <span class="fl">9.5</span>) </span>
 <span id="cb20-5"><a href="r-para-iniciantes.html#cb20-5" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="r-para-iniciantes.html#cb20-6" tabindex="-1"></a><span class="co">#Segundo criamos os nomes (na ordem das notas)</span></span>
-<span id="cb20-7"><a href="r-para-iniciantes.html#cb20-7" tabindex="-1"></a><span class="co">#Ex: o primeiro valor do objeto nota (10) representara a nota de Marilia que eh o primeiro nome.</span></span>
+<span id="cb20-6"><a href="r-para-iniciantes.html#cb20-6" tabindex="-1"></a><span class="co">#Segundo, criamos os nomes (na ordem das notas)</span></span>
+<span id="cb20-7"><a href="r-para-iniciantes.html#cb20-7" tabindex="-1"></a><span class="co">#Ex: o primeiro valor do objeto nota (10) representara a nota de Mari que eh o primeiro nome.</span></span>
 <span id="cb20-8"><a href="r-para-iniciantes.html#cb20-8" tabindex="-1"></a></span>
 <span id="cb20-9"><a href="r-para-iniciantes.html#cb20-9" tabindex="-1"></a>nomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Mari&quot;</span>, <span class="st">&quot;Jojo&quot;</span>, <span class="st">&quot;Guigow&quot;</span>, <span class="st">&quot;Sofi&quot;</span>, </span>
 <span id="cb20-10"><a href="r-para-iniciantes.html#cb20-10" tabindex="-1"></a><span class="st">&quot;Fifi&quot;</span>, <span class="st">&quot;Brunnin&quot;</span>, <span class="st">&quot;Aquino&quot;</span>, <span class="st">&quot;Mazana&quot;</span>, <span class="st">&quot;Thiago&quot;</span>, <span class="st">&quot;Belga&quot;</span>)</span></code></pre></div>
 <p>A funcao data.frame() pega cada objeto e coloca na tabela como colunas.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-para-iniciantes.html#cb21-1" tabindex="-1"></a><span class="co">#Terceiro utilizamos a funcao data.frame() para criar a tabela</span></span>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-para-iniciantes.html#cb21-1" tabindex="-1"></a><span class="co">#Terceiro, utilizamos a funcao data.frame() para criar a tabela</span></span>
 <span id="cb21-2"><a href="r-para-iniciantes.html#cb21-2" tabindex="-1"></a>tabela <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(nomes, notas) <span class="co">#cada argumento aqui sera uma coluna no data.frame</span></span>
 <span id="cb21-3"><a href="r-para-iniciantes.html#cb21-3" tabindex="-1"></a>tabela</span>
 <span id="cb21-4"><a href="r-para-iniciantes.html#cb21-4" tabindex="-1"></a></span>
 <span id="cb21-5"><a href="r-para-iniciantes.html#cb21-5" tabindex="-1"></a><span class="co">#vamos criar mais uma nova coluna no data.frame chamada de ID</span></span>
 <span id="cb21-6"><a href="r-para-iniciantes.html#cb21-6" tabindex="-1"></a>ID <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1A&quot;</span>,<span class="st">&quot;2A&quot;</span>,<span class="st">&quot;3A&quot;</span>,<span class="st">&quot;4A&quot;</span>,<span class="st">&quot;5A&quot;</span>,<span class="st">&quot;6A&quot;</span>,<span class="st">&quot;7A&quot;</span>,<span class="st">&quot;8A&quot;</span>,<span class="st">&quot;9A&quot;</span>,<span class="st">&quot;10A&quot;</span>)</span>
 <span id="cb21-7"><a href="r-para-iniciantes.html#cb21-7" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="r-para-iniciantes.html#cb21-8" tabindex="-1"></a><span class="co">#Vamos criar uma tabela incluindo essa nova coluna</span></span>
+<span id="cb21-8"><a href="r-para-iniciantes.html#cb21-8" tabindex="-1"></a><span class="co">#Vamos criar uma nova tabela incluindo essa nova coluna</span></span>
 <span id="cb21-9"><a href="r-para-iniciantes.html#cb21-9" tabindex="-1"></a>tabela2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(ID, nomes, notas)</span></code></pre></div>
 <p>Esse data.frame (tabela) é uma forma muito simplificada das tabelas que iremos importar de nossos dados reais. No entanto, ela nos serve muito bem para entender como funciona uma planilha no R.</p>
 <p>A partir de agora, quero que você perceba uma coisa muito importante e leve isso para a vida. Uma planilha organizada deve ser construída da seguinte forma:</p>
@@ -464,7 +465,7 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <span id="cb22-2"><a href="r-para-iniciantes.html#cb22-2" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="r-para-iniciantes.html#cb22-3" tabindex="-1"></a>tabela<span class="sc">$</span>nomes</span>
 <span id="cb22-4"><a href="r-para-iniciantes.html#cb22-4" tabindex="-1"></a>tabela<span class="sc">$</span>notas</span>
-<span id="cb22-5"><a href="r-para-iniciantes.html#cb22-5" tabindex="-1"></a>tabela<span class="sc">$</span>ID</span></code></pre></div>
+<span id="cb22-5"><a href="r-para-iniciantes.html#cb22-5" tabindex="-1"></a>tabela2<span class="sc">$</span>ID</span></code></pre></div>
 <p>Perceba que quando você digita <strong>tabela$</strong>, pode apertar a tecla TAB para mostrar e selecionar as variáveis de sua tabela.</p>
 <ul>
 <li><em>Dica: crie um novo data.frame das notas dos alunos, mas adicionando uma variavel (coluna) chamada “faltas”.</em></li>
@@ -476,7 +477,7 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <p>Agora, sabendo como acessar as variáveis de uma tabela, você pode utilizar funções para calcular uma variável específica do data frame.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="r-para-iniciantes.html#cb24-1" tabindex="-1"></a><span class="co">#Calculando a media da variavel notas da tabela</span></span>
 <span id="cb24-2"><a href="r-para-iniciantes.html#cb24-2" tabindex="-1"></a><span class="fu">mean</span>(tabela<span class="sc">$</span>notas)</span></code></pre></div>
-<p>Utilize as funções abaixo para calcular mediana, máximo, mínimo:</p>
+<p>Utilize as funções abaixo para calcular mediana, máximo, mínimo do objeto “tabela”:</p>
 <ul>
 <li>median()</li>
 <li>max()</li>
@@ -512,6 +513,18 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <ul>
 <li><em>Dica: calcule o <code>summary()</code> para cada espécie usando a função <code>tapply()</code>.</em></li>
 </ul>
+<p>Vamos invocar uma outra planilha de dados chamada de “mtcars”. Vamos utilizar outras funcoes para acessar informacoes dessa planilha.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="r-para-iniciantes.html#cb28-1" tabindex="-1"></a><span class="co">#Acessando planilha nativa do R com a funcao data()</span></span>
+<span id="cb28-2"><a href="r-para-iniciantes.html#cb28-2" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb28-3"><a href="r-para-iniciantes.html#cb28-3" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="r-para-iniciantes.html#cb28-4" tabindex="-1"></a><span class="co">#Abrir a planilha numa aba</span></span>
+<span id="cb28-5"><a href="r-para-iniciantes.html#cb28-5" tabindex="-1"></a><span class="fu">View</span>(mtcars)</span>
+<span id="cb28-6"><a href="r-para-iniciantes.html#cb28-6" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="r-para-iniciantes.html#cb28-7" tabindex="-1"></a><span class="co">#ver nome das colunas (variaveis)</span></span>
+<span id="cb28-8"><a href="r-para-iniciantes.html#cb28-8" tabindex="-1"></a><span class="fu">colnames</span>(mtcars)</span>
+<span id="cb28-9"><a href="r-para-iniciantes.html#cb28-9" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="r-para-iniciantes.html#cb28-10" tabindex="-1"></a><span class="co">#ver nome das linhas (observacoes)</span></span>
+<span id="cb28-11"><a href="r-para-iniciantes.html#cb28-11" tabindex="-1"></a><span class="fu">rownames</span>(mtcars)</span></code></pre></div>
 </div>
 </div>
 <div id="importando-sua-planilha" class="section level2 hasAnchor" number="3.4">
@@ -532,8 +545,8 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <div id="importando-planilha-csv" class="section level3 hasAnchor" number="3.4.2">
 <h3><span class="header-section-number">3.4.2</span> Importando planilha CSV<a href="r-para-iniciantes.html#importando-planilha-csv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Se você quer importar uma planilha no formato ‘csv’ e não ‘xlsx’, sinto muito, mas não existe um botão para importar esse formato no RStudio. Entretanto, não precisamos de um botão; podemos criar nosso próprio código de importação hehe. Ao rodar esse código, você poderá escolher a planilha no formato CSV que desejar. Maravilha, não é?</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="r-para-iniciantes.html#cb28-1" tabindex="-1"></a><span class="co">#Importando CSV</span></span>
-<span id="cb28-2"><a href="r-para-iniciantes.html#cb28-2" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="r-para-iniciantes.html#cb29-1" tabindex="-1"></a><span class="co">#Importando CSV</span></span>
+<span id="cb29-2"><a href="r-para-iniciantes.html#cb29-2" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>())</span></code></pre></div>
 </div>
 </div>
 <div id="diretório-de-trabalho" class="section level2 hasAnchor" number="3.5">
@@ -546,11 +559,11 @@ Vamos criar um novo Script clicando no <strong>botão “A” &gt; New Script</s
 <div id="grafico-de-histograma" class="section level3 hasAnchor" number="3.6.1">
 <h3><span class="header-section-number">3.6.1</span> Grafico de histograma<a href="r-para-iniciantes.html#grafico-de-histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Esse gráfico nos mostra a frequência dos valores da variável de interesse, como por exemplo, o comprimento da pétala das flores do banco de dados iris.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="r-para-iniciantes.html#cb29-1" tabindex="-1"></a><span class="co">#Importando banco de dados &quot;iris&quot;</span></span>
-<span id="cb29-2"><a href="r-para-iniciantes.html#cb29-2" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb29-3"><a href="r-para-iniciantes.html#cb29-3" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="r-para-iniciantes.html#cb29-4" tabindex="-1"></a><span class="co">#Criando histograma</span></span>
-<span id="cb29-5"><a href="r-para-iniciantes.html#cb29-5" tabindex="-1"></a><span class="fu">hist</span>(iris<span class="sc">$</span>Sepal.Length)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="r-para-iniciantes.html#cb30-1" tabindex="-1"></a><span class="co">#Importando banco de dados &quot;iris&quot;</span></span>
+<span id="cb30-2"><a href="r-para-iniciantes.html#cb30-2" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb30-3"><a href="r-para-iniciantes.html#cb30-3" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="r-para-iniciantes.html#cb30-4" tabindex="-1"></a><span class="co">#Criando histograma</span></span>
+<span id="cb30-5"><a href="r-para-iniciantes.html#cb30-5" tabindex="-1"></a><span class="fu">hist</span>(iris<span class="sc">$</span>Sepal.Length)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:nome-do-chunk1"></span>
 <img src="_main_files/figure-html/nome-do-chunk1-1.png" alt="Gráficos com R base" width="672" />
 <p class="caption">
@@ -562,67 +575,67 @@ Figure 3.1: Gráficos com R base
 <div id="grafico-de-dispersao" class="section level3 hasAnchor" number="3.6.2">
 <h3><span class="header-section-number">3.6.2</span> Grafico de dispersao<a href="r-para-iniciantes.html#grafico-de-dispersao" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Esse gráfico nos mostra a relação entre duas variáveis contínuas. Vamos utilizar o banco de dados “iris” para construir e visualizar alguns gráficos. Para construir um gráfico de dispersão, utilizamos a função <em>plot()</em>. Note que a função plot possui vários argumentos que podemos ir adicionando para personalizar o gráfico. Além disso, para deixar o código mais organizado, sempre após a vírgula de um argumento, pulamos a linha, de forma que cada argumento fique numa linha.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="r-para-iniciantes.html#cb30-1" tabindex="-1"></a><span class="co">#Cria o grafico basico</span></span>
-<span id="cb30-2"><a href="r-para-iniciantes.html#cb30-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="r-para-iniciantes.html#cb31-1" tabindex="-1"></a><span class="co">#Cria o grafico basico</span></span>
+<span id="cb31-2"><a href="r-para-iniciantes.html#cb31-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:nome-do-chunk2-1"></span>
 <img src="_main_files/figure-html/nome-do-chunk2-1.png" alt="Gráficos com R base" width="672" />
 <p class="caption">
 Figure 3.2: Gráficos com R base
 </p>
 </div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="r-para-iniciantes.html#cb31-1" tabindex="-1"></a><span class="co">#adiciona o argumento para mudar o nome do eixo y</span></span>
-<span id="cb31-2"><a href="r-para-iniciantes.html#cb31-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
-<span id="cb31-3"><a href="r-para-iniciantes.html#cb31-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="r-para-iniciantes.html#cb32-1" tabindex="-1"></a><span class="co">#adiciona o argumento para mudar o nome do eixo y</span></span>
+<span id="cb32-2"><a href="r-para-iniciantes.html#cb32-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
+<span id="cb32-3"><a href="r-para-iniciantes.html#cb32-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:nome-do-chunk2-2"></span>
 <img src="_main_files/figure-html/nome-do-chunk2-2.png" alt="Gráficos com R base" width="672" />
 <p class="caption">
 Figure 3.3: Gráficos com R base
 </p>
 </div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="r-para-iniciantes.html#cb32-1" tabindex="-1"></a><span class="co">#adiciona o argumento para mudar o nome do eixo x</span></span>
-<span id="cb32-2"><a href="r-para-iniciantes.html#cb32-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
-<span id="cb32-3"><a href="r-para-iniciantes.html#cb32-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
-<span id="cb32-4"><a href="r-para-iniciantes.html#cb32-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sepal Width&quot;</span></span>
-<span id="cb32-5"><a href="r-para-iniciantes.html#cb32-5" tabindex="-1"></a>     )</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="r-para-iniciantes.html#cb33-1" tabindex="-1"></a><span class="co">#adiciona o argumento para mudar o nome do eixo x</span></span>
+<span id="cb33-2"><a href="r-para-iniciantes.html#cb33-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
+<span id="cb33-3"><a href="r-para-iniciantes.html#cb33-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
+<span id="cb33-4"><a href="r-para-iniciantes.html#cb33-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sepal Width&quot;</span></span>
+<span id="cb33-5"><a href="r-para-iniciantes.html#cb33-5" tabindex="-1"></a>     )</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:nome-do-chunk2-3"></span>
 <img src="_main_files/figure-html/nome-do-chunk2-3.png" alt="Gráficos com R base" width="672" />
 <p class="caption">
 Figure 3.4: Gráficos com R base
 </p>
 </div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="r-para-iniciantes.html#cb33-1" tabindex="-1"></a><span class="co">#argumento para mudar a cor dos pontos</span></span>
-<span id="cb33-2"><a href="r-para-iniciantes.html#cb33-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
-<span id="cb33-3"><a href="r-para-iniciantes.html#cb33-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
-<span id="cb33-4"><a href="r-para-iniciantes.html#cb33-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sepal Width&quot;</span>,</span>
-<span id="cb33-5"><a href="r-para-iniciantes.html#cb33-5" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;blue&quot;</span></span>
-<span id="cb33-6"><a href="r-para-iniciantes.html#cb33-6" tabindex="-1"></a>     )</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="r-para-iniciantes.html#cb34-1" tabindex="-1"></a><span class="co">#argumento para mudar a cor dos pontos</span></span>
+<span id="cb34-2"><a href="r-para-iniciantes.html#cb34-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
+<span id="cb34-3"><a href="r-para-iniciantes.html#cb34-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
+<span id="cb34-4"><a href="r-para-iniciantes.html#cb34-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sepal Width&quot;</span>,</span>
+<span id="cb34-5"><a href="r-para-iniciantes.html#cb34-5" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;blue&quot;</span></span>
+<span id="cb34-6"><a href="r-para-iniciantes.html#cb34-6" tabindex="-1"></a>     )</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:nome-do-chunk2-4"></span>
 <img src="_main_files/figure-html/nome-do-chunk2-4.png" alt="Gráficos com R base" width="672" />
 <p class="caption">
 Figure 3.5: Gráficos com R base
 </p>
 </div>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="r-para-iniciantes.html#cb34-1" tabindex="-1"></a><span class="co">#argumento para mudar o formato dos pontos</span></span>
-<span id="cb34-2"><a href="r-para-iniciantes.html#cb34-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
-<span id="cb34-3"><a href="r-para-iniciantes.html#cb34-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
-<span id="cb34-4"><a href="r-para-iniciantes.html#cb34-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sepal Width&quot;</span>,</span>
-<span id="cb34-5"><a href="r-para-iniciantes.html#cb34-5" tabindex="-1"></a>     <span class="at">col =</span> <span class="dv">3</span>,</span>
-<span id="cb34-6"><a href="r-para-iniciantes.html#cb34-6" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">2</span></span>
-<span id="cb34-7"><a href="r-para-iniciantes.html#cb34-7" tabindex="-1"></a>     )</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="r-para-iniciantes.html#cb35-1" tabindex="-1"></a><span class="co">#argumento para mudar o formato dos pontos</span></span>
+<span id="cb35-2"><a href="r-para-iniciantes.html#cb35-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
+<span id="cb35-3"><a href="r-para-iniciantes.html#cb35-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
+<span id="cb35-4"><a href="r-para-iniciantes.html#cb35-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sepal Width&quot;</span>,</span>
+<span id="cb35-5"><a href="r-para-iniciantes.html#cb35-5" tabindex="-1"></a>     <span class="at">col =</span> <span class="dv">3</span>,</span>
+<span id="cb35-6"><a href="r-para-iniciantes.html#cb35-6" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">2</span></span>
+<span id="cb35-7"><a href="r-para-iniciantes.html#cb35-7" tabindex="-1"></a>     )</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:nome-do-chunk2-5"></span>
 <img src="_main_files/figure-html/nome-do-chunk2-5.png" alt="Gráficos com R base" width="672" />
 <p class="caption">
 Figure 3.6: Gráficos com R base
 </p>
 </div>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="r-para-iniciantes.html#cb35-1" tabindex="-1"></a><span class="co">#argumento para adicionar um titulo no grafico</span></span>
-<span id="cb35-2"><a href="r-para-iniciantes.html#cb35-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
-<span id="cb35-3"><a href="r-para-iniciantes.html#cb35-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
-<span id="cb35-4"><a href="r-para-iniciantes.html#cb35-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sepal Width&quot;</span>,</span>
-<span id="cb35-5"><a href="r-para-iniciantes.html#cb35-5" tabindex="-1"></a>     <span class="at">col =</span> <span class="dv">3</span>,</span>
-<span id="cb35-6"><a href="r-para-iniciantes.html#cb35-6" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">2</span>,</span>
-<span id="cb35-7"><a href="r-para-iniciantes.html#cb35-7" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Titulo do grafico&quot;</span></span>
-<span id="cb35-8"><a href="r-para-iniciantes.html#cb35-8" tabindex="-1"></a>     )</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="r-para-iniciantes.html#cb36-1" tabindex="-1"></a><span class="co">#argumento para adicionar um titulo no grafico</span></span>
+<span id="cb36-2"><a href="r-para-iniciantes.html#cb36-2" tabindex="-1"></a><span class="fu">plot</span>(iris<span class="sc">$</span>Sepal.Width, iris<span class="sc">$</span>Petal.Width, </span>
+<span id="cb36-3"><a href="r-para-iniciantes.html#cb36-3" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
+<span id="cb36-4"><a href="r-para-iniciantes.html#cb36-4" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sepal Width&quot;</span>,</span>
+<span id="cb36-5"><a href="r-para-iniciantes.html#cb36-5" tabindex="-1"></a>     <span class="at">col =</span> <span class="dv">3</span>,</span>
+<span id="cb36-6"><a href="r-para-iniciantes.html#cb36-6" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">2</span>,</span>
+<span id="cb36-7"><a href="r-para-iniciantes.html#cb36-7" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Titulo do grafico&quot;</span></span>
+<span id="cb36-8"><a href="r-para-iniciantes.html#cb36-8" tabindex="-1"></a>     )</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:nome-do-chunk2-6"></span>
 <img src="_main_files/figure-html/nome-do-chunk2-6.png" alt="Gráficos com R base" width="672" />
 <p class="caption">
@@ -633,24 +646,24 @@ Figure 3.7: Gráficos com R base
 <div id="grafico-boxplot" class="section level3 hasAnchor" number="3.6.3">
 <h3><span class="header-section-number">3.6.3</span> Grafico boxplot<a href="r-para-iniciantes.html#grafico-boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para criar o gráfico de boxplot, iremos utilizar a variável numérica Sepal.Width do banco de dados iris em relação à variável Species. Note que na função plot, as duas variáveis (argumentos) eram separadas por vírgula; aqui utilizamos o <strong>~</strong> para relacionar a variável numérica com a categórica.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="r-para-iniciantes.html#cb36-1" tabindex="-1"></a><span class="co">#Importa o banco de dados iris</span></span>
-<span id="cb36-2"><a href="r-para-iniciantes.html#cb36-2" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb36-3"><a href="r-para-iniciantes.html#cb36-3" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="r-para-iniciantes.html#cb36-4" tabindex="-1"></a><span class="co">#Cria o grafico de boxplot basico</span></span>
-<span id="cb36-5"><a href="r-para-iniciantes.html#cb36-5" tabindex="-1"></a><span class="fu">boxplot</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">~</span> iris<span class="sc">$</span>Species)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="r-para-iniciantes.html#cb37-1" tabindex="-1"></a><span class="co">#Importa o banco de dados iris</span></span>
+<span id="cb37-2"><a href="r-para-iniciantes.html#cb37-2" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb37-3"><a href="r-para-iniciantes.html#cb37-3" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="r-para-iniciantes.html#cb37-4" tabindex="-1"></a><span class="co">#Cria o grafico de boxplot basico</span></span>
+<span id="cb37-5"><a href="r-para-iniciantes.html#cb37-5" tabindex="-1"></a><span class="fu">boxplot</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">~</span> iris<span class="sc">$</span>Species)</span></code></pre></div>
 <div class="figure">
 <img src="_main_files/figure-html/3_basic_boxplot-1.png" alt="Boxplot com R base utilizando o banco de dados iris" width="672" />
 <p class="caption">
 (#fig:3_basic_boxplot-1)Boxplot com R base utilizando o banco de dados iris
 </p>
 </div>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="r-para-iniciantes.html#cb37-1" tabindex="-1"></a><span class="co">#Boxplot personalizado</span></span>
-<span id="cb37-2"><a href="r-para-iniciantes.html#cb37-2" tabindex="-1"></a><span class="fu">boxplot</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">~</span> iris<span class="sc">$</span>Species,</span>
-<span id="cb37-3"><a href="r-para-iniciantes.html#cb37-3" tabindex="-1"></a>      <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
-<span id="cb37-4"><a href="r-para-iniciantes.html#cb37-4" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;Species&quot;</span>,</span>
-<span id="cb37-5"><a href="r-para-iniciantes.html#cb37-5" tabindex="-1"></a>      <span class="at">col =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="st">&quot;tomato&quot;</span>),</span>
-<span id="cb37-6"><a href="r-para-iniciantes.html#cb37-6" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Titulo do grafico&quot;</span></span>
-<span id="cb37-7"><a href="r-para-iniciantes.html#cb37-7" tabindex="-1"></a>      )</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="r-para-iniciantes.html#cb38-1" tabindex="-1"></a><span class="co">#Boxplot personalizado</span></span>
+<span id="cb38-2"><a href="r-para-iniciantes.html#cb38-2" tabindex="-1"></a><span class="fu">boxplot</span>(iris<span class="sc">$</span>Sepal.Width <span class="sc">~</span> iris<span class="sc">$</span>Species,</span>
+<span id="cb38-3"><a href="r-para-iniciantes.html#cb38-3" tabindex="-1"></a>      <span class="at">ylab =</span> <span class="st">&quot;Petal Width&quot;</span>, </span>
+<span id="cb38-4"><a href="r-para-iniciantes.html#cb38-4" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;Species&quot;</span>,</span>
+<span id="cb38-5"><a href="r-para-iniciantes.html#cb38-5" tabindex="-1"></a>      <span class="at">col =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="st">&quot;tomato&quot;</span>),</span>
+<span id="cb38-6"><a href="r-para-iniciantes.html#cb38-6" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Titulo do grafico&quot;</span></span>
+<span id="cb38-7"><a href="r-para-iniciantes.html#cb38-7" tabindex="-1"></a>      )</span></code></pre></div>
 <div class="figure">
 <img src="_main_files/figure-html/3_basic_boxplot-2.png" alt="Boxplot com R base utilizando o banco de dados iris" width="672" />
 <p class="caption">
@@ -662,27 +675,27 @@ Figure 3.7: Gráficos com R base
 <div id="grafico-de-barras" class="section level3 hasAnchor" number="3.6.4">
 <h3><span class="header-section-number">3.6.4</span> Grafico de barras<a href="r-para-iniciantes.html#grafico-de-barras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para criar um gráfico de barras de contagem, vamos criar nosso próprio data frame. Imagine que queremos tabular a contagem total de ectoparasitas (piolho) de aves em cada parte corporal. Como é algo simples, podemos criar diretamente no R.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="r-para-iniciantes.html#cb38-1" tabindex="-1"></a><span class="co">#Criando quantidade total de parasitas</span></span>
-<span id="cb38-2"><a href="r-para-iniciantes.html#cb38-2" tabindex="-1"></a>qt_parasita <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">29</span>, <span class="dv">4</span>)</span>
-<span id="cb38-3"><a href="r-para-iniciantes.html#cb38-3" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="r-para-iniciantes.html#cb38-4" tabindex="-1"></a><span class="co">#Criando parte corporal da ave</span></span>
-<span id="cb38-5"><a href="r-para-iniciantes.html#cb38-5" tabindex="-1"></a>parte_corporal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;cabeca&quot;</span>, <span class="st">&quot;asa&quot;</span>, <span class="st">&quot;barriga&quot;</span>, <span class="st">&quot;cauda&quot;</span>)</span>
-<span id="cb38-6"><a href="r-para-iniciantes.html#cb38-6" tabindex="-1"></a></span>
-<span id="cb38-7"><a href="r-para-iniciantes.html#cb38-7" tabindex="-1"></a><span class="co">#Criando tabela</span></span>
-<span id="cb38-8"><a href="r-para-iniciantes.html#cb38-8" tabindex="-1"></a>dados_parasita <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(qt_parasita, parte_corporal)</span>
-<span id="cb38-9"><a href="r-para-iniciantes.html#cb38-9" tabindex="-1"></a></span>
-<span id="cb38-10"><a href="r-para-iniciantes.html#cb38-10" tabindex="-1"></a><span class="co"># Cria ndo gráfico de barras</span></span>
-<span id="cb38-11"><a href="r-para-iniciantes.html#cb38-11" tabindex="-1"></a>grafico <span class="ot">&lt;-</span> <span class="fu">barplot</span>(dados_parasita<span class="sc">$</span>qt_parasita, </span>
-<span id="cb38-12"><a href="r-para-iniciantes.html#cb38-12" tabindex="-1"></a>                   <span class="at">names.arg =</span> dados_parasita<span class="sc">$</span>parte_corporal,</span>
-<span id="cb38-13"><a href="r-para-iniciantes.html#cb38-13" tabindex="-1"></a>                   <span class="at">xlab =</span> <span class="st">&quot;Parte do Corpo&quot;</span>,</span>
-<span id="cb38-14"><a href="r-para-iniciantes.html#cb38-14" tabindex="-1"></a>                   <span class="at">ylab =</span> <span class="st">&quot;Quantidade de Parasitas&quot;</span>,</span>
-<span id="cb38-15"><a href="r-para-iniciantes.html#cb38-15" tabindex="-1"></a>                   <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">35</span>), <span class="co">#define o limite do eixo y (de 0 a 35)</span></span>
-<span id="cb38-16"><a href="r-para-iniciantes.html#cb38-16" tabindex="-1"></a>                   <span class="at">col =</span> <span class="st">&quot;lightgreen&quot;</span>,</span>
-<span id="cb38-17"><a href="r-para-iniciantes.html#cb38-17" tabindex="-1"></a>                   <span class="at">border =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb38-18"><a href="r-para-iniciantes.html#cb38-18" tabindex="-1"></a></span>
-<span id="cb38-19"><a href="r-para-iniciantes.html#cb38-19" tabindex="-1"></a><span class="co"># Adicionando os números acima das barras</span></span>
-<span id="cb38-20"><a href="r-para-iniciantes.html#cb38-20" tabindex="-1"></a><span class="fu">text</span>(grafico, dados_parasita<span class="sc">$</span>qt_parasita, </span>
-<span id="cb38-21"><a href="r-para-iniciantes.html#cb38-21" tabindex="-1"></a><span class="at">labels =</span> dados_parasita<span class="sc">$</span>qt_parasita, <span class="at">pos =</span> <span class="dv">3</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="r-para-iniciantes.html#cb39-1" tabindex="-1"></a><span class="co">#Criando quantidade total de parasitas</span></span>
+<span id="cb39-2"><a href="r-para-iniciantes.html#cb39-2" tabindex="-1"></a>qt_parasita <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">29</span>, <span class="dv">4</span>)</span>
+<span id="cb39-3"><a href="r-para-iniciantes.html#cb39-3" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="r-para-iniciantes.html#cb39-4" tabindex="-1"></a><span class="co">#Criando parte corporal da ave</span></span>
+<span id="cb39-5"><a href="r-para-iniciantes.html#cb39-5" tabindex="-1"></a>parte_corporal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;cabeca&quot;</span>, <span class="st">&quot;asa&quot;</span>, <span class="st">&quot;barriga&quot;</span>, <span class="st">&quot;cauda&quot;</span>)</span>
+<span id="cb39-6"><a href="r-para-iniciantes.html#cb39-6" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="r-para-iniciantes.html#cb39-7" tabindex="-1"></a><span class="co">#Criando tabela</span></span>
+<span id="cb39-8"><a href="r-para-iniciantes.html#cb39-8" tabindex="-1"></a>dados_parasita <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(qt_parasita, parte_corporal)</span>
+<span id="cb39-9"><a href="r-para-iniciantes.html#cb39-9" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="r-para-iniciantes.html#cb39-10" tabindex="-1"></a><span class="co"># Cria ndo gráfico de barras</span></span>
+<span id="cb39-11"><a href="r-para-iniciantes.html#cb39-11" tabindex="-1"></a>grafico <span class="ot">&lt;-</span> <span class="fu">barplot</span>(dados_parasita<span class="sc">$</span>qt_parasita, </span>
+<span id="cb39-12"><a href="r-para-iniciantes.html#cb39-12" tabindex="-1"></a>                   <span class="at">names.arg =</span> dados_parasita<span class="sc">$</span>parte_corporal,</span>
+<span id="cb39-13"><a href="r-para-iniciantes.html#cb39-13" tabindex="-1"></a>                   <span class="at">xlab =</span> <span class="st">&quot;Parte do Corpo&quot;</span>,</span>
+<span id="cb39-14"><a href="r-para-iniciantes.html#cb39-14" tabindex="-1"></a>                   <span class="at">ylab =</span> <span class="st">&quot;Quantidade de Parasitas&quot;</span>,</span>
+<span id="cb39-15"><a href="r-para-iniciantes.html#cb39-15" tabindex="-1"></a>                   <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">35</span>), <span class="co">#define o limite do eixo y (de 0 a 35)</span></span>
+<span id="cb39-16"><a href="r-para-iniciantes.html#cb39-16" tabindex="-1"></a>                   <span class="at">col =</span> <span class="st">&quot;lightgreen&quot;</span>,</span>
+<span id="cb39-17"><a href="r-para-iniciantes.html#cb39-17" tabindex="-1"></a>                   <span class="at">border =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb39-18"><a href="r-para-iniciantes.html#cb39-18" tabindex="-1"></a></span>
+<span id="cb39-19"><a href="r-para-iniciantes.html#cb39-19" tabindex="-1"></a><span class="co"># Adicionando os números acima das barras</span></span>
+<span id="cb39-20"><a href="r-para-iniciantes.html#cb39-20" tabindex="-1"></a><span class="fu">text</span>(grafico, dados_parasita<span class="sc">$</span>qt_parasita, </span>
+<span id="cb39-21"><a href="r-para-iniciantes.html#cb39-21" tabindex="-1"></a><span class="at">labels =</span> dados_parasita<span class="sc">$</span>qt_parasita, <span class="at">pos =</span> <span class="dv">3</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
 <div class="figure">
 <img src="_main_files/figure-html/4_basic_hist-1.png" alt="Grafico de barras de contagem com R base utilizando banco de dados criado" width="672" />
 <p class="caption">
@@ -711,33 +724,33 @@ Antes de tudo, precisamos instalar o pacote que queremos utilizar, e para isso e
 <p>Vamos instalar o pacote “lattice” para criarmos uns gráficos diferentes do que fizemos anteriormente.</p>
 <p>Utilizando o botão <em>Tools</em> do RStudio clique em: <strong>Tools &gt; Install package &gt; digite o nome “lattice”.</strong> Ao começar a digitar, o R irá sugerir opções de pacotes com as iniciais que você digitou. Depois, clique em “instalar”.</p>
 <p>Utilizando a função <em>install.packages()</em></p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="r-para-iniciantes.html#cb39-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;lattice&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="r-para-iniciantes.html#cb40-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;lattice&quot;</span>)</span></code></pre></div>
 <p>O processo de instalação mostra no console vários processos, e enquanto isso acontece, um ícone de “stop” vermelho aparece na parte superior direita da janela do console. O processo só termina quando esse ícone some e um aviso aparece:</p>
 <p><img src="img/install_package.png" /></p>
 <p>Pacote instalado, agora é só dizer que queremos utilizar o pacote. O processo de instalação em um determinado computador só precisa ser feito uma vez. Porém, toda vez, você precisa dizer para o R qual pacote você está utilizando. Para isso, utilizamos a função <em>library()</em>.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="r-para-iniciantes.html#cb40-1" tabindex="-1"></a><span class="co">#Carregando o pacote lattice</span></span>
-<span id="cb40-2"><a href="r-para-iniciantes.html#cb40-2" tabindex="-1"></a><span class="fu">library</span>(lattice)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="r-para-iniciantes.html#cb41-1" tabindex="-1"></a><span class="co">#Carregando o pacote lattice</span></span>
+<span id="cb41-2"><a href="r-para-iniciantes.html#cb41-2" tabindex="-1"></a><span class="fu">library</span>(lattice)</span></code></pre></div>
 <p>Se você carregou o pacote e o R não te retornou nenhum erro, está tudo certo. Às vezes, ele te retorna um Warning message, também está tudo certo. Vamos adiante.</p>
 <p>O pacote “lattice” que acabamos de instalar nos fornece várias funções para criação de gráficos. Tenha em mente que existem milhares de pacotes, cada um trazendo um conjunto de funções e bancos de dados de diferentes contextos, tanto para criar gráficos quanto para realizar modelos estatísticos avançados.</p>
 <p>Vamos criar alguns gráficos utilizando as funções que o pacote lattice nos forneceu.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="r-para-iniciantes.html#cb41-1" tabindex="-1"></a><span class="co">#Se o pacote já estiver instalado, você só precisa carregar o pacote</span></span>
-<span id="cb41-2"><a href="r-para-iniciantes.html#cb41-2" tabindex="-1"></a><span class="fu">library</span>(lattice) </span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="r-para-iniciantes.html#cb42-1" tabindex="-1"></a><span class="co">#Se o pacote já estiver instalado, você só precisa carregar o pacote</span></span>
+<span id="cb42-2"><a href="r-para-iniciantes.html#cb42-2" tabindex="-1"></a><span class="fu">library</span>(lattice) </span></code></pre></div>
 <pre><code>## Warning: package &#39;lattice&#39; was built under R version 4.3.2</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="r-para-iniciantes.html#cb43-1" tabindex="-1"></a><span class="co"># Gráfico de dispersão condicionado por uma variável</span></span>
-<span id="cb43-2"><a href="r-para-iniciantes.html#cb43-2" tabindex="-1"></a><span class="fu">xyplot</span>(Sepal.Length <span class="sc">~</span> Sepal.Width <span class="sc">|</span> Species, <span class="at">data =</span> iris,</span>
-<span id="cb43-3"><a href="r-para-iniciantes.html#cb43-3" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">&quot;Scatterplot Condicionado por Espécie&quot;</span>,</span>
-<span id="cb43-4"><a href="r-para-iniciantes.html#cb43-4" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">&quot;Largura da Sépala&quot;</span>, </span>
-<span id="cb43-5"><a href="r-para-iniciantes.html#cb43-5" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">&quot;Comprimento da Sépala&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="r-para-iniciantes.html#cb44-1" tabindex="-1"></a><span class="co"># Gráfico de dispersão condicionado por uma variável</span></span>
+<span id="cb44-2"><a href="r-para-iniciantes.html#cb44-2" tabindex="-1"></a><span class="fu">xyplot</span>(Sepal.Length <span class="sc">~</span> Sepal.Width <span class="sc">|</span> Species, <span class="at">data =</span> iris,</span>
+<span id="cb44-3"><a href="r-para-iniciantes.html#cb44-3" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">&quot;Scatterplot Condicionado por Espécie&quot;</span>,</span>
+<span id="cb44-4"><a href="r-para-iniciantes.html#cb44-4" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">&quot;Largura da Sépala&quot;</span>, </span>
+<span id="cb44-5"><a href="r-para-iniciantes.html#cb44-5" tabindex="-1"></a>       <span class="at">ylab =</span> <span class="st">&quot;Comprimento da Sépala&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:nome-do-chunk-1"></span>
 <img src="_main_files/figure-html/nome-do-chunk-1.png" alt="Gráficos com Lattice" width="672" />
 <p class="caption">
 Figure 3.8: Gráficos com Lattice
 </p>
 </div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="r-para-iniciantes.html#cb44-1" tabindex="-1"></a><span class="co"># Histograma condicionado por uma variável</span></span>
-<span id="cb44-2"><a href="r-para-iniciantes.html#cb44-2" tabindex="-1"></a><span class="fu">histogram</span>(<span class="sc">~</span> Petal.Length <span class="sc">|</span> Species, <span class="at">data =</span> iris,</span>
-<span id="cb44-3"><a href="r-para-iniciantes.html#cb44-3" tabindex="-1"></a>          <span class="at">main =</span> <span class="st">&quot;Histograma Condicionado por Espécie&quot;</span>,</span>
-<span id="cb44-4"><a href="r-para-iniciantes.html#cb44-4" tabindex="-1"></a>          <span class="at">xlab =</span> <span class="st">&quot;Comprimento da Pétala&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="r-para-iniciantes.html#cb45-1" tabindex="-1"></a><span class="co"># Histograma condicionado por uma variável</span></span>
+<span id="cb45-2"><a href="r-para-iniciantes.html#cb45-2" tabindex="-1"></a><span class="fu">histogram</span>(<span class="sc">~</span> Petal.Length <span class="sc">|</span> Species, <span class="at">data =</span> iris,</span>
+<span id="cb45-3"><a href="r-para-iniciantes.html#cb45-3" tabindex="-1"></a>          <span class="at">main =</span> <span class="st">&quot;Histograma Condicionado por Espécie&quot;</span>,</span>
+<span id="cb45-4"><a href="r-para-iniciantes.html#cb45-4" tabindex="-1"></a>          <span class="at">xlab =</span> <span class="st">&quot;Comprimento da Pétala&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:nome-do-chunk-2"></span>
 <img src="_main_files/figure-html/nome-do-chunk-2.png" alt="Gráficos com Lattice" width="672" />
 <p class="caption">
