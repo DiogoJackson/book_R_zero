@@ -1,7 +1,63 @@
 # Git e GitHub
+  
+  # Git e GitHub
+  
+**Git**
+  
+Git é um sistema de controle de versão distribuído gratuitamente que é amplamente utilizado no desenvolvimento de software. Ele é projetado para rastrear as mudanças no código-fonte durante o desenvolvimento de um projeto de programacao. Alem disso, ele permite que várias pessoas trabalhem simultaneamente no mesmo projeto, facilitando a colaboração.
 
+Vantagens de utilizar Git:
+  
+  - **Controle de Versão:** O Git mantém um histórico completo de todas as alterações feitas no código, permitindo que os desenvolvedores revertam para versões anteriores, comparem alterações ao longo do tempo e colaborem de maneira eficiente.
+
+  - **Distribuído:** Cada desenvolvedor tem uma cópia completa do repositório, o que facilita o trabalho offline e a colaboração entre equipes distribuídas geograficamente.
+
+  - **Branching e Merging:** O Git facilita a criação de "branches" (ramificações) para o desenvolvimento de recursos ou correções de bugs sem afetar o código principal. Posteriormente, essas branches podem ser "mescladas" de volta ao código principal.
+
+  - **Rastreamento de Mudanças:** Cada commit no Git é identificado por um código hash único, o que facilita o rastreamento de quem fez cada alteração e quando.
+
+**GitHub**
+
+O GitHub eh como se fosse uma rede social de programadores, uma plataforma online de hospedagem de código-fonte que utiliza o Git para controle de versão. Voce cria seu perfil, pode interagir com outras pessoas, compartilha seus projetos (repositorios), e contribuem para projetos de código aberto (o qual sou altamente favoravel). O GitHub fornece uma interface web para repositórios Git, facilitando a visualização de alterações, gerenciamento de problemas (issues), e integração com várias ferramentas de desenvolvimento.
+  
+Vantagens de utilizar o GitHub:
+  
+  - **Colaboração:** Desenvolvedores podem colaborar em projetos, clonar repositórios (algum projeto), propor mudanças no codigo de outras pessoas (pull requests) e discutir alterações com outros colaboradores.
+  
+  - **Controle de Acesso:** Repositórios no GitHub podem ser públicos (acessíveis a todos) ou privados (acessíveis apenas a membros autorizados da equipe).
+  
+  - **Gestão de Problemas e Projetos:** O GitHub oferece ferramentas integradas para rastreamento de problemas, gerenciamento de projetos e integração com serviços de automação de construção e teste.
+  
+  - **GitHub Pages:** Permite a publicação direta de páginas da web a partir de repositórios, facilitando a criação de sites para documentação ou apresentação de projetos.
+  
+Em resumo, Git é o sistema de controle de versão, enquanto o GitHub é uma plataforma de hospedagem e colaboração baseada no Git, que facilita o trabalho e construcao de codigos em conjunto.
+  
+## Instalando o Git
+  
+Instalar o Git eh muito simples, voce so precisa acessar o site oficial (https://git-scm.com/downloads), baixar o programa de acordo com seu sistema operacional, e instalar seguindo as recomendacoes padrao.
+  
+  Como esse eh um material para iniciantes que provavelmente nunca programaram na vida, nao trarei detalhes sobre o Git. Apenas tenha ele instalado. Trabalharemos principalmente atraves do GitHub desktop.
+  
+## Criando conta no GitHub
+  
+  Faça sua conta no site https://github.com! São muitas vantagens para um serviço gratuito, então aproveite! Algumas dicas interessantes na hora de criar sua conta são importantes para o seu username. Por favor, não coloque nomes do bate-papo UOL. Essa é uma conta que será muito útil profissionalmente, então tenha em mente algumas coisas:
+
+- Use seu nome real! As pessoas querem saber com quem estão lidando.
+- Escolha um username do qual você não terá vergonha de compartilhar. É sério, tem gente muito doida nesse mundo.
+- Evite referências específicas a universidades, empregadores ou local de residência atual.
+- Use um nome curtinho, facilita a vida de todo mundo que for ter que lidar com seu perfil, além de ser mais fácil de lembrar.
+- Usernames únicos evitam conflitos, tenha isso em mente caso seu nome seja João Silva.
+- Evite colocar informações temporais no seu username como nome da universidade atual ou empregador. Você não vai querer apresentar seu perfil ao Nordestão com o nome jose-atacadao.
+- Evite o uso de maiúsculas para separar palavras, pois o GitHub trata usernames de forma insensível a maiúsculas e minúsculas. Use hifens para separar palavras (por exemplo: joao-guilherme).
+  
+  Há muitas dicas, mas não se estresse demais. É possível mudar de nome depois.
+  
+## GitHub desktop
+  
+ Agora, você irá instalar o GitHub Desktop através do site: https://desktop.github.com/! Este programa facilitará muito a vida de quem não está acostumado a programar. Todos os comandos de criação de repositório, commits e upload para o GitHub que seriam feitos pelo Git atraves de linhas de comando, serão facilitados através de uma interface amigável e clicavel.
+  
 # Funcoes avancadas
-
+  
 ## ifelse ()
 
 ## for()
@@ -9,9 +65,9 @@
 ## while()
 
 # Criando funcoes
-
+  
 ## Estrutura de uma função
   
 ## Criando uma funcao simples
-
+  
 # Criando pacotes

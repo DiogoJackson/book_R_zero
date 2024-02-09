@@ -38,6 +38,9 @@ etapa-2-fazer-analise
 etapa-3-criar-gráfico
 etapa-4-replicabilidade
 git-e-github
+instalando-o-git
+criando-conta-no-github
+github-desktop
 funcoes-avancadas
 ifelse
 for

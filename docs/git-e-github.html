@@ -192,7 +192,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.4" data-path="como-trabalhar-no-r.html"><a href="como-trabalhar-no-r.html#etapa-4-replicabilidade"><i class="fa fa-check"></i><b>4.3.4</b> Etapa 4: Replicabilidade</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="git-e-github.html"><a href="git-e-github.html"><i class="fa fa-check"></i><b>5</b> Git e GitHub</a></li>
+<li class="chapter" data-level="5" data-path="git-e-github.html"><a href="git-e-github.html"><i class="fa fa-check"></i><b>5</b> Git e GitHub</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="git-e-github.html"><a href="git-e-github.html#instalando-o-git"><i class="fa fa-check"></i><b>5.1</b> Instalando o Git</a></li>
+<li class="chapter" data-level="5.2" data-path="git-e-github.html"><a href="git-e-github.html#criando-conta-no-github"><i class="fa fa-check"></i><b>5.2</b> Criando conta no GitHub</a></li>
+<li class="chapter" data-level="5.3" data-path="git-e-github.html"><a href="git-e-github.html#github-desktop"><i class="fa fa-check"></i><b>5.3</b> GitHub desktop</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="funcoes-avancadas.html"><a href="funcoes-avancadas.html"><i class="fa fa-check"></i><b>6</b> Funcoes avancadas</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="funcoes-avancadas.html"><a href="funcoes-avancadas.html#ifelse"><i class="fa fa-check"></i><b>6.1</b> ifelse ()</a></li>
@@ -227,6 +232,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="git-e-github" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Capítulo 5</span> Git e GitHub<a href="git-e-github.html#git-e-github" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p># Git e GitHub</p>
+<p><strong>Git</strong></p>
+<p>Git é um sistema de controle de versão distribuído gratuitamente que é amplamente utilizado no desenvolvimento de software. Ele é projetado para rastrear as mudanças no código-fonte durante o desenvolvimento de um projeto de programacao. Alem disso, ele permite que várias pessoas trabalhem simultaneamente no mesmo projeto, facilitando a colaboração.</p>
+<p>Vantagens de utilizar Git:</p>
+<ul>
+<li><p><strong>Controle de Versão:</strong> O Git mantém um histórico completo de todas as alterações feitas no código, permitindo que os desenvolvedores revertam para versões anteriores, comparem alterações ao longo do tempo e colaborem de maneira eficiente.</p></li>
+<li><p><strong>Distribuído:</strong> Cada desenvolvedor tem uma cópia completa do repositório, o que facilita o trabalho offline e a colaboração entre equipes distribuídas geograficamente.</p></li>
+<li><p><strong>Branching e Merging:</strong> O Git facilita a criação de “branches” (ramificações) para o desenvolvimento de recursos ou correções de bugs sem afetar o código principal. Posteriormente, essas branches podem ser “mescladas” de volta ao código principal.</p></li>
+<li><p><strong>Rastreamento de Mudanças:</strong> Cada commit no Git é identificado por um código hash único, o que facilita o rastreamento de quem fez cada alteração e quando.</p></li>
+</ul>
+<p><strong>GitHub</strong></p>
+<p>O GitHub eh como se fosse uma rede social de programadores, uma plataforma online de hospedagem de código-fonte que utiliza o Git para controle de versão. Voce cria seu perfil, pode interagir com outras pessoas, compartilha seus projetos (repositorios), e contribuem para projetos de código aberto (o qual sou altamente favoravel). O GitHub fornece uma interface web para repositórios Git, facilitando a visualização de alterações, gerenciamento de problemas (issues), e integração com várias ferramentas de desenvolvimento.</p>
+<p>Vantagens de utilizar o GitHub:</p>
+<ul>
+<li><p><strong>Colaboração:</strong> Desenvolvedores podem colaborar em projetos, clonar repositórios (algum projeto), propor mudanças no codigo de outras pessoas (pull requests) e discutir alterações com outros colaboradores.</p></li>
+<li><p><strong>Controle de Acesso:</strong> Repositórios no GitHub podem ser públicos (acessíveis a todos) ou privados (acessíveis apenas a membros autorizados da equipe).</p></li>
+<li><p><strong>Gestão de Problemas e Projetos:</strong> O GitHub oferece ferramentas integradas para rastreamento de problemas, gerenciamento de projetos e integração com serviços de automação de construção e teste.</p></li>
+<li><p><strong>GitHub Pages:</strong> Permite a publicação direta de páginas da web a partir de repositórios, facilitando a criação de sites para documentação ou apresentação de projetos.</p></li>
+</ul>
+<p>Em resumo, Git é o sistema de controle de versão, enquanto o GitHub é uma plataforma de hospedagem e colaboração baseada no Git, que facilita o trabalho e construcao de codigos em conjunto.</p>
+<div id="instalando-o-git" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Instalando o Git<a href="git-e-github.html#instalando-o-git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Instalar o Git eh muito simples, voce so precisa acessar o site oficial (<a href="https://git-scm.com/downloads" class="uri">https://git-scm.com/downloads</a>), baixar o programa de acordo com seu sistema operacional, e instalar seguindo as recomendacoes padrao.</p>
+<p>Como esse eh um material para iniciantes que provavelmente nunca programaram na vida, nao trarei detalhes sobre o Git. Apenas tenha ele instalado. Trabalharemos principalmente atraves do GitHub desktop.</p>
+</div>
+<div id="criando-conta-no-github" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Criando conta no GitHub<a href="git-e-github.html#criando-conta-no-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Faça sua conta no site <a href="https://github.com" class="uri">https://github.com</a>! São muitas vantagens para um serviço gratuito, então aproveite! Algumas dicas interessantes na hora de criar sua conta são importantes para o seu username. Por favor, não coloque nomes do bate-papo UOL. Essa é uma conta que será muito útil profissionalmente, então tenha em mente algumas coisas:</p>
+<ul>
+<li><p>Use seu nome real! As pessoas querem saber com quem estão lidando.</p></li>
+<li><p>Escolha um username do qual você não terá vergonha de compartilhar. É sério, tem gente muito doida nesse mundo.</p></li>
+<li><p>Evite referências específicas a universidades, empregadores ou local de residência atual.</p></li>
+<li><p>Use um nome curtinho, facilita a vida de todo mundo que for ter que lidar com seu perfil, além de ser mais fácil de lembrar.</p></li>
+<li><p>Usernames únicos evitam conflitos, tenha isso em mente caso seu nome seja João Silva.</p></li>
+<li><p>Evite colocar informações temporais no seu username como nome da universidade atual ou empregador. Você não vai querer apresentar seu perfil ao Nordestão com o nome jose-atacadao.</p></li>
+<li><p>Evite o uso de maiúsculas para separar palavras, pois o GitHub trata usernames de forma insensível a maiúsculas e minúsculas. Use hifens para separar palavras (por exemplo: joao-guilherme).</p>
+<p>Há muitas dicas, mas não se estresse demais. É possível mudar de nome depois.</p></li>
+</ul>
+</div>
+<div id="github-desktop" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> GitHub desktop<a href="git-e-github.html#github-desktop" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Agora, você irá instalar o GitHub Desktop através do site: <a href="https://desktop.github.com/" class="uri">https://desktop.github.com/</a>! Este programa facilitará muito a vida de quem não está acostumado a programar. Todos os comandos de criação de repositório, commits e upload para o GitHub que seriam feitos pelo Git atraves de linhas de comando, serão facilitados através de uma interface amigável e clicavel.</p>
+</div>
 </div>
             </section>
 
