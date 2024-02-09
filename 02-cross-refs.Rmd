@@ -418,7 +418,7 @@ colnames(mtcars)
 #ver nome das linhas (observacoes)
 rownames(mtcars)
 ```
-
+  
 ## Importando sua planilha
   
 Aqui iremos importar algumas planilhas do computador. Caso você não tenha nenhuma, clique nos links abaixo para importar planilhas nos formatos Excel (xlsx) e CSV, e selecione onde você quer salvá-las.
