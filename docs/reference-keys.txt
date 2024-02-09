@@ -37,7 +37,8 @@ etapa-1-limpar-dados
 etapa-2-fazer-analise
 etapa-3-criar-gráfico
 etapa-4-replicabilidade
-git-e-github
+git-e-github-em-desenvolvimento
+o-que-danado-eh-isso
 instalando-o-git
 criando-conta-no-github
 github-desktop

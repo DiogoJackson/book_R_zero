@@ -1,6 +1,8 @@
-# Git e GitHub
+# Git e GitHub (EM DESENVOLVIMENTO)
   
-  # Git e GitHub
+  Para salvar todas as modificações que fizermos no código, iremos armazenar tudo no GitHub. Não só isso, cada modificação será versionada, e poderemos ter de forma organizada todo o histórico do processo de programação do nosso código. Para isso, iremos utilizar a união do Git e GitHub.
+  
+## O que danado eh isso?
   
 **Git**
   
