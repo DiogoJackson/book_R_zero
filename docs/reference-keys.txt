@@ -42,11 +42,11 @@ o-que-danado-eh-isso
 instalando-o-git
 criando-uma-conta-no-github
 github-desktop
-funcoes-avancadas
+funções-avançadas
 ifelse
 for
 while
-criando-funcoes
+criando-funções
 estrutura-de-uma-função
-criando-uma-funcao-simples
+criando-uma-função-simples
 criando-pacotes

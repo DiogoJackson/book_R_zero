@@ -59,18 +59,18 @@ Agora, você irá instalar o GitHub Desktop através do site: https://desktop.gi
   
 Após a instalação, você só precisará fazer login com sua conta do GitHub. Para isso, abra o programa, vá em "**File**" > "**Options**" > "**Accounts**". Adicione sua conta e seja feliz.
   
-# Funcoes avancadas
-  
-## ifelse ()
+# Funções Avançadas
+
+## ifelse()
 
 ## for()
 
 ## while()
 
-# Criando funcoes
-  
-## Estrutura de uma função
-  
-## Criando uma funcao simples
-  
-# Criando pacotes
+# Criando Funções
+
+## Estrutura de uma Função
+
+## Criando uma Função Simples
+
+# Criando Pacotes
