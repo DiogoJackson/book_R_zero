@@ -40,7 +40,7 @@ etapa-4-replicabilidade
 git-e-github-em-desenvolvimento
 o-que-danado-eh-isso
 instalando-o-git
-criando-conta-no-github
+criando-uma-conta-no-github
 github-desktop
 funcoes-avancadas
 ifelse
