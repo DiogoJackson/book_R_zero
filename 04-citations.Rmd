@@ -6,8 +6,8 @@
   
 **Git**
   
-Git é um sistema de controle de versão distribuído gratuitamente que é amplamente utilizado no desenvolvimento de software. Ele é projetado para rastrear as mudanças no código-fonte durante o desenvolvimento de um projeto de programacao. Alem disso, ele permite que várias pessoas trabalhem simultaneamente no mesmo projeto, facilitando a colaboração.
-
+Git é um sistema de controle de versão distribuído gratuitamente que é amplamente utilizado para rastrear as mudanças no código-fonte durante o desenvolvimento de um projeto de programacao. Alem disso, ele permite que várias pessoas trabalhem simultaneamente no mesmo projeto, facilitando a colaboração.
+  
 Vantagens de utilizar Git:
   
   - **Controle de Versão:** O Git mantém um histórico completo de todas as alterações feitas no código, permitindo que os desenvolvedores revertam para versões anteriores, comparem alterações ao longo do tempo e colaborem de maneira eficiente.
@@ -38,19 +38,18 @@ Em resumo, Git é o sistema de controle de versão, enquanto o GitHub é uma pla
   
 Instalar o Git eh muito simples, voce so precisa acessar o site oficial (https://git-scm.com/downloads), baixar o programa de acordo com seu sistema operacional, e instalar seguindo as recomendacoes padrao.
   
-  Como esse eh um material para iniciantes que provavelmente nunca programaram na vida, nao trarei detalhes sobre o Git. Apenas tenha ele instalado. Trabalharemos principalmente atraves do GitHub desktop.
+  Como esse eh um material para iniciantes que, provavelmente, nunca programaram na vida, nao trarei detalhes sobre o Git. Apenas tenha ele instalado. Trabalharemos principalmente atraves do GitHub desktop.
   
 ## Criando conta no GitHub
   
-  Faça sua conta no site https://github.com! São muitas vantagens para um serviço gratuito, então aproveite! Algumas dicas interessantes na hora de criar sua conta são importantes para o seu username. Por favor, não coloque nomes do bate-papo UOL. Essa é uma conta que será muito útil profissionalmente, então tenha em mente algumas coisas:
+  Faça sua conta no site https://github.com! São muitas vantagens para um serviço gratuito, então aproveite! Algumas dicas interessantes na hora de criar sua conta são importantes para o seu username. Por favor, não coloque nomes de bate-papo UOL. Essa é uma conta que será muito útil profissionalmente, então tenha em mente algumas coisas:
 
 - Use seu nome real! As pessoas querem saber com quem estão lidando.
 - Escolha um username do qual você não terá vergonha de compartilhar. É sério, tem gente muito doida nesse mundo.
-- Evite referências específicas a universidades, empregadores ou local de residência atual.
 - Use um nome curtinho, facilita a vida de todo mundo que for ter que lidar com seu perfil, além de ser mais fácil de lembrar.
 - Usernames únicos evitam conflitos, tenha isso em mente caso seu nome seja João Silva.
 - Evite colocar informações temporais no seu username como nome da universidade atual ou empregador. Você não vai querer apresentar seu perfil ao Nordestão com o nome jose-atacadao.
-- Evite o uso de maiúsculas para separar palavras, pois o GitHub trata usernames de forma insensível a maiúsculas e minúsculas. Use hifens para separar palavras (por exemplo: joao-guilherme).
+- Use hifens para separar palavras (por exemplo: joao-guilherme).
   
   Há muitas dicas, mas não se estresse demais. É possível mudar de nome depois.
   
