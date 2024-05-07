@@ -421,7 +421,7 @@ rownames(mtcars)
   
 ## Importando sua planilha
   
-Aqui iremos importar algumas planilhas do computador. Caso você não tenha nenhuma, clique nos links abaixo para importar planilhas nos formatos Excel (xlsx) e CSV, e selecione onde você quer salvá-las.
+Aqui iremos importar algumas planilhas do computador para o R. Caso você não tenha nenhuma planilha, clique nos links abaixo para salvar no seu computador duas planilhas ficticias no formato excel **xlsx** e **csv**. Cada formato de arquivo precisa ser importada de uma forma diferente, mas todas sao muito simples.
   
 [Planilha ficticia - fake_data.xlsx](data/fake_data.xlsx)
   
@@ -479,24 +479,24 @@ Esse gráfico nos mostra a relação entre duas variáveis contínuas. Vamos uti
 #Cria o grafico basico
 plot(iris$Sepal.Width, iris$Petal.Width)
 
-#adiciona o argumento para mudar o nome do eixo y
+#adiciona o 'ylab' argumento para mudar o nome do eixo y
 plot(iris$Sepal.Width, iris$Petal.Width, 
      ylab = "Petal Width")
 
-#adiciona o argumento para mudar o nome do eixo x
+#adiciona o argumento 'xlab' para mudar o nome do eixo x
 plot(iris$Sepal.Width, iris$Petal.Width, 
      ylab = "Petal Width", 
      xlab = "Sepal Width"
      )
 
-#argumento para mudar a cor dos pontos
+#argumento 'col' para mudar a cor dos pontos
 plot(iris$Sepal.Width, iris$Petal.Width, 
      ylab = "Petal Width", 
      xlab = "Sepal Width",
-     col = "blue"
+     col = 2 #tente usar outros numeros para utilizar outras cores
      )
      
-#argumento para mudar o formato dos pontos
+#argumento 'pch' para mudar o formato dos pontos
 plot(iris$Sepal.Width, iris$Petal.Width, 
      ylab = "Petal Width", 
      xlab = "Sepal Width",
@@ -504,7 +504,7 @@ plot(iris$Sepal.Width, iris$Petal.Width,
      pch = 2
      )
      
-#argumento para adicionar um titulo no grafico
+#argumento 'main' para adicionar um titulo no grafico
 plot(iris$Sepal.Width, iris$Petal.Width, 
      ylab = "Petal Width", 
      xlab = "Sepal Width",
@@ -517,11 +517,11 @@ plot(iris$Sepal.Width, iris$Petal.Width,
 
 ### Grafico boxplot
   
-Para criar o gráfico de boxplot, iremos utilizar a variável numérica Sepal.Width do banco de dados iris em relação à variável Species. Note que na função plot, as duas variáveis (argumentos) eram separadas por vírgula; aqui utilizamos o **~** para relacionar a variável numérica com a categórica.
+Para criar o gráfico de boxplot, iremos utilizar a variável numérica Sepal.Width do banco de dados **iris** em relação à variável Species. Note que na função plot, as duas variáveis (argumentos) eram separadas por vírgula; aqui utilizamos o **~** para relacionar a variável numérica com a categórica.
   
   ```{r 3_basic_boxplot, fig.show='asis', fig.cap='Boxplot com R base utilizando o banco de dados iris'}
   
-#Importa o banco de dados iris
+#Chama o banco de dados iris do R
 data(iris)
 
 #Cria o grafico de boxplot basico
@@ -537,8 +537,8 @@ boxplot(iris$Sepal.Width ~ iris$Species,
 
 ```
 
-Perceba que o argumento **col** pode ser um vetor e pode receber mais de um valor. Nesse caso, demos uma cor para cada fator de Species. Tente substituir os números por outros ou colocar o nome das principais cores como: red, green, blue, yellow... Só não esqueça de colocar entre aspas.
-
+Perceba que o argumento **col** pode ser um vetor e pode receber mais de um valor. Nesse caso, demos uma cor para cada fator de Species. Tente substituir os números por outros ou colocar o nome das principais cores como: red, green, blue, yellow... Só não esqueça de colocar o texto entre aspas.
+  
 ### Grafico de barras
   
 Para criar um gráfico de barras de contagem, vamos criar nosso próprio data frame. Imagine que queremos tabular a contagem total de ectoparasitas (piolho) de aves em cada parte corporal. Como é algo simples, podemos criar diretamente no R.
@@ -556,28 +556,30 @@ dados_parasita <- data.frame(qt_parasita, parte_corporal)
 
 # Cria ndo gráfico de barras
 grafico <- barplot(dados_parasita$qt_parasita, 
-                   names.arg = dados_parasita$parte_corporal,
+                   names.arg = dados_parasita$parte_corporal, #esse argumento diz que o nome das barras vao ser nomeados de acordo com a variavel parte corporal.
                    xlab = "Parte do Corpo",
                    ylab = "Quantidade de Parasitas",
-                   ylim = c(0,35), #define o limite do eixo y (de 0 a 35)
+                   ylim = c(0,35), #define os limites do eixo y (de 0 a 35)
                    col = "lightgreen",
                    border = "black")
 
-# Adicionando os números acima das barras
-text(grafico, dados_parasita$qt_parasita, 
-labels = dados_parasita$qt_parasita, pos = 3, cex = 0.8)
+# Adicionando os números acima das barras com a funcao text()
+text(grafico, dados_parasita$qt_parasita,
+     labels = dados_parasita$qt_parasita, 
+     pos = 3, 
+     cex = 0.8)
 
 ```
 Faça as seguintes modificações no código e veja o que acontece:
 
-- Veja o que acontece se você deletar a linha completa do argumento names.arg.
+- Veja o que acontece se você deletar o argumento names.arg.
 - Troque o valor 35 de ylim por 50.
-- No argumento border, troque "black" por "red" e depois "white".
+- No argumento border, troque "black" por "red" e depois por "white".
 - Na função text(), troque pos = 3 por pos = 1.
-  (rode o gráfico antes para não sobrepor os números)
+  (rode o gráfico barplot antes para não sobrepor os números)
 
 É possível fazer muitos outros tipos de gráficos, utilizando diferentes funções. Mas a ideia desse capítulo é ensinar a utilizar o R, e não a criar gráficos. Então vamos com calma, pois quando você pensar que não, já foi.
-
+  
 ## Pacotes
   
 Agora já podemos começar a expandir nosso universo do R. Tudo que fizemos até agora foi utilizando o próprio R base. A partir de agora, iremos incluir um conjunto de novas funções através dos pacotes de R.
@@ -600,7 +602,7 @@ O processo de instalação mostra no console vários processos, e enquanto isso 
 
   ![](img/install_package.png)
   
-Pacote instalado, agora é só dizer que queremos utilizar o pacote. O processo de instalação em um determinado computador só precisa ser feito uma vez. Porém, toda vez, você precisa dizer para o R qual pacote você está utilizando. Para isso, utilizamos a função *library()*.
+Pacote instalado, agora é só dizer que queremos utilizar o pacote. O processo de instalação em um determinado computador só precisa ser feito uma vez. Porém, toda vez que voce for utilizar o R, você precisa dizer para O R qual pacote você vai utilizar. Para isso, utilizamos a função *library()*.
 
 ```r
 #Carregando o pacote lattice
@@ -608,23 +610,25 @@ library(lattice)
 
 ```
 Se você carregou o pacote e o R não te retornou nenhum erro, está tudo certo. Às vezes, ele te retorna um Warning message, também está tudo certo. Vamos adiante.
-
+  
 O pacote "lattice" que acabamos de instalar nos fornece várias funções para criação de gráficos. Tenha em mente que existem milhares de pacotes, cada um trazendo um conjunto de funções e bancos de dados de diferentes contextos, tanto para criar gráficos quanto para realizar modelos estatísticos avançados.
 
-Vamos criar alguns gráficos utilizando as funções que o pacote lattice nos forneceu.
+Vamos criar alguns gráficos utilizando as funções que o pacote lattice nos fornece.
   
 ```{r nome-do-chunk, fig.show='asis', fig.cap='Gráficos com Lattice'}
 #Se o pacote já estiver instalado, você só precisa carregar o pacote
 library(lattice) 
 
 # Gráfico de dispersão condicionado por uma variável
-xyplot(Sepal.Length ~ Sepal.Width | Species, data = iris,
+xyplot(Sepal.Length ~ Sepal.Width | Species, 
+       data = iris,
        main = "Scatterplot Condicionado por Espécie",
        xlab = "Largura da Sépala", 
        ylab = "Comprimento da Sépala")
 
 # Histograma condicionado por uma variável
-histogram(~ Petal.Length | Species, data = iris,
+histogram(~ Petal.Length | Species, 
+          data = iris,
           main = "Histograma Condicionado por Espécie",
           xlab = "Comprimento da Pétala")
 ```

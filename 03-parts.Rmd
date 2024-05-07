@@ -2,7 +2,7 @@
   
 Se você já tem uma noção de R, mas ainda sente dificuldade em organizar seu fluxo de trabalho, este capítulo é para você! Utilizaremos técnicas de ciência de dados e repositórios como o GitHub para tornar o trabalho no R prazeroso e eficiente!
 
-Iremos utilizar o banco de dados ficticios que possui erros comuns que podemos utilizar para aprender a lidar com eles sem precisar de utilizar o Excel (um dia).
+Iremos utilizar o banco de dados ficticios que possui erros propositais comuns que podemos utilizar para aprender a lidar com eles, sem precisar de utilizar o Excel.
   
 Imagine que voce fez um projeto para analisar o numero de parasitas dos bem-te-vis dependendo do local. Voce acha que o local influencia a quantidade de parasita dos bichin. Sua planilha ficticia se encontra abaixo. Baixe a planilha fake e veja que ela possui quatro variaveis (ID, peso, numero de parasitas e local).
   
@@ -14,17 +14,17 @@ Para trabalhar de forma eficiente no R, é interessante que você utilize um pro
   
 ## Criando um projeto de R
   
-Vamos lá! Imagine que precisamos analisar um banco de dados de algum projeto, que neste caso será o do bem-te-vi. O primeiro passo é criar um projeto no R. Para isso, vá para o canto superior direito do RStudio (próximo à janela de environment e history) e clique no seguinte caminho:
+A gente da o nome de "projeto" a muitas coisas do nosso dia a dia, projeto de mestrado, projeto de iniciacao cientifica, projeto de vida, etc. No R, o que chamamos projeto de R, eh um arquivo de R que marcara uma pasta qualquer do computador como sendo seu diretorio. Imagine que precisamos analisar um banco de dados de algum trabalho que estamos realizando, que neste caso será o do bem-te-vi. O primeiro passo é criar um projeto no R. Para isso, vá para o canto superior direito do RStudio (próximo à janela de environment e history) e clique no seguinte caminho:
   
 **project (none)" > new project > new directory > new project**
   
 Ao clicar em "New Project", aparecerá uma janela para escolher o nome do projeto e o local no computador onde seu projeto irá ficar. Coloque o nome desejado (sugestão: "projeto_bemtevi"), selecione qualquer pasta no computador (sugestão: desktop) e clique em "Criar Projeto".
 
-Se você fez tudo direitinho, o RStudio mostrara que voce esta operando dentro de um projeto especifico. Note que ao invés de "Project (None)", estará o nome do projeto que você criou.
+Se você fez tudo direitinho, o RStudio mostrara que voce esta operando dentro de um projeto de R especifico. Note que ao invés de "Project (None)", estará o nome do projeto que você criou.
   
 ![](img/tela_do_projeto.png)
   
-Sugiro, meu nobre consagrado Rzeiro, que você vá no local do computador onde você criou o projeto e veja a pasta, veja o arquivo de R que foi criado. Você também pode fazer isso utilizando a janela de "Files" (canto inferior direito), onde mostrará todas as pastas do seu diretório que, a partir de agora, será a pasta que o seu arquivo de projeto de R está situado. Todos os scripts, arquivos e planilhas que você irá utilizar nas suas análises, ficarão dentro da pasta do projeto. Isso significa que vai ficar tudo solto, bagunçado? Claro que não. Iremos criar pastas organizadas onde hospedarão cada coisa que iremos trabalhar, como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Você pode criar manualmente, mas por que faríamos isso se temos o R para fazer por nós?
+Sugiro, meu nobre consagrado Rzeiro, que você vá no local do computador onde você criou o projeto de R e veja a pasta, veja o arquivo de R que foi criado, esse arquivo diz que todas as outras pastas e arquivos que estao juntos com esse projeto, sera considerado como fazendo parte desse projeto de R. Você também pode fazer isso utilizando a janela de "Files" (canto inferior direito), onde mostrará todas as pastas do seu diretório que, a partir de agora, será a pasta que o seu arquivo de projeto de R está situado. Todos os scripts, arquivos e planilhas que você irá utilizar nas suas análises, ficarão dentro da pasta do arquivo do projeto. Isso significa que vai ficar tudo solto, bagunçado? Claro que não. Iremos criar pastas organizadas onde hospedarão cada coisa que iremos trabalhar, como por exemplo: dados brutos, dados processados, scripts, outputs, etc. Você pode criar manualmente, mas por que faríamos isso se temos o R para fazer por nós?
 
 ## Organizando o projeto de R
   
@@ -35,7 +35,7 @@ install.packages("here")
 library(here)
 ```
   
-Após a instalação do pacote "here", iremos criar uma função que criará as pastas automaticamente no nosso diretório. Não se assuste com o script da função, ela é mais simples do que parece e você não precisa entendê-lo por completo. Apenas rode o código para criar a função e depois rode o código que utiliza a função para criar as pastas.
+Após a instalação do pacote "here", iremos criar uma função que criará as pastas automaticamente no nosso diretório (local onde o projeto de R esta). Não se assuste com o script da função, ela é mais simples do que parece e você não precisa entendê-lo por completo. Apenas rode o código para criar a função e depois rode o código que utiliza a função para criar as pastas.
 
 Antes de executar o código, certifique-se de que você está no projeto de R que você criou. Você pode copiar e colar este código diretamente no console se quiser, pois é um script que só será utilizado uma vez.
   
@@ -89,17 +89,33 @@ Antes de tudo, baixe a planilha de dados ficticios (caso nao tenha baixado ainda
  
 [Planilha ficticia - fake_data.csv](data/fake_data.csv)
   
-No projeto de R, de preferência, só utilizaremos planilhas no formato CSV. É mais fácil de ler, mais leve e mais compatível do que formatos xlsx.
+No projeto de R, de preferência, só utilizaremos planilhas no formato CSV. É mais fácil de ler, mais leve e mais compatível do que formatos xlsx. Mas nao tem problema se seu dado bruto for do formato xlsx, apos a limpeza da planilha bruta, ele sera salvo em csv.
   
-Na pasta **data > raw**, você adiciona sua planilha de dados brutos fictícia (fake_data.csv). O fluxo de trabalho será o mais simples possível, mas envolverá etapas essenciais da análise de dados.
+Na pasta **data > raw**, você adiciona sua planilha de dados brutos fictícia (fake_data.csv). O fluxo de trabalho seguira sempre uma ordem que envolverá etapas essenciais da análise de dados.
   
-**Limpar dados brutos > Realizar análise > Mostrar gráficos**
+  **Fluxo de trabalho:**
   
-Para limpar a planilha de dados brutos, iremos criar um script para isso. Utilizaremos funções do pacote *dplyr* para modificar nomes das variáveis, nomes dos fatores, analisar dados faltantes, entre outras coisas.
+  **Limpar dados brutos > Realizar análise > Mostrar gráficos**
+  
+  **Limpar dados brutos:**
+  
+Significa que vamos corrigir erros de digitacao, alterar nome das variaveis, remover ou adicionar novas variaveis, remover dados faltantes ou filtrar linhas especificas.
+  
+  **Realizar analises:**
+  
+Aqui utilizaremos o banco de dados limpo (i.e. processado) para realizarmos analises estatisticas que respondem nossa hipotese.
+
+  **Mostrar graficos:**
+  
+Aqui utilizaremos os dados limpos para criar graficos para mostrar a relacao de nossas variaveis. Um grafico vale mais do que mil tabelas.
   
 ### Etapa 1: limpar dados
 
+Para limpar a planilha de dados brutos, iremos criar um script para isso. Cada etapa possuira um escript unico. Utilizaremos funções do pacote *dplyr* para modificar nomes das variáveis, nomes dos fatores, analisar dados faltantes, entre outras coisas.
+  
 Vamos criar um script para limpar nossos dados brutos. Monte o script completo utilizando os códigos que irei fornecendo a seguir, copiando e colando no seu RStudio. A primeira coisa que faremos no script é seu cabeçalho. Utilizaremos comentários para criar um cabeçalho com informações de título, autores e data. 
+  
+  **Cabecalho:** 
   
  ```r
  
@@ -119,7 +135,7 @@ Após isso, utilizaremos os comentários para organizar o script em tópicos, fa
 library(dplyr)  #Pacote com funcoes para manipular dados
 library(readxl) #Pacote com funcao para importar planilha em formato de excel (xlsx)
 ```
-Segundo, importamos o banco de dados a ser processado e "limpado" utilizando a função *read.csv()* e atribuindo (<-) a um objeto que iremos chamar de "dados". Mas dessa vez, sem utilizar o 'file.choose'. Para importar, você só precisa especificar o caminho do diretório em que o arquivo está inserido. Como estamos utilizando o projeto de R, o diretório é onde o projeto está. Dessa forma, não há necessidade de dizer para o R qual é o seu diretório de trabalho. Logo, fica fácil importar os dados brutos pois sabemos que ele está na pasta "dados > raw > iris.csv". Dizemos isso para o R utilizando os nomes das pastas separados por barras e, por fim, o nome do arquivo (iris) e sua extensão (.csv).
+Segundo, importamos o banco de dados a ser processado e "limpado" utilizando a função *read.csv()* e atribuindo (<-) a um objeto que iremos chamar de "dados". Mas dessa vez, sem utilizar o 'file.choose()'. Para importar, você só precisa especificar o caminho do diretório em que o arquivo está inserido. Como estamos utilizando o projeto de R, o diretório é onde o projeto está. Dessa forma, não há necessidade de dizer para o R qual é o seu diretório de trabalho. Logo, fica fácil importar os dados brutos pois sabemos que ele está na pasta "dados > raw > iris.csv". Dizemos isso para o R utilizando os nomes das pastas separados por barras e, por fim, o nome do arquivo (iris) e sua extensão (.csv). Isso eh o que chamamos de caminho relativo, pois nao precisamos dizer todo o caminho do arquivo do computador (caminho absoluto).
   
 
  ```r
@@ -141,17 +157,19 @@ any(duplicated(dados))  # Checar se tem linhas duplicadas.
 any(is.na(dados))       # Checar se tem dado faltando (NA).
 
 ```
-Às vezes, os nomes das variáveis não são fáceis de trabalhar, possuindo espaços, acentos, letras maiúsculas e minúsculas, e nomes confusos. Além de complicar o código, o nome de algumas variáveis pode bugá-lo (caso das acentuações de palavras em português). Então, vamos mudar o nome das variáveis utilizando a função *rename()* do pacote **dplyr**. Iremos deixar os nomes mais fáceis de trabalhar, deixando todas as letras minúsculas e retirando espacos.
+Às vezes, os nomes das variáveis não são fáceis de trabalhar, possuindo espaços, acentos, letras maiúsculas e minúsculas, e nomes confusos. Além de complicar o código, o nome de algumas variáveis pode bugá-lo (caso das acentuações de palavras em português). Evite utilizar acentuacoes no seu codigo. 
+  
+Vamos mudar o nome das variáveis utilizando a função *rename()* do pacote **dplyr**. Iremos deixar os nomes mais fáceis de trabalhar, deixando todas as letras minúsculas e retirando espacos.
   
 ```r
 
 # 3. Renomeando o nome das variaveis -------------------------------------------
 # 3.1 Ver nome das colunas (variaveis) ----
-colnames(dados) #veja que os espacos e caracteres especiais foram trocados por pontos
+colnames(dados) #veja que os espacos e caracteres especiais foram trocados automaticamente por pontos
 
 #3.2 Renomeando variaveis ----
 #Vamos renomear de forma a manter apenas letras minusculas
-dados2  <- rename(dados,           
+dados2  <- rename(dados,       #nome da sua planilha    
                   id = ID,             #nomes das variaveis (nome novo = nome antigo)
                   peso_g  = Peso..g.,
                   total_parasitas = Total.de.parasitas,
@@ -176,9 +194,12 @@ dados2$local <- as.factor(dados2$local)
 levels(dados2$local)
 
 ```
-Veja que aqui deveríamos ter apenas três fatores: **floresta**, **urbano** e **parque**. Mas, devido a erros de digitação, o R entende que são fatores diferentes. Isso é muito comum em planilhas de dados grandes, e você teria que fazer isso manualmente, identificando cada erro. Imagina o trabalhão.
 
-Agora podemos renomear o nome dos fatores de uma variável categórica utilizando a função *recode_factor()*. Nesse processo, podemos identificar erros de digitação que ocorreram durante o planilhamento dos dados. Por exemplo, você pode ter digitado "Macho", "macho" e "male" na variável sexo durante o planilhamento. O R vai identificar os três como sendo fatores diferentes, mas na verdade, são o mesmo fator. Portanto, é necessário que seja padronizado.
+*Dica: se voce nao entendeu o codigo da transformacao em fator, copie e cole esse codigo no chatgpt e pergunte ele para te explicar passo a passo. Voce vai perceber que com a linguagem adquirida ate aqui (funcao, objeto, argumentos), voce vai compreender melhor as coisas que voce encontra na internet.*
+  
+Veja que aqui deveríamos ter apenas três fatores: **floresta**, **urbano** e **parque**. Mas, devido a erros de digitação, o R entende que todas as variacoes dos nomes (e.g. forest, urban) são fatores diferentes. Isso é muito comum em planilhas de dados grandes, e você teria que fazer isso manualmente, identificando  e modificando cada erro. Imagina o trabalhão.
+
+Agora vamos renomear o nome dos fatores de uma variável categórica utilizando a função *recode_factor()*. Nesse processo, podemos identificar erros de digitação que ocorreram durante o planilhamento dos dados.
   
 ```r
 # 4.3 Renomear fatores
@@ -193,7 +214,7 @@ dados2$local <- recode_factor(dados2$local,                  #variavel categoric
 levels(dados2$local)
 
 ```
-Agora sim! Temos os três fatores bonitinhos. Agora que limpamos nossos dados brutos, iremos exportar nossa planilha limpa. Perceba que o processo do script é colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. É com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato CSV, por ser um formato mais simples, leve e estável. Para isso iremos utilizar a funcao write.csv, onde o argumento **x** eh o nome do objeto a ser exportado, o argumento **file** eh o local especifico onde a planilha vai ser salva, e **row.names** pergunta se voce quer que ele crie uma coluna com o numero das linhas, no caso, nao queremos entao eh FALSE, se quisessemos, seria TRUE.
+Agora sim! Temos os três fatores bonitinhos. Agora que limpamos nossos dados brutos, iremos exportar (salvar no computador) nossa planilha limpa. Perceba que o processo do script é colocar a planilha bruta de um lado e sair limpa e bonitinha do outro. É com os dados processados que iremos trabalhar de fato. Vamos salvar sempre no formato CSV, por ser um formato mais simples, leve e estável. Para isso iremos utilizar a funcao write.csv, onde o argumento **x** eh o nome do objeto a ser exportado, o argumento **file** eh o local especifico onde a planilha vai ser salva. O argumento **row.names** pergunta se voce quer que ele crie uma coluna com o numero das linhas. Como nao queremos, entao o argumento sera = FALSE, se quisessemos, seria = TRUE.
   
 Perceba que o caminho em **file** é muito simples. Estamos apenas indicando a pasta do nosso projeto de R: **raw > processed > nome da planilha**.
   
@@ -328,7 +349,7 @@ Não esqueça de salvar o script com o nome '03_grafico'.
   
 ### Etapa 4: Replicabilidade
 
-O seu projeto está organizado de forma que se torna fácil a replicabilidade em qualquer computador, gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, você precisa manter e **JAMAIS deletar** ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um clique a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna útil ao compartilhar seus dados com alguém, em que você pode zipar toda pasta do seu projeto, enviar para um contribuidor, e ele poderá ter acesso a tudo rodando apenas um script. É esse script que iremos fazer agora.
+O seu projeto está organizado de forma que se torna fácil a replicabilidade em qualquer computador, gerando todos seus outputs (tabelas e figuras) automaticamente! Para isso, você precisa manter e **JAMAIS deletar** ou modificar seus dados brutos (pasta raw). Todos os demais arquivos podem ser produzidos com um clique a partir dos seus dados brutos, portanto, podem ser deletados. Isso se torna útil ao compartilhar seus dados com alguém, em que você pode zipar toda pasta do seu projeto (transformar em um arquivo rar com o winrar), enviar para um contribuidor, e ele poderá ter acesso a tudo rodando apenas um script. É esse script que iremos fazer agora.
 
 ```r
 # Script do projeto
@@ -349,7 +370,7 @@ Ao rodar este código, todos os seus scripts são executados, e todos os seus ou
 
 Salve este script com o nome "run_project".
 
-Agora, vamos ver a mágica acontecer. Imagine que seu dado bruto "fake_data.csv" possui um problema (algum valor foi digitado errado), ou você coletou mais dados para aumentar o N do seu projeto. Você vai ter que refazer tudo de novo? Será? Vamos fazer um teste!
+Agora, vamos ver a mágica acontecer. Imagine que seu dado bruto "fake_data.csv" possui um problema (algum valor foi digitado errado), ou que você acabou tendo que coletar mais dados para aumentar o N do seu projeto do mestrado. Você vai ter que refazer tudo de novo? Será? Vamos fazer um teste!
 
 Vá no dado bruto "fake_data.csv" contido na pasta **raw** e simule que você coletou mais dados; inclua mais observações com valores de ID, peso, parasita e local. Após fazer isso, abra seu projeto de R, abra o script **run_project**, selecione todo o código, e pressione **Ctrl + Enter**, e veja a mágica acontecer! 
 Em dois segundos, tudo está refeito, todas as suas análises, todos os seus gráficos, todas as suas tabelas de resultado... tudo! Tudo está refeito. 
