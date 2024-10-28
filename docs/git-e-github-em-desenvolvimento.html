@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Diogo J. A. Silva" />
 
 
-<meta name="date" content="2024-02-10" />
+<meta name="date" content="2024-08-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -198,6 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="git-e-github-em-desenvolvimento.html"><a href="git-e-github-em-desenvolvimento.html#instalando-o-git"><i class="fa fa-check"></i><b>5.2</b> Instalando o Git</a></li>
 <li class="chapter" data-level="5.3" data-path="git-e-github-em-desenvolvimento.html"><a href="git-e-github-em-desenvolvimento.html#criando-uma-conta-no-github"><i class="fa fa-check"></i><b>5.3</b> Criando uma conta no GitHub</a></li>
 <li class="chapter" data-level="5.4" data-path="git-e-github-em-desenvolvimento.html"><a href="git-e-github-em-desenvolvimento.html#github-desktop"><i class="fa fa-check"></i><b>5.4</b> GitHub Desktop</a></li>
+<li class="chapter" data-level="5.5" data-path="git-e-github-em-desenvolvimento.html"><a href="git-e-github-em-desenvolvimento.html#criando-um-repositorio"><i class="fa fa-check"></i><b>5.5</b> Criando um repositorio</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="funções-avançadas.html"><a href="funções-avançadas.html"><i class="fa fa-check"></i><b>6</b> Funções Avançadas</a>
 <ul>
@@ -278,6 +279,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.4</span> GitHub Desktop<a href="git-e-github-em-desenvolvimento.html#github-desktop" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Agora, você irá instalar o GitHub Desktop através do site: <a href="https://desktop.github.com/" class="uri">https://desktop.github.com/</a>! Este programa facilitará muito a vida de quem não está acostumado a programar. Todos os comandos de criação de repositório, commits e upload para o GitHub que seriam feitos pelo Git através de linhas de comando serão facilitados através de uma interface amigável e clicável.</p>
 <p>Após a instalação, você só precisará fazer login com sua conta do GitHub. Para isso, abra o programa, vá em “<strong>File</strong>” &gt; “<strong>Options</strong>” &gt; “<strong>Accounts</strong>”. Adicione sua conta e seja feliz.</p>
+</div>
+<div id="criando-um-repositorio" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Criando um repositorio<a href="git-e-github-em-desenvolvimento.html#criando-um-repositorio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para que toda modificacao que realizamos no codigo seja salvo na nuvem e de forma versionada. Precisamos criar um repositorio para nosso projeto de R. Que nada mais eh do que uma pasta reconhecida pelo Git. Criaremos esse repositorio (pasta) utilizando o Github Desktop. Primeiro, certifique-se de que voce logou sua conta do GitHub no Github desktop.</p>
+<p>Abra o Github desktop, va em <strong>Files</strong> &gt; <strong>New repository</strong>. Coloque o nome do repositorio (e.g. projeto_mestrado), uma descricao dizendo sobre o que eh o repositorio (e.g. Analise dos dados do mestrado), marque para criar um READ.ME e crie o repositorio.</p>
+<div class="float">
+<img src="img/create_repository.png" alt="Criando repositorio no GitHub desktop." />
+<div class="figcaption">Criando repositorio no GitHub desktop.</div>
+</div>
+<p>Apos criar o repositorio, voce precisa publicar no GitHub online, que eh apenas clicar em Publish repository (ou apertar o atalho Ctrl + P).</p>
+<div class="float">
+<img src="img/publish%20repository.png" alt="Figura 2. Tela do RStudio" />
+<div class="figcaption">Figura 2. Tela do RStudio</div>
+</div>
+<p>Pronto, voce criou o repositorio e agora esta conectado ao Github online! Todas as modificacoes que voce fizer dentro desse repositorio, sera rastreada pelo git. Toda modificacao que for feita voce precisa manualmente enviar para o github online. Mas pera, a gente criou o repositorio, mas nao colocamos nada la dentro ainda. Pegue seu projeto de R junto com todas as pastas e scripts e tudo mais que foi feito ate agora, e coloque dentro do seu repositorio. Abra o github desktop e voce vai ver que ele detectou os arquivos adicionados, porem para ele ir pra nuvem do Github online, voce precisa enviar, e esse envio eh feito atraves do que chamamos de commit (canto inferior esquerdo do github desktop), de um titulo e faca o commit, depois publique (pull). O comando eh sempre esse, commit (ctrl + enter) depois pull (ctrl + P).</p>
+<p>Com seu projeto de R sendo rastreado pelo Git e salvo online pelo GitHub, voce agora pode compartilhar e trabalhar em conjunto com outras pessoas.
+Abra o Github e veja seus repositorios, voce vai ver que esta tudo la. Voce pode fazer alteracoes no codito atraves do proprio Github online. Essas alteracoes serao detectadas pelo github desktop, e o processo inverso precisara ser feito (ao inves de modificacoes no computador ir para o online, as modificacoes online irao ir para o computador).</p>
 </div>
 </div>
             </section>

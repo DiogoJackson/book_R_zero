@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Diogo J. A. Silva" />
 
 
-<meta name="date" content="2024-02-10" />
+<meta name="date" content="2024-08-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -198,6 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="git-e-github-em-desenvolvimento.html"><a href="git-e-github-em-desenvolvimento.html#instalando-o-git"><i class="fa fa-check"></i><b>5.2</b> Instalando o Git</a></li>
 <li class="chapter" data-level="5.3" data-path="git-e-github-em-desenvolvimento.html"><a href="git-e-github-em-desenvolvimento.html#criando-uma-conta-no-github"><i class="fa fa-check"></i><b>5.3</b> Criando uma conta no GitHub</a></li>
 <li class="chapter" data-level="5.4" data-path="git-e-github-em-desenvolvimento.html"><a href="git-e-github-em-desenvolvimento.html#github-desktop"><i class="fa fa-check"></i><b>5.4</b> GitHub Desktop</a></li>
+<li class="chapter" data-level="5.5" data-path="git-e-github-em-desenvolvimento.html"><a href="git-e-github-em-desenvolvimento.html#criando-um-repositorio"><i class="fa fa-check"></i><b>5.5</b> Criando um repositorio</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="funções-avançadas.html"><a href="funções-avançadas.html"><i class="fa fa-check"></i><b>6</b> Funções Avançadas</a>
 <ul>
@@ -233,11 +234,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="criando-funções" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Capítulo 7</span> Criando Funções<a href="criando-funções.html#criando-funções" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Eh possivel que em algum momento nao conhecamos ou nao exista nenhuma funcao para resolver nossos problema. Nesse caso voce pode criar sua propria funcao.</p>
 <div id="estrutura-de-uma-função" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Estrutura de uma Função<a href="criando-funções.html#estrutura-de-uma-função" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>name &lt;- function(variables) {</p>
+<p>}</p>
 </div>
 <div id="criando-uma-função-simples" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Criando uma Função Simples<a href="criando-funções.html#criando-uma-função-simples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Se a gente quisesse calcular quanto a gente ganha por ano baseado no nosso salario por mes, basta multiplicar nosso salario por 12, certo?</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="criando-funções.html#cb65-1" tabindex="-1"></a><span class="co">#Calculo do ganho por ano baseado num salario mensal de 1500 reais.</span></span>
+<span id="cb65-2"><a href="criando-funções.html#cb65-2" tabindex="-1"></a><span class="dv">1500</span> <span class="sc">*</span> <span class="dv">12</span></span></code></pre></div>
+<p>Mas toda vez que quisermos calcular, precisamos fazer esse calculo. Eu nao quero ter que pensar, quero apenas colocar o valor do meu salario e ter o valor do ganho anual. Vamos criar uma funcao para isso. Esse eh o exemplo de funcao mais simples que consegui imaginar.</p>
+<p>Vamos criar uma funcao que calcula quanto voce ganha em 1 ano (12 meses), baseado no seu salario mensal. Vamos supor que voce ganha 1500 reais por mes. Para saber quanto voce ganha em um ano, basta apenas multiplicar por 12. Entao vamos criar uma funcao que ira fazer isso para a gente. A funcao recebera quanto voce ganha por mes, calculara por debaixo dos panos, e te dara apenas o resultado. O nome da nossa funcao sera salario_ano, a variavel que ela recebera dentro dos parenteses, nesse caso sera o salario por mes (um numero), entao chamamos esse argumento de salario_mes. Dentro das chaves, ocorrera o processo do argumento. Nesse caso, ocorre apenas a multiplicacao por 12. Simples assim.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="criando-funções.html#cb66-1" tabindex="-1"></a><span class="co">#Criando funcao</span></span>
+<span id="cb66-2"><a href="criando-funções.html#cb66-2" tabindex="-1"></a>salario_ano <span class="ot">&lt;-</span> <span class="cf">function</span>(salario_mes) {</span>
+<span id="cb66-3"><a href="criando-funções.html#cb66-3" tabindex="-1"></a>  </span>
+<span id="cb66-4"><a href="criando-funções.html#cb66-4" tabindex="-1"></a>salario_mes <span class="sc">*</span> <span class="dv">12</span></span>
+<span id="cb66-5"><a href="criando-funções.html#cb66-5" tabindex="-1"></a></span>
+<span id="cb66-6"><a href="criando-funções.html#cb66-6" tabindex="-1"></a>}</span>
+<span id="cb66-7"><a href="criando-funções.html#cb66-7" tabindex="-1"></a></span>
+<span id="cb66-8"><a href="criando-funções.html#cb66-8" tabindex="-1"></a><span class="co">#usando a funcao criada</span></span>
+<span id="cb66-9"><a href="criando-funções.html#cb66-9" tabindex="-1"></a><span class="fu">salario_ano</span>(<span class="dv">1500</span>) <span class="co">#o resultado eh os 1500 multiplicado por 12 (salario por ano).</span></span></code></pre></div>
+<p>Voce pode colocar qualquer numero dentro da funcao e ele ira te dar o resultado. Voce deve ta pensando duas coisas nesse momento…</p>
+<ul>
+<li><p>Primeiro pensamento:
+Que lezeira hein, tanto trabalho so para calcular um negocio simples desses.</p></li>
+<li><p>Segundo pensamento:
+Que massa!!! Imagina quanta coisa massa e complexa que da pra fazer usando funcoes incriveis.</p></li>
+</ul>
+<p>Eu espero que voce tenha tido o segundo pensamento, mas caso tenha tido o pensamento 1, sinto te desapontar mas iremos criar outra funcao leza que nao sereve para nada, mas agora com duas variaveis.</p>
+<p>Imagine que queremos uma funcao para somar dois numeros qualquer. Sim, so isso.
+Para essa funcao, precisamos de dois argumentos que serao dois numeros qualquer. Chamei arbitrariamente esses dois numeros de x e y, que na funcao sao separados por virgula. O processo dessa funcao eh apenas a soma dos dois numeros.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="criando-funções.html#cb67-1" tabindex="-1"></a><span class="co">#Criando funcao de somar</span></span>
+<span id="cb67-2"><a href="criando-funções.html#cb67-2" tabindex="-1"></a>soma <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb67-3"><a href="criando-funções.html#cb67-3" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="criando-funções.html#cb67-4" tabindex="-1"></a>x <span class="sc">+</span> y</span>
+<span id="cb67-5"><a href="criando-funções.html#cb67-5" tabindex="-1"></a></span>
+<span id="cb67-6"><a href="criando-funções.html#cb67-6" tabindex="-1"></a>}</span>
+<span id="cb67-7"><a href="criando-funções.html#cb67-7" tabindex="-1"></a></span>
+<span id="cb67-8"><a href="criando-funções.html#cb67-8" tabindex="-1"></a><span class="co">#usando a funcao soma</span></span>
+<span id="cb67-9"><a href="criando-funções.html#cb67-9" tabindex="-1"></a><span class="fu">soma</span>(<span class="dv">1423</span>, <span class="dv">1235</span>)</span></code></pre></div>
+<p>Voce pode criar funcoes utilizando quantos argumentos quiser. Mas agora vamos criar uma funcao que fornece teu ganho, nao apenas anual, mas sim, semanal, por dia, anual mas que o retorno do resultado seja uma tabela.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="criando-funções.html#cb68-1" tabindex="-1"></a> salarios <span class="ot">&lt;-</span> <span class="cf">function</span>(salario_mes) {</span>
+<span id="cb68-2"><a href="criando-funções.html#cb68-2" tabindex="-1"></a>  </span>
+<span id="cb68-3"><a href="criando-funções.html#cb68-3" tabindex="-1"></a>mes <span class="ot">&lt;-</span> salario_mes</span>
+<span id="cb68-4"><a href="criando-funções.html#cb68-4" tabindex="-1"></a></span>
+<span id="cb68-5"><a href="criando-funções.html#cb68-5" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </div>
             </section>

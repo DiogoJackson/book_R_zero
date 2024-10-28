@@ -42,6 +42,7 @@ o-que-danado-eh-isso
 instalando-o-git
 criando-uma-conta-no-github
 github-desktop
+criando-um-repositorio
 funções-avançadas
 ifelse
 for
